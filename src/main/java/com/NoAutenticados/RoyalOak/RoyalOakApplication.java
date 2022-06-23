@@ -3,14 +3,16 @@ package com.NoAutenticados.RoyalOak;
 import com.NoAutenticados.RoyalOak.models.Cliente;
 import com.NoAutenticados.RoyalOak.models.Producto;
 import com.NoAutenticados.RoyalOak.repositories.ClienteRepositorio;
+import com.NoAutenticados.RoyalOak.repositories.FacturaRepositorio;
 import com.NoAutenticados.RoyalOak.repositories.ProductoRepositorio;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 @SpringBootApplication
 public class RoyalOakApplication {
@@ -20,22 +22,25 @@ public class RoyalOakApplication {
 	}
 
 	@Bean
-	public CommandLineRunner initData(ClienteRepositorio clienteRepositorio, ProductoRepositorio productoRepositorio){
+	public CommandLineRunner initData(ClienteRepositorio clienteRepositorio, ProductoRepositorio productoRepositorio, FacturaRepositorio facturaRepositorio){
 		return (args) -> {
-			Cliente cliente1 = new Cliente("Esteban", "Casile", "esteban@gmail.com", "98735435");
-			Cliente cliente2 = new Cliente("Facu", "Araujo", "facu@gmail.com", "264654564");
-			Cliente cliente3 = new Cliente("Daphne", "Collao", "daphnecollao@gmail.com", "5649848594");
-			Cliente cliente4 = new Cliente("Nacho", "Ferrero", "nacho@gmail.com", "78895656");
-			Cliente cliente5 = new Cliente("Andres", "Garcia", "andres@gmail.com", "84354635");
-			Cliente cliente6 = new Cliente("Caro", "Cardiello", "caro@gmail.com", "48964564564");
-			Cliente cliente7 = new Cliente("Walter", "Peralta", "walter@gmail.com", "6573575357");
+			Cliente cliente1 = new Cliente("Esteban", "Casile", "esteban@gmail.com", "98735435", Set.of("San Juan"));
+			Cliente cliente2 = new Cliente("Facu", "Araujo", "facu@gmail.com", "264654564", Set.of("San Juan"));
+			Cliente cliente3 = new Cliente("Daphne", "Collao", "daphnecollao@gmail.com", "5649848594", Set.of("San Juan"));
+			Cliente cliente4 = new Cliente("Nacho", "Ferrero", "nacho@gmail.com", "78895656", Set.of("San Juan"));
+			Cliente cliente5 = new Cliente("Andres", "Garcia", "andres@gmail.com", "84354635", Set.of("San Juan"));
+			Cliente cliente6 = new Cliente("Caro", "Cardiello", "caro@gmail.com", "48964564564", Set.of("San Juan"));
+			Cliente cliente7 = new Cliente("Walter", "Peralta", "walter@gmail.com", "6573575357", Set.of("San Juan"));
 			clienteRepositorio.save(cliente1);
+//			cliente1.addDireccion("Cordoba");
+//			clienteRepositorio.save(cliente1);
 			clienteRepositorio.save(cliente2);
 			clienteRepositorio.save(cliente3);
 			clienteRepositorio.save(cliente4);
 			clienteRepositorio.save(cliente5);
 			clienteRepositorio.save(cliente6);
 			clienteRepositorio.save(cliente7);
+			clienteRepositorio.save(cliente1);
 
 
 

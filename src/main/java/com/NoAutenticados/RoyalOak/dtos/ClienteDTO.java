@@ -2,11 +2,15 @@ package com.NoAutenticados.RoyalOak.dtos;
 
 import com.NoAutenticados.RoyalOak.models.Cliente;
 
+import java.util.List;
+import java.util.Set;
+
 public class ClienteDTO {
 
     private long id;
 
     private String nombre,apellido,email,telefono;
+    private Set<String> direcciones;
 
 
     public ClienteDTO () {}
@@ -17,6 +21,7 @@ public class ClienteDTO {
         this.apellido = cliente.getApellido();
         this.email = cliente.getEmail();
         this.telefono = cliente.getTelefono();
+        this.direcciones = cliente.getDirecciones();
     }
 
 
@@ -55,5 +60,13 @@ public class ClienteDTO {
 
     public void setTelefono(String telefono) {
         this.telefono = telefono;
+    }
+
+    public Set<String> getDirecciones() {
+        return direcciones;
+    }
+
+    public void setDirecciones(Set<String> direcciones) {
+        this.direcciones = direcciones;
     }
 }
