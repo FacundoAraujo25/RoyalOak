@@ -1,6 +1,9 @@
 Vue.createApp({
-    data() {
+    data(
+    ) {
         return {
+            cliente: [],
+            pedido:[],
         }
     },
     created() {
