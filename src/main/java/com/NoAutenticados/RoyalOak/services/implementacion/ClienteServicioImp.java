@@ -33,6 +33,11 @@ public class ClienteServicioImp implements ClienteServicio {
     }
 
     @Override
+    public Cliente findByTelefono(String telefono) {
+        return clienteRepositorio.findByTelefono(telefono);
+    }
+
+    @Override
     public void guardarCliente(Cliente cliente) {
         clienteRepositorio.save(cliente);
     }
