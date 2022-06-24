@@ -342,9 +342,27 @@ a.continue:hover, a.continue:focus, a.continue:active {
 
 
 @media only screen and (max-width: 570px){
+    #logoCarrito{
+        width: 20vh !important;
+    }
+
   .heading{
-    display: none;
+    font-size: 0.6em !important;
   }
+  .prodHeader{
+    width: 35%;
+  }
+  .cantidadCarrito{
+    width: 40%;
+    padding-left: 2em !important; 
+  }
+  .totalCarrito{
+    width: 20%;
+  }
+  .quitarCarrito{
+    width: 5%;
+  }
+
 
 }
 @media only screen and (max-width: 630px) {
