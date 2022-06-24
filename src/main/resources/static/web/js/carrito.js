@@ -1,6 +1,10 @@
 Vue.createApp({
-    data() {
+    data(
+    ) {
         return {
+            cliente: [],
+            pedido:[],
+            envioValue:"",
         }
     },
     created() {
