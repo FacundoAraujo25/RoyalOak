@@ -175,6 +175,7 @@ img {
   font-family: 'Kdam Thmor Pro', sans-serif;
   font-size: 0.75em;
   color: #CCCCCC;
+  padding-right: 3em;
 }
 .tableHead li {
   display: table-cell;
@@ -335,8 +336,18 @@ a.continue:hover, a.continue:focus, a.continue:active {
 #inputsCarrito{
     margin-left: 10.5rem;
 }
+.foto_radio{
+  width: 60px;
+}
 
-@media only screen and (max-width: 39.375em) {
+
+@media only screen and (max-width: 570px){
+  .heading{
+    display: none;
+  }
+
+}
+@media only screen and (max-width: 630px) {
   .wrap {
     width: 98%;
     padding: 2% 0;
@@ -385,5 +396,14 @@ a.continue:hover, a.continue:focus, a.continue:active {
   a.btn.continue {
     width: 100%;
     text-align: center;
+  }
+}
+
+@media(max-width: 1280px){
+  #logoCarrito{
+    width: 15vw;
+  }
+  .cantidadCarrito{
+    padding-right: 6rem !important;
   }
 }

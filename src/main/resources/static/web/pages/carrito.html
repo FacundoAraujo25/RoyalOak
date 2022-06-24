@@ -35,7 +35,7 @@
                 <div class="cart">
                   <ul class="tableHead">
                     <li class="prodHeader">Producto</li>
-                    <li>Cantidad</li>
+                    <li class="cantidadCarrito">Cantidad</li>
                     <li>Total</li>
                     <li>Quitar</li>
                   </ul>
@@ -57,7 +57,7 @@
                         </div>
               
                         <div class="prodTotal cartSection col-5">
-                          <p>$15.00</p>
+                          <p class="total">$15.00</p>
                         </div>
                         <div class="cartSection removeWrap col-2">
                           <a href="#" class="remove">x</a>
@@ -78,12 +78,12 @@
                         <input type="radio" name="delivery" id="radio_delivery" required v-model="envioValue" value="delivery" class="btn-check"></input>
                         <label for="radio_delivery" class="btn label">
                             Delivery
-                            <img src="../assets/comida.png" alt="motito" class="foto_radio" width="40px">
+                            <img src="../assets/comida.png" alt="motito" class="foto_radio">
                         </label>
                         <input type="radio" name="takeAway" id="radio_takeAway" required v-model="envioValue" value="takeAway" class="btn-check"></input>
                         <label for="radio_takeAway" class="btn label">
                             TakeAway
-                            <img src="../assets/para-llevar.png" alt="bolsita" class="foto_radio" width="40px">
+                            <img src="../assets/para-llevar.png" alt="bolsita" class="foto_radio">
                         </label>
                     </div>
                     </li>
