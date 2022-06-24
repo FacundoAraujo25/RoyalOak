@@ -75,12 +75,12 @@
                     
                     <li class="totalRow">
                         <div class="d-flex totalRow" id="inputsCarrito">
-                        <input type="radio" name="delivery" id="radio_delivery" required v-model="envioValue" :value="delivery" class="btn-check"></input>
+                        <input type="radio" name="delivery" id="radio_delivery" required v-model="envioValue" value="delivery" class="btn-check"></input>
                         <label for="radio_delivery" class="btn label">
                             Delivery
                             <img src="../assets/comida.png" alt="motito" class="foto_radio" width="40px">
                         </label>
-                        <input type="radio" name="takeAway" id="radio_takeAway" required v-model="envioValue" :value="takeAway" class="btn-check"></input>
+                        <input type="radio" name="takeAway" id="radio_takeAway" required v-model="envioValue" value="takeAway" class="btn-check"></input>
                         <label for="radio_takeAway" class="btn label">
                             TakeAway
                             <img src="../assets/para-llevar.png" alt="bolsita" class="foto_radio" width="40px">
@@ -88,7 +88,7 @@
                     </div>
                     </li>
                     
-                    <li class="totalRow" v-if="envioValue == 'delivery'"><span class="label">Shipping</span><span class="value">$150</span></li>
+                    <li class="totalRow" v-show="envioValue == 'delivery'"><span class="label">Shipping</span><span class="value">$150</span></li>
 
                     <li class="totalRow final"><span class="label">Total</span><span class="value">$44.00</span></li>
                     <li class="totalRow"><a href="#" class="continue">Pagar</a></li>
@@ -102,17 +102,17 @@
     </div>
 
     <!-- Script de Bootstrap -->
-    <script src="../js/carrito.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
     integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
     crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
     integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
     crossorigin="anonymous"></script>
-
+    
     <!-- Script de Axios - Vue.js - Javascript - SweetAlert - AOS -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://unpkg.com/vue@3"></script>
+    <script src="../js/carrito.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="sweetalert2.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
