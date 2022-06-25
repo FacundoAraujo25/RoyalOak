@@ -10,6 +10,7 @@ public class ProductoDTO {
     private String nombre, descripcion, imagen;
     private int stock;
     private double precio;
+    private boolean activo;
     private List<String> ingredientes = new ArrayList<>();
 
     public ProductoDTO() {}
@@ -22,8 +23,7 @@ public class ProductoDTO {
         this.stock = producto.getStock();
         this.precio = producto.getPrecio();
         this.ingredientes = producto.getIngredientes();
-
-
+        this.activo = producto.isActivo();
     }
 
     public long getId() {
@@ -64,5 +64,11 @@ public class ProductoDTO {
     }
     public void setIngredientes(List<String> ingredientes) {
         this.ingredientes = ingredientes;
+    }
+    public boolean isActivo() {
+        return activo;
+    }
+    public void setActivo(boolean activo) {
+        this.activo = activo;
     }
 }
