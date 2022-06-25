@@ -1,8 +1,7 @@
 package com.NoAutenticados.RoyalOak;
 
-import com.NoAutenticados.RoyalOak.models.Cliente;
-import com.NoAutenticados.RoyalOak.models.Producto;
-import com.NoAutenticados.RoyalOak.models.RolUsuario;
+import com.NoAutenticados.RoyalOak.models.*;
+import com.NoAutenticados.RoyalOak.repositories.ClienteProductoPedidoRepositorio;
 import com.NoAutenticados.RoyalOak.repositories.ClienteRepositorio;
 import com.NoAutenticados.RoyalOak.repositories.FacturaRepositorio;
 import com.NoAutenticados.RoyalOak.repositories.ProductoRepositorio;
@@ -21,7 +20,7 @@ public class RoyalOakApplication {
 	}
 
 	@Bean
-	public CommandLineRunner initData(ClienteRepositorio clienteRepositorio, ProductoRepositorio productoRepositorio, FacturaRepositorio facturaRepositorio){
+	public CommandLineRunner initData(ClienteRepositorio clienteRepositorio, ProductoRepositorio productoRepositorio, FacturaRepositorio facturaRepositorio, ClienteProductoPedidoRepositorio clienteProductoPedidoRepositorio){
 		return (args) -> {
 			Cliente cliente1 = new Cliente("Esteban", "Casile", "esteban@gmail.com", "98735435", "123");
 			Cliente cliente2 = new Cliente("Facu", "Araujo", "facu@gmail.com", "264654564", "123");
@@ -62,6 +61,13 @@ public class RoyalOakApplication {
 			productoRepositorio.save( producto3);
 			productoRepositorio.save( producto4);
 			productoRepositorio.save( producto5);
+			Factura factura = new Factura();
+			factura.setCliente(cliente1);
+			facturaRepositorio.save(factura);
+			ClienteProductoPedido pedido = new ClienteProductoPedido(2, factura, producto2);
+			ClienteProductoPedido pedido1 = new ClienteProductoPedido(3, factura, producto1);
+			clienteProductoPedidoRepositorio.save(pedido);
+			clienteProductoPedidoRepositorio.save(pedido1);
 		};
 	}
 }

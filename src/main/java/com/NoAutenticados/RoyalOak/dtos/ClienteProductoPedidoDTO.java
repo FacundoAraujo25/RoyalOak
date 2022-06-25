@@ -6,19 +6,19 @@ import com.NoAutenticados.RoyalOak.models.Producto;
 
 
 public class ClienteProductoPedidoDTO {
-    private long id, idFactura;
+    private long id;
     private int cantidad;
-    private Factura factura;
-    private Producto producto;
+    private double precio, total;
+    private String producto;
 
     public ClienteProductoPedidoDTO() {}
 
     public ClienteProductoPedidoDTO(ClienteProductoPedido clienteProductoPedido) {
         this.id = clienteProductoPedido.getId();
-        this.idFactura = clienteProductoPedido.getFactura().getId();
         this.cantidad = clienteProductoPedido.getCantidad();
-        this.factura = clienteProductoPedido.getFactura();
-        this.producto = clienteProductoPedido.getProducto();
+        this.producto = clienteProductoPedido.getProducto().getNombre();
+        this.precio = clienteProductoPedido.getProducto().getPrecio();
+        this.total = clienteProductoPedido.getTotal();
     }
 
     public long getId() {
@@ -33,16 +33,22 @@ public class ClienteProductoPedidoDTO {
     public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
     }
-    public Factura getFactura() {
-        return factura;
+    public double getPrecio() {
+        return precio;
     }
-    public void setFactura(Factura factura) {
-        this.factura = factura;
+    public void setPrecio(double precio) {
+        this.precio = precio;
     }
-    public Producto getProducto() {
+    public String getProducto() {
         return producto;
     }
-    public void setProducto(Producto producto) {
+    public void setProducto(String producto) {
         this.producto = producto;
+    }
+    public double getTotal() {
+        return total;
+    }
+    public void setTotal(double total) {
+        this.total = total;
     }
 }
