@@ -24,11 +24,15 @@ public class ProductoControlador {
         return productoServicio.getAll();
     }
 
+//    @PatchMapping("/productos")
+//    public ResponseEntity<Object> modificarProducto(){
+//
+//    }
+
     @PostMapping("/productos")
     public ResponseEntity<Object> agregarProductos(@RequestParam String nombre,
                                                    @RequestParam String descripcion,
                                                    @RequestParam String imagen,
-                                                   @RequestParam int stock,
                                                    @RequestParam double precio,
                                                    @RequestParam int stock,
                                                    @RequestParam String ingredientes,
@@ -55,7 +59,8 @@ public class ProductoControlador {
 
 
         String[] ingredientesArray = ingredientes.split(" ");
-        Producto producto = new Producto(nombre, descripcion, imagen, stock, precio);
+        Producto producto = new Producto(nombre, descripcion, imagen,stock, precio);
+        producto.setActivo(activo);
         producto.setIngredientes(Arrays.stream(ingredientesArray).collect(Collectors.toList()));
         productoServicio.guardarProducto(producto);
         return new ResponseEntity<>(HttpStatus.CREATED);

@@ -34,6 +34,7 @@ public class Producto {
         this.imagen = imagen;
         this.stock = stock;
         this.precio = precio;
+        this.activo = false;
     }
 
     public long getId() {
