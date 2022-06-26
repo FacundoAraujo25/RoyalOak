@@ -1,140 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/2630d2cbb2.js" crossorigin="anonymous"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="./css/style.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <title>Document</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://kit.fontawesome.com/2630d2cbb2.js" crossorigin="anonymous"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+                integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+                crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="./css/style.css">
+        <link rel="stylesheet" href="./css/footer.css">
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <title>Document</title>
 </head>
+
 <body>
-    <div id="app">
-        
-        <!-- <div id="hamburguesa">
-            <div class="collapse" id="navbarToggleExternalContent">
-                <div id="hamburguesitas">
-                    
-                    <a class="a_nav" href=""><img src="media/iconoBurger.png" class ="iconos_nav">Menu</a>
-                    <a class="a_nav" href=""><img src="media/flechasDeLasuerte.png"class ="iconos_nav">Random</a>
-                    <a class="a_nav" href=""><img src="media/Register.webp"class ="iconos_nav">Registrate</a>
-                    <a class="a_nav" href=""><img src="media/cerrarSesion.png"class ="iconos_nav">Salir</a>
+        <div id="app">
+
+                <div id="hamburguesa">
+                <div class="collapse" id="navbarToggleExternalContent">
+
+                        <div>
+                                <nav id="menu_hamburguesa" class="navbar navbar-dark">
+                                        <div id="container_fluid" class="d-flex justify-between">
+                                                <div>
+                                                        <img id="carritoHamburguesa" src="media/canastaIcono.png" alt="">
+                                                </div>
+                                                <div>
+                                                        <img src="media/logo-royaloak-2.png" alt="">
+                                                </div>
+                                                <div id="botonHamburguesa">
+                                                        <button id="boton_hamburguesa" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                                                                <i class="bi bi-x-square"></i>
+                                                        </button>
+                                                </div>
+                                        </div>
+                                </nav>   
+                        </div>
+
+                    <div id="hamburguesitas">
+                        <div>
+                            <a  href=""><img src="media/iconoBurger.png"></a>
+                            <p>Menu</p>   
+                        </div>
+                        <div>
+                            <a  href=""><img src="https://cdn-icons-png.flaticon.com/512/30/30569.png"></a>
+                            <p>Royal Oak</p>
+                        </div>
+                        <div>
+                            <a  href=""><img src="media/Register.webp"></a>
+                            <p>Registrarme</p>
+                        </div>
+                        <div>
+                            <a  href=""><img src="media/cerrarSesion.png"></a>
+                            <p>Salir</p>
+                        </div>
                     </div>
                 </div>
                 <nav id="menu_hamburguesa" class="navbar navbar-dark">
                     <div id="container_fluid" class="d-flex justify-between">
                     <div>
-                        <img src="media/canastaIcono.png" alt="">
+                        <img id="carritoHamburguesa" src="media/canastaIcono.png" alt="">
                     </div>
                     <div>
                         <img src="media/logo-royaloak-2.png" alt="">
                     </div>
-                    <div>
+                    <div id="botonHamburguesa">
                         <button id="boton_hamburguesa" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
                     </div>
                     </div>
                 </nav>
-        </div> -->
-
-        <header>
-            <div class="nav">
-                <div id="marca">
-                    <a href="#"><img src="./media/logo-royaloak.png" alt="Logo" ></a>
-                </div>
-                <div>
-                    <a href=""><img class="scale-up-center" id="iconos" src="media/iconoBurger.png" alt="menu"></a>
-                    <p>Menu</p>
-                </div>
-                <div>
-                    <a href=""><img class="scale-up-center" src="media/iconoBolsita.webp" alt=""></a>
-                    <p>Pedido</p>
-                </div>
-                <div>
-                    <a href=""><img class="scale-up-center" src="media/flechasDeLasuerte.png" alt=""></a>
-                    <p>Random</p>
-                </div>
-                <div >
-                    <a href="login.html"><img class="scale-up-center " src="media/Register.webp" alt=""></a>
-                    <p>register</p>
-                </div>
-                <div>
-                    <a href=""><img class="scale-up-center" src="media/cerrarSesion.png" alt=""></a>
-                    <p>Salir</p>
-                </div>
-            </div>
-    
-            <div class="center">
-                <div class="principal">
-                        <video id="video2" autoplay loop muted >
-                                <source src="media/Burger Handheld B-roll  Drumlife Production[720p]_Trim (2).mp4" type="video/mp4">
-                                su navegador no puede reproducir este formato de video
-                            </video>
-                </div>
-            </div>
-        </header>
-
-        
-
-
-        <div  id="pizzas">
-            <div>
-                <img src="media/iconoPizza.png" alt="">
-            </div>
-            <div>
-                <img src="media/iconoPizza.png" alt="">
-            </div>
-            <div>
-                <img src="media/iconoPizza.png" alt="">
-            </div>
-            <div>
-                <img src="media/iconoPizza.png" alt="">
-            </div>
-            <div>
-                <img src="media/iconoPizza.png" alt="">
-            </div>
-            <div>
-                <img src="media/iconoPizza.png" alt="">
-            </div>
-            <div>
-                <img src="media/iconoPizza.png" alt="">
-            </div>
-            <div>
-                <img src="media/iconoPizza.png" alt="">
-            </div>
-            <div>
-                <img src="media/iconoPizza.png" alt="">
-            </div>
-            <div>
-                <img src="media/iconoPizza.png" alt="">
-            </div>
-            <div>
-                <img src="media/iconoPizza.png" alt="">
-            </div>
-            <div>
-                <img src="media/iconoPizza.png" alt="">
-            </div>
         </div>
+
+                <header>
+                        <div class="nav">
+                                <div id="marca">
+                                        <a href="#"><img src="./media/logo-royaloak.png" alt="Logo"></a>
+                                </div>
+                                <div id="menu">
+                                        <a href="#container"><img class="scale-up-center" id="iconos"
+                                                        src="media/iconoBurger.png" alt="menu"></a>
+                                        <p>Menu</p>
+                                </div>
+                                <div>
+                                        <a href=""><img class="scale-up-center" src="media/iconoBolsita.webp"
+                                                        alt=""></a>
+                                        <p>Pedido</p>
+                                </div>
+                                <div>
+                                        <a href=""><img class="scale-up-center" src="https://cdn-icons-png.flaticon.com/512/30/30569.png"
+                                                        alt=""></a>
+                                        <p>Royal</p>
+                                </div>
+                                <div>
+                                        <a href="login.html"><img class="scale-up-center " src="media/Register.webp"
+                                                        alt=""></a>
+                                        <p>Registro</p>
+                                </div>
+                                <div id="salir">
+                                        <a href=""><img class="scale-up-center" src="media/cerrarSesion.png" alt=""></a>
+                                        <p>Salir</p>
+                                </div>
+                        </div>
+
+                        <!-- <box-icon name='user-pin' type='solid' ></box-icon>
+                        <box-icon type='solid' name='dice-5'></box-icon>
+                        <box-icon name='cart-download' type='solid' ></box-icon>
+                        <box-icon name='dish' type='solid'></box-icon>
+                        <box-icon name='user-pin' type='solid' ></box-icon> -->
+
+                        <div class="center">
+                                <div class="principal">
+                                        <video id="video2" autoplay loop muted>
+                                                <source src="media/Burger Handheld B-roll  Drumlife Production[720p]_Trim (2).mp4"
+                                                        type="video/mp4">
+                                                su navegador no puede reproducir este formato de video
+                                        </video>
+                                </div>
+                        </div>
+                </header>
+
+
+
+
+                <div id="pizzas">
+                        <img src="https://cdn-icons-png.flaticon.com/512/1404/1404945.png" alt="1">
         
-        <div data-aos="fade-up"  class="divisor d-flex" >
-                <div class="tipoDeComida">
-                        <img src="media/logo-royaloak-2.png" alt="">
-                        <h3>Hamburguesas</h3>
+                        <img src="https://cdn-icons-png.flaticon.com/512/198/198416.png" alt="2">
+        
+                        <img src="https://cdn-icons-png.flaticon.com/512/3076/3076134.png" alt="3">
+        
+                        <img src="https://cdn-icons-png.flaticon.com/512/1691/1691169.png" alt="4">
+                                
+                        <img src="https://cdn.pixabay.com/photo/2014/12/21/23/34/swiss-cheese-575541_1280.png" alt="5">
+        
+                        <img src="https://cdn3.iconfinder.com/data/icons/food-drink-56/100/shushi-512.png" alt="6">
+        
+                        <img src="https://cdn-icons-png.flaticon.com/512/941/941758.png" alt="7">
+                                
+                        <img src="https://images.vexels.com/media/users/3/185216/isolated/preview/577e52c9f916cf36bed97b3df404c214-icono-de-papas-fritas.png" alt="8">
+                                
+                        <img src="https://cdn-icons-png.flaticon.com/512/184/184559.png" alt="9">
+                                
+                        <img src="https://cdn-icons-png.flaticon.com/512/4515/4515697.png" alt="10">                     
+        
+                        <img src="https://i.pinimg.com/originals/67/ac/6f/67ac6ff9c411816ed8bbc9ae34368e8f.png" alt="11">                    
+        
+                        <img src="https://images.vexels.com/media/users/3/143088/isolated/preview/f565debc52083dacca60da22284e4083-icono-de-pierna-de-pollo.png" alt="12">                     
                 </div>
-                <div id="divisorBurgers">
+
+                <!-- DARK MODE -->
+                <div class="form-check form-switch d-flex ">
+                        <div>
+                                <input class="form-check-input" type="checkbox" role="switch" id="switch">
+                        </div>
                         
+                        <div>
+                                <label class="form-check-label" for="flexSwitchCheckDefault">Mode</label>
+                        </div>
                 </div>
-        </div>
 
-        <!-- SECCION HAMBURGUESAS -->
-        <section data-aos="fade-up" class="section-products">
-            <div class="container">
-                    <!-- <div class="row justify-content-center text-center">
+                
+                      
+
+                <div data-aos="fade-up" class="divisor d-flex">
+                        <div class="tipoDeComida">
+                                <img src="media/logo-royaloak-2.png" alt="">
+                                <h3>Hamburguesas</h3>
+                        </div>
+                        <div id="divisorBurgers">
+                                
+                        </div>
+                </div>
+
+                <!-- SECCION HAMBURGUESAS -->
+                <section data-aos="fade-up"  class="section-products">
+                        <div class="container">
+                                <!-- <div class="row justify-content-center text-center">
                             <div class="col-md-8 col-lg-6">
                                     <div class="header">
                                             <h3>Seccion de productos</h3>
@@ -142,364 +188,462 @@
                                     </div>
                             </div>
                     </div> -->
-                    <div class="row">
-                            <!-- Single Product -->
-                            <div class="col-md-6 col-lg-4 col-xl-3">
-                                    <div id="product-1" class="single-product">
-                                            <div class="part-1">
-                                                    <ul>
-                                                            <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                                                            <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                                                            <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                                                            <li><a href="#"><i class="fas fa-seedling"></i></a></li>
-                                                            <li><a href="#"><button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fas fa-info"></i></button></a></li>
-                                                    </ul>
+                                <div  class="row">
+                                        <!-- Single Product -->
+                                        <div class="col-md-6 col-lg-4 col-xl-3">
+                                                <div id="product-1" class="single-product">
+                                                        <div class="part-1">
+                                                                <ul>
+                                                                        <li><a href="#"><i
+                                                                                                class="fas fa-shopping-cart"></i></a>
+                                                                        </li>
+                                                                        <li><a href="#"><i class="fas fa-heart"></i></a>
+                                                                        </li>
+                                                                        <li><a href="#"><i class="fas fa-plus"></i></a>
+                                                                        </li>
+                                                                        <li><a href="#"><i
+                                                                                                class="fas fa-seedling"></i></a>
+                                                                        </li>
+                                                                        <li @click="mostrarIngredientes"><a href="#"><i
+                                                                                                class="fas fa-info"></i></a>
+                                                                        </li>
+                                                                </ul>
 
-                                                    <!-- Modal -->
-                                                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                        <div class="modal-dialog">
-                                                        <div class="modal-content">
-                                                            <div class="modal-header">
-                                                            <h5 class="modal-title" id="exampleModalLabel">Ingredientes</h5>
-                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                            </div>
-                                                            <div class="modal-body">
-                                                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo voluptate distinctio magni, tenetur pariatur quas nihil. Rerum ratione harum impedit alias dolor nam laborum, eveniet, non repudiandae voluptatem ex vel!</p>
-                                                            </div>
-                                                            <div class="modal-footer d-flex justify-content-center">
-                                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                                            <button type="button" class="btn btn-primary">Okey!</button>
-                                                            </div>
-                                                        </div>
-                                                        </div>
-                                                    </div>
+                                                                
 
-                                            </div>
-                                            <div class="part-2">
-                                                    <h3 class="product-title">Asadas y furiosas</h3>
-                                                    <h4 class="product-old-price">$79.99</h4>
-                                                    <h4 class="product-price">$49.99</h4>
-                                            </div>
-                                    </div>
-                            </div>
-                            <!-- Single Product -->
-                            <div class="col-md-6 col-lg-4 col-xl-3">
-                                    <div id="product-2" class="single-product">
-                                            <div class="part-1">
-                                                    <span class="discount">15% off</span>
-                                                    <ul>
-                                                            <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                                                            <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                                                            <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                                                            <li><a href="#"><i class="fas fa-seedling"></i></a></li>
-                                                            
-                                                    </ul>
-                                            </div>
-                                            <div class="part-2">
-                                                    <h3 class="product-title">Mega Black</h3>
-                                                    <h4 class="product-price">$49.99</h4>
-                                            </div>
-                                    </div>
-                            </div>
-                            <!-- Single Product -->
-                            <div class="col-md-6 col-lg-4 col-xl-3">
-                                    <div id="product-3" class="single-product">
-                                            <div class="part-1">
-                                                    <ul>
-                                                            <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                                                            <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                                                            <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                                                            <li><a href="#"><i class="fas fa-seedling"></i></a></li>
-                                                    </ul>
-                                            </div>
-                                            <div class="part-2">
-                                                    <h3 class="product-title">Classic</h3>
-                                                    <h4 class="product-old-price">$79.99</h4>
-                                                    <h4 class="product-price">$49.99</h4>
-                                            </div>
-                                    </div>
-                            </div>
-                            <!-- Single Product -->
-                            <div class="col-md-6 col-lg-4 col-xl-3">
-                                    <div id="product-4" class="single-product">
-                                            <div class="part-1">
-                                                    <span class="new">new</span>
-                                                    <ul>
-                                                            <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                                                            <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                                                            <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                                                            <li><a href="#"><i class="fas fa-seedling"></i></a></li>
-                                                    </ul>
-                                            </div>
-                                            <div class="part-2">
-                                                    <h3 class="product-title">Mar de Cheddar</h3>
-                                                    <h4 class="product-price">$49.99</h4>
-                                            </div>
-                                    </div>
-                            </div>
-                            <!-- Single Product -->
-                            <div class="col-md-6 col-lg-4 col-xl-3">
-                                    <div id="product-5" class="single-product">
-                                            <div class="part-1">
-                                                    <ul>
-                                                            <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                                                            <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                                                            <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                                                            <li><a href="#"><i class="fas fa-seedling"></i></a></li>
-                                                    </ul>
-                                            </div>
-                                            <div class="part-2">
-                                                    <h3 class="product-title">Smash Burger</h3>
-                                                    <h4 class="product-old-price">$79.99</h4>
-                                                    <h4 class="product-price">$49.99</h4>
-                                            </div>
-                                    </div>
-                            </div>
-                            <!-- Single Product -->
-                            <div class="col-md-6 col-lg-4 col-xl-3">
-                                    <div id="product-6" class="single-product">
-                                            <div class="part-1">
-                                                    <span class="discount">15% off</span>
-                                                    <ul>
-                                                            <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                                                            <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                                                            <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                                                            <li><a href="#"><i class="fas fa-seedling"></i></a></li>
-                                                    </ul>
-                                            </div>
-                                            <div class="part-2">
-                                                    <h3 class="product-title">Fit Burger</h3>
-                                                    <h4 class="product-old-price">59.99</h4>
-                                                    <h4 class="product-price">$49.99</h4>
-                                            </div>
-                                    </div>
-                            </div>
-                            <!-- Single Product -->
-                            <div class="col-md-6 col-lg-4 col-xl-3">
-                                    <div id="product-7" class="single-product">
-                                            <div class="part-1">
-                                                    <ul>
-                                                            <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                                                            <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                                                            <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                                                            <li><a href="#"><i class="fas fa-seedling"></i></a></li>
-                                                    </ul>
-                                            </div>
-                                            <div class="part-2">
-                                                    <h3 class="product-title">Rascacielos</h3>
-                                                    <h4 class="product-old-price">$79.99</h4>
-                                                    <h4 class="product-price">$49.99</h4>
-                                            </div>
-                                    </div>
-                            </div>
-                            <!-- Single Product -->
-                            <div class="col-md-6 col-lg-4 col-xl-3">
-                                    <div id="product-8" class="single-product">
-                                            <div class="part-1">
-                                                    <span class="new">new</span>
-                                                    <ul>
-                                                            <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                                                            <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                                                            <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                                                            <li><a href="#"><i class="fas fa-seedling"></i></a></li>
-                                                    </ul>
-                                            </div>
-                                            <div class="part-2">
-                                                    <h3 class="product-title">Veggie Burger</h3>
-                                                    <h4 class="product-price">$49.99</h4>
-                                            </div>
-                                    </div>
+                                                        </div>
+                                                        <div class="part-2">
+                                                                <h3 class="product-title">Asadas y furiosas</h3>
+                                                                <h4 class="product-old-price">$79.99</h4>
+                                                                <h4 class="product-price">$49.99</h4>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <!-- Single Product -->
+                                        <div class="col-md-6 col-lg-4 col-xl-3">
+                                                <div id="product-2" class="single-product">
+                                                        <div class="part-1">
+                                                                <span class="discount">15% off</span>
+                                                                <ul>
+                                                                        <li><a href="#"><i
+                                                                                                class="fas fa-shopping-cart"></i></a>
+                                                                        </li>
+                                                                        <li><a href="#"><i class="fas fa-heart"></i></a>
+                                                                        </li>
+                                                                        <li><a href="#"><i class="fas fa-plus"></i></a>
+                                                                        </li>
+                                                                        <li><a href="#"><i
+                                                                                                class="fas fa-seedling"></i></a>
+                                                                        </li>
+
+                                                                </ul>
+                                                        </div>
+                                                        <div class="part-2">
+                                                                <h3 class="product-title">Mega Black</h3>
+                                                                <h4 class="product-price">$49.99</h4>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <!-- Single Product -->
+                                        <div class="col-md-6 col-lg-4 col-xl-3">
+                                                <div id="product-3" class="single-product">
+                                                        <div class="part-1">
+                                                                <ul>
+                                                                        <li><a href="#"><i
+                                                                                                class="fas fa-shopping-cart"></i></a>
+                                                                        </li>
+                                                                        <li><a href="#"><i class="fas fa-heart"></i></a>
+                                                                        </li>
+                                                                        <li><a href="#"><i class="fas fa-plus"></i></a>
+                                                                        </li>
+                                                                        <li><a href="#"><i
+                                                                                                class="fas fa-seedling"></i></a>
+                                                                        </li>
+                                                                </ul>
+                                                        </div>
+                                                        <div class="part-2">
+                                                                <h3 class="product-title">Classic</h3>
+                                                                <h4 class="product-old-price">$79.99</h4>
+                                                                <h4 class="product-price">$49.99</h4>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <!-- Single Product -->
+                                        <div class="col-md-6 col-lg-4 col-xl-3">
+                                                <div id="product-4" class="single-product">
+                                                        <div class="part-1">
+                                                                <span class="new">new</span>
+                                                                <ul>
+                                                                        <li><a href="#"><i
+                                                                                                class="fas fa-shopping-cart"></i></a>
+                                                                        </li>
+                                                                        <li><a href="#"><i class="fas fa-heart"></i></a>
+                                                                        </li>
+                                                                        <li><a href="#"><i class="fas fa-plus"></i></a>
+                                                                        </li>
+                                                                        <li><a href="#"><i
+                                                                                                class="fas fa-seedling"></i></a>
+                                                                        </li>
+                                                                </ul>
+                                                        </div>
+                                                        <div class="part-2">
+                                                                <h3 class="product-title">Mar de Cheddar</h3>
+                                                                <h4 class="product-price">$49.99</h4>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <!-- Single Product -->
+                                        <div class="col-md-6 col-lg-4 col-xl-3">
+                                                <div id="product-5" class="single-product">
+                                                        <div class="part-1">
+                                                                <ul>
+                                                                        <li><a href="#"><i
+                                                                                                class="fas fa-shopping-cart"></i></a>
+                                                                        </li>
+                                                                        <li><a href="#"><i class="fas fa-heart"></i></a>
+                                                                        </li>
+                                                                        <li><a href="#"><i class="fas fa-plus"></i></a>
+                                                                        </li>
+                                                                        <li><a href="#"><i
+                                                                                                class="fas fa-seedling"></i></a>
+                                                                        </li>
+                                                                </ul>
+                                                        </div>
+                                                        <div class="part-2">
+                                                                <h3 class="product-title">Smash Burger</h3>
+                                                                <h4 class="product-old-price">$79.99</h4>
+                                                                <h4 class="product-price">$49.99</h4>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <!-- Single Product -->
+                                        <div class="col-md-6 col-lg-4 col-xl-3">
+                                                <div id="product-6" class="single-product">
+                                                        <div class="part-1">
+                                                                <span class="discount">15% off</span>
+                                                                <ul>
+                                                                        <li><a href="#"><i
+                                                                                                class="fas fa-shopping-cart"></i></a>
+                                                                        </li>
+                                                                        <li><a href="#"><i class="fas fa-heart"></i></a>
+                                                                        </li>
+                                                                        <li><a href="#"><i class="fas fa-plus"></i></a>
+                                                                        </li>
+                                                                        <li><a href="#"><i
+                                                                                                class="fas fa-seedling"></i></a>
+                                                                        </li>
+                                                                </ul>
+                                                        </div>
+                                                        <div class="part-2">
+                                                                <h3 class="product-title">Fit Burger</h3>
+                                                                <h4 class="product-old-price">59.99</h4>
+                                                                <h4 class="product-price">$49.99</h4>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <!-- Single Product -->
+                                        <div class="col-md-6 col-lg-4 col-xl-3">
+                                                <div id="product-7" class="single-product">
+                                                        <div class="part-1">
+                                                                <ul>
+                                                                        <li><a href="#"><i
+                                                                                                class="fas fa-shopping-cart"></i></a>
+                                                                        </li>
+                                                                        <li><a href="#"><i class="fas fa-heart"></i></a>
+                                                                        </li>
+                                                                        <li><a href="#"><i class="fas fa-plus"></i></a>
+                                                                        </li>
+                                                                        <li><a href="#"><i
+                                                                                                class="fas fa-seedling"></i></a>
+                                                                        </li>
+                                                                </ul>
+                                                        </div>
+                                                        <div class="part-2">
+                                                                <h3 class="product-title">Rascacielos</h3>
+                                                                <h4 class="product-old-price">$79.99</h4>
+                                                                <h4 class="product-price">$49.99</h4>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <!-- Single Product -->
+                                        <div class="col-md-6 col-lg-4 col-xl-3">
+                                                <div id="product-8" class="single-product">
+                                                        <div class="part-1">
+                                                                <span class="new">new</span>
+                                                                <ul>
+                                                                        <li><a href="#"><i
+                                                                                                class="fas fa-shopping-cart"></i></a>
+                                                                        </li>
+                                                                        <li><a href="#"><i class="fas fa-heart"></i></a>
+                                                                        </li>
+                                                                        <li><a href="#"><i class="fas fa-plus"></i></a>
+                                                                        </li>
+                                                                        <li><a href="#"><i
+                                                                                                class="fas fa-seedling"></i></a>
+                                                                        </li>
+                                                                </ul>
+                                                        </div>
+                                                        <div class="part-2">
+                                                                <h3 class="product-title">Veggie Burger</h3>
+                                                                <h4 class="product-price">$49.99</h4>
+                                                        </div>
+                                                </div>
+                                        </div>
                                 </div>
                         </div>
+                </section>
+
+                <div data-aos="fade-up" class="divisor d-flex">
+                        <div class="tipoDeComida">
+                                <img src="media/logo-royaloak-2.png" alt="">
+                                <h3>Bebidas</h3>
+                        </div>
+                        <div id="divisorBurgers2">
+                                <video id="video" autoplay loop muted>
+                                        <source src="media/Recursos  Vídeos de fondo  Cerveza[720p].mp4"
+                                                type="video/mp4">
+                                        su navegador no puede reproducir este formato de video
+                                </video>
+                        </div>
                 </div>
-        </section>
-        
-        <div data-aos="fade-up"  class="divisor d-flex" >
-                <div class="tipoDeComida">
-                        <img src="media/logo-royaloak-2.png" alt="">
-                        <h3>Bebidas</h3>
-                </div>
-                <div id="divisorBurgers2">
-                        <video id="video" autoplay loop muted>
-                                <source src="media/Recursos  Vídeos de fondo  Cerveza[720p].mp4" type="video/mp4">
-                                su navegador no puede reproducir este formato de video
-                            </video> 
-                </div>
-        </div>
-        
-        <!-- SECCION BEBIDAS -->
-    <section data-aos="fade-up" class="section-products">
-        <div class="container">
-                <!-- <div class="row justify-content-center text-center">
+
+                <!-- SECCION BEBIDAS -->
+                <section data-aos="fade-up" class="section-products">
+                        <div class="container">
+                                <!-- <div class="row justify-content-center text-center">
                         <div class="col-md-8 col-lg-6">
                                 <div class="header">
                                         <h2>Nuestras Bebidas</h2>
                                 </div>
                         </div>
                 </div> -->
-                <div class="row">
-                        <!-- Single Product -->
-                        <div class="col-md-6 col-lg-4 col-xl-3">
-                                <div id="product-9" class="single-product">
-                                        <div class="part-1">
-                                                <ul>
-                                                        <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                                                        <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                                                        <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                                                        <li><a href="#"><i class="fas fa-seedling"></i></a></li>
-                                                </ul>
+                                <div class="row">
+                                        <!-- Single Product -->
+                                        <div class="col-md-6 col-lg-4 col-xl-3">
+                                                <div id="product-9" class="single-product">
+                                                        <div class="part-1">
+                                                                <ul>
+                                                                        <li><a href="#"><i
+                                                                                                class="fas fa-shopping-cart"></i></a>
+                                                                        </li>
+                                                                        <li><a href="#"><i class="fas fa-heart"></i></a>
+                                                                        </li>
+                                                                        <li><a href="#"><i class="fas fa-plus"></i></a>
+                                                                        </li>
+                                                                        <li><a href="#"><i
+                                                                                                class="fas fa-seedling"></i></a>
+                                                                        </li>
+                                                                </ul>
+                                                        </div>
+                                                        <div class="part-2">
+                                                                <h3 class="product-title">Coca Cola</h3>
+                                                                <p>Coca cola tradicional Lorem ipsum dolor sit amet
+                                                                        consectetur, adipisicing elit. Natus, dolor
+                                                                        porro consectetur dolorem ita</p>
+                                                                <h4 class="product-old-price">$79.99</h4>
+                                                                <h4 class="product-price">$49.99</h4>
+                                                        </div>
+                                                </div>
                                         </div>
-                                        <div class="part-2">
-                                                <h3 class="product-title">Coca Cola</h3>
-                                                <p>Coca cola tradicional Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus, dolor porro consectetur dolorem ita</p>
-                                                <h4 class="product-old-price">$79.99</h4>
-                                                <h4 class="product-price">$49.99</h4>
+                                        <!-- Single Product -->
+                                        <div class="col-md-6 col-lg-4 col-xl-3">
+                                                <div id="product-10" class="single-product">
+                                                        <div class="part-1">
+                                                                <span class="discount">15% off</span>
+                                                                <ul>
+                                                                        <li><a href="#"><i
+                                                                                                class="fas fa-shopping-cart"></i></a>
+                                                                        </li>
+                                                                        <li><a href="#"><i class="fas fa-heart"></i></a>
+                                                                        </li>
+                                                                        <li><a href="#"><i class="fas fa-plus"></i></a>
+                                                                        </li>
+                                                                        <li><a href="#"><i
+                                                                                                class="fas fa-seedling"></i></a>
+                                                                        </li>
+                                                                </ul>
+                                                        </div>
+                                                        <div class="part-2">
+                                                                <h3 class="product-title">Cerveza</h3>
+                                                                <p>Cerveza Lorem ipsum dolor sit amet, consectetur
+                                                                        adipisicing elit. Ad facilis officiis pariatur
+                                                                        excepturi sed fugit iusto quod, esse quas
+                                                                        corporis.</p>
+                                                                <h4 class="product-price">$49.99</h4>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <!-- Single Product -->
+                                        <div class="col-md-6 col-lg-4 col-xl-3">
+                                                <div id="product-11" class="single-product">
+                                                        <div class="part-1">
+                                                                <ul>
+                                                                        <li><a href="#"><i
+                                                                                                class="fas fa-shopping-cart"></i></a>
+                                                                        </li>
+                                                                        <li><a href="#"><i class="fas fa-heart"></i></a>
+                                                                        </li>
+                                                                        <li><a href="#"><i class="fas fa-plus"></i></a>
+                                                                        </li>
+                                                                        <li><a href="#"><i
+                                                                                                class="fas fa-seedling"></i></a>
+                                                                        </li>
+                                                                </ul>
+                                                        </div>
+                                                        <div class="part-2">
+                                                                <h3 class="product-title">Sprite</h3>
+                                                                <p>Sprite Lorem ipsum dolor sit amet, consectetur
+                                                                        adipisicing elit. Ad facilis officiis pariatur
+                                                                        excepturi sed fugit iusto quod, esse quas
+                                                                        corporis.</p>
+                                                                <h4 class="product-old-price">$79.99</h4>
+                                                                <h4 class="product-price">$49.99</h4>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <!-- Single Product -->
+                                        <div class="col-md-6 col-lg-4 col-xl-3">
+                                                <div id="product-12" class="single-product">
+                                                        <div class="part-1">
+                                                                <span class="new">new</span>
+                                                                <ul>
+                                                                        <li><a href="#"><i
+                                                                                                class="fas fa-shopping-cart"></i></a>
+                                                                        </li>
+                                                                        <li><a href="#"><i class="fas fa-heart"></i></a>
+                                                                        </li>
+                                                                        <li><a href="#"><i class="fas fa-plus"></i></a>
+                                                                        </li>
+                                                                        <li><a href="#"><i
+                                                                                                class="fas fa-seedling"></i></a>
+                                                                        </li>
+                                                                </ul>
+                                                        </div>
+                                                        <div class="part-2">
+                                                                <h3 class="product-title">Limonada</h3>
+                                                                <p>Cerveza Lorem ipsum dolor sit amet, consectetur
+                                                                        adipisicing elit. Ad facilis officiis pariatur
+                                                                        excepturi sed fugit iusto quod, esse quas
+                                                                        corporis.</p>
+                                                                <h4 class="product-price">$49.99</h4>
+                                                        </div>
+                                                </div>
                                         </div>
                                 </div>
                         </div>
-                        <!-- Single Product -->
-                        <div class="col-md-6 col-lg-4 col-xl-3">
-                                <div id="product-10" class="single-product">
-                                        <div class="part-1">
-                                                <span class="discount">15% off</span>
-                                                <ul>
-                                                        <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                                                        <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                                                        <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                                                        <li><a href="#"><i class="fas fa-seedling"></i></a></li>
-                                                </ul>
-                                        </div>
-                                        <div class="part-2">
-                                                <h3 class="product-title">Cerveza</h3>
-                                                <p>Cerveza Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad facilis officiis pariatur excepturi sed fugit iusto quod, esse quas corporis.</p>
-                                                <h4 class="product-price">$49.99</h4>
-                                        </div>
-                                </div>
-                        </div>
-                        <!-- Single Product -->
-                        <div class="col-md-6 col-lg-4 col-xl-3">
-                                <div id="product-11" class="single-product">
-                                        <div class="part-1">
-                                                <ul>
-                                                        <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                                                        <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                                                        <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                                                        <li><a href="#"><i class="fas fa-seedling"></i></a></li>
-                                                </ul>
-                                        </div>
-                                        <div class="part-2">
-                                                <h3 class="product-title">Sprite</h3>
-                                                <p>Sprite Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad facilis officiis pariatur excepturi sed fugit iusto quod, esse quas corporis.</p>
-                                                <h4 class="product-old-price">$79.99</h4>
-                                                <h4 class="product-price">$49.99</h4>
-                                        </div>
-                                </div>
-                        </div>
-                        <!-- Single Product -->
-                        <div class="col-md-6 col-lg-4 col-xl-3">
-                                <div id="product-12" class="single-product">
-                                        <div class="part-1">
-                                                <span class="new">new</span>
-                                                <ul>
-                                                        <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                                                        <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                                                        <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                                                        <li><a href="#"><i class="fas fa-seedling"></i></a></li>
-                                                </ul>
-                                        </div>
-                                        <div class="part-2">
-                                                <h3 class="product-title">Limonada</h3>
-                                                <p>Cerveza Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad facilis officiis pariatur excepturi sed fugit iusto quod, esse quas corporis.</p>
-                                                <h4 class="product-price">$49.99</h4>
-                                        </div>
-                                </div>
-                        </div>                    
-                </div>
-            </div>
-    </section>
+                </section>
 
-
-        <!-- <div>
-            <div class="contenedorDeVariedades d-flex">
-                <div>
-                    <img src="media/pizza1.jpg" alt="">
-                    <h4>Pizza tradicional</h4>
-                    <p>Esta es una pizza tradicional</p>
-                    <p>el precio es de $500 pesos</p>
-                    <div class="contenedorBotones d-flex">
-                        <div class=" col-3">
-                            <button>Pedir</button>
+                <div data-aos="fade-up" class="divisor d-flex">
+                        <div class="tipoDeComida">
+                                <img src="media/logo-royaloak-2.png" alt="">
+                                <h3>Picadas</h3>
                         </div>
-                        <div class="col-3">
-                            <h5>1</h5>
+                        <div id="divisorBurgers3">
+                                
                         </div>
-                        <div class="d-flex flex-column col-3">
-                            <button>+</button>
-                            <button>-</button>
-                        </div>
-                    </div>
                 </div>
 
-                <div>
-                    <img src="media/pizza1.jpg" alt="">
-                    <h4>Pizza tradicional</h4>
-                    <p>Esta es una pizza tradicional</p>
-                    <p>el precio es de $500 pesos</p>
-                    <div class="d-flex">
-                        <div class="col-3">
-                            <button>Pedir</button>
-                        </div>
-                        <div class="col-3">
-                            <h5>1</h5>
-                        </div>
-                        <div class="d-flex flex-column col-3">
-                            <button>+</button>
-                            <button>-</button>
-                        </div>
-                    </div>
+
+
+
+        </div>
+
+        <!-- FOOTER -->
+        <div id="contenedorInfo">
+                <button class="botoninfo" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample"
+                        aria-expanded="false" aria-controls="collapseExample">
+                        <i class="bi bi-chevron-up"></i> Más información
+                </button>
+        </div>
+        <div class="collapse" id="collapseExample">
+        <div class="card card-body card-informacion">
+        <div id="masInformacion-contenedor"
+                class="container-fluid-p0 d-flex justify-content-around pt-4 pb-4 text-dark flex-wrap row">
+
+                <div class="col-lg-2">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2942.0966932595034!2d-83.14328548503491!3d42.48949693491102!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8824cf69a6accbd7%3A0x56e7427bdbdafa3f!2sRoyal%20Oak%20Farmers%20Market!5e0!3m2!1ses-419!2sar!4v1656171816975!5m2!1ses-419!2sar" width="225" height="225" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
 
-                <div>
-                    <img src="media/pizza1.jpg" alt="">
-                    <h4>Pizza tradicional</h4>
-                    <p>Esta es una pizza tradicional</p>
-                    <p>el precio es de $500 pesos</p>
-                    <div class="d-flex">
-                        <div class="col-3">
-                            <button>Pedir</button>
-                        </div>
-                        <div class="col-3">
-                            <h5>1</h5>
-                        </div>
-                        <div class="d-flex flex-column col-3">
-                            <button>+</button>
-                            <button>-</button>
-                        </div>
-                    </div>
+                <div class="col-lg-2 extrainfo">
+                <h3>Somos Royal Oak</h3>
+                <ul>
+                <li><a href="./login.html">Registrarme</a></li>
+                <li><a href="#" >Ver Menu</a></li>
+                </ul>
                 </div>
-                
-            </div>
+
+                <div class="col-lg-2 extrainfo">
+                <h3>Servicio al cliente</h3>
+                <ul>
+                <li><a class="swal-preguntas-frecuentes" onclick="preguntasFrecuentes()">Preguntas Frecuentes</a></li>
+                <li><a class="swal-atencion-al-cliente" onclick="atencionAlCliente()">Atencion al cliente</a></li>
+                <li><a class="swal-terminos-y-condiciones" onclick="terminosYCondiciones()">Terminos y condiciones</a></li>
+                <li><a class="swal-medios-de-pago" onclick="mediosDePago()">Medios de Pago</a></li>
+                </ul>
+                </div>
+
+                <div class="col-lg-2 extrainfo">
+                <h3>Sobre Nosotros</h3>
+                <ul>
+                <li><a class="swal-quienes-somos" onclick="quienesSomos()">Quiénes Somos</a></li>
+                <li><a class="swal-quienes-somos"  onclick="contacto()">Contacto</a></li>
+                </ul>
+                </div>
+
+                <div class="col-lg-2 infocontacto d-flex flex-column ">
+                <h6>Contáctanos</h6>
+                <span class="d-flex gap-3 pb-2"><a href="#" target="_blank"><i
+                        class="bi bi-facebook" style="font-size:25px"></i></a>
+                <a href="#" target="_blank"><i class="bi bi-instagram"
+                        style="font-size:25px"></i></a>
+                <a href="#" target="_blank"><i class="bi bi-twitter"
+                        style="font-size:25px"></i></a></span>
 
 
-        </div> -->
-        
-        
+                <a href="">RoyalOak@gmail.com</a>
+                <a href="tel:+5491124966463">+1 408 548 4536</a>
+                <p>316 Eleven Street, Chicago, Estados Unidos</p>
+                </div>
+
+        </div>
+        </div>
+        </div>
+
+  <footer class="d-flex align-items-center justify-content-around p-2 flex-wrap">
+    <div>
+        <p class="ps-5">&copy;Royal Oak 2022 - Todos los derechos reservados</p>
     </div>
+    <div id="metodos" class="d-flex ">
+        <div>
+                <img id="mp" src="./media/mercadopago1.png" alt="mercado pago" >
+        </div>
+        <div>
+                <img id="uala" src="./media/uala2.png" alt="mercado pago" >
+        </div>
+        <div>
+                <img id="dataFiscal" src="./media/Datafiscal.jpg" alt="data fiscal" >
+        </div>
+    </div>
+  </footer>
+        <!-- FOOTER -->
 
-    <!-- Script de Bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
-    integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
-    crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
-    integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
-    crossorigin="anonymous"></script>
+        <!-- Script de Bootstrap -->
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+                integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+                crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+                integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+                crossorigin="anonymous"></script>
 
-    <!-- Script de Axios - Vue.js - Javascript - SweetAlert -->
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="https://unpkg.com/vue@3"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>AOS.init({duration: 1200,})</script>
-    <!-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
-    <script src="js/index.js" ></script>
+        <!-- Script de Axios - Vue.js - Javascript - SweetAlert -->
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="https://unpkg.com/vue@3"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>AOS.init({ duration: 1200, })</script>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="./js/index.js"></script>
+        <script src="./js/sweetAlert.js"></script>
+        <script src="https://unpkg.com/boxicons@2.1.2/dist/boxicons.js"></script>
 </body>
+
 </html>
