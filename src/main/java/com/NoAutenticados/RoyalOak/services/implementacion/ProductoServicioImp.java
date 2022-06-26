@@ -16,7 +16,7 @@ public class ProductoServicioImp implements ProductoServicio {
     private ProductoRepositorio productoRepositorio;
 
     public List<ProductoDTO> getAll(){
-        return productoRepositorio.findAll().stream().map(producto -> new ProductoDTO(producto)).collect(Collectors.toList());
+        return productoRepositorio.findAll().stream().filter(producto -> producto.isActivo()).map(producto -> new ProductoDTO(producto)).collect(Collectors.toList());
     }
 
     @Override

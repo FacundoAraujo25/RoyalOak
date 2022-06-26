@@ -56,6 +56,13 @@ public class RoyalOakApplication {
 			Producto producto3 = new Producto("Bastoncitos de papa","rellenos con queso mozzarella","urlImagen",15,500);
 			Producto producto4 = new Producto("Papas con cheddar","acompañadas del mejor cheddar de la zona","urlImagen",35,600);
 			Producto producto5 = new Producto("Picada para 2 personas","aros de cebolla, aceitunas y fiambres y quesos varios","urlImagen",15,900);
+			producto1.setActivo(true);
+			producto2.setActivo(true);
+			producto3.setActivo(true);
+			producto4.setActivo(true);
+			producto5.setActivo(true);
+
+
 			productoRepositorio.save( producto1);
 			productoRepositorio.save( producto2);
 			productoRepositorio.save( producto3);

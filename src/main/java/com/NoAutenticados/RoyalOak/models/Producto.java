@@ -24,6 +24,7 @@ public class Producto {
 
     @OneToMany(mappedBy="producto", fetch=FetchType.EAGER)
     private Set<ClienteProductoPedido> clienteProductoPedidos = new HashSet<>();
+    private boolean activo;
 
     public Producto() {}
 
@@ -33,6 +34,7 @@ public class Producto {
         this.imagen = imagen;
         this.stock = stock;
         this.precio = precio;
+        this.activo = false;
     }
 
     public long getId() {
@@ -67,6 +69,12 @@ public class Producto {
     }
     public void setPrecio(double precio) {
         this.precio = precio;
+    }
+    public boolean isActivo() {
+        return activo;
+    }
+    public void setActivo(boolean activo) {
+        this.activo = activo;
     }
     public List<String> getIngredientes() {
         return ingredientes;
