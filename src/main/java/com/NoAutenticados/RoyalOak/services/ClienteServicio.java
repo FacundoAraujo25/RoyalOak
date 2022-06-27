@@ -1,0 +1,18 @@
+package com.NoAutenticados.RoyalOak.services;
+
+import com.NoAutenticados.RoyalOak.dtos.ClienteDTO;
+import com.NoAutenticados.RoyalOak.models.Cliente;
+import org.springframework.web.bind.annotation.PathVariable;
+
+import java.util.List;
+
+public interface ClienteServicio {
+
+    List<ClienteDTO> getClientesDto();
+    ClienteDTO getCliente(@PathVariable Long id);
+    ClienteDTO getClienteLogueado(String mail);
+    Cliente findByEmail(String email);
+    Cliente findByTelefono(String telefono);
+    void guardarCliente(Cliente cliente);
+
+}
