@@ -130,11 +130,19 @@ body{
   }
 }
 
-
+#collapseExample{
+  transition-duration: 2s;
+}
 
 #logo{
     width: 7rem;
     height: 7rem;
+    transition-duration: 0.3s;
+}
+
+#logo:hover{
+  transform: rotate(15deg);
+  transition-duration: 0.3s;
 }
 
 a {

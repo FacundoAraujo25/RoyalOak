@@ -39,6 +39,7 @@
     background-image: linear-gradient(to top left,#6b1a3c, #225f6d );
     border: none;
     border-radius: 0;
+    font-family:serif ;
 }
 
 #masInformacion-contenedor div, a{

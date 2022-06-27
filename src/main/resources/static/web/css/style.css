@@ -158,11 +158,13 @@ p{
 #pizzas img{
     padding: 0.5rem;
     width: 5rem;
+    transition-duration: 0.3s;
 }
 
 #pizzas img:hover{
     transform: rotate(15deg);
     cursor: pointer;
+    transition-duration: 0.3s;
 }
 
 #pizzas div:hover{
@@ -767,7 +769,14 @@ a:hover {
     #hamburguesa{
         display: none;
     }
+
+    #categorias{
+        display: none;
+    }
+  
 }
+
+
 
 @media(max-width: 570px){
 
@@ -839,6 +848,35 @@ a:hover {
 
     .navbar-toggler-icon{
     background-color: #0F292F;
+    }
+
+    #pizzas{
+        display: none;
+    }
+
+    #pizza{
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    #pizza img{
+        width:4rem;
+        margin: 3%;
+    }
+
+    #contenedorCategorias{
+        display: flex;
+        justify-content: center;
+    }
+
+    #categorias{
+        display: flex;
+        justify-content: center;
+        background-color: #cccccc;
+        width: fit-content;
+        border-radius: 15px;
+        margin: 3% 0%;
     }
 }   
 
