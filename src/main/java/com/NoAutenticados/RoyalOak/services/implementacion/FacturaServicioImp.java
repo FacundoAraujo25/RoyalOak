@@ -1,11 +1,13 @@
 package com.NoAutenticados.RoyalOak.services.implementacion;
 
 import com.NoAutenticados.RoyalOak.dtos.FacturaDTO;
+import com.NoAutenticados.RoyalOak.models.Cliente;
 import com.NoAutenticados.RoyalOak.models.EstadoFactura;
 import com.NoAutenticados.RoyalOak.models.Factura;
 import com.NoAutenticados.RoyalOak.repositories.FacturaRepositorio;
 import com.NoAutenticados.RoyalOak.services.FacturaServicio;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
@@ -22,8 +24,8 @@ public class FacturaServicioImp implements FacturaServicio {
     }
 
     @Override
-    public Factura getFacturaEnCarrito() {
-        return facturaRepositorio.findAll().stream().filter(factura -> factura.getEstadoFactura()== EstadoFactura.CARRITO).findFirst().orElse(null);
+    public Factura getFacturaEnCarrito(Cliente cliente) {
+        return cliente.getFacturas().stream().filter(factura -> factura.getEstadoFactura()== EstadoFactura.CARRITO).findFirst().orElse(null);
     }
 
     @Override
