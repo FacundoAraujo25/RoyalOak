@@ -18,15 +18,83 @@
 <body>
     <div id="app">
         <!-- ======= Header ======= -->
-        <header></header>
-        <!-- ======= navBar ======= -->
-        <nav></nav>
+        <header>
+          <div class="nav">
+            <div id="marca">
+                <a href="../index.html"><img src="../media/logo-royaloak.png" alt="Logo" ></a>
+            </div>
+            <div>
+                <a href="../index.html"><img class="scale-up-center" id="iconos" src="../media/iconoBurger.png" alt="menu"></a>
+                <p>Menu</p>
+            </div>
+            <div>
+                <a href="#"><img class="scale-up-center" src="../media/iconoBolsita.webp" alt=""></a>
+                <p>Pedido</p>
+            </div>
+            <div>
+                <a href=""><img class="scale-up-center" src="../media/flechasDeLasuerte.png" alt=""></a>
+                <p>Random</p>
+            </div>
+            <div >
+                <a href="../login.html"><img class="scale-up-center " src="../media/Register.webp" alt=""></a>
+                <p>register</p>
+            </div>
+            <div>
+                <a href=""><img class="scale-up-center" src="../media/cerrarSesion.png" alt=""></a>
+                <p>Salir</p>
+            </div>
+        </div>
+
+        
+        </header>
+
         <!-- ======= Main ======= -->
         <main>
 
             <div class="wrap cf">
+
+
+
+            <div>
+              <!----------------------- [ Menu hamburguesa ] ----------------------->        
+            <div id="hamburguesa">
+            <div class="collapse" id="navbarToggleExternalContent">
+                <div class="p-4">
+                  <div class="logo_nav">
+                    <a class="a_nav" href="../index.html" id="pushed"><img src="../media/logo-royaloak.png" alt="Logo" id="logo_nav"></a>
+                  </div>
+                  <div>
+                    <a class="a_nav" href="../index.html"><img class="scale-up-center" src="../media/iconoBurger.png" alt="menu"></a>
+                    <p>Menu</p>
+                  </div>
+                  <div>
+                    <a class="a_nav" href="#"><img class="scale-up-center" src="../media/iconoBolsita.webp" alt=""></a>
+                    <p>Pedido</p>
+                  </div>
+                  <div>
+                    <a class="a_nav" href="./pages/contacto.html"><img class="scale-up-center" src="../media/flechasDeLasuerte.png" alt=""></a>
+                    <p>Random</p>
+                  </div>
+                  <div>
+                    <a class="a_nav" href="#"><img class="scale-up-center" src="../media/cerrarSesion.png" alt=""></a>
+                    <p>Salir</p>
+                  </div>
+                  </div>
+              </div>
+                <nav id="menu_hamburguesa" class="navbar navbar-dark">
+                    <div id="container_fluid">
+                    <button id="boton_hamburguesa" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                </nav>
+                </div>
+            </div>
+
             <div class="projTitle">
                 <img src="../assets/logo-royaloak-2.png" alt="logo_royal_oak" id="logoCarrito">
+              </div>
+
             </div>
                 <div class="heading cf">
                   <h1>Tu Carrito de Compras</h1>
@@ -88,7 +156,7 @@
                     </div>
                     </li>
                     
-                    <li class="totalRow" v-show="envioValue == 'delivery'"><span class="label">Shipping</span><span class="value">$150</span></li>
+                    <li class="totalRow" v-if="envioValue == 'delivery'"><span class="label">Shipping</span><span class="value">$150</span></li>
 
                     <li class="totalRow final"><span class="label">Total</span><span class="value">$44.00</span></li>
                     <li class="totalRow"><a href="#" class="continue">Pagar</a></li>
