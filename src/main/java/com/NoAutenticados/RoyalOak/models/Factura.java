@@ -3,7 +3,10 @@ package com.NoAutenticados.RoyalOak.models;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 @Entity
 public class Factura {
@@ -15,6 +18,10 @@ public class Factura {
     @JoinColumn(name = "cliente_id")
     private Cliente cliente;
     private double total;
+    private EstadoFactura estadoFactura;
+
+    @OneToMany(mappedBy="factura", fetch=FetchType.EAGER)
+    private Set<ClienteProductoPedido> clienteProductoPedidos = new HashSet<>();
 
 
     public Factura() {}
@@ -22,6 +29,7 @@ public class Factura {
     public Factura(Cliente cliente, double total) {
         this.cliente = cliente;
         this.total = total;
+        this.estadoFactura = EstadoFactura.CARRITO;
     }
 
     public long getId() {
@@ -38,5 +46,22 @@ public class Factura {
     }
     public void setTotal(double total) {
         this.total = total;
+    }
+
+    public Set<ClienteProductoPedido> getClienteProductoPedidos() {
+        return clienteProductoPedidos;
+    }
+    public Set<Producto> getProducto(){
+        return clienteProductoPedidos.stream().map(producto -> producto.getProducto()).collect(Collectors.toSet());
+    }
+     public void addClienteProductoPedido(ClienteProductoPedido clienteProductoPedido) {
+        clienteProductoPedido.setFactura(this);
+        clienteProductoPedidos.add(clienteProductoPedido);
+    }
+    public EstadoFactura getEstadoFactura() {
+        return estadoFactura;
+    }
+    public void setEstadoFactura(EstadoFactura estadoFactura) {
+        this.estadoFactura = estadoFactura;
     }
 }
