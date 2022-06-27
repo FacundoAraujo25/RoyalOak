@@ -1,5 +1,6 @@
 package com.NoAutenticados.RoyalOak.dtos;
 
+import com.NoAutenticados.RoyalOak.models.EstadoFactura;
 import com.NoAutenticados.RoyalOak.models.Factura;
 
 import java.util.HashSet;
@@ -11,6 +12,7 @@ public class FacturaDTO {
     private long id;
     private double total = 0;
     private Set<ClienteProductoPedidoDTO> pedidos = new HashSet<>();
+    private EstadoFactura estadoFactura;
 
     public FacturaDTO() {
     }
@@ -19,6 +21,7 @@ public class FacturaDTO {
         this.id = factura.getId();
         this.pedidos = factura.getClienteProductoPedidos().stream().map(clienteProductoPedido -> new ClienteProductoPedidoDTO(clienteProductoPedido)).collect(Collectors.toSet());
         this.total = factura.getClienteProductoPedidos().stream().mapToDouble(producto -> producto.getTotal()).sum();
+        this.estadoFactura = factura.getEstadoFactura();
     }
 
     public long getId() {
@@ -35,5 +38,11 @@ public class FacturaDTO {
     }
     public void setPedidos(Set<ClienteProductoPedidoDTO> pedidos) {
         this.pedidos = pedidos;
+    }
+    public EstadoFactura getEstadoFactura() {
+        return estadoFactura;
+    }
+    public void setEstadoFactura(EstadoFactura estadoFactura) {
+        this.estadoFactura = estadoFactura;
     }
 }

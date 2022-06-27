@@ -18,6 +18,7 @@ public class Factura {
     @JoinColumn(name = "cliente_id")
     private Cliente cliente;
     private double total;
+    private EstadoFactura estadoFactura;
 
     @OneToMany(mappedBy="factura", fetch=FetchType.EAGER)
     private Set<ClienteProductoPedido> clienteProductoPedidos = new HashSet<>();
@@ -28,6 +29,7 @@ public class Factura {
     public Factura(Cliente cliente, double total) {
         this.cliente = cliente;
         this.total = total;
+        this.estadoFactura = EstadoFactura.CARRITO;
     }
 
     public long getId() {
@@ -52,8 +54,14 @@ public class Factura {
     public Set<Producto> getProducto(){
         return clienteProductoPedidos.stream().map(producto -> producto.getProducto()).collect(Collectors.toSet());
     }
-    public void addClienteProductoPedido(ClienteProductoPedido clienteProductoPedido) {
+     public void addClienteProductoPedido(ClienteProductoPedido clienteProductoPedido) {
         clienteProductoPedido.setFactura(this);
         clienteProductoPedidos.add(clienteProductoPedido);
+    }
+    public EstadoFactura getEstadoFactura() {
+        return estadoFactura;
+    }
+    public void setEstadoFactura(EstadoFactura estadoFactura) {
+        this.estadoFactura = estadoFactura;
     }
 }

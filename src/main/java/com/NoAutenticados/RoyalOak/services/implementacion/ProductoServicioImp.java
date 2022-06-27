@@ -23,4 +23,9 @@ public class ProductoServicioImp implements ProductoServicio {
     public void guardarProducto(Producto producto) {
         productoRepositorio.save(producto);
     }
+
+    @Override
+    public Producto findById(long id) {
+        return productoRepositorio.findById(id).orElse(null);
+    }
 }

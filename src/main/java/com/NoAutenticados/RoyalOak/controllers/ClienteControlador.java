@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
@@ -22,9 +23,12 @@ public class ClienteControlador {
 
     @Autowired
     ClienteRepositorio clienteRepositorio;
-
     @Autowired
     ClienteServicio clienteServicio;
+    @Autowired
+    ApplicationEventPublisher eventoPublicador;
+    @Autowired
+    public PasswordEncoder passwordEncoder;
 
 
     @RequestMapping("/clientes") //asigna ruta a un controlador específico
@@ -54,8 +58,6 @@ public class ClienteControlador {
 
     //}
 
-    @Autowired
-    ApplicationEventPublisher eventoPublicador;
     @PostMapping("/clientes")
     public ResponseEntity<Object> registrarCliente(@RequestParam String nombre,
                                                    @RequestParam String apellido,
@@ -64,6 +66,7 @@ public class ClienteControlador {
                                                    @RequestParam String direccion,
                                                    @RequestParam String contraseña,
                                                    HttpServletRequest request){
+        String pepe;
 
         if(nombre.isEmpty()){
             return new ResponseEntity<>("Faltan datos: Nombre", HttpStatus.FORBIDDEN);
@@ -92,7 +95,7 @@ public class ClienteControlador {
 
         String generarToken = Utils.getToken(65,90,8,new Random());
         String urlApp = request.getContextPath();
-        Cliente cliente = new Cliente(nombre, apellido,email,telefono, contraseña);
+        Cliente cliente = new Cliente(nombre, apellido,email,telefono, passwordEncoder.encode(contraseña));
         cliente.addDireccion(direccion);
         cliente.setToken(generarToken);
         cliente.setEnable(false);
@@ -103,23 +106,31 @@ public class ClienteControlador {
 
     @GetMapping("/registro/{token}")
     public ResponseEntity<Object> confirmacionRegistro (HttpServletRequest request,
-                                                        @PathVariable String token){
+                                                        @PathVariable String token) {
 
-        Cliente cliente = clienteRepositorio.findByToken(token);
-        String tokencito = cliente.getToken();
+        Cliente cliente;
+        String tokencito;
+        if (clienteRepositorio.findByToken(token) == null) {
+            return new ResponseEntity<>("Token invalido", HttpStatus.FORBIDDEN);
+        } else {
 
-        if(cliente.isEnable()){
+            cliente = clienteRepositorio.findByToken(token);
+            tokencito = cliente.getToken();
+        }
+
+
+        if (cliente.isEnable()) {
             return new ResponseEntity<>("El cliente ya está validado", HttpStatus.FORBIDDEN);
         }
-        if(tokencito == null){
+        if (tokencito == null) {
             return new ResponseEntity<>("El token ya no es válido", HttpStatus.FORBIDDEN);
         }
 
         cliente.setEnable(true);
-        Utils.borrarToken(tokencito,cliente);
+        Utils.borrarToken(tokencito, cliente);
         clienteRepositorio.save(cliente);
 
-        return new ResponseEntity<>("Registro de cliente confirmado",HttpStatus.CREATED);
+        return new ResponseEntity<>("Registro de cliente confirmado", HttpStatus.CREATED);
     }
 
 }

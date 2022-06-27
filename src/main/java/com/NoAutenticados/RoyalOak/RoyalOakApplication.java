@@ -5,10 +5,12 @@ import com.NoAutenticados.RoyalOak.repositories.ClienteProductoPedidoRepositorio
 import com.NoAutenticados.RoyalOak.repositories.ClienteRepositorio;
 import com.NoAutenticados.RoyalOak.repositories.FacturaRepositorio;
 import com.NoAutenticados.RoyalOak.repositories.ProductoRepositorio;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.util.List;
 
@@ -19,6 +21,8 @@ public class RoyalOakApplication {
 		SpringApplication.run(RoyalOakApplication.class, args);
 	}
 
+	@Autowired
+	public PasswordEncoder passwordEncoder;
 	@Bean
 	public CommandLineRunner initData(ClienteRepositorio clienteRepositorio, ProductoRepositorio productoRepositorio, FacturaRepositorio facturaRepositorio, ClienteProductoPedidoRepositorio clienteProductoPedidoRepositorio){
 		return (args) -> {
@@ -43,7 +47,13 @@ public class RoyalOakApplication {
 			cliente6.addDireccion(direccion2);
 			cliente7.addDireccion(direccion1);
 			cliente1.addDireccion(direccion1);
-			clienteRepositorio.save(cliente1);
+			cliente1.setEnable(true);
+			cliente2.setEnable(true);
+			cliente3.setEnable(true);
+			cliente4.setEnable(true);
+			cliente5.setEnable(true);
+			cliente6.setEnable(true);
+			cliente7.setEnable(true);
 			clienteRepositorio.save(cliente1);
 			clienteRepositorio.save(cliente2);
 			clienteRepositorio.save(cliente3);
@@ -69,11 +79,12 @@ public class RoyalOakApplication {
 			productoRepositorio.save( producto4);
 			productoRepositorio.save( producto5);
 			Factura factura = new Factura();
+			factura.setEstadoFactura(EstadoFactura.CARRITO);
 			factura.setCliente(cliente1);
 			facturaRepositorio.save(factura);
 			ClienteProductoPedido pedido = new ClienteProductoPedido(2, factura, producto2);
-			ClienteProductoPedido pedido1 = new ClienteProductoPedido(3, factura, producto1);
 			clienteProductoPedidoRepositorio.save(pedido);
+			ClienteProductoPedido pedido1 = new ClienteProductoPedido(3, factura, producto1);
 			clienteProductoPedidoRepositorio.save(pedido1);
 		};
 	}
