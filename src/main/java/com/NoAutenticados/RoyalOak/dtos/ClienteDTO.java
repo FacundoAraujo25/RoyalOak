@@ -6,6 +6,7 @@ import com.NoAutenticados.RoyalOak.models.Factura;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class ClienteDTO {
 
@@ -13,7 +14,7 @@ public class ClienteDTO {
 
     private String nombre,apellido,email,telefono;
     private Set<String> direcciones;
-    private Set<Factura>facturas = new HashSet<>();
+    private Set<FacturaDTO>facturas = new HashSet<>();
 
 
     public ClienteDTO () {}
@@ -25,7 +26,7 @@ public class ClienteDTO {
         this.email = cliente.getEmail();
         this.telefono = cliente.getTelefono();
         this.direcciones = cliente.getDirecciones();
-        this.facturas = cliente.getFacturas();
+        this.facturas = cliente.getFacturas().stream().map(factura -> new FacturaDTO(factura)).collect(Collectors.toSet());
 
     }
 
@@ -63,10 +64,10 @@ public class ClienteDTO {
     public void setDirecciones(Set<String> direcciones) {
         this.direcciones = direcciones;
     }
-    public Set<Factura> getFacturas() {
+    public Set<FacturaDTO> getFacturas() {
         return facturas;
     }
-    public void setFacturas(Set<Factura> facturas) {
+    public void setFacturas(Set<FacturaDTO> facturas) {
         this.facturas = facturas;
     }
 }

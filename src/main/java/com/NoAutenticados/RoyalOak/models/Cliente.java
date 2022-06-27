@@ -19,6 +19,8 @@ public class Cliente {
     @OneToMany(mappedBy="cliente", fetch=FetchType.EAGER)
     private Set<Factura>facturas = new HashSet<>();
     private RolUsuario rolUsuario;
+    private boolean enable;
+    private String token;
 
 
     public Cliente () {}
@@ -43,6 +45,10 @@ public class Cliente {
     public String getApellido() {
         return apellido;
     }
+
+    public String getNombreCompleto(){
+        return this.nombre + " " + this.apellido;
+    }
     public void setApellido(String apellido) {
         this.apellido = apellido;
     }
@@ -58,6 +64,23 @@ public class Cliente {
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
+
+    public boolean isEnable() {
+        return enable;
+    }
+
+    public void setEnable(boolean enable) {
+        this.enable = enable;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+
     public Set<String> getDirecciones() {
         return direcciones;
     }
