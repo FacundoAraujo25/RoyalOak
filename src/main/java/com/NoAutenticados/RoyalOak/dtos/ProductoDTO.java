@@ -2,7 +2,7 @@ package com.NoAutenticados.RoyalOak.dtos;
 
 import com.NoAutenticados.RoyalOak.models.Producto;
 
-import com.NoAutenticados.RoyalOak.models.Subtipo;
+import com.NoAutenticados.RoyalOak.models.SubTipo;
 
 import com.NoAutenticados.RoyalOak.models.Tipo;
 
@@ -18,8 +18,8 @@ public class ProductoDTO {
     private Tipo tipo;
     private SubTipo subTipo;
     private boolean activo;
-    private Tipo tipo;
-    private Subtipo subtipo;
+   // private Tipo tipo;
+   // private Subtipo subtipo;
     private List<String> ingredientes = new ArrayList<>();
 
     public ProductoDTO() {}
@@ -35,7 +35,7 @@ public class ProductoDTO {
         this.activo = producto.isActivo();
         this.tipo = producto.getTipo();
 
-        this.subtipo = producto.getSubtipo();
+        this.subTipo = producto.getSubtipo();
 
     }
 
@@ -77,8 +77,8 @@ public class ProductoDTO {
         return tipo;
     }
 
-    public Subtipo getSubtipo() {
-        return subtipo;
+    public SubTipo  getSubtipo() {
+        return subTipo;
     }
 
     public List<String> getIngredientes() {
@@ -94,13 +94,13 @@ public class ProductoDTO {
         this.activo = activo;
     }
 
-    public Tipo getTipo() {
+   /* //public Tipo getTipo() {
         return tipo;
     }
 
     public void setTipo(Tipo tipo) {
         this.tipo = tipo;
-    }
+    }*/
 
     public SubTipo getSubTipo() {
         return subTipo;

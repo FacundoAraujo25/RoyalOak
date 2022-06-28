@@ -20,8 +20,8 @@ public class Producto {
     private SubTipo subTipo;
     private int stock;
     private double precio;
-    private Tipo tipo;
-    private Subtipo subtipo;
+    //private Tipo tipo;
+   // private SubTipo subtipo;
     @ElementCollection
     @Column(name="ingredientes")
     private List<String> ingredientes = new ArrayList<>();
@@ -33,7 +33,7 @@ public class Producto {
     public Producto() {}
 
 
-    public Producto(String nombre, String descripcion, String imagen, int stock, double precio, Tipo tipo, Subtipo subtipo) {
+    public Producto(String nombre, String descripcion, String imagen, int stock, double precio, Tipo tipo, SubTipo  subtipo) {
 
         this.nombre = nombre;
         this.descripcion = descripcion;
@@ -91,11 +91,11 @@ public class Producto {
     public void setTipo(Tipo tipo) {
         this.tipo = tipo;
     }
-    public Subtipo getSubtipo() {
-        return subtipo;
+    public SubTipo getSubtipo() {
+        return subTipo;
     }
-    public void setSubtipo(Subtipo subtipo) {
-        this.subtipo = subtipo;
+    public void setSubtipo(SubTipo  subtipo) {
+        this.subTipo = subtipo;
     }
 
     public List<String> getIngredientes() {
@@ -119,13 +119,13 @@ public class Producto {
         clienteProductoPedidos.add(clienteProductoPedido);
     }
 
-    public Tipo getTipo() {
+    /*public Tipo getTipo() {
         return tipo;
     }
 
     public void setTipo(Tipo tipo) {
         this.tipo = tipo;
-    }
+    }*/
 
     public SubTipo getSubTipo() {
         return subTipo;
