@@ -18,6 +18,8 @@ public class Producto {
     private String nombre, descripcion, imagen;
     private int stock;
     private double precio;
+    private Tipo tipo;
+    private Subtipo subtipo;
     @ElementCollection
     @Column(name="ingredientes")
     private List<String> ingredientes = new ArrayList<>();
@@ -28,13 +30,15 @@ public class Producto {
 
     public Producto() {}
 
-    public Producto(String nombre, String descripcion, String imagen, int stock, double precio) {
+    public Producto(String nombre, String descripcion, String imagen, int stock, double precio, Tipo tipo, Subtipo subtipo) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.imagen = imagen;
         this.stock = stock;
         this.precio = precio;
         this.activo = false;
+        this.tipo = tipo;
+        this.subtipo = subtipo;
     }
 
     public long getId() {
@@ -76,6 +80,19 @@ public class Producto {
     public void setActivo(boolean activo) {
         this.activo = activo;
     }
+    public Tipo getTipo() {
+        return tipo;
+    }
+    public void setTipo(Tipo tipo) {
+        this.tipo = tipo;
+    }
+    public Subtipo getSubtipo() {
+        return subtipo;
+    }
+    public void setSubtipo(Subtipo subtipo) {
+        this.subtipo = subtipo;
+    }
+
     public List<String> getIngredientes() {
         return ingredientes;
     }
