@@ -176,13 +176,6 @@ public class ClienteControlador {
 
         return new ResponseEntity<>("Registro de cliente confirmado", HttpStatus.CREATED);
     }
-<<<<<<< HEAD
-    @GetMapping("clientes/{token}")
-    public Cliente getClientePorToken(@PathVariable String token) {
-        return clienteServicio.findByToken(token);
-    }
-=======
-
     @PatchMapping("/clientes/roles")
     public ResponseEntity<Object> asignarRoles(@RequestParam long idUsuario,
                                                 @RequestParam String mailUsuario,
@@ -201,5 +194,8 @@ public class ClienteControlador {
         return new ResponseEntity<>("Usuario con rol de Admin confirmado", HttpStatus.CREATED);
     }
 
->>>>>>> main
+    @GetMapping("clientes/{token}")
+    public Cliente getClientePorToken(@PathVariable String token) {
+        return clienteServicio.findByToken(token);
+    }
 }

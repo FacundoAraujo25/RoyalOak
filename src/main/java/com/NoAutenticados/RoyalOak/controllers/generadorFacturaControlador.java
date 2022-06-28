@@ -48,13 +48,13 @@ public class generadorFacturaControlador {
         Cliente cliente = clienteServicio.findByEmail(authentication.getName());
         FacturaDTO factura = cliente.getFacturas().stream().map(factura1 -> new FacturaDTO(factura1)).filter(fact -> fact.getEstadoFactura() == EstadoFactura.CARRITO).findFirst().orElse(null);
 
-        response.setContentType("aplicacion/pdf");
+        response.setContentType("application/pdf");
         DateFormat formatoFecha = new SimpleDateFormat("dd-MM-yyyy:hh:mm");
         String fechaActual = formatoFecha.format(new Date());
 
         String headerKey = "Content-Disposition";
-        String headerVelue = "attachment; filename=pdf_" + fechaActual + ".pdf";
-        response.setHeader(headerVelue, headerVelue);
+        String headerValue = "attachment; filename=pdf_royalOak-pedido" + fechaActual + ".pdf";
+        response.setHeader(headerKey, headerValue);
 
         pdfService.exportar(response, factura);
 

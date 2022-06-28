@@ -35,9 +35,9 @@ public class GeneradorPdfServiceImp implements GeneradorPdfService {
 
         // Imagen Logo
         //Path path = Paths.get(ClassLoader.getSystemResource("logo-royaloak.png").toURI());
-        Image img = Image.getInstance("/Users/daphnecollao/Documents/Documentos/Cursos/Desarrollo Full Stack/MinHub/Challenge 2.0/media/logo-royaloak.png");
+        Image img = Image.getInstance("https://res.cloudinary.com/royal-oak-imagenes/image/upload/v1656443331/logo-ro_xmp8hl.png");
         img.setAbsolutePosition(35f,745f);
-        img.scaleAbsolute(50f,50f);
+        img.scaleAbsolute(50f,60f);
         //img.setAlignment(Image.ALIGN_RIGHT);
 
         //Titulo de Factura - Tipo de letra
@@ -64,7 +64,7 @@ public class GeneradorPdfServiceImp implements GeneradorPdfService {
         document.addCreator("Royal Oak - Contabilidad");
 
         PdfPTable table = new PdfPTable(4);
-        table.getDefaultCell().setHorizontalAlignment(Element.ALIGN_CENTER);
+        //table.getDefaultCell().setHorizontalAlignment(Element.ALIGN_CENTER);
         //table.getDefaultCell().setHorizontalAlignment(Element.ALIGN_CENTER);
 
         table.addCell("Nombre Producto");
