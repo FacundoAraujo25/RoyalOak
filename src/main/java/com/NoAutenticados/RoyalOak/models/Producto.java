@@ -26,9 +26,6 @@ public class Producto {
     private boolean activo;
 
     public Producto() {}
-
-
-
     public Producto(String nombre, String descripcion, String imagen, int stock, double precio, Tipo tipo, SubTipo subTipo) {
 
         this.nombre = nombre;
@@ -39,7 +36,6 @@ public class Producto {
         this.activo = false;
         this.tipo = tipo;
         this.subTipo = subTipo;
-
     }
 
     public long getId() {

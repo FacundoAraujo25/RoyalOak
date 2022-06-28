@@ -26,7 +26,6 @@ public class ProductoDTO {
         this.activo = producto.isActivo();
         this.tipo = producto.getTipo();
         this.subTipo = producto.getSubTipo();
-
     }
 
     public long getId() {
@@ -62,34 +61,21 @@ public class ProductoDTO {
     public void setPrecio(double precio) {
         this.precio = precio;
     }
-
-    public Tipo getTipo() {
-        return tipo;
-    }
-
-    public SubTipo  getSubtipo() {
-        return subTipo;
-    }
-
     public boolean isActivo() {
         return activo;
     }
     public void setActivo(boolean activo) {
         this.activo = activo;
     }
-
-   /* //public Tipo getTipo() {
+    public Tipo getTipo() {
         return tipo;
     }
-
     public void setTipo(Tipo tipo) {
         this.tipo = tipo;
-    }*/
-
+    }
     public SubTipo getSubTipo() {
         return subTipo;
     }
-
     public void setSubTipo(SubTipo subTipo) {
         this.subTipo = subTipo;
     }
