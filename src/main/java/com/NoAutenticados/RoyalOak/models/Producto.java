@@ -20,8 +20,7 @@ public class Producto {
     private SubTipo subTipo;
     private int stock;
     private double precio;
-    private Tipo tipo;
-    private Subtipo subtipo;
+
     @OneToMany(mappedBy="producto", fetch=FetchType.EAGER)
     private Set<ClienteProductoPedido> clienteProductoPedidos = new HashSet<>();
     private boolean activo;
@@ -29,7 +28,7 @@ public class Producto {
     public Producto() {}
 
 
-    public Producto(String nombre, String descripcion, String imagen, int stock, double precio, Tipo tipo, Subtipo subtipo) {
+    public Producto(String nombre, String descripcion, String imagen, int stock, double precio, Tipo tipo, SubTipo subTipo) {
 
         this.nombre = nombre;
         this.descripcion = descripcion;
@@ -80,18 +79,6 @@ public class Producto {
     }
     public void setActivo(boolean activo) {
         this.activo = activo;
-    }
-    public Tipo getTipo() {
-        return tipo;
-    }
-    public void setTipo(Tipo tipo) {
-        this.tipo = tipo;
-    }
-    public Subtipo getSubtipo() {
-        return subtipo;
-    }
-    public void setSubtipo(Subtipo subtipo) {
-        this.subtipo = subtipo;
     }
     public Set<ClienteProductoPedido> getClienteProductoPedidos() {
         return clienteProductoPedidos;

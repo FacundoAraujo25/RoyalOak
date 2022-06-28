@@ -1,9 +1,8 @@
 package com.NoAutenticados.RoyalOak.models;
 
-public enum Subtipo {
-
-    HAMBURGUESAS,
+public enum SubTipo {
     PIZZAS,
     ENSALADAS,
-    PICADAS
+    PICADAS,
+    HAMBURGUESAS
 }

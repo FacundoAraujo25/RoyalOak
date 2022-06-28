@@ -2,7 +2,7 @@ package com.NoAutenticados.RoyalOak.controllers;
 
 import com.NoAutenticados.RoyalOak.dtos.ProductoDTO;
 import com.NoAutenticados.RoyalOak.models.Producto;
-import com.NoAutenticados.RoyalOak.models.Subtipo;
+import com.NoAutenticados.RoyalOak.models.SubTipo;
 import com.NoAutenticados.RoyalOak.models.Tipo;
 import com.NoAutenticados.RoyalOak.services.ProductoServicio;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,7 +34,7 @@ public class ProductoControlador {
                                                    @RequestParam int stock,
                                                    @RequestParam String ingredientes,
                                                    @RequestParam Tipo tipo,
-                                                   @RequestParam Subtipo subtipo,
+                                                   @RequestParam SubTipo subtipo,
                                                    @RequestParam boolean activo) {
 
         if(nombre.isEmpty()){
@@ -68,7 +68,7 @@ public class ProductoControlador {
                                                    @RequestParam double precio,
                                                    @RequestParam int stock,
                                                    @RequestParam Tipo tipo,
-                                                   @RequestParam Subtipo subtipo,
+                                                   @RequestParam SubTipo subtipo,
                                                    @RequestParam boolean activo,
                                                      @RequestParam long idProducto) {
 
@@ -110,7 +110,7 @@ public class ProductoControlador {
         producto.setPrecio(precio);
         producto.setStock(stock);
         producto.setTipo(tipo);
-        producto.setSubtipo(subtipo);
+        producto.setSubTipo(subtipo);
         producto.setActivo(activo);
         productoServicio.guardarProducto(producto);
         return new ResponseEntity<>(HttpStatus.CREATED);
