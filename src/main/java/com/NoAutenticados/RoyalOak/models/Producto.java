@@ -16,6 +16,8 @@ public class Producto {
     @GenericGenerator(name = "native", strategy =  "native")
     private long id;
     private String nombre, descripcion, imagen;
+    private Tipo tipo;
+    private SubTipo subTipo;
     private int stock;
     private double precio;
     private Tipo tipo;
@@ -26,7 +28,9 @@ public class Producto {
 
     public Producto() {}
 
+
     public Producto(String nombre, String descripcion, String imagen, int stock, double precio, Tipo tipo, Subtipo subtipo) {
+
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.imagen = imagen;
@@ -34,7 +38,8 @@ public class Producto {
         this.precio = precio;
         this.activo = false;
         this.tipo = tipo;
-        this.subtipo = subtipo;
+        this.subTipo = subTipo;
+
     }
 
     public long getId() {
@@ -100,5 +105,21 @@ public class Producto {
     public void addClienteProductoPedido(ClienteProductoPedido clienteProductoPedido) {
         clienteProductoPedido.setProducto(this);
         clienteProductoPedidos.add(clienteProductoPedido);
+    }
+
+    public Tipo getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(Tipo tipo) {
+        this.tipo = tipo;
+    }
+
+    public SubTipo getSubTipo() {
+        return subTipo;
+    }
+
+    public void setSubTipo(SubTipo subTipo) {
+        this.subTipo = subTipo;
     }
 }
