@@ -4,6 +4,7 @@ import com.NoAutenticados.RoyalOak.dtos.FacturaDTO;
 import com.NoAutenticados.RoyalOak.models.Cliente;
 import com.NoAutenticados.RoyalOak.models.EstadoFactura;
 import com.NoAutenticados.RoyalOak.models.Factura;
+import com.NoAutenticados.RoyalOak.repositories.ClienteRepositorio;
 import com.NoAutenticados.RoyalOak.repositories.FacturaRepositorio;
 import com.NoAutenticados.RoyalOak.services.FacturaServicio;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,8 @@ import java.util.stream.Collectors;
 public class FacturaServicioImp implements FacturaServicio {
     @Autowired
     FacturaRepositorio facturaRepositorio;
+    @Autowired
+    ClienteRepositorio clienteRepositorio;
 
     @Override
     public Set<FacturaDTO> getFacturasDTO() {
@@ -24,8 +27,10 @@ public class FacturaServicioImp implements FacturaServicio {
     }
 
     @Override
+
     public Factura getFacturaEnCarrito(Cliente cliente) {
         return cliente.getFacturas().stream().filter(factura -> factura.getEstadoFactura()== EstadoFactura.CARRITO).findFirst().orElse(null);
+
     }
 
     @Override
