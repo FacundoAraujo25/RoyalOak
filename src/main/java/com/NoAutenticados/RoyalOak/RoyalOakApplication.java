@@ -12,7 +12,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @SpringBootApplication
 public class RoyalOakApplication {
@@ -62,11 +64,28 @@ public class RoyalOakApplication {
 			clienteRepositorio.save(cliente6);
 			clienteRepositorio.save(cliente7);
 
-			Producto producto1 = new Producto("Hamburguesa", "Gorda, grande y jugosa", "urlDeImagen", 25, 550);
-			Producto producto2 = new Producto("Lomito Veggie","pan ciabatta, bife de seitan","urlImagen",20,650);
-			Producto producto3 = new Producto("Bastoncitos de papa","rellenos con queso mozzarella","urlImagen",15,500);
-			Producto producto4 = new Producto("Papas con cheddar","acompañadas del mejor cheddar de la zona","urlImagen",35,600);
-			Producto producto5 = new Producto("Picada para 2 personas","aros de cebolla, aceitunas y fiambres y quesos varios","urlImagen",15,900);
+			Producto producto1 = new Producto("Classic", "Hamburguesa clásica con carne,queso cheddar,verduras y Ali oli.", "https://drive.google.com/file/d/1GFaoNmz_a0XmEjLqMai1nJrM1K2swvyj/view?usp=sharing", 25, 550);
+			producto1.setIngredientes(Arrays.stream(("medallón_de_carne cheddar lechuga tomate cebolla morada Ali_oli").split(" ")).collect(Collectors.toList()));
+			Producto producto2 = new Producto("Baccon","Bacon y cheddar con hamburguesa acompañada de mayonesa y cebolla caramelizada.","https://drive.google.com/file/d/1kApw5t-rMRLxDYwtFutbdD3Ff9qSViac/view?usp=sharing",20,650);
+			producto2.setIngredientes(Arrays.stream(("dos_medallones_de_carne cheddar lechuga tomate cebolla morada mayonesa_casera").split(" ")).collect(Collectors.toList()));
+			Producto producto3 = new Producto("Butter Burger","Un medallón, cheddar,cebolla caramelizada con manteca en el medallón.","https://drive.google.com/file/d/1zd8ro-jtzghSjmBGrwxiHyQ81RwkRbiZ/view?usp=sharing",15,600);
+			Producto producto4 = new Producto("Crispy Burger","Medallón simple, cheddar, lechuga, tomate, cebolla crispy y Alí Oli.","https://drive.google.com/file/d/1VFGVp4J7CJnrEqCfm3TVGPxZv4GmlZBC/view?usp=sharing",35,600);
+			Producto producto5 = new Producto("Doble Cuarto","Dos medallones, extra cheddar, cebolla caramelizada, pepinos alemanes, mostaza y Ketchup Heinz.","https://drive.google.com/file/d/17541BXC7PWl4_6Yfnie1P_Wr3YJWGjbz/view?usp=sharing",15,700);
+			Producto producto6 = new Producto("Guacamole Burger","Un medallón, cheddar, queso dambo, guacamole con limón, cebolla picada y mayonesa.","https://drive.google.com/file/d/1NHC6XZJXYldzLCSZR-zbDx23FdonP1aR/view?usp=sharing",15,650);
+			Producto producto7 = new Producto("Hamburguesa simple con queso","Dos medallones, extra cheddar y salsa Thousand Islands.","https://drive.google.com/file/d/1gC0UGQKs_QZaebv_rw8t-2zQW6X2FGpO/view?usp=sharing",15,700);
+			Producto producto8 = new Producto("Homenaje Stacker","Doble medallón,salsa stacker,cheddar y bacon.","https://drive.google.com/file/d/1F_l2De2QJ7xVmNla9e6GZcHiaTbEVaBf/view?usp=sharing",15,750);
+			Producto producto9 = new Producto("Honey Burger","Un medallón, cheddar, pancetas caramelizadas, panes invertidos tostados con manteca y baño de miel.","https://drive.google.com/file/d/1tAoonBGuAewjjR9SRwFR7OAjtrls8yd-/view?usp=sharing",15,650);
+			Producto producto10 = new Producto("Mimozza Burger","Medallón simple, cheddar, panceta, bastones de mozzarella y salsa barbacoa.","https://drive.google.com/file/d/1fRmxFZhzi2DUGoZa1Ldr4BzWHweHEqpV/view?usp=sharing",15,700);
+			Producto producto11 = new Producto("Oklahoma","Un medallón, extra cheddar, pepino alemanes, cebolla blanca a la plancha, Ketchup y mostaza.","https://drive.google.com/file/d/1QlJyVyi2xQ2cJi96BPHtjYVzFHUEzm0_/view?usp=sharing",15,700);
+			Producto producto12 = new Producto("Onion Rings","Un medallón, cheddar, panceta, aros de cebolla y salsa barbacoa.","https://drive.google.com/file/d/1qhPM6QGJ8jhD7e5TrBVnUu5Uyv2e6KUB/view?usp=sharing",15,700);
+			Producto producto13 = new Producto("Promo Kids","2 hamburguesas con un medallón cada una, 2 fetas de cheddar c/u, salsa thousand islands o lechuga y tomate a elección.","https://drive.google.com/file/d/1qk1oMY2n4vDF0Uh6sFYu6bDxpeAzFApR/view?usp=sharing",15,700);
+			Producto producto14 = new Producto("Travis Scott","Medallón simple, cheddar, panceta, lechuga, cebolla caramelizada, pepinos almanes, salsa Thousland Islands.","https://drive.google.com/file/d/15bjzFVh5vZvcluS4wYR9-F46wvceIgJQ/view?usp=sharing",15,700);
+			Producto producto15 = new Producto("Veggie Classic","Un medallón de seitán y avena, cheddar vegano, Alí Oli, cebolla morada, lechuga y tomate.","https://drive.google.com/file/d/1Wlf9f329EHpoDJYMUTIAhn4iEQGjtFqy/view?usp=sharing",15,700);
+			Producto producto16 = new Producto("Veggie Crispy","Medallón simple, cheddar x 2, Alí Oli, lechuga, tomete, cebolla crispy.","https://drive.google.com/file/d/1mcF_NE8hebcadngJPpDKcenRGwFaKgp8/view?usp=sharing",15,700);
+			Producto producto17 = new Producto("Veggie Onion","Un medallón, cheddar, Alí oli, 4 aros de cebolla.","https://drive.google.com/file/d/17rVJj8MYjT7_Q5oZaaaEtYDEaQE-t7U1/view?usp=sharing",15,700);
+			Producto producto18 = new Producto("Veggie Scott","Medallón simple, cheddar, pepinos, cebolla caramelizadas, lechuga y salsa Thousand Islands.","https://drive.google.com/file/d/1qhCKpGjKSHJ9W1ceEb47EQGDC90q_MLX/view?usp=sharing",15,700);
+
+
 			producto1.setActivo(true);
 			producto2.setActivo(true);
 			producto3.setActivo(true);
