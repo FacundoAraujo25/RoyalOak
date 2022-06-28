@@ -110,6 +110,7 @@ public class ProductoControlador {
             return new ResponseEntity<>("Faltan datos: SubTipo", HttpStatus.FORBIDDEN);
         }
 
+
         producto.setNombre(nombre);
         producto.setDescripcion(descripcion);
         producto.setImagen(imagen);
