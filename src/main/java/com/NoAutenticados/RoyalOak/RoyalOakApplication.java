@@ -65,9 +65,7 @@ public class RoyalOakApplication {
 			clienteRepositorio.save(cliente7);
 
 			Producto producto1 = new Producto("Classic", "Hamburguesa clásica con carne,queso cheddar,verduras y Ali oli.", "https://drive.google.com/file/d/1GFaoNmz_a0XmEjLqMai1nJrM1K2swvyj/view?usp=sharing", 25, 550,Tipo.COMIDA,Subtipo.HAMBURGUESAS);
-			producto1.setIngredientes(Arrays.stream(("medallón_de_carne cheddar lechuga tomate cebolla morada Ali_oli").split(" ")).collect(Collectors.toList()));
-			Producto producto2 = new Producto("Baccon","Bacon y cheddar con hamburguesa acompañada de mayonesa y cebolla caramelizada.","https://drive.google.com/file/d/1kApw5t-rMRLxDYwtFutbdD3Ff9qSViac/view?usp=sharing",20,650,Tipo.COMIDA,Subtipo.HAMBURGUESAS);
-			producto2.setIngredientes(Arrays.stream(("dos_medallones_de_carne cheddar lechuga tomate cebolla morada mayonesa_casera").split(" ")).collect(Collectors.toList()));
+			Producto producto2 = new Producto("Bacon","Bacon y cheddar con hamburguesa acompañada de mayonesa y cebolla caramelizada.","https://drive.google.com/file/d/1kApw5t-rMRLxDYwtFutbdD3Ff9qSViac/view?usp=sharing",20,650,Tipo.COMIDA,Subtipo.HAMBURGUESAS);
 			Producto producto3 = new Producto("Butter Burger","Un medallón, cheddar,cebolla caramelizada con manteca en el medallón.","https://drive.google.com/file/d/1zd8ro-jtzghSjmBGrwxiHyQ81RwkRbiZ/view?usp=sharing",15,600,Tipo.COMIDA,Subtipo.HAMBURGUESAS);
 			Producto producto4 = new Producto("Crispy Burger","Medallón simple, cheddar, lechuga, tomate, cebolla crispy y Alí Oli.","https://drive.google.com/file/d/1VFGVp4J7CJnrEqCfm3TVGPxZv4GmlZBC/view?usp=sharing",35,600,Tipo.COMIDA,Subtipo.HAMBURGUESAS);
 			Producto producto5 = new Producto("Doble Cuarto","Dos medallones, extra cheddar, cebolla caramelizada, pepinos alemanes, mostaza y Ketchup Heinz.","https://drive.google.com/file/d/17541BXC7PWl4_6Yfnie1P_Wr3YJWGjbz/view?usp=sharing",15,700,Tipo.COMIDA,Subtipo.HAMBURGUESAS);
@@ -89,11 +87,38 @@ public class RoyalOakApplication {
 			producto3.setActivo(true);
 			producto4.setActivo(true);
 			producto5.setActivo(true);
+			producto6.setActivo(true);
+			producto7.setActivo(true);
+			producto8.setActivo(true);
+			producto9.setActivo(true);
+			producto10.setActivo(true);
+			producto11.setActivo(true);
+			producto12.setActivo(true);
+			producto13.setActivo(true);
+			producto14.setActivo(true);
+			producto15.setActivo(true);
+			producto16.setActivo(true);
+			producto17.setActivo(true);
+			producto18.setActivo(true);
 			productoRepositorio.save( producto1);
 			productoRepositorio.save( producto2);
 			productoRepositorio.save( producto3);
 			productoRepositorio.save( producto4);
 			productoRepositorio.save( producto5);
+			productoRepositorio.save( producto6);
+			productoRepositorio.save( producto7);
+			productoRepositorio.save( producto8);
+			productoRepositorio.save( producto9);
+			productoRepositorio.save( producto10);
+			productoRepositorio.save( producto11);
+			productoRepositorio.save( producto12);
+			productoRepositorio.save( producto13);
+			productoRepositorio.save( producto14);
+			productoRepositorio.save( producto15);
+			productoRepositorio.save( producto16);
+			productoRepositorio.save( producto17);
+			productoRepositorio.save( producto18);
+
 
 			Producto producto19 = new Producto("Almejas sagradas","Harina italiana, salsa de crema, mozzarella, camarones, mejillones, palta, rúcula, salsa secreta","https://drive.google.com/file/d/1Hf0doNmXRcfzX8cwUeAabe63XgQDezB2/view?usp=sharing",15,900,Tipo.COMIDA,Subtipo.PIZZAS);
 			Producto producto20 = new Producto("Capricciosa clasica","Harina italiana, salsa de tomate integral, mozzarella, tocino, tomates, champiñones, aceitunas","https://drive.google.com/file/d/1Vglr7GLwAnqQ13h90uemztDj9wtvnn-n/view?usp=sharing",15,900, Tipo.COMIDA, Subtipo.PIZZAS);
@@ -121,6 +146,20 @@ public class RoyalOakApplication {
 			productoRepositorio.save(producto29);
 			productoRepositorio.save(producto30);
 			productoRepositorio.save(producto31);
+			producto19.setActivo(true);
+			producto20.setActivo(true);
+			producto21.setActivo(true);
+			producto22.setActivo(true);
+			producto23.setActivo(true);
+			producto24.setActivo(true);
+			producto25.setActivo(true);
+			producto26.setActivo(true);
+			producto27.setActivo(true);
+			producto28.setActivo(true);
+			producto29.setActivo(true);
+			producto30.setActivo(true);
+			producto31.setActivo(true);
+
 			Producto producto32 = new Producto("Baru","mix verdes, tomate, queso en cubos, calabaza asada y huevo","https://drive.google.com/file/d/1fbmeJUH9BQ90cUMQWUmWDxSlQ5I6weUv/view?usp=sharing",15,900, Tipo.COMIDA, Subtipo.ENSALADAS);
 			Producto producto33 = new Producto("Hawaii","mix verdes, pollo grill , queso en cubos, queso crema y nueces","https://drive.google.com/file/d/1z0g6TfF4fD1mwfeKG3TuG-3MZnYwTNwg/view?usp=sharing",15,900, Tipo.COMIDA, Subtipo.ENSALADAS);
 			Producto producto34 = new Producto("Ibiza","mix verdes, arroz yamani queso tybo, zanahoria, choclo y huevo","https://drive.google.com/file/d/1kcTsuks3AmagC6apeMP9PpamsIHtzbC7/view?usp=sharing",15,900, Tipo.COMIDA, Subtipo.ENSALADAS);
@@ -137,6 +176,33 @@ public class RoyalOakApplication {
 			productoRepositorio.save(producto37);
 			productoRepositorio.save(producto38);
 			productoRepositorio.save(producto39);
+			producto32.setActivo(true);
+			producto33.setActivo(true);
+			producto34.setActivo(true);
+			producto35.setActivo(true);
+			producto36.setActivo(true);
+			producto37.setActivo(true);
+			producto38.setActivo(true);
+			producto39.setActivo(true);
+
+			Producto producto40 = new Producto("Papas Americanas","papas con bacon y cheddar de excelente calidad","https://drive.google.com/file/d/1v8YMaE__4QTGdEn7tpR_E6unWNefIz4-/view?usp=sharing",15,550, Tipo.COMIDA, Subtipo.PICADAS);
+			Producto producto41 = new Producto("Papas Criollas","papas con salsa criolla y huevos fritos","https://drive.google.com/file/d/1UGDqS6H-MlFGpP7p3bL2w2Xfd_Oc5WL7/view?usp=sharing",15,550, Tipo.COMIDA, Subtipo.PICADAS);
+			Producto producto42 = new Producto("Picada 4 elementos","Abundante tabla de picada de fiambres,quesos,nuggets de pollo,papas y rabas.","https://drive.google.com/file/d/1Yur3rJE-tssW_1ZCVevi-UFffwGv790G/view?usp=sharing",15,550, Tipo.COMIDA, Subtipo.PICADAS);
+			Producto producto43 = new Producto("Picada Colombiana","Excelente tabla de picada con trocitos de carne,costillitas de cerdo,embutidos, verduras y salsas varias.","https://drive.google.com/file/d/1peLiJahqH_Y0087fvIjG7PaypVF5_HVr/view?usp=sharing",15,550, Tipo.COMIDA, Subtipo.PICADAS);
+			Producto producto44 = new Producto("Veracruzanas","Tortillas acompañadas de queso,cebollas picadas,tomates,frijoles refritos con chorizo y jalapeños","https://drive.google.com/file/d/1ombGgXgaMm2mZSusWdNQvXCB-7yb6Eom/view?usp=sharing",15,550, Tipo.COMIDA, Subtipo.PICADAS);
+			Producto producto45 = new Producto("Bastones de Muzza","Bastoncitos rellenos de queso mozzarella","https://drive.google.com/file/d/1vSyQ7oqlp6RGp6-9lt9HEhxN-SYemBwT/view?usp=sharing",15,550, Tipo.COMIDA, Subtipo.PICADAS);
+			productoRepositorio.save(producto40);
+			productoRepositorio.save(producto41);
+			productoRepositorio.save(producto42);
+			productoRepositorio.save(producto43);
+			productoRepositorio.save(producto44);
+			productoRepositorio.save(producto45);
+			producto40.setActivo(true);
+			producto41.setActivo(true);
+			producto42.setActivo(true);
+			producto43.setActivo(true);
+			producto44.setActivo(true);
+			producto45.setActivo(true);
 
 
 			Factura factura = new Factura();

@@ -20,10 +20,6 @@ public class Producto {
     private double precio;
     private Tipo tipo;
     private Subtipo subtipo;
-    @ElementCollection
-    @Column(name="ingredientes")
-    private List<String> ingredientes = new ArrayList<>();
-
     @OneToMany(mappedBy="producto", fetch=FetchType.EAGER)
     private Set<ClienteProductoPedido> clienteProductoPedidos = new HashSet<>();
     private boolean activo;
@@ -92,14 +88,6 @@ public class Producto {
     public void setSubtipo(Subtipo subtipo) {
         this.subtipo = subtipo;
     }
-
-    public List<String> getIngredientes() {
-        return ingredientes;
-    }
-    public void setIngredientes(List<String> ingredientes) {
-        this.ingredientes = ingredientes;
-    }
-
     public Set<ClienteProductoPedido> getClienteProductoPedidos() {
         return clienteProductoPedidos;
     }
