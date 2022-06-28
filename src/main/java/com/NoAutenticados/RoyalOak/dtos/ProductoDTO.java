@@ -18,9 +18,6 @@ public class ProductoDTO {
     private Tipo tipo;
     private SubTipo subTipo;
     private boolean activo;
-   // private Tipo tipo;
-   // private Subtipo subtipo;
-    private List<String> ingredientes = new ArrayList<>();
 
     public ProductoDTO() {}
 
@@ -31,12 +28,9 @@ public class ProductoDTO {
         this.imagen = producto.getImagen();
         this.stock = producto.getStock();
         this.precio = producto.getPrecio();
-        this.ingredientes = producto.getIngredientes();
         this.activo = producto.isActivo();
         this.tipo = producto.getTipo();
-
-        this.subTipo = producto.getSubtipo();
-
+        this.subTipo = producto.getSubTipo();
     }
 
     public long getId() {
@@ -81,12 +75,6 @@ public class ProductoDTO {
         return subTipo;
     }
 
-    public List<String> getIngredientes() {
-        return ingredientes;
-    }
-    public void setIngredientes(List<String> ingredientes) {
-        this.ingredientes = ingredientes;
-    }
     public boolean isActivo() {
         return activo;
     }

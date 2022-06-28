@@ -10,7 +10,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -64,7 +63,6 @@ public class ProductoControlador {
         String[] ingredientesArray = ingredientes.split(" ");
         Producto producto = new Producto(nombre, descripcion, imagen,stock, precio, tipo, subTipo);
         producto.setActivo(activo);
-        producto.setIngredientes(Arrays.stream(ingredientesArray).collect(Collectors.toList()));
         productoServicio.guardarProducto(producto);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
@@ -114,7 +112,6 @@ public class ProductoControlador {
         }
 
         String[] ingredientesArray = ingredientes.split(" ");
-        producto.setIngredientes(Arrays.stream(ingredientesArray).collect(Collectors.toList()));
 
         producto.setNombre(nombre);
         producto.setDescripcion(descripcion);
