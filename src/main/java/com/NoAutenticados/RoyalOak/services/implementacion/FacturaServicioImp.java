@@ -1,6 +1,7 @@
 package com.NoAutenticados.RoyalOak.services.implementacion;
 
 import com.NoAutenticados.RoyalOak.dtos.FacturaDTO;
+import com.NoAutenticados.RoyalOak.models.Cliente;
 import com.NoAutenticados.RoyalOak.models.EstadoFactura;
 import com.NoAutenticados.RoyalOak.models.Factura;
 import com.NoAutenticados.RoyalOak.repositories.ClienteRepositorio;
@@ -26,8 +27,10 @@ public class FacturaServicioImp implements FacturaServicio {
     }
 
     @Override
-    public Factura getFacturaEnCarrito(Authentication authentication) {
-        return clienteRepositorio.findByEmail(authentication.getName()).getFacturas().stream().filter(factura -> factura.getEstadoFactura()== EstadoFactura.CARRITO).findFirst().orElse(null);
+
+    public Factura getFacturaEnCarrito(Cliente cliente) {
+        return cliente.getFacturas().stream().filter(factura -> factura.getEstadoFactura()== EstadoFactura.CARRITO).findFirst().orElse(null);
+
     }
 
     @Override

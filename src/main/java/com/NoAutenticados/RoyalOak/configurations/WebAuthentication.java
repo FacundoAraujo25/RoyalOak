@@ -3,6 +3,7 @@ package com.NoAutenticados.RoyalOak.configurations;
 import com.NoAutenticados.RoyalOak.models.Cliente;
 import com.NoAutenticados.RoyalOak.models.RolUsuario;
 import com.NoAutenticados.RoyalOak.repositories.ClienteRepositorio;
+import com.NoAutenticados.RoyalOak.services.ClienteServicio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.security.SecurityProperties;
 import org.springframework.context.annotation.Bean;
@@ -20,6 +21,8 @@ public class WebAuthentication extends GlobalAuthenticationConfigurerAdapter {
 
     @Autowired
     ClienteRepositorio clienteRepositorio;
+    @Autowired
+    ClienteServicio clienteServicio;
 
     @Override
     public void init(AuthenticationManagerBuilder auth) throws Exception {
@@ -33,6 +36,8 @@ public class WebAuthentication extends GlobalAuthenticationConfigurerAdapter {
                     if (cliente.getRolUsuario()== RolUsuario.ADMIN) {
                         return new User(cliente.getEmail(), cliente.getContraseña(), AuthorityUtils.createAuthorityList("ADMIN"));
                     } else {
+//                        cliente.setRolUsuario(RolUsuario.CLIENTE);
+//                        clienteServicio.guardarCliente(cliente);
                         return new User(cliente.getEmail(), cliente.getContraseña(), AuthorityUtils.createAuthorityList("CLIENTE"));
                     }
                 } else {

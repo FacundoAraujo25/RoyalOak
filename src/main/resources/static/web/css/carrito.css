@@ -18,142 +18,274 @@ body{
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1200 800'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='600' y1='25' x2='600' y2='777'%3E%3Cstop offset='0' stop-color='%230F292F'/%3E%3Cstop offset='1' stop-color='%23501F3A'/%3E%3C/linearGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='650' y1='25' x2='650' y2='777'%3E%3Cstop offset='0' stop-color='%230d2a34'/%3E%3Cstop offset='1' stop-color='%235a2140'/%3E%3C/linearGradient%3E%3ClinearGradient id='c' gradientUnits='userSpaceOnUse' x1='700' y1='25' x2='700' y2='777'%3E%3Cstop offset='0' stop-color='%230c2b38'/%3E%3Cstop offset='1' stop-color='%23652345'/%3E%3C/linearGradient%3E%3ClinearGradient id='d' gradientUnits='userSpaceOnUse' x1='750' y1='25' x2='750' y2='777'%3E%3Cstop offset='0' stop-color='%230f2b3d'/%3E%3Cstop offset='1' stop-color='%236f254b'/%3E%3C/linearGradient%3E%3ClinearGradient id='e' gradientUnits='userSpaceOnUse' x1='800' y1='25' x2='800' y2='777'%3E%3Cstop offset='0' stop-color='%23142b41'/%3E%3Cstop offset='1' stop-color='%237a2650'/%3E%3C/linearGradient%3E%3ClinearGradient id='f' gradientUnits='userSpaceOnUse' x1='850' y1='25' x2='850' y2='777'%3E%3Cstop offset='0' stop-color='%231c2a44'/%3E%3Cstop offset='1' stop-color='%23852855'/%3E%3C/linearGradient%3E%3ClinearGradient id='g' gradientUnits='userSpaceOnUse' x1='900' y1='25' x2='900' y2='777'%3E%3Cstop offset='0' stop-color='%23252946'/%3E%3Cstop offset='1' stop-color='%2390295a'/%3E%3C/linearGradient%3E%3ClinearGradient id='h' gradientUnits='userSpaceOnUse' x1='950' y1='25' x2='950' y2='777'%3E%3Cstop offset='0' stop-color='%232e2846'/%3E%3Cstop offset='1' stop-color='%239c2a5e'/%3E%3C/linearGradient%3E%3ClinearGradient id='i' gradientUnits='userSpaceOnUse' x1='1000' y1='25' x2='1000' y2='777'%3E%3Cstop offset='0' stop-color='%23372646'/%3E%3Cstop offset='1' stop-color='%23a72b63'/%3E%3C/linearGradient%3E%3ClinearGradient id='j' gradientUnits='userSpaceOnUse' x1='1050' y1='25' x2='1050' y2='777'%3E%3Cstop offset='0' stop-color='%23402443'/%3E%3Cstop offset='1' stop-color='%23b32c67'/%3E%3C/linearGradient%3E%3ClinearGradient id='k' gradientUnits='userSpaceOnUse' x1='1100' y1='25' x2='1100' y2='777'%3E%3Cstop offset='0' stop-color='%2349213f'/%3E%3Cstop offset='1' stop-color='%23bf2c6b'/%3E%3C/linearGradient%3E%3ClinearGradient id='l' gradientUnits='userSpaceOnUse' x1='1150' y1='25' x2='1150' y2='777'%3E%3Cstop offset='0' stop-color='%23501F3A'/%3E%3Cstop offset='1' stop-color='%23CB2D6F'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg fill-opacity='0.12'%3E%3Crect fill='url(%23a)' width='1200' height='800'/%3E%3Crect fill='url(%23b)' x='100' width='1100' height='800'/%3E%3Crect fill='url(%23c)' x='200' width='1000' height='800'/%3E%3Crect fill='url(%23d)' x='300' width='900' height='800'/%3E%3Crect fill='url(%23e)' x='400' width='800' height='800'/%3E%3Crect fill='url(%23f)' x='500' width='700' height='800'/%3E%3Crect fill='url(%23g)' x='600' width='600' height='800'/%3E%3Crect fill='url(%23h)' x='700' width='500' height='800'/%3E%3Crect fill='url(%23i)' x='800' width='400' height='800'/%3E%3Crect fill='url(%23j)' x='900' width='300' height='800'/%3E%3Crect fill='url(%23k)' x='1000' width='200' height='800'/%3E%3Crect fill='url(%23l)' x='1100' width='100' height='800'/%3E%3C/g%3E%3C/svg%3E");
     background-attachment: fixed;
     background-size: cover;
-    overflow:hidden;
+    font-family: 'Kdam Thmor Pro', sans-serif;
+}
+main{
+  width: 92%;
+  margin-left: 8%;
 }
 
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  vertical-align: baseline;
-}
-
-html {
-  line-height: 1;
-}
-
-ol, ul {
-  list-style: none;
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-caption, th, td {
-  text-align: left;
-  font-weight: normal;
-  vertical-align: middle;
-}
-
-q, blockquote {
-  quotes: none;
-}
-q:before, q:after, blockquote:before, blockquote:after {
-  content: "";
-  content: none;
-}
-
-a img {
-  border: none;
-}
-
-article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
-  display: block;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-img {
+/*------------------------------------------------*/
+header{
   width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+h1 {
+  font-family: 'Potta One', cursive;
+  color: #CCCCCC;
+  padding-left: 5rem;
+  padding-top: 3rem;
+}
+#hamburguesa{
+  display: none;
+}
+.nav{
+  background-color:#CCCCCC;
+  width: 8%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  height: 100%;
+}
+.nav div{
+  padding:0.5rem ;
+  width: 4rem;
+  transition-duration: 0.3s;
+  margin-bottom: 0.3rem;
+}
+.nav div:hover{
+  width: 4.5rem;
+  transition-duration: 0.3s;
+}
+#marca{
+  width: auto;
+}
+#marca:hover{
+  transform: rotate(15deg);
+}
+#menu{
+  border-top: 2px solid black;
+}
+#salir{
+  border-top: 2px solid black;
+}
+box-icon{
+ width: 48px; 
+}
+p{
+  text-align: center;
+  color: black;
+  font-weight: bold;
+}
+.scale-up-center {
+	-webkit-animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	        animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+@-webkit-keyframes scale-up-center {
+    0% {
+      -webkit-transform: scale(0.5);
+              transform: scale(0.5);
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+  }
+  @keyframes scale-up-center {
+    0% {
+      -webkit-transform: scale(0.5);
+              transform: scale(0.5);
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+  }
+.nav img{
+    width: 92%;
+    margin-left: 8%
+}
+#divisorBurgers {
+  width: 100%;
+  height: 10vh;
+  background-image: url(https://us.123rf.com/450wm/kbolbik/kbolbik2010/kbolbik201000595/157596716-patr%C3%B3n-transparente-de-vector-de-hamburguesas-de-contorno-negro-fondo-para-banner-embalaje-men%C3%BA-.jpg?ver=6);
+  background-size: auto;
+  margin: 2rem 3rem 1rem 3rem;
+}
+#divisorBurgers2{
+  width: 100%;
+  height: 10vh;
+  background-size: auto;
 }
 
-.cf:before,
-.cf:after {
-  content: " ";
+
+/* Global settings */
+/* Global "table" column settings */
+.product-image {
+  float: left;
+  width: 20%;
+}
+
+.product-details {
+  float: left;
+  width: 37%;
+}
+
+.product-price {
+  float: left;
+  width: 12%;
+}
+
+.product-quantity {
+  float: left;
+  width: 10%;
+}
+
+.product-removal {
+  float: left;
+  width: 9%;
+}
+
+.product-line-price {
+  float: left;
+  width: 12%;
+  text-align: right;
+  padding-right: 2rem;
+}
+.labels{
+  font-family: 'Potta One', cursive;
+}
+.arreglo{
+  padding-top: 3rem;
+}
+
+/* This is used as the traditional .clearfix class */
+.group:before, .shopping-cart:before, .column-labels:before, .product:before, .totals-item:before,
+.group:after,
+.shopping-cart:after,
+.column-labels:after,
+.product:after,
+.totals-item:after {
+  content: '';
   display: table;
 }
 
-.cf:after {
+.group:after, .shopping-cart:after, .column-labels:after, .product:after, .totals-item:after {
   clear: both;
 }
 
-.cf {
-  *zoom: 1;
+.group, .shopping-cart, .column-labels, .product, .totals-item {
+  zoom: 1;
 }
 
-.wrap {
-  width: 75%;
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 5% 0;
-  margin-bottom: 5em;
+/* Apply clearfix in a few places */
+/* Apply dollar signs */
+.product .product-price:before, .product .product-line-price:before, .totals-value:before {
+  content: '$';
 }
-#logoCarrito{
-    width: 10vw;
+
+/* Body/Header stuff */
+
+label {
+  color: #aaa;
 }
-.projTitle {
+
+.shopping-cart {
+  padding: 3rem;
+}
+
+/* Column headers */
+.column-labels label {
+  padding-bottom: 15px;
+  border-bottom: 2px solid black;
+}
+.column-labels .product-image, .column-labels .product-details, .column-labels .product-removal {
+  text-indent: -9999px;
+}
+
+/* Product entries */
+.product {
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid black;
+  background-color: #CCCCCC;
+}
+.product .product-image {
   text-align: center;
-  font-size: 2em;
-  padding: 1em 0;
-  border-bottom: 1px solid #dadada;
+  padding-top: 1rem;
 }
-.projTitle span {
-  font-family: 'Potta One', cursive; 
-  font-weight: normal;
-  font-style: italic;
-  text-transform: lowercase;
+.product .product-image img {
+  width: 100px;
+}
+.product .product-details .product-title {
+  margin-right: 20px;
+  padding-top: 3rem;
+}
+.product .product-details .product-description {
+  margin: 5px 20px 5px 0;
+  line-height: 1.4em;
+}
+.product .product-quantity input {
+  width: 40px;
+}
+.product .remove-product {
+  border: 0;
+  padding: 6px 12px;
+  background-color: #af255e;
   color: #CCCCCC;
+  font-family: 'Kdam Thmor Pro', sans-serif;
+  font-size: 15px;
+  border-radius: 3px;
+}
+.product .remove-product:hover {
+  background-color: #6b254b;
+}
+.product .product-line-price{
+  padding-right: 2rem;
 }
 
-.heading {
-  padding: 1em 0;
-  border-bottom: 1px solid #d0d0d0;
-}
-.heading h1 {
-  color: #CCCCCC;
-  font-family: 'Potta One', cursive; 
-  font-size: 2em;
-  float: left;
-}
-.heading a.continue:link, .heading a.continue:visited {
-  font-family: 'Kdam Thmor Pro', sans-serif;
-  text-decoration: none;
-  letter-spacing: -0.015em;
-  font-size: 0.75em;
-  padding: 1em;
-  color: #CCCCCC;
-  background: #12A098;
-  font-weight: bold;
-  border-radius: 50px;
+/* Totals section */
+.totals .totals-item {
   float: right;
-  text-align: right;
-  -webkit-transition: all 0.25s linear;
-  -moz-transition: all 0.25s linear;
-  -ms-transition: all 0.25s linear;
-  -o-transition: all 0.25s linear;
-  transition: all 0.25s linear;
+  clear: both;
+  width: 100%;
+  margin-bottom: 10px;
 }
-.heading a.continue:after {
+.totals .totals-item label {
+  float: left;
+  clear: both;
+  width: 90%;
+  text-align: right;
+}
+.totals .totals-item .totals-value {
+  float: right;
+  width: 10%;
+  text-align: right;
+  color: #CCCCCC;
+  padding-right: 1rem;
+}
+.radioImg{
+  width: 5vw;
+}
+.checkoutDiv{
+  margin-right: 2rem;
+}
+.checkout {
+  float: right;
+  border: 0;
+  margin-top: 20px;
+  padding: 6px 30px;
+  background-color: #12A098;
+  color: #CCCCCC;
+  font-size: 25px;
+  border-radius: 3px;
+}
+.checkout:after {
   content: "\276f";
-  padding: 0.5em;
+  padding: .5em;
   position: relative;
   right: 0;
   -webkit-transition: all 0.15s linear;
@@ -162,266 +294,176 @@ img {
   -o-transition: all 0.15s linear;
   transition: all 0.15s linear;
 }
-.heading a.continue:hover, .heading a.continue:focus, .heading a.continue:active {
-  background: #cb2d6fa4;
+
+.checkout:hover {
+  background-color: #6b254b;
 }
-.heading a.continue:hover:after, .heading a.continue:focus:after, .heading a.continue:active:after {
-  right: -10px;
+.checkout:hover::after{
+  right: -15px;
 }
 
-.tableHead {
-  display: table;
-  width: 100%;
-  font-family: 'Kdam Thmor Pro', sans-serif;
-  font-size: 0.75em;
-  color: #CCCCCC;
-  padding-right: 3em;
-}
-.tableHead li {
-  display: table-cell;
-  padding: 1em 0;
-  text-align: center;
-}
-.tableHead li.prodHeader {
-  text-align: left;
-}
-
-.cart {
-  padding: 1em 0;
-  color: #777;
-}
-.cart .items {
-  display: block;
-  width: 100%;
-  padding: 1.5em;
-  border-bottom: 1px solid #fafafa;
-}
-.cart .items.even {
-  background: #fafafa;
-}
-.cart .items .infoWrap {
-  display: table;
-  width: 100%;
-}
-.cart .items .cartSection {
-  display: table-cell;
-  vertical-align: middle;
-}
-.cart .items .cartSection .itemNumber {
-  font-size: 0.75em;
-  color: #777;
-  margin-bottom: 0.5em;
-}
-.cart .items .cartSection h3 {
-  font-size: 1em;
-  font-family: 'Kdam Thmor Pro', sans-serif;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 0.025em;
-}
-.cart .items .cartSection p {
-  padding-right: 4rem;
-  display: inline-block;
-  font-size: 0.85em;
-  color: #777777;
-  font-family: 'Kdam Thmor Pro', sans-serif;
-}
-.cart .items .cartSection p .quantity {
-  font-weight: bold;
-  color: #333;
-}
-.cart .items .cartSection .itemImg {
-  width: 4em;
-  float: left;
-}
-.cart .items .cartSection.qtyWrap, .cart .items .cartSection.prodTotal {
-  text-align: center;
-}
-.cart .items .cartSection.qtyWrap p, .cart .items .cartSection.prodTotal p {
-  font-weight: bold;
-  font-size: 1.25em;
-}
-.cart .items .cartSection .itemImg {
-  width: 8em;
-  display: inline;
-  padding-right: 1em;
-}
-
-a.remove {
-  text-decoration: none;
-  color: #501F3A;
-  font-weight: bold;
-  background: #e0e0e0;
-  padding: 0.5em;
-  font-size: 1rem;
-  display: inline-block;
-  border-radius: 100%;
-  line-height: 0.85;
-  -webkit-transition: all 0.25s linear;
-  -moz-transition: all 0.25s linear;
-  -ms-transition: all 0.25s linear;
-  -o-transition: all 0.25s linear;
-  transition: all 0.25s linear;
-}
-a.remove:hover {
-  background: #501F3A;
-  color: #e0e0e0;
-}
-
-.continue, .continue:link, .continue:visited{
-  text-decoration: none;
-  font-family: 'Kdam Thmor Pro', sans-serif;
-  letter-spacing: -0.015em;
-  font-size: 1em;
-  padding: 1em 3em;
-  color: #CCCCCC;
-  background: #12A098;
-  font-weight: bold;
-  border-radius: 50px;
-  float: right;
-  text-align: right;
-  -webkit-transition: all 0.25s linear;
-  -moz-transition: all 0.25s linear;
-  -ms-transition: all 0.25s linear;
-  -o-transition: all 0.25s linear;
-  transition: all 0.25s linear;
-}
-.continue:after {
-  content: "\276f";
-  padding: 0.5em;
-  position: relative;
-  right: 0;
-  -webkit-transition: all 0.15s linear;
-  -moz-transition: all 0.15s linear;
-  -ms-transition: all 0.15s linear;
-  -o-transition: all 0.15s linear;
-  transition: all 0.15s linear;
-}
-.continue:hover:after, .continue:focus:after, .continue:active:after {
-  right: -10px;
-}
-a.continue:hover, a.continue:focus, a.continue:active {
-    background: #cb2d6fa4;
-  }
-
-/* TOTAL AND CHECKOUT  */
-.subtotal {
-  float: right;
-  width: 40%;
-}
-.subtotal .totalRow {
-  padding: 0.5em;
-  text-align: right;
-}
-.subtotal .totalRow.final {
-  font-size: 1.25em;
-  font-weight: bold;
-}
-.subtotal .totalRow span {
-  display: inline-block;
-  padding: 0 0 0 1em;
-  text-align: right;
-}
-.subtotal .totalRow .label {
-  font-family: 'Kdam Thmor Pro', sans-serif;
-  font-size: 0.85em;
-  text-transform: uppercase;
-  color: #CCCCCC;
-}
-.subtotal .totalRow .value {
-  letter-spacing: -0.025em;
-  width: 35%;
-  color: white;
-}
-#inputsCarrito{
-    margin-left: 10.5rem;
-}
-.foto_radio{
-  width: 60px;
-}
-
-
-@media only screen and (max-width: 570px){
-    #logoCarrito{
-        width: 20vh !important;
-    }
-
-  .heading{
-    font-size: 0.6em !important;
-  }
-  .prodHeader{
-    width: 35%;
-  }
-  .cantidadCarrito{
-    width: 40%;
-    padding-left: 2em !important; 
-  }
-  .totalCarrito{
-    width: 20%;
-  }
-  .quitarCarrito{
-    width: 5%;
-  }
-
-
-}
-@media only screen and (max-width: 630px) {
-  .wrap {
-    width: 98%;
-    padding: 2% 0;
-  }
-
-  .projTitle {
-    font-size: 1.5em;
-    padding: 10% 5%;
-  }
-
-  .heading {
-    padding: 1em;
-    font-size: 90%;
-  }
-
-  .cart .items .cartSection {
-    width: 90%;
-    display: block;
-    float: left;
-  }
-  .cart .items .cartSection.qtyWrap {
-    width: 10%;
-    text-align: center;
-    padding: 0.5em 0;
-    float: right;
-  }
-  .cart .items .cartSection.qtyWrap:before {
-    content: "QTY";
-    display: block;
-    font-family: 'Kdam Thmor Pro', sans-serif;
-    padding: 0.25em;
-    font-size: 0.75em;
-  }
-  .cart .items .cartSection.prodTotal, .cart .items .cartSection.removeWrap {
+/* Make adjustments for tablet */
+@media screen and (max-width: 650px) {
+  .column-labels {
     display: none;
   }
-  .cart .items .cartSection .itemImg {
-    width: 25%;
+  .product-price {
+    clear: both;
+    width: 70px;
+    padding-left: 0.5rem;
   }
-
-  .promoCode,
-  .subtotal {
-    width: 100%;
+  .product-quantity {
+    width: 100px;
   }
-
-  a.btn.continue {
-    width: 100%;
-    text-align: center;
+  .product-quantity input {
+    margin-left: 10px;
+  }
+  .product-quantity:before {
+    content: 'x';
+  }
+  .product-removal {
+    width: auto;
+  }
+  .product-line-price {
+    float: right;
+    width: 70px;
   }
 }
 
-@media(max-width: 1280px){
-  #logoCarrito{
+
+
+
+/* MENU HAMBURGUESA */
+
+#hamburguesitas{
+  display: flex;
+}
+
+@media(max-width: 570px){
+  .nav{
+      display: none;
+      }
+  body{
+    width: 100vw;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1200 800'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='600' y1='25' x2='600' y2='777'%3E%3Cstop offset='0' stop-color='%230F292F'/%3E%3Cstop offset='1' stop-color='%23501F3A'/%3E%3C/linearGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='650' y1='25' x2='650' y2='777'%3E%3Cstop offset='0' stop-color='%230d2a34'/%3E%3Cstop offset='1' stop-color='%235a2140'/%3E%3C/linearGradient%3E%3ClinearGradient id='c' gradientUnits='userSpaceOnUse' x1='700' y1='25' x2='700' y2='777'%3E%3Cstop offset='0' stop-color='%230c2b38'/%3E%3Cstop offset='1' stop-color='%23652345'/%3E%3C/linearGradient%3E%3ClinearGradient id='d' gradientUnits='userSpaceOnUse' x1='750' y1='25' x2='750' y2='777'%3E%3Cstop offset='0' stop-color='%230f2b3d'/%3E%3Cstop offset='1' stop-color='%236f254b'/%3E%3C/linearGradient%3E%3ClinearGradient id='e' gradientUnits='userSpaceOnUse' x1='800' y1='25' x2='800' y2='777'%3E%3Cstop offset='0' stop-color='%23142b41'/%3E%3Cstop offset='1' stop-color='%237a2650'/%3E%3C/linearGradient%3E%3ClinearGradient id='f' gradientUnits='userSpaceOnUse' x1='850' y1='25' x2='850' y2='777'%3E%3Cstop offset='0' stop-color='%231c2a44'/%3E%3Cstop offset='1' stop-color='%23852855'/%3E%3C/linearGradient%3E%3ClinearGradient id='g' gradientUnits='userSpaceOnUse' x1='900' y1='25' x2='900' y2='777'%3E%3Cstop offset='0' stop-color='%23252946'/%3E%3Cstop offset='1' stop-color='%2390295a'/%3E%3C/linearGradient%3E%3ClinearGradient id='h' gradientUnits='userSpaceOnUse' x1='950' y1='25' x2='950' y2='777'%3E%3Cstop offset='0' stop-color='%232e2846'/%3E%3Cstop offset='1' stop-color='%239c2a5e'/%3E%3C/linearGradient%3E%3ClinearGradient id='i' gradientUnits='userSpaceOnUse' x1='1000' y1='25' x2='1000' y2='777'%3E%3Cstop offset='0' stop-color='%23372646'/%3E%3Cstop offset='1' stop-color='%23a72b63'/%3E%3C/linearGradient%3E%3ClinearGradient id='j' gradientUnits='userSpaceOnUse' x1='1050' y1='25' x2='1050' y2='777'%3E%3Cstop offset='0' stop-color='%23402443'/%3E%3Cstop offset='1' stop-color='%23b32c67'/%3E%3C/linearGradient%3E%3ClinearGradient id='k' gradientUnits='userSpaceOnUse' x1='1100' y1='25' x2='1100' y2='777'%3E%3Cstop offset='0' stop-color='%2349213f'/%3E%3Cstop offset='1' stop-color='%23bf2c6b'/%3E%3C/linearGradient%3E%3ClinearGradient id='l' gradientUnits='userSpaceOnUse' x1='1150' y1='25' x2='1150' y2='777'%3E%3Cstop offset='0' stop-color='%23501F3A'/%3E%3Cstop offset='1' stop-color='%23CB2D6F'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg fill-opacity='0.12'%3E%3Crect fill='url(%23a)' width='1200' height='800'/%3E%3Crect fill='url(%23b)' x='100' width='1100' height='800'/%3E%3Crect fill='url(%23c)' x='200' width='1000' height='800'/%3E%3Crect fill='url(%23d)' x='300' width='900' height='800'/%3E%3Crect fill='url(%23e)' x='400' width='800' height='800'/%3E%3Crect fill='url(%23f)' x='500' width='700' height='800'/%3E%3Crect fill='url(%23g)' x='600' width='600' height='800'/%3E%3Crect fill='url(%23h)' x='700' width='500' height='800'/%3E%3Crect fill='url(%23i)' x='800' width='400' height='800'/%3E%3Crect fill='url(%23j)' x='900' width='300' height='800'/%3E%3Crect fill='url(%23k)' x='1000' width='200' height='800'/%3E%3Crect fill='url(%23l)' x='1100' width='100' height='800'/%3E%3C/g%3E%3C/svg%3E");
+;
+  }
+  header{
+    width: 100vw;
+  }
+  main{
+    width: 100%;
+    height: 90vh;
+    margin: 10vh 0 0 0;
+  }
+  p{
+    color: #CCCCCC;
+  }   
+  h1{
+    padding: 0;
+    padding-top: 1rem;
+    text-align: center;
+    margin: 0;
+    font-size: 1.5rem;
+  } 
+  #divisorBurgers{
+    margin: 1rem 1rem 1rem 1rem;
+  }
+  #hamburguesa{
+      display: contents;
+      color: #0F292F;
+      }
+  #navbarToggleExternalContent{
+      color: #0F292F;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1200 800'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='600' y1='25' x2='600' y2='777'%3E%3Cstop offset='0' stop-color='%230F292F'/%3E%3Cstop offset='1' stop-color='%23501F3A'/%3E%3C/linearGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='650' y1='25' x2='650' y2='777'%3E%3Cstop offset='0' stop-color='%230d2a34'/%3E%3Cstop offset='1' stop-color='%235a2140'/%3E%3C/linearGradient%3E%3ClinearGradient id='c' gradientUnits='userSpaceOnUse' x1='700' y1='25' x2='700' y2='777'%3E%3Cstop offset='0' stop-color='%230c2b38'/%3E%3Cstop offset='1' stop-color='%23652345'/%3E%3C/linearGradient%3E%3ClinearGradient id='d' gradientUnits='userSpaceOnUse' x1='750' y1='25' x2='750' y2='777'%3E%3Cstop offset='0' stop-color='%230f2b3d'/%3E%3Cstop offset='1' stop-color='%236f254b'/%3E%3C/linearGradient%3E%3ClinearGradient id='e' gradientUnits='userSpaceOnUse' x1='800' y1='25' x2='800' y2='777'%3E%3Cstop offset='0' stop-color='%23142b41'/%3E%3Cstop offset='1' stop-color='%237a2650'/%3E%3C/linearGradient%3E%3ClinearGradient id='f' gradientUnits='userSpaceOnUse' x1='850' y1='25' x2='850' y2='777'%3E%3Cstop offset='0' stop-color='%231c2a44'/%3E%3Cstop offset='1' stop-color='%23852855'/%3E%3C/linearGradient%3E%3ClinearGradient id='g' gradientUnits='userSpaceOnUse' x1='900' y1='25' x2='900' y2='777'%3E%3Cstop offset='0' stop-color='%23252946'/%3E%3Cstop offset='1' stop-color='%2390295a'/%3E%3C/linearGradient%3E%3ClinearGradient id='h' gradientUnits='userSpaceOnUse' x1='950' y1='25' x2='950' y2='777'%3E%3Cstop offset='0' stop-color='%232e2846'/%3E%3Cstop offset='1' stop-color='%239c2a5e'/%3E%3C/linearGradient%3E%3ClinearGradient id='i' gradientUnits='userSpaceOnUse' x1='1000' y1='25' x2='1000' y2='777'%3E%3Cstop offset='0' stop-color='%23372646'/%3E%3Cstop offset='1' stop-color='%23a72b63'/%3E%3C/linearGradient%3E%3ClinearGradient id='j' gradientUnits='userSpaceOnUse' x1='1050' y1='25' x2='1050' y2='777'%3E%3Cstop offset='0' stop-color='%23402443'/%3E%3Cstop offset='1' stop-color='%23b32c67'/%3E%3C/linearGradient%3E%3ClinearGradient id='k' gradientUnits='userSpaceOnUse' x1='1100' y1='25' x2='1100' y2='777'%3E%3Cstop offset='0' stop-color='%2349213f'/%3E%3Cstop offset='1' stop-color='%23bf2c6b'/%3E%3C/linearGradient%3E%3ClinearGradient id='l' gradientUnits='userSpaceOnUse' x1='1150' y1='25' x2='1150' y2='777'%3E%3Cstop offset='0' stop-color='%23501F3A'/%3E%3Cstop offset='1' stop-color='%23CB2D6F'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg fill-opacity='0.12'%3E%3Crect fill='url(%23a)' width='1200' height='800'/%3E%3Crect fill='url(%23b)' x='100' width='1100' height='800'/%3E%3Crect fill='url(%23c)' x='200' width='1000' height='800'/%3E%3Crect fill='url(%23d)' x='300' width='900' height='800'/%3E%3Crect fill='url(%23e)' x='400' width='800' height='800'/%3E%3Crect fill='url(%23f)' x='500' width='700' height='800'/%3E%3Crect fill='url(%23g)' x='600' width='600' height='800'/%3E%3Crect fill='url(%23h)' x='700' width='500' height='800'/%3E%3Crect fill='url(%23i)' x='800' width='400' height='800'/%3E%3Crect fill='url(%23j)' x='900' width='300' height='800'/%3E%3Crect fill='url(%23k)' x='1000' width='200' height='800'/%3E%3Crect fill='url(%23l)' x='1100' width='100' height='800'/%3E%3C/g%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-size: cover;
+    text-align: right;
+    height: 100vh;
+    }
+  #menu_hamburguesa{
+    display: contents;
+    width: 100vw;
+    }
+  #container_fluid{
+    width: 100vw;
+    height: 10vh;
+    background-color: #CCCCCC;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 3%;
+    position: fixed;
+    z-index: 10;
+    }
+  #container_fluid img{
+    height: 9vh;
+    }
+  #carritoHamburguesa{
+    margin-left: 15%;
+    }
+  #container_fluid #carritoHamburguesa {
+    height: 5vh;
+    }
+  #boton_hamburguesa{
+    padding: 3px;
+    color: #0F292F;
+    font-size: xx-large;
+    } 
+  #hamburguesitas{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    }
+  #hamburguesitas div{
+    height: 12vh;
+    align-items: center;
+    margin-top: 15%;
+    }
+  #hamburguesitas img{
+    height: 80%;
+    width: auto;
+    }
+  .navbar-toggler-icon{
+    background-color: #0F292F;
+    }
+  .shopping-cart{
+    margin: 0 1rem;
+    padding: 0;
+  }
+  .product .product-image img{
+    width: 50vw;
+    image-rendering: optimizeQuality;
+    margin-left: 5rem;
+  }
+  .product-title{
+    display: none;
+  }
+  .product-description{
+    display: none;
+  }
+  .totals{
+    margin: 0;
+    padding: 0;
+    padding-right: 3rem;
+  }
+  .totals .totals-item label {
+    width: auto;
+  }
+  .totals .totals-item .totals-value {
+    width: auto;
+  }
+  .radioImg{
     width: 15vw;
   }
-  .cantidadCarrito{
-    padding-right: 6rem !important;
+  .checkoutDiv{
+    padding-right: 1rem;
+  }
+  #video{
+    margin: 0;
+    margin-top: 1rem;
+    width: 100vw;
   }
 }
