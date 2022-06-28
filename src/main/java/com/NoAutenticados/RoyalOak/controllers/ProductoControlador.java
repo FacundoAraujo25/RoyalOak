@@ -60,7 +60,6 @@ public class ProductoControlador {
         if(subTipo.toString().isEmpty()){
             return new ResponseEntity<>("Faltan datos: SubTipo", HttpStatus.FORBIDDEN);
         }
-        String[] ingredientesArray = ingredientes.split(" ");
         Producto producto = new Producto(nombre, descripcion, imagen,stock, precio, tipo, subTipo);
         producto.setActivo(activo);
         productoServicio.guardarProducto(producto);
@@ -111,7 +110,6 @@ public class ProductoControlador {
             return new ResponseEntity<>("Faltan datos: SubTipo", HttpStatus.FORBIDDEN);
         }
 
-        String[] ingredientesArray = ingredientes.split(" ");
 
         producto.setNombre(nombre);
         producto.setDescripcion(descripcion);
