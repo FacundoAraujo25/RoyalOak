@@ -533,6 +533,15 @@ a:hover {
     margin-left: 0;
   }
 
+   #seccion-aleatoria  {
+        width: 100%;
+        margin-left: 0% !important;
+    }
+
+   #random   {
+        width: 100%;
+        margin-left: 0% !important;
+    }
 }
 
 /* MENU HAMBURGUESA */
@@ -594,3 +603,63 @@ a:hover {
     background-color: #0F292F;
     }
 }    */
+
+/* Estilos pagina random*/
+
+#random {
+    color: #0F292F;
+    width: 92%;
+    margin-left: 8%;
+    height: 100vh;
+    /* display: flex;
+    flex-direction: column;
+    align-items: center; */
+}
+
+#random img{
+    max-width: 150px;
+    max-height: 200px;
+    margin-left: 0% !important;
+    display: flex;
+    justify-content: center;
+}
+
+#random .texto{
+    max-width: 20rem;
+}
+
+#seccion-aleatoria {
+    margin-left: 8%;
+
+}
+
+.card{
+    background-color: #501F3A;
+    min-width: 12rem;
+}
+
+.card img{
+    margin-top: 0rem !important;
+    width: 100px !important;
+    height: 100px !important;
+    padding: 1rem;
+}
+
+.btn-verificar {
+    background-color: #0F292F;
+    
+}
+
+#seccion-aleatoria h2{
+    color: #0F292F;
+}
+
+#seccion-aleatoria img{
+    margin-left: 0% !important;
+}
+
+.btn-otravez {
+    background-color:  #501F3A;
+}
+
+/* #selccionAleatoria .producto */

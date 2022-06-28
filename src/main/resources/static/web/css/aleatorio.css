@@ -594,3 +594,39 @@ a:hover {
     background-color: #0F292F;
     }
 }    */
+
+/* Estilos pagina random*/
+
+#random {
+    color: #0F292F;
+    width: 92%;
+    margin-left: 8%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#random img{
+    width: 10%;
+    height: 30%;
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+}
+
+#comestible{
+    background-color: #a05712;
+    width: 10rem;
+    height: 10rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#seccionAleatoria {
+    margin-left: 8%;
+
+}
+
+/* #selccionAleatoria .producto */
