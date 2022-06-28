@@ -42,7 +42,7 @@ public class FacturaControlador {
         Producto producto;
 
         if(cliente.getFacturas().stream().filter(fact -> fact.getEstadoFactura() == EstadoFactura.CARRITO).count()==1) {
-            factura = facturaServicio.getFacturaEnCarrito();
+            factura = facturaServicio.getFacturaEnCarrito(authentication);
         }else{
             factura = new Factura();
             factura.setEstadoFactura(EstadoFactura.CARRITO);
@@ -57,7 +57,7 @@ public class FacturaControlador {
         }
         factura.setCliente(cliente);
         facturaServicio.guardarFactura(factura);
-        productoServicio.guardarProducto(producto);
+//        productoServicio.guardarProducto(producto);
         ClienteProductoPedido clienteProductoPedido = new ClienteProductoPedido(cantidad, factura, producto);
         clienteProductoPedidoRepositorio.save(clienteProductoPedido);
         return new ResponseEntity<>(HttpStatus.CREATED);
@@ -81,6 +81,7 @@ public class FacturaControlador {
         }
 
         Producto producto = factura.getProducto().stream().filter(prod -> prod.getId()== idProducto).findFirst().orElse(null);
+
         Objects.requireNonNull(factura.getClienteProductoPedidos().stream().filter(pedido -> pedido.getProducto() == producto).findFirst().orElse(null)).setCantidad(nuevaCantidad);
         productoServicio.guardarProducto(producto);
         facturaServicio.guardarFactura(factura);
