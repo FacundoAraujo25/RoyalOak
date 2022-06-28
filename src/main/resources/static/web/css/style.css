@@ -528,8 +528,8 @@ a:hover {
 /* SWEET ALERT */
 .swal2-popup{
     
-    background-image: linear-gradient(to bottom right,#225f6d, #6b1a3c) !important;
-    color: #CCCCCC !important;
+    background-color: #CCCCCC;
+    color: black;
     font-family: Arial, Helvetica, sans-serif;
 }
 
