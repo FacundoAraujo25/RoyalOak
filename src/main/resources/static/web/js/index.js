@@ -59,28 +59,24 @@ const app = Vue.createApp({
         salir(){
             Swal.fire({
                 title:'¿Estas seguro que quieres cerrar sesion?',
-                text: 'Si cierras sesion solo podras ver nuestra seccio de productos pero no podras ordenar tu compra',
+                text: 'Si cierras sesion solo podras ver nuestra seccion de productos pero no podras ordenar tu compra',
                 popup: '',
                 icon:'warning',
                 confirmButtonColor: '#12A098',
                 cancelButtonColor: '#d33',
                 confirmButtonText: true,
-                showCancelButton: false,
                 confirmButtonText: 'Si, salir',
-                showCancelButton: 'Volver',
+                showCancelButton: true,
+                cancelButtonText: 'No, volver!',
                 
-                footer: '<a href="">Uraaaaaaaaaaaaaaaaaaaaaaa</a>'
+                
                 })
-              .then((result) => {
-                if (result.isConfirmed) {
-                    axios.post('/api/logout')
-                }
-              })
-            .then(response =>{
-                setTimeout(function () {
-                    window.location.href = './login.html'
-                }, 1000)
-            })
+                .then((result) => {
+                    if (result.isConfirmed) {
+                        axios.post('/api/logout')
+                        window.location.href = './login.html'
+                    }
+                  })
         }
 
         
