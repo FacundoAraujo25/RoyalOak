@@ -51,11 +51,11 @@
                             <p>Royal Oak</p>
                         </div>
                         <div>
-                            <a  href=""><img src="media/Register.webp"></a>
+                            <a  href="./login.html"><img src="media/Register.webp"></a>
                             <p>Registrarme</p>
                         </div>
                         <div>
-                            <a  href=""><img src="media/cerrarSesion.png"></a>
+                            <a @click="salir"><img src="media/cerrarSesion.png"></a>
                             <p>Salir</p>
                         </div>
                     </div>
@@ -83,7 +83,7 @@
                                         <a href="#"><img src="./media/logo-royaloak.png" alt="Logo"></a>
                                 </div>
                                 <div id="menu">
-                                        <a href="#container"><img class="scale-up-center" id="iconos"
+                                        <a href=#divisorBurgers><img class="scale-up-center" id="iconos"
                                                         src="media/iconoBurger.png" alt="menu"></a>
                                         <p>Menu</p>
                                 </div>
@@ -98,12 +98,12 @@
                                         <p>Royal</p>
                                 </div>
                                 <div>
-                                        <a href="login.html"><img class="scale-up-center " src="media/Register.webp"
+                                        <a href="./login.html"><img class="scale-up-center " src="media/Register.webp"
                                                         alt=""></a>
                                         <p>Registro</p>
                                 </div>
                                 <div id="salir">
-                                        <a href=""><img class="scale-up-center" src="media/cerrarSesion.png" alt=""></a>
+                                        <a @click="salir"><img class="scale-up-center" src="media/cerrarSesion.png" alt=""></a>
                                         <p>Salir</p>
                                 </div>
                         </div>
@@ -162,7 +162,7 @@
 
                 
                       
-
+                <!-- DIVISOR HAMBURGUESAS -->
                 <div data-aos="fade-up" class="divisor d-flex">
                         <div class="tipoDeComida">
                                 <img src="media/logo-royaloak-2.png" alt="">
@@ -172,6 +172,7 @@
                                 
                         </div>
                 </div>
+                <!-- FIN DIVISOR HAMBURGUESAS -->
 
                 <!-- SECCION HAMBURGUESAS -->
                 <section data-aos="fade-up"  class="section-products">
@@ -184,35 +185,35 @@
                                     </div>
                             </div>
                     </div> -->
-                                <div  class="row">
+                                <div   class="row">
                                         <!-- Single Product -->
-                                        <div class="col-md-6 col-lg-4 col-xl-3">
-                                                <div id="product-1" class="single-product">
+                                        <div v-for="hamburguesa in hamburguesas" class="col-md-6 col-lg-4 col-xl-3">
+                                                <div {{hamburguesa.imagen}} id="product-1" class="single-product">
                                                         <div class="part-1">
                                                                 <ul>
-                                                                        <li><a href="#"><i
-                                                                                                class="fas fa-shopping-cart"></i></a>
-                                                                        </li>
-                                                                        <li><a href="#"><i class="fas fa-heart"></i></a>
-                                                                        </li>
-                                                                        <li><a href="#"><i class="fas fa-plus"></i></a>
-                                                                        </li>
-                                                                        <li><a href="#"><i
-                                                                                                class="fas fa-seedling"></i></a>
-                                                                        </li>
-                                                                        <li @click="mostrarIngredientes"><a href="#"><i
-                                                                                                class="fas fa-info"></i></a>
-                                                                        </li>
+                                                                        <li><a href="#"><i class="fa-solid fa-cart-plus"></i></a></li>
+                                                                        
+                                                                        <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                                                                        
+                                                                        <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                                                                        
+                                                                        <li><a href="#"><iclass="fas fa-seedling"></i></a></li>
+                                                                        
+                                                                        <li @click="mostrarIngredientes"><a href="#"><i class="fas fa-info"></i></a></li>
+                                                                                                
+                                                                        
                                                                 </ul>
 
                                                                 
 
                                                         </div>
                                                         <div class="part-2">
-                                                                <h3 class="product-title">Asadas y furiosas</h3>
+                                                                <h3 class="product-title">{{hamburguesa.nombre}}</h3>
+                                                                <p>{{hamburguesa.descripcion}}</p>
                                                                 <h4 class="product-old-price">$79.99</h4>
-                                                                <h4 class="product-price">$49.99</h4>
+                                                                <h4 class="product-price">{{hamburguesa.precio}}</h4>
                                                         </div>
+                                                        
                                                 </div>
                                         </div>
                                         <!-- Single Product -->
@@ -388,7 +389,9 @@
                                 </div>
                         </div>
                 </section>
+                <!-- FIN SECCION HAMBURGUESAS -->
 
+                <!-- DIVISOR BEBIDAS -->
                 <div data-aos="fade-up" class="divisor d-flex">
                         <div class="tipoDeComida">
                                 <img src="media/logo-royaloak-2.png" alt="">
@@ -402,6 +405,7 @@
                                 </video>
                         </div>
                 </div>
+                <!-- FIN DIVISOR BEBIDAS -->
 
                 <!-- SECCION BEBIDAS -->
                 <section data-aos="fade-up" class="section-products">
@@ -412,7 +416,7 @@
                                         <h2>Nuestras Bebidas</h2>
                                 </div>
                         </div>
-                </div> -->
+                        </div> -->
                                 <div class="row">
                                         <!-- Single Product -->
                                         <div class="col-md-6 col-lg-4 col-xl-3">
@@ -528,7 +532,9 @@
                                 </div>
                         </div>
                 </section>
+                <!-- FIN SECCION BEBIDAS -->
 
+                <!-- DIVISOR PICADAS -->
                 <div data-aos="fade-up" class="divisor d-flex">
                         <div class="tipoDeComida">
                                 <img src="media/logo-royaloak-2.png" alt="">
@@ -538,6 +544,273 @@
                                 
                         </div>
                 </div>
+                <!-- FIN DIVISOR PICADAS -->
+                <!-- SECCION PICADAS -->
+                <section data-aos="fade-up" class="section-products">
+                        <div class="container">
+                                <!-- <div class="row justify-content-center text-center">
+                        <div class="col-md-8 col-lg-6">
+                                <div class="header">
+                                        <h2>Nuestras Bebidas</h2>
+                                </div>
+                        </div>
+                        </div> -->
+                                <div class="row">
+                                        <!-- Single Product -->
+                                        <div class="col-md-6 col-lg-4 col-xl-3">
+                                                <div id="product-13" class="single-product">
+                                                        <div class="part-1">
+                                                                <ul>
+                                                                        <li><a href="#"><i
+                                                                                                class="fas fa-shopping-cart"></i></a>
+                                                                        </li>
+                                                                        <li><a href="#"><i class="fas fa-heart"></i></a>
+                                                                        </li>
+                                                                        <li><a href="#"><i class="fas fa-plus"></i></a>
+                                                                        </li>
+                                                                        <li><a href="#"><i
+                                                                                                class="fas fa-seedling"></i></a>
+                                                                        </li>
+                                                                </ul>
+                                                        </div>
+                                                        <div class="part-2">
+                                                                <h3 class="product-title">Coca Cola</h3>
+                                                                <p>Coca cola tradicional Lorem ipsum dolor sit amet
+                                                                        consectetur, adipisicing elit. Natus, dolor
+                                                                        porro consectetur dolorem ita</p>
+                                                                <h4 class="product-old-price">$79.99</h4>
+                                                                <h4 class="product-price">$49.99</h4>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <!-- Single Product -->
+                                        <div class="col-md-6 col-lg-4 col-xl-3">
+                                                <div id="product-14" class="single-product">
+                                                        <div class="part-1">
+                                                                <span class="discount">15% off</span>
+                                                                <ul>
+                                                                        <li><a href="#"><i
+                                                                                                class="fas fa-shopping-cart"></i></a>
+                                                                        </li>
+                                                                        <li><a href="#"><i class="fas fa-heart"></i></a>
+                                                                        </li>
+                                                                        <li><a href="#"><i class="fas fa-plus"></i></a>
+                                                                        </li>
+                                                                        <li><a href="#"><i
+                                                                                                class="fas fa-seedling"></i></a>
+                                                                        </li>
+                                                                </ul>
+                                                        </div>
+                                                        <div class="part-2">
+                                                                <h3 class="product-title">Cerveza</h3>
+                                                                <p>Cerveza Lorem ipsum dolor sit amet, consectetur
+                                                                        adipisicing elit. Ad facilis officiis pariatur
+                                                                        excepturi sed fugit iusto quod, esse quas
+                                                                        corporis.</p>
+                                                                <h4 class="product-price">$49.99</h4>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <!-- Single Product -->
+                                        <div class="col-md-6 col-lg-4 col-xl-3">
+                                                <div id="product-15" class="single-product">
+                                                        <div class="part-1">
+                                                                <ul>
+                                                                        <li><a href="#"><i
+                                                                                                class="fas fa-shopping-cart"></i></a>
+                                                                        </li>
+                                                                        <li><a href="#"><i class="fas fa-heart"></i></a>
+                                                                        </li>
+                                                                        <li><a href="#"><i class="fas fa-plus"></i></a>
+                                                                        </li>
+                                                                        <li><a href="#"><i
+                                                                                                class="fas fa-seedling"></i></a>
+                                                                        </li>
+                                                                </ul>
+                                                        </div>
+                                                        <div class="part-2">
+                                                                <h3 class="product-title">Sprite</h3>
+                                                                <p>Sprite Lorem ipsum dolor sit amet, consectetur
+                                                                        adipisicing elit. Ad facilis officiis pariatur
+                                                                        excepturi sed fugit iusto quod, esse quas
+                                                                        corporis.</p>
+                                                                <h4 class="product-old-price">$79.99</h4>
+                                                                <h4 class="product-price">$49.99</h4>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <!-- Single Product -->
+                                        <div class="col-md-6 col-lg-4 col-xl-3">
+                                                <div id="product-16" class="single-product">
+                                                        <div class="part-1">
+                                                                <span class="new">new</span>
+                                                                <ul>
+                                                                        <li><a href="#"><i
+                                                                                                class="fas fa-shopping-cart"></i></a>
+                                                                        </li>
+                                                                        <li><a href="#"><i class="fas fa-heart"></i></a>
+                                                                        </li>
+                                                                        <li><a href="#"><i class="fas fa-plus"></i></a>
+                                                                        </li>
+                                                                        <li><a href="#"><i
+                                                                                                class="fas fa-seedling"></i></a>
+                                                                        </li>
+                                                                </ul>
+                                                        </div>
+                                                        <div class="part-2">
+                                                                <h3 class="product-title">Limonada</h3>
+                                                                <p>Cerveza Lorem ipsum dolor sit amet, consectetur
+                                                                        adipisicing elit. Ad facilis officiis pariatur
+                                                                        excepturi sed fugit iusto quod, esse quas
+                                                                        corporis.</p>
+                                                                <h4 class="product-price">$49.99</h4>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                </section>
+                <!-- FIN SECCION PICADAS -->
+
+                <!-- DIVISOR PIZZAS -->
+                <div data-aos="fade-up" class="divisor d-flex">
+                        <div class="tipoDeComida">
+                                <img src="media/logo-royaloak-2.png" alt="">
+                                <h3>Picadas</h3>
+                        </div>
+                        <div id="divisorBurgers4">
+                                
+                        </div>
+                </div>
+                <!-- FIN DIVISOR PIZZAS -->
+                <!-- SECCION PIZZAS -->
+                <section data-aos="fade-up" class="section-products">
+                        <div class="container">
+                                <!-- <div class="row justify-content-center text-center">
+                        <div class="col-md-8 col-lg-6">
+                                <div class="header">
+                                        <h2>Nuestras Bebidas</h2>
+                                </div>
+                        </div>
+                        </div> -->
+                                <div class="row">
+                                        <!-- Single Product -->
+                                        <div class="col-md-6 col-lg-4 col-xl-3">
+                                                <div id="product-17" class="single-product">
+                                                        <div class="part-1">
+                                                                <ul>
+                                                                        <li><a href="#"><i
+                                                                                                class="fas fa-shopping-cart"></i></a>
+                                                                        </li>
+                                                                        <li><a href="#"><i class="fas fa-heart"></i></a>
+                                                                        </li>
+                                                                        <li><a href="#"><i class="fas fa-plus"></i></a>
+                                                                        </li>
+                                                                        <li><a href="#"><i
+                                                                                                class="fas fa-seedling"></i></a>
+                                                                        </li>
+                                                                </ul>
+                                                        </div>
+                                                        <div class="part-2">
+                                                                <h3 class="product-title">Coca Cola</h3>
+                                                                <p>Coca cola tradicional Lorem ipsum dolor sit amet
+                                                                        consectetur, adipisicing elit. Natus, dolor
+                                                                        porro consectetur dolorem ita</p>
+                                                                <h4 class="product-old-price">$79.99</h4>
+                                                                <h4 class="product-price">$49.99</h4>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <!-- Single Product -->
+                                        <div class="col-md-6 col-lg-4 col-xl-3">
+                                                <div id="product-18" class="single-product">
+                                                        <div class="part-1">
+                                                                <span class="discount">15% off</span>
+                                                                <ul>
+                                                                        <li><a href="#"><i
+                                                                                                class="fas fa-shopping-cart"></i></a>
+                                                                        </li>
+                                                                        <li><a href="#"><i class="fas fa-heart"></i></a>
+                                                                        </li>
+                                                                        <li><a href="#"><i class="fas fa-plus"></i></a>
+                                                                        </li>
+                                                                        <li><a href="#"><i
+                                                                                                class="fas fa-seedling"></i></a>
+                                                                        </li>
+                                                                </ul>
+                                                        </div>
+                                                        <div class="part-2">
+                                                                <h3 class="product-title">Cerveza</h3>
+                                                                <p>Cerveza Lorem ipsum dolor sit amet, consectetur
+                                                                        adipisicing elit. Ad facilis officiis pariatur
+                                                                        excepturi sed fugit iusto quod, esse quas
+                                                                        corporis.</p>
+                                                                <h4 class="product-price">$49.99</h4>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <!-- Single Product -->
+                                        <div class="col-md-6 col-lg-4 col-xl-3">
+                                                <div id="product-19" class="single-product">
+                                                        <div class="part-1">
+                                                                <ul>
+                                                                        <li><a href="#"><i
+                                                                                                class="fas fa-shopping-cart"></i></a>
+                                                                        </li>
+                                                                        <li><a href="#"><i class="fas fa-heart"></i></a>
+                                                                        </li>
+                                                                        <li><a href="#"><i class="fas fa-plus"></i></a>
+                                                                        </li>
+                                                                        <li><a href="#"><i
+                                                                                                class="fas fa-seedling"></i></a>
+                                                                        </li>
+                                                                </ul>
+                                                        </div>
+                                                        <div class="part-2">
+                                                                <h3 class="product-title">Sprite</h3>
+                                                                <p>Sprite Lorem ipsum dolor sit amet, consectetur
+                                                                        adipisicing elit. Ad facilis officiis pariatur
+                                                                        excepturi sed fugit iusto quod, esse quas
+                                                                        corporis.</p>
+                                                                <h4 class="product-old-price">$79.99</h4>
+                                                                <h4 class="product-price">$49.99</h4>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <!-- Single Product -->
+                                        <div class="col-md-6 col-lg-4 col-xl-3">
+                                                <div id="product-20" class="single-product">
+                                                        <div class="part-1">
+                                                                <span class="new">new</span>
+                                                                <ul>
+                                                                        <li><a href="#"><i
+                                                                                                class="fas fa-shopping-cart"></i></a>
+                                                                        </li>
+                                                                        <li><a href="#"><i class="fas fa-heart"></i></a>
+                                                                        </li>
+                                                                        <li><a href="#"><i class="fas fa-plus"></i></a>
+                                                                        </li>
+                                                                        <li><a href="#"><i
+                                                                                                class="fas fa-seedling"></i></a>
+                                                                        </li>
+                                                                </ul>
+                                                        </div>
+                                                        <div class="part-2">
+                                                                <h3 class="product-title">Limonada</h3>
+                                                                <p>Cerveza Lorem ipsum dolor sit amet, consectetur
+                                                                        adipisicing elit. Ad facilis officiis pariatur
+                                                                        excepturi sed fugit iusto quod, esse quas
+                                                                        corporis.</p>
+                                                                <h4 class="product-price">$49.99</h4>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                </section>
+                <!-- FIN SECCION PIZZAS -->
+
+
 
 
 
