@@ -3,12 +3,14 @@ const app = Vue.createApp({
     //CREAR Y USAR VARIABLES
     data() {
         return {
-            
+            clientes:[],
+            hamburguesas:[],
+
         }
     },
 
     created(){
-
+        axios
     },
 
 
@@ -53,6 +55,33 @@ const app = Vue.createApp({
                 
               })
         },
+
+        salir(){
+            Swal.fire({
+                title:'¿Estas seguro que quieres cerrar sesion?',
+                text: 'Si cierras sesion solo podras ver nuestra seccio de productos pero no podras ordenar tu compra',
+                popup: '',
+                icon:'warning',
+                confirmButtonColor: '#12A098',
+                cancelButtonColor: '#d33',
+                confirmButtonText: true,
+                showCancelButton: false,
+                confirmButtonText: 'Si, salir',
+                showCancelButton: 'Volver',
+                
+                footer: '<a href="">Uraaaaaaaaaaaaaaaaaaaaaaa</a>'
+                })
+              .then((result) => {
+                if (result.isConfirmed) {
+                    axios.post('/api/logout')
+                }
+              })
+            .then(response =>{
+                setTimeout(function () {
+                    window.location.href = './login.html'
+                }, 1000)
+            })
+        }
 
         
         

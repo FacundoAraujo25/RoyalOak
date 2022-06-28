@@ -12,6 +12,7 @@ public class ClienteProductoPedidoDTO {
     private double precio;
     private double total;
     private String producto;
+    private long idProducto;
 
     public ClienteProductoPedidoDTO() {}
 
@@ -21,6 +22,7 @@ public class ClienteProductoPedidoDTO {
         this.producto = clienteProductoPedido.getProducto().getNombre();
         this.precio = clienteProductoPedido.getProducto().getPrecio();
         this.total = clienteProductoPedido.getTotal();
+        this.idProducto = clienteProductoPedido.getProducto().getId();
     }
 
     public long getId() {
@@ -52,5 +54,11 @@ public class ClienteProductoPedidoDTO {
     }
     public void setTotal(double total) {
         this.total = total;
+    }
+    public long getIdProducto() {
+        return idProducto;
+    }
+    public void setIdProducto(long idProducto) {
+        this.idProducto = idProducto;
     }
 }

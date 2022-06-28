@@ -3,6 +3,7 @@ package com.NoAutenticados.RoyalOak.controllers;
 import com.NoAutenticados.RoyalOak.dtos.ClienteDTO;
 import com.NoAutenticados.RoyalOak.evento.OnRegistrationSuccessEvent;
 import com.NoAutenticados.RoyalOak.models.Cliente;
+import com.NoAutenticados.RoyalOak.models.RolUsuario;
 import com.NoAutenticados.RoyalOak.repositories.ClienteRepositorio;
 import com.NoAutenticados.RoyalOak.services.ClienteServicio;
 import com.NoAutenticados.RoyalOak.utils.Utils;
@@ -10,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
@@ -104,6 +106,49 @@ public class ClienteControlador {
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
+    @PostMapping("/clientes/direcciones")
+    public ResponseEntity<Object> agregarDirecciones (@RequestParam String direccionNueva,
+                                                      Authentication authentication){
+
+        Cliente cliente = clienteServicio.findByEmail(authentication.getName());
+
+        if(direccionNueva.isEmpty())
+        {
+            return new ResponseEntity<>("Dirección vacía.", HttpStatus.FORBIDDEN);
+        }
+        if(cliente.getDirecciones().contains(direccionNueva))
+        {
+            return new ResponseEntity<>("Dirección repetida.", HttpStatus.FORBIDDEN);
+        }
+
+        cliente.addDireccion(direccionNueva);
+        clienteServicio.guardarCliente(cliente);
+
+        return new ResponseEntity<>("Dirección guardada exitosamente.", HttpStatus.CREATED);
+    }
+
+    @DeleteMapping("/clientes/direcciones")
+    public ResponseEntity<Object> borrarDirecciones (@RequestParam String direccionBorrada,
+                                                      Authentication authentication){
+
+        Cliente cliente = clienteServicio.findByEmail(authentication.getName());
+
+        if(direccionBorrada.isEmpty())
+        {
+            return new ResponseEntity<>("Dirección vacía.", HttpStatus.FORBIDDEN);
+        }
+        if(!cliente.getDirecciones().contains(direccionBorrada))
+        {
+            return new ResponseEntity<>("No se ha encontrado la dirección.", HttpStatus.FORBIDDEN);
+        }
+
+        cliente.getDirecciones().remove(direccionBorrada);
+
+        clienteServicio.guardarCliente(cliente);
+
+        return new ResponseEntity<>("Dirección guardada exitosamente.", HttpStatus.CREATED);
+    }
+
     @GetMapping("/registro/{token}")
     public ResponseEntity<Object> confirmacionRegistro (HttpServletRequest request,
                                                         @PathVariable String token) {
@@ -113,7 +158,6 @@ public class ClienteControlador {
         if (clienteRepositorio.findByToken(token) == null) {
             return new ResponseEntity<>("Token invalido", HttpStatus.FORBIDDEN);
         } else {
-
             cliente = clienteRepositorio.findByToken(token);
             tokencito = cliente.getToken();
         }
@@ -132,8 +176,30 @@ public class ClienteControlador {
 
         return new ResponseEntity<>("Registro de cliente confirmado", HttpStatus.CREATED);
     }
+<<<<<<< HEAD
     @GetMapping("clientes/{token}")
     public Cliente getClientePorToken(@PathVariable String token) {
         return clienteServicio.findByToken(token);
     }
+=======
+
+    @PatchMapping("/clientes/roles")
+    public ResponseEntity<Object> asignarRoles(@RequestParam long idUsuario,
+                                                @RequestParam String mailUsuario,
+                                               Authentication authentication){
+        if(clienteServicio.findById(idUsuario) == null){
+            return new ResponseEntity<>("El usuario no existe.", HttpStatus.FORBIDDEN);
+        }
+
+        Cliente usuario = clienteServicio.findById(idUsuario);
+        if(!usuario.getEmail().equals(mailUsuario)){
+            return new ResponseEntity<>("El email no corresponde al usuario.", HttpStatus.FORBIDDEN);
+        }
+        usuario.setRolUsuario(RolUsuario.ADMIN);
+        clienteServicio.guardarCliente(usuario);
+
+        return new ResponseEntity<>("Usuario con rol de Admin confirmado", HttpStatus.CREATED);
+    }
+
+>>>>>>> main
 }

@@ -53,4 +53,9 @@ public class ClienteServicioImp implements ClienteServicio {
         return new ClienteDTO(clienteRepositorio.findByEmail(email));
     }
 
+    @Override
+    public Cliente findById(long id) {
+        return clienteRepositorio.findById(id).orElse(null);
+    }
+
 }
