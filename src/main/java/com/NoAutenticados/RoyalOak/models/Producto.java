@@ -20,11 +20,13 @@ public class Producto {
     private SubTipo subTipo;
     private int stock;
     private double precio;
+
     @OneToMany(mappedBy="producto", fetch=FetchType.EAGER)
     private Set<ClienteProductoPedido> clienteProductoPedidos = new HashSet<>();
     private boolean activo;
 
     public Producto() {}
+
 
 
     public Producto(String nombre, String descripcion, String imagen, int stock, double precio, Tipo tipo, SubTipo subTipo) {

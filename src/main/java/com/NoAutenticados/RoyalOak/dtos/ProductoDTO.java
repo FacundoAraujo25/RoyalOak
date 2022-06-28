@@ -63,6 +63,14 @@ public class ProductoDTO {
         this.precio = precio;
     }
 
+    public Tipo getTipo() {
+        return tipo;
+    }
+
+    public SubTipo  getSubtipo() {
+        return subTipo;
+    }
+
     public boolean isActivo() {
         return activo;
     }
@@ -70,13 +78,13 @@ public class ProductoDTO {
         this.activo = activo;
     }
 
-    public Tipo getTipo() {
+   /* //public Tipo getTipo() {
         return tipo;
     }
 
     public void setTipo(Tipo tipo) {
         this.tipo = tipo;
-    }
+    }*/
 
     public SubTipo getSubTipo() {
         return subTipo;
