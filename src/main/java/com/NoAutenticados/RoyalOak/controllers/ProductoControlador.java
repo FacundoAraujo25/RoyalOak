@@ -2,6 +2,8 @@ package com.NoAutenticados.RoyalOak.controllers;
 
 import com.NoAutenticados.RoyalOak.dtos.ProductoDTO;
 import com.NoAutenticados.RoyalOak.models.Producto;
+import com.NoAutenticados.RoyalOak.models.SubTipo;
+import com.NoAutenticados.RoyalOak.models.Tipo;
 import com.NoAutenticados.RoyalOak.services.ProductoServicio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -31,7 +33,9 @@ public class ProductoControlador {
                                                    @RequestParam double precio,
                                                    @RequestParam int stock,
                                                    @RequestParam String ingredientes,
-                                                   @RequestParam boolean activo) {
+                                                   @RequestParam boolean activo,
+                                                   @RequestParam Tipo tipo,
+                                                   @RequestParam SubTipo subTipo) {
 
         if(nombre.isEmpty()){
             return new ResponseEntity<>("Faltan datos: Nombre", HttpStatus.FORBIDDEN);
@@ -51,8 +55,14 @@ public class ProductoControlador {
         if(ingredientes.isEmpty()){
             return new ResponseEntity<>("Faltan datos: Ingredientes", HttpStatus.FORBIDDEN);
         }
+        if(tipo.toString().isEmpty()){
+            return new ResponseEntity<>("Faltan datos: Tipo", HttpStatus.FORBIDDEN);
+        }
+        if(subTipo.toString().isEmpty()){
+            return new ResponseEntity<>("Faltan datos: SubTipo", HttpStatus.FORBIDDEN);
+        }
         String[] ingredientesArray = ingredientes.split(" ");
-        Producto producto = new Producto(nombre, descripcion, imagen,stock, precio);
+        Producto producto = new Producto(nombre, descripcion, imagen,stock, precio, tipo, subTipo);
         producto.setActivo(activo);
         producto.setIngredientes(Arrays.stream(ingredientesArray).collect(Collectors.toList()));
         productoServicio.guardarProducto(producto);
@@ -66,7 +76,9 @@ public class ProductoControlador {
                                                    @RequestParam int stock,
                                                    @RequestParam String ingredientes,
                                                    @RequestParam boolean activo,
-                                                     @RequestParam long idProducto) {
+                                                   @RequestParam long idProducto,
+                                                   @RequestParam Tipo tipo,
+                                                   @RequestParam SubTipo subTipo) {
 
 
         if(productoServicio.findById(idProducto)==null)
@@ -94,6 +106,13 @@ public class ProductoControlador {
         if(ingredientes.isEmpty()){
             return new ResponseEntity<>("Faltan datos: Ingredientes", HttpStatus.FORBIDDEN);
         }
+        if(tipo.toString().isEmpty()){
+            return new ResponseEntity<>("Faltan datos: Tipo", HttpStatus.FORBIDDEN);
+        }
+        if(subTipo.toString().isEmpty()){
+            return new ResponseEntity<>("Faltan datos: SubTipo", HttpStatus.FORBIDDEN);
+        }
+
         String[] ingredientesArray = ingredientes.split(" ");
         producto.setIngredientes(Arrays.stream(ingredientesArray).collect(Collectors.toList()));
 
@@ -103,6 +122,8 @@ public class ProductoControlador {
         producto.setPrecio(precio);
         producto.setStock(stock);
         producto.setActivo(activo);
+        producto.setTipo(tipo);
+        producto.setSubTipo(subTipo);
         productoServicio.guardarProducto(producto);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
@@ -117,8 +138,6 @@ public class ProductoControlador {
         Producto producto = productoServicio.findById(idProducto);
         producto.setActivo(false);
         productoServicio.guardarProducto(producto);
-
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
-
 }
