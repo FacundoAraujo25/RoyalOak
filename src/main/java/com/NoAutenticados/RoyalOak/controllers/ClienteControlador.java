@@ -50,15 +50,11 @@ public class ClienteControlador {
     }
 
 
-    //@RequestMapping("/clients/current")
-
-    //public ClienteDTO getAll(Authentication authentication) {
-
-        //return clientService.getCurrentClient(authentication.getName());   //getName = getUsernameParameter("mail")
-
-        //return new ClienteDTO(clienteRepositorio.findByEmail(authentication.getName()));
-
-    //}
+    @GetMapping("/clientes/actual")
+    public ClienteDTO getClient(Authentication authentication) {
+        Cliente cliente = clienteServicio.findByEmail(authentication.getName());
+        return new ClienteDTO(cliente);
+    }
 
     @PostMapping("/clientes")
     public ResponseEntity<Object> registrarCliente(@RequestParam String nombre,
@@ -198,4 +194,5 @@ public class ClienteControlador {
     public Cliente getClientePorToken(@PathVariable String token) {
         return clienteServicio.findByToken(token);
     }
+
 }
