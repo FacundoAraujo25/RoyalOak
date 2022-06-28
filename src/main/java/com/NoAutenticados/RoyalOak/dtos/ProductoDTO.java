@@ -1,7 +1,9 @@
 package com.NoAutenticados.RoyalOak.dtos;
 
 import com.NoAutenticados.RoyalOak.models.Producto;
-import com.NoAutenticados.RoyalOak.models.SubTipo;
+
+import com.NoAutenticados.RoyalOak.models.Subtipo;
+
 import com.NoAutenticados.RoyalOak.models.Tipo;
 
 import java.util.ArrayList;
@@ -16,6 +18,8 @@ public class ProductoDTO {
     private Tipo tipo;
     private SubTipo subTipo;
     private boolean activo;
+    private Tipo tipo;
+    private Subtipo subtipo;
     private List<String> ingredientes = new ArrayList<>();
 
     public ProductoDTO() {}
@@ -30,7 +34,9 @@ public class ProductoDTO {
         this.ingredientes = producto.getIngredientes();
         this.activo = producto.isActivo();
         this.tipo = producto.getTipo();
-        this.subTipo = producto.getSubTipo();
+
+        this.subtipo = producto.getSubtipo();
+
     }
 
     public long getId() {
@@ -66,6 +72,15 @@ public class ProductoDTO {
     public void setPrecio(double precio) {
         this.precio = precio;
     }
+
+    public Tipo getTipo() {
+        return tipo;
+    }
+
+    public Subtipo getSubtipo() {
+        return subtipo;
+    }
+
     public List<String> getIngredientes() {
         return ingredientes;
     }
