@@ -2,6 +2,7 @@ package com.NoAutenticados.RoyalOak.dtos;
 
 import com.NoAutenticados.RoyalOak.models.Cliente;
 import com.NoAutenticados.RoyalOak.models.Factura;
+import com.NoAutenticados.RoyalOak.models.RolUsuario;
 
 import java.util.HashSet;
 import java.util.List;
@@ -15,7 +16,7 @@ public class ClienteDTO {
     private String nombre,apellido,email,telefono;
     private Set<String> direcciones;
     private Set<FacturaDTO>facturas = new HashSet<>();
-
+    private RolUsuario rolUsuario;
 
     public ClienteDTO () {}
 
@@ -27,7 +28,7 @@ public class ClienteDTO {
         this.telefono = cliente.getTelefono();
         this.direcciones = cliente.getDirecciones();
         this.facturas = cliente.getFacturas().stream().map(factura -> new FacturaDTO(factura)).collect(Collectors.toSet());
-
+        this.rolUsuario = cliente.getRolUsuario();
     }
 
 
@@ -69,5 +70,12 @@ public class ClienteDTO {
     }
     public void setFacturas(Set<FacturaDTO> facturas) {
         this.facturas = facturas;
+    }
+
+    public RolUsuario getRolUsuario() {
+        return rolUsuario;
+    }
+    public void setRolUsuario(RolUsuario rolUsuario) {
+        this.rolUsuario = rolUsuario;
     }
 }

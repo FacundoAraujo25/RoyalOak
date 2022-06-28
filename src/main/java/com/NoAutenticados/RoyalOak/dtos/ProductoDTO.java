@@ -1,8 +1,8 @@
 package com.NoAutenticados.RoyalOak.dtos;
 
 import com.NoAutenticados.RoyalOak.models.Producto;
-import java.util.ArrayList;
-import java.util.List;
+import com.NoAutenticados.RoyalOak.models.SubTipo;
+import com.NoAutenticados.RoyalOak.models.Tipo;
 
 public class ProductoDTO {
 
@@ -10,8 +10,9 @@ public class ProductoDTO {
     private String nombre, descripcion, imagen;
     private int stock;
     private double precio;
+    private Tipo tipo;
+    private SubTipo subTipo;
     private boolean activo;
-    private List<String> ingredientes = new ArrayList<>();
 
     public ProductoDTO() {}
 
@@ -22,8 +23,10 @@ public class ProductoDTO {
         this.imagen = producto.getImagen();
         this.stock = producto.getStock();
         this.precio = producto.getPrecio();
-        this.ingredientes = producto.getIngredientes();
         this.activo = producto.isActivo();
+        this.tipo = producto.getTipo();
+        this.subTipo = producto.getSubTipo();
+
     }
 
     public long getId() {
@@ -59,16 +62,35 @@ public class ProductoDTO {
     public void setPrecio(double precio) {
         this.precio = precio;
     }
-    public List<String> getIngredientes() {
-        return ingredientes;
+
+    public Tipo getTipo() {
+        return tipo;
     }
-    public void setIngredientes(List<String> ingredientes) {
-        this.ingredientes = ingredientes;
+
+    public SubTipo  getSubtipo() {
+        return subTipo;
     }
+
     public boolean isActivo() {
         return activo;
     }
     public void setActivo(boolean activo) {
         this.activo = activo;
+    }
+
+   /* //public Tipo getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(Tipo tipo) {
+        this.tipo = tipo;
+    }*/
+
+    public SubTipo getSubTipo() {
+        return subTipo;
+    }
+
+    public void setSubTipo(SubTipo subTipo) {
+        this.subTipo = subTipo;
     }
 }
