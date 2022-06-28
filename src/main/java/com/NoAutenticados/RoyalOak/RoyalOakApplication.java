@@ -26,9 +26,9 @@ public class RoyalOakApplication {
 	@Bean
 	public CommandLineRunner initData(ClienteRepositorio clienteRepositorio, ProductoRepositorio productoRepositorio, FacturaRepositorio facturaRepositorio, ClienteProductoPedidoRepositorio clienteProductoPedidoRepositorio){
 		return (args) -> {
-			Cliente cliente1 = new Cliente("Esteban", "Casile", "esteban@gmail.com", "98735435", "123");
+			Cliente cliente1 = new Cliente("Esteban", "Casile", "esteban@gmail.com", "98735435",  passwordEncoder.encode("123"));
 			Cliente cliente2 = new Cliente("Facu", "Araujo", "facu@gmail.com", "264654564", "123");
-			Cliente cliente3 = new Cliente("Daphne", "Collao", "daphnecollao@gmail.com", "5649848594", "123");
+			Cliente cliente3 = new Cliente("Daphne", "Collao", "daphnecollao@gmail.com", "5649848594", passwordEncoder.encode("123"));
 			Cliente cliente4 = new Cliente("Nacho", "Ferrero", "nacho@gmail.com", "78895656", "123");
 			Cliente cliente5 = new Cliente("Andres", "Garcia", "andres@gmail.com", "84354635", "123");
 			Cliente cliente6 = new Cliente("Caro", "Cardiello", "caro@gmail.com", "48964564564", "123");

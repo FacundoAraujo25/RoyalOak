@@ -47,7 +47,7 @@ public class RegistrationEmailListener implements ApplicationListener <OnRegistr
                 +"<p> <a href=\"URL\">Confirma tu registro</a> </p>"
                 +nombreEmisor;
         contenidoEmail = contenidoEmail.replace("Cliente", cliente.getNombreCompleto());
-        contenidoEmail = contenidoEmail.replace("URL","http://localhost:8585/web"+urlConfirmacionRegistro);
+        contenidoEmail = contenidoEmail.replace("URL","http://localhost:8080/web"+urlConfirmacionRegistro);
         MimeMessage mensaje = javaMailSender.createMimeMessage();
         MimeMessageHelper mensajeAyudador = new MimeMessageHelper(mensaje);
         mensajeAyudador.setFrom(emailEmisor);

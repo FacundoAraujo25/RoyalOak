@@ -3,12 +3,14 @@ package com.NoAutenticados.RoyalOak.dtos;
 import com.NoAutenticados.RoyalOak.models.ClienteProductoPedido;
 import com.NoAutenticados.RoyalOak.models.Factura;
 import com.NoAutenticados.RoyalOak.models.Producto;
+import com.itextpdf.text.pdf.PdfPCell;
 
 
 public class ClienteProductoPedidoDTO {
     private long id;
     private int cantidad;
-    private double precio, total;
+    private double precio;
+    private double total;
     private String producto;
 
     public ClienteProductoPedidoDTO() {}

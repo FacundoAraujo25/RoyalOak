@@ -127,10 +127,13 @@ public class ClienteControlador {
         }
 
         cliente.setEnable(true);
-        Utils.borrarToken(tokencito, cliente);
+        Utils.borrarToken(tokencito);
         clienteRepositorio.save(cliente);
 
         return new ResponseEntity<>("Registro de cliente confirmado", HttpStatus.CREATED);
     }
-
+    @GetMapping("clientes/{token}")
+    public Cliente getClientePorToken(@PathVariable String token) {
+        return clienteServicio.findByToken(token);
+    }
 }

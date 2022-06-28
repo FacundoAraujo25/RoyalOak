@@ -42,6 +42,11 @@ public class ClienteServicioImp implements ClienteServicio {
         clienteRepositorio.save(cliente);
     }
 
+    @Override
+    public Cliente findByToken(String token) {
+        return clienteRepositorio.findByToken(token);
+    }
+
 
     @Override
     public ClienteDTO getClienteLogueado(String email) {
