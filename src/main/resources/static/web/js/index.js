@@ -5,12 +5,25 @@ const app = Vue.createApp({
         return {
             clientes:[],
             hamburguesas:[],
+            tipos:[],
+            subtipos:[],
+            pizzas:[],
+            ensaladas:[],
+            bebidas:[],
+            picadas:[],
 
         }
     },
 
     created(){
-        axios
+        
+        /* traerProductos(){
+            axios.get('http://localhost:8585/api/productos')
+            .then(productos => {
+                this.
+            })
+        } */
+
     },
 
 
