@@ -177,7 +177,9 @@ h6 span{
 .section{
   position: relative;
   width: 100%;
+  height: 100%;
   display: block;
+  top: 5%;
 }
 .full-height{
   min-height: 100vh;
@@ -254,8 +256,7 @@ h6 span{
 
 .card-front, .card-back {
   width: 100%;
-  height: 100%;
-  background-color:#501f3aa6;
+  height: 68vh;
   background-image: url('mediaBurger.webp');
   background-size: cover;
   background-position: bottom center;
@@ -282,7 +283,7 @@ h6 span{
   position: absolute;
   width: 100%;
   padding: 0 35px;
-  top: 50%;
+  top: 48%;
   left: 0;
   transform: translate3d(0, -50%, 35px) perspective(100px);
   z-index: 20;
@@ -298,7 +299,7 @@ h6 span{
 }
 .form-style {
   padding: 13px 20px;
-  padding-left: 55px;
+  padding-left: 20px;
   height: 42px;
   width: 100%;
   font-weight: 500;
@@ -494,10 +495,11 @@ h6 span{
     display: flex;
     justify-content: center;
     z-index: 100;
+    top: 0;
   }
 
 
-  .py-5{
+  .register{
     padding-top: 0;
     margin-bottom: 40%;
   }
@@ -506,13 +508,16 @@ h6 span{
     background-size: cover;
   }
 
+  .card-3d-wrap{
+    margin-top: 20px;
+  }
+
 }
 
 @media screen and (max-width:500px) {
   
   .card-front{
-    width: 90%;
-    margin-left: 5%;
+    width: 100%;
   }
 
   .form-style{
@@ -528,8 +533,5 @@ body{
   background-size: cover;
 }
 
-.pt-5 {
-  padding-top: 0rem !important;
-}
 
 }
