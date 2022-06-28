@@ -11,7 +11,8 @@ public class ClienteProductoPedido {
     @GenericGenerator(name = "native", strategy = "native")
     private long id;
     private int cantidad;
-
+    private String nombre;
+    private double precio, total;
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="factura_id")
     private Factura factura;
@@ -26,6 +27,10 @@ public class ClienteProductoPedido {
         this.cantidad = cantidad;
         this.factura = factura;
         this.producto = producto;
+        this.nombre = producto.getNombre();
+        this.precio = producto.getPrecio();
+        this.total = producto.getPrecio() * this.cantidad;
+
     }
 
     public long getId() {
@@ -48,5 +53,23 @@ public class ClienteProductoPedido {
     }
     public void setProducto(Producto producto) {
         this.producto = producto;
+    }
+    public String getNombre() {
+        return nombre;
+    }
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+    public double getPrecio() {
+        return precio;
+    }
+    public void setPrecio(double precio) {
+        this.precio = precio;
+    }
+    public double getTotal() {
+        return total;
+    }
+    public void setTotal(double total) {
+        this.total = total;
     }
 }

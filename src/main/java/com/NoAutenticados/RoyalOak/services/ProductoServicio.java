@@ -8,4 +8,5 @@ import java.util.List;
 public interface ProductoServicio {
     List<ProductoDTO> getAll();
     void guardarProducto (Producto producto);
+    Producto findById(long id);
 }

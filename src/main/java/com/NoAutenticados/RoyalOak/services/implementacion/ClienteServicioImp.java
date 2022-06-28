@@ -19,7 +19,7 @@ public class ClienteServicioImp implements ClienteServicio {
 
     @Override
     public List<ClienteDTO> getClientesDto() {
-        return clienteRepositorio.findAll().stream().map(ClienteDTO::new).collect(toList());
+        return clienteRepositorio.findAll().stream().filter(cliente -> cliente.isEnable()).map(ClienteDTO::new).collect(toList());
     }
 
     @Override
@@ -46,6 +46,11 @@ public class ClienteServicioImp implements ClienteServicio {
     @Override
     public ClienteDTO getClienteLogueado(String email) {
         return new ClienteDTO(clienteRepositorio.findByEmail(email));
+    }
+
+    @Override
+    public Cliente findById(long id) {
+        return clienteRepositorio.findById(id).orElse(null);
     }
 
 }
