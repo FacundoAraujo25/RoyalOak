@@ -59,7 +59,7 @@ public class FacturaControlador {
         factura.setCliente(cliente);
         facturaServicio.guardarFactura(factura);
 
-        productoServicio.guardarProducto(producto); //duda
+      //  productoServicio.guardarProducto(producto); //duda
        if(factura.getClienteProductoPedidos().stream().filter(pedidito -> pedidito.getProducto()==producto).findAny().orElse(null)==null)
        {
            ClienteProductoPedido clienteProductoPedido = new ClienteProductoPedido(cantidad, factura, producto);

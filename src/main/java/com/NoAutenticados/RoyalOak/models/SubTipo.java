@@ -5,5 +5,5 @@ public enum SubTipo {
     HAMBURGUESAS,
     PIZZAS,
     ENSALADAS,
-    LOMITOS
+    PICADAS
 }
