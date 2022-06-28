@@ -42,6 +42,7 @@ public class FacturaControlador {
         Producto producto;
 
         if(cliente.getFacturas().stream().filter(fact -> fact.getEstadoFactura() == EstadoFactura.CARRITO).count()==1) {
+
             factura = facturaServicio.getFacturaEnCarrito(cliente);
         }else{
             factura = new Factura();
@@ -57,6 +58,7 @@ public class FacturaControlador {
         }
         factura.setCliente(cliente);
         facturaServicio.guardarFactura(factura);
+
         productoServicio.guardarProducto(producto); //duda
        if(factura.getClienteProductoPedidos().stream().filter(pedidito -> pedidito.getProducto()==producto).findAny().orElse(null)==null)
        {
@@ -70,6 +72,7 @@ public class FacturaControlador {
            pedidoRepetido.setTotal(producto.getPrecio()*pedidoRepetido.getCantidad());
            clienteProductoPedidoRepositorio.save(pedidoRepetido);
        }
+
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 //-------------------------------------------FIN Agregar productos al carrito-------------------------------------------
@@ -91,10 +94,12 @@ public class FacturaControlador {
         }
 
         Producto producto = factura.getProducto().stream().filter(prod -> prod.getId()== idProducto).findFirst().orElse(null);
+
         ClienteProductoPedido pedidoModificado = Objects.requireNonNull(factura.getClienteProductoPedidos().stream().filter(pedido -> pedido.getProducto() == producto).findFirst().orElse(null));
                 pedidoModificado.setCantidad(nuevaCantidad);
                 pedidoModificado.setTotal(pedidoModificado.getCantidad()*producto.getPrecio());
                 clienteProductoPedidoRepositorio.save(pedidoModificado);
+
         productoServicio.guardarProducto(producto);
         facturaServicio.guardarFactura(factura);
         return new ResponseEntity<>(HttpStatus.CREATED);
