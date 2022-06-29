@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../css/random.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://kit.fontawesome.com/19135af981.js" crossorigin="anonymous"></script>
     
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -108,17 +109,17 @@
                     </div>
           </header>
 
-        <div id="random" class="d-flex row justify-content-center align-items-center p-3">
+        <div id="random" class="d-flex row justify-content-center align-items-start align-content-start gap-3 p-3">
             <img src="../media/logo-simplificado.png" alt="logo" class="col-12">
-            <h2 class="text-light text-center" style="font-family: 'Potta One'">Random</h2>
-            <p class="text-light texto">Presiona el botón y deja la elección al azar.</p>
+            <h2 class="text-light text-center" style="font-family: 'Potta One'">Royal</h2>
+            <p class="text-light texto">¿No sabés qué pedir? <br> Presiona el botón y deja la elección al azar.</p>
             <div class="d-flex justify-content-center gap-3">
                 <div class="card col-2 d-flex justify-content-center p-2" id="comestible" >
                     <img class="align-self-center" src="../media/hamburger.png" alt="" >
                     <p class="text-light">Comestibles</p>
                     <div class="btn-group d-flex justify-content-around" role="group" aria-label="First group" >
-                        <button type="button"  @click="disminuirCantidad('comida')" class="btn btn-outline-secondary stock1 "><i class="material-icons">remove</i></button>
-                        <button type="button" @click="aumentarCantidad('comida')" class="btn btn-outline-secondary stock2 "><i class="material-icons">add</i></button>
+                        <button type="button"  @click="disminuirCantidad('comida')" class="btn btn-outline-secondary stock1 d-flex justify-content-center align-items-center"><i class="material-icons">remove</i></button>
+                        <button type="button" @click="aumentarCantidad('comida')" class="btn btn-outline-secondary stock2 d-flex justify-content-center align-items-center "><i class="material-icons">add</i></button>
                         <input type="text  "  style="width : 50px" disabled class="inputCantidad" :placeholder="cantComida"></input>
                     </div>
                 </div>
@@ -126,19 +127,19 @@
                     <img class="align-self-center" src="../media/beer.png" alt="" >
                     <p class="text-light">Bebestibles</p>
                     <div class="btn-group " role="group" aria-label="First group" >
-                        <button type="button"  @click="disminuirCantidad('bebida')" class="btn btn-outline-secondary stock1 "><i class="material-icons">remove</i></button>
-                        <button type="button" @click="aumentarCantidad('bebida')" class="btn btn-outline-secondary stock2 "><i class="material-icons">add</i></button>
+                        <button type="button"  @click="disminuirCantidad('bebida')" class="btn btn-outline-secondary stock1 d-flex justify-content-center align-items-center"><i class="material-icons">remove</i></button>
+                        <button type="button" @click="aumentarCantidad('bebida')" class="btn btn-outline-secondary stock2 d-flex justify-content-center align-items-center"><i class="material-icons">add</i></button>
                         <input type="text  "  style="width : 50px" disabled class="inputCantidad" :placeholder="cantBebida"></input>
                     </div>
                 </div>
                
             </div>
-            <button class="btn btn-verificar col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3" @click="random"><a href="#seccionAleatoria" class="text-light fw-bold">Verificar</a></button>
+            <button class="btn btn-verificar col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3" @click="random"><a href="#seccionAleatoria" class="fw-bold text-light">Verificar</a></button>
         </div>
         <!---->
-        <div id="seccion-aleatoria"  v-show="seccionAleatoria" class="p-3 seccionAleatoria"> 
+        <div id="seccion-aleatoria"  v-show="seccionAleatoria" class="p-3 seccionAleatoria gap-3"> 
             <div id="divisorBurgers" class="d-flex justify-content-center align-items-center">
-                <h2 class="text-center fw-bold text-light">Resultado de la seleccion random</h2>
+                <h2 class="text-center fw-bold text-light" style="font-family: 'Potta One'">Resultado de la selección al azar</h2>
             </div>
             <div class="d-flex justify-content-around producto-random p-3 m-3" v-for="producto in productosRandom">
                 <img class="img-fluid col-2" src="../media/jgaXh2A4jVwLTXkTKBDIgFHZkgm06YF3g3Sva78a.jpeg" alt="">
@@ -150,18 +151,18 @@
                     
                 </div>
                 <div class="btn-group align-self-center" role="group" aria-label="First group" >
-                    <button type="button" @click="disminuirCantidad(producto)" disabled class="btn btn-outline-secondary stock1">&#45;</button>
-                    <button type="button" @click="aumentarCantidad(producto)" :disabled="1 == 2" class="btn btn-outline-secondary stock2">&#43;</button>
+                    <button type="button" @click="disminuirCantidad(producto)" disabled class="btn btn-outline-secondary stock1 d-flex justify-content-center align-items-center"><i class="material-icons">remove</i></button>
+                    <button type="button" @click="aumentarCantidad(producto)" :disabled="1 == 2" class="btn btn-outline-secondary stock2 d-flex justify-content-center align-items-center"><i class="material-icons">add</i></button>
                     <input type="text" style="width : 50px" disabled class="inputCantidad" :placeholder="producto.cant"></input>
-                    <button type="button" @click="eliminarProducto(producto)" class="btn btn-outline-secondary stock2">x</button>
-                    <button type="button" @click="agregar(producto)" class="btn btn-outline-secondary stock2">x</button>
+                    <button type="button" @click="eliminarProducto(producto)" class="btn btn-outline-secondary stock2 d-flex justify-content-center align-items-center"><i class="material-icons">clear</i></button>
+                    <button type="button" @click="agregar(producto)" class="btn btn-outline-secondary stock2 d-flex justify-content-center align-items-center"><i class="material-icons">check</i></button>
                 </div>
             </div>
             {{total}}
-            <h2 class="text-center text-light">Total a pagar ${{totalPagar}}</h2>
-            <div class="d-flex justify-content-center gap-2">
-                <button class="btn btn-light col-3 btn-otravez text-light" @click="random">Revisar otra vez</button> 
-                <button class="btn btn-verificar col-3 text-light" @click="ordenar">Ordenar</button> 
+            <h2 class="text-center text-light" v-if="productosRandom.length != 0">Total a pagar ${{totalPagar}}</h2>
+            <div class="d-flex justify-content-center gap-2 mt-3">
+                <button class="btn col-3 btn-otravez fw-bold"  @click="random">Revisar otra vez</button> 
+                <button class="btn btn-carrito col-3 fw-bold" @click="verCarrito">Ir al carrito</button> 
             </div>
         </div>
 

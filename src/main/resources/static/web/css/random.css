@@ -808,6 +808,7 @@ a:hover {
 
 #random   {
     width: 100%;
+    margin-top: 5rem !important;
     margin-left: 0% !important;
 }
 }
@@ -990,7 +991,7 @@ input[type="checkbox"]:checked ~ .nav
 }
 
 #random .texto{
-    max-width: 20rem;
+    max-width: 25rem;
 }
 
 #seccion-aleatoria {
@@ -1001,6 +1002,7 @@ input[type="checkbox"]:checked ~ .nav
 .card{
     background-color: #501F3A;
     min-width: 12rem;
+    box-shadow: 0 0 3px rgba(221, 221, 221, 0.151);
 }
 
 .card img{
@@ -1012,7 +1014,16 @@ input[type="checkbox"]:checked ~ .nav
 
 .btn-verificar {
     background-color: #0F292F;
-    
+    color: white;
+}
+.btn-carrito {
+    background-color: #0F292F;
+    color: white;
+}
+
+.btn-carrito:hover {
+    background-color: white;
+    color: #0F292F;
 }
 
 #seccion-aleatoria h2{
@@ -1025,6 +1036,12 @@ input[type="checkbox"]:checked ~ .nav
 
 .btn-otravez {
     background-color:  #501F3A;
+    color: white;
+}
+
+.btn-otravez:hover {
+    background-color: white;
+    color: #501F3A;
 }
 
 #divisorBurgers > h2{
@@ -1034,8 +1051,14 @@ input[type="checkbox"]:checked ~ .nav
 }
 
 .producto-random{
-    background-color: #0f292f79;
+    background-color: #0f292f91;
     border-radius: 5px;
+    box-shadow: 0 0 3px rgba(221, 221, 221, 0.151);
+}
+
+.btn {
+    box-shadow: 0 0 3px rgba(221, 221, 221, 0.151);
+
 }
 
 /* #selccionAleatoria .producto */

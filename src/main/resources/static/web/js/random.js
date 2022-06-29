@@ -41,7 +41,7 @@ const app = Vue.createApp({
                 this.cantComida = this.cantComida + 1
             }else if (param === 'bebida'){
                 this.cantBebida = this.cantBebida + 1
-            } else{
+            } else if(param.cant < param.stock){
                 param.cant ++
             }
         },
@@ -101,8 +101,11 @@ const app = Vue.createApp({
         // }
         agregar(producto){
                 axios.post('http://localhost:8585/api/productos/carrito/agregar',`cantidad=${producto.cant}&idProducto=${producto.id}`)
-                    .then(response => this.deshabilitar = true)
+                    .then(response => this.productosRandom = this.productosRandom.filter(product => product != producto))
                     .catch(error => console.log('no añadido '+producto.nombre))
+        },
+        verCarrito(){
+            window.location.href = './carrito.html'
         }
 
     },
