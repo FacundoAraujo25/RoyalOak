@@ -3,14 +3,18 @@ package com.NoAutenticados.RoyalOak.dtos;
 import com.NoAutenticados.RoyalOak.models.ClienteProductoPedido;
 import com.NoAutenticados.RoyalOak.models.Factura;
 import com.NoAutenticados.RoyalOak.models.Producto;
+import com.itextpdf.text.pdf.PdfPCell;
 
 
 public class ClienteProductoPedidoDTO {
     private long id;
     private int cantidad;
-    private double precio, total;
+    private double precio;
+    private double total;
     private String producto;
     private long idProducto;
+    private int stockProducto;
+
 
     public ClienteProductoPedidoDTO() {}
 
@@ -21,6 +25,8 @@ public class ClienteProductoPedidoDTO {
         this.precio = clienteProductoPedido.getProducto().getPrecio();
         this.total = clienteProductoPedido.getTotal();
         this.idProducto = clienteProductoPedido.getProducto().getId();
+        this.stockProducto = clienteProductoPedido.getProducto().getStock();
+
     }
 
     public long getId() {
@@ -58,5 +64,11 @@ public class ClienteProductoPedidoDTO {
     }
     public void setIdProducto(long idProducto) {
         this.idProducto = idProducto;
+    }
+    public int getStockProducto() {
+        return stockProducto;
+    }
+    public void setStockProducto(int stockProducto) {
+        this.stockProducto = stockProducto;
     }
 }

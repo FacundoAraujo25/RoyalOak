@@ -16,4 +16,6 @@ public interface ClienteServicio {
     Cliente findByTelefono(String telefono);
     void guardarCliente(Cliente cliente);
 
+    Cliente findByToken(String token);
+
 }

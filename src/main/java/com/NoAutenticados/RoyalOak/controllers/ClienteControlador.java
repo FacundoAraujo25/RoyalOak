@@ -56,6 +56,10 @@ public class ClienteControlador {
         return new ClienteDTO(cliente);
     }
 
+    @GetMapping("/clientes/actual")
+    public ClienteDTO getTodos(Authentication authentication){
+        return clienteServicio.getClienteLogueado(authentication.getName());
+    }
     @PostMapping("/clientes")
     public ResponseEntity<Object> registrarCliente(@RequestParam String nombre,
                                                    @RequestParam String apellido,
@@ -167,12 +171,11 @@ public class ClienteControlador {
         }
 
         cliente.setEnable(true);
-        Utils.borrarToken(tokencito, cliente);
+        Utils.borrarToken(tokencito);
         clienteRepositorio.save(cliente);
 
         return new ResponseEntity<>("Registro de cliente confirmado", HttpStatus.CREATED);
     }
-
     @PatchMapping("/clientes/roles")
     public ResponseEntity<Object> asignarRoles(@RequestParam long idUsuario,
                                                 @RequestParam String mailUsuario,
@@ -191,6 +194,9 @@ public class ClienteControlador {
         return new ResponseEntity<>("Usuario con rol de Admin confirmado", HttpStatus.CREATED);
     }
 
-
+    @GetMapping("clientes/{token}")
+    public Cliente getClientePorToken(@PathVariable String token) {
+        return clienteServicio.findByToken(token);
+    }
 
 }
