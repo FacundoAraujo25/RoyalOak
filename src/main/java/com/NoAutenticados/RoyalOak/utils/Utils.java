@@ -27,8 +27,7 @@ public class Utils {
                 .toString();
     }
 
-    public static void borrarToken(String token, Cliente cliente){
+    public static void borrarToken(String token){
         createdToken.remove(token);
-        cliente.setToken(null);
     }
 }

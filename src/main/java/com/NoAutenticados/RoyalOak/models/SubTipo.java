@@ -1,9 +1,13 @@
 package com.NoAutenticados.RoyalOak.models;
 
 public enum SubTipo {
-
     HAMBURGUESAS,
     PIZZAS,
     ENSALADAS,
-    LOMITOS
+    PICADAS,
+    SIN_ALCOHOL,
+    CON_ALCOHOL
+
 }
+
+

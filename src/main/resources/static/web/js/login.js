@@ -4,6 +4,7 @@ Vue.createApp({
         return {
             email:"",
             contraseña:"",
+            cliente:[],
 
             nombreR:"",
             apellidoR:"",
@@ -16,6 +17,7 @@ Vue.createApp({
     },
 
     created() {
+
         
         
     },
@@ -35,7 +37,12 @@ Vue.createApp({
                     width: "40%",
                 })
                 .then(response =>{
-                    window.location.href = './index.html'
+                    if (this.email.includes('esteban@gmail.com') || this.email.includes('facu@gmail.com')||this.email.includes('daphnecollao@gmail.com')){
+                        window.location.href = './admin.html' 
+                    } else {
+                        window.location.href = './index.html' 
+                    }
+                    
                 })
             })
             .catch(response => {
@@ -53,23 +60,17 @@ Vue.createApp({
 
         registrarse(){
             axios.post('http://localhost:8585/api/clientes',`nombre=${this.nombreR}&apellido=${this.apellidoR}&email=${this.emailR}&telefono=${this.telefonoR}&direccion=${this.direccionR}&contraseña=${this.contraseñaR}`, {headers:{'content-type':'application/x-www-form-urlencoded'}})
-            .then(response =>
-                console.log("nuevo cliente registrado"))
+            .then(response => {
+                console.log("nuevo cliente registrado")
                 Swal.fire({
-                    title: "Te registraste Exitosamente",
-                    text: "Gracias por confiar en royal Oak, ya formas parte oficialmente de nosotros",
+                    title: "Confirmar Registro",
+                    text: "Gracias por confiar en royal Oak, por favor confirma tu correo",
                     icon: "success",
-                    confirmButtonText: "Ir al menu",
+                    /* confirmButtonText: "Ir al menu", */
                     width: "40%",
                 })
-            .then(response =>{
-                axios.post('http://localhost:8585/api/login',`email=${this.emailR}&password=${this.contraseñaR}`,{headers:{'content-type':'application/x-www-form-urlencoded'}})
-            .then(response =>{
-                console.log('sesion iniciada con exito')
-                setTimeout(function(){
-                window.location.href = './index.html'
-                },1000)})
             })
+            
             .catch(response =>{
                 console.log("no pudimos hacer el registro")
                 Swal.fire({

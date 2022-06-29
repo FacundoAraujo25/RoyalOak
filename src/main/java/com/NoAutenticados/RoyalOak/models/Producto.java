@@ -3,9 +3,7 @@ package com.NoAutenticados.RoyalOak.models;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -26,7 +24,6 @@ public class Producto {
     private boolean activo;
 
     public Producto() {}
-
 
 
     public Producto(String nombre, String descripcion, String imagen, int stock, double precio, Tipo tipo, SubTipo subTipo) {
@@ -81,18 +78,6 @@ public class Producto {
     public void setActivo(boolean activo) {
         this.activo = activo;
     }
-    public Tipo getTipo() {
-        return tipo;
-    }
-    public void setTipo(Tipo tipo) {
-        this.tipo = tipo;
-    }
-    public SubTipo getSubTipo() {
-        return subTipo;
-    }
-    public void setSubTipo(SubTipo subtipo) {
-        this.subTipo = subTipo;
-    }
     public Set<ClienteProductoPedido> getClienteProductoPedidos() {
         return clienteProductoPedidos;
     }
@@ -105,5 +90,21 @@ public class Producto {
     public void addClienteProductoPedido(ClienteProductoPedido clienteProductoPedido) {
         clienteProductoPedido.setProducto(this);
         clienteProductoPedidos.add(clienteProductoPedido);
+    }
+
+    public Tipo getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(Tipo tipo) {
+        this.tipo = tipo;
+    }
+
+    public SubTipo getSubTipo() {
+        return subTipo;
+    }
+
+    public void setSubTipo(SubTipo subTipo) {
+        this.subTipo = subTipo;
     }
 }
