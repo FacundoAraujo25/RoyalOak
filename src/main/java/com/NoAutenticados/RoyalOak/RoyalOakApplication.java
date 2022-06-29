@@ -67,14 +67,14 @@ public class RoyalOakApplication {
 
 			Producto producto1 = new Producto("Classic", "Hamburguesa clásica con carne,queso cheddar,verduras y Ali oli.", "https://i.imgur.com/7n3AQpO.jpg", 25, 550,Tipo.COMIDA,SubTipo.HAMBURGUESAS);
 			Producto producto2 = new Producto("Bacon","Bacon y cheddar con hamburguesa acompañada de mayonesa y cebolla caramelizada.","https://i.imgur.com/NB5THSY.jpg",20,650,Tipo.COMIDA,SubTipo.HAMBURGUESAS);
-			Producto producto3 = new Producto("Butter Burger","Un medallón, cheddar,cebolla caramelizada con manteca en el medallón.","https://i.imgur.com/52tsTkG.jpg",15,600,Tipo.COMIDA,SubTipo.HAMBURGUESAS);
-			Producto producto4 = new Producto("Crispy Burger","Medallón simple, cheddar, lechuga, tomate, cebolla crispy y Alí Oli.","https://i.imgur.com/46E6lnG.jpg",35,600,Tipo.COMIDA,SubTipo.HAMBURGUESAS);
+			Producto producto3 = new Producto("Butter","Un medallón, cheddar,cebolla caramelizada con manteca en el medallón.","https://i.imgur.com/52tsTkG.jpg",15,600,Tipo.COMIDA,SubTipo.HAMBURGUESAS);
+			Producto producto4 = new Producto("Crispy","Medallón simple, cheddar, lechuga, tomate, cebolla crispy y Alí Oli.","https://i.imgur.com/46E6lnG.jpg",35,600,Tipo.COMIDA,SubTipo.HAMBURGUESAS);
 			Producto producto5 = new Producto("Doble Cuarto","Dos medallones, extra cheddar, cebolla caramelizada, pepinos alemanes, mostaza y Ketchup Heinz.","https://i.imgur.com/twjNv49.jpg",15,700,Tipo.COMIDA,SubTipo.HAMBURGUESAS);
-			Producto producto6 = new Producto("Guacamole Burger","Un medallón, cheddar, queso dambo, guacamole con limón, cebolla picada y mayonesa.","https://i.imgur.com/FwSEQff.jpg",15,650,Tipo.COMIDA,SubTipo.HAMBURGUESAS);
-			Producto producto7 = new Producto("Hamburguesa simple con queso","Dos medallones, extra cheddar y salsa Thousand Islands.","https://i.imgur.com/5X7lT23.jpg",15,700,Tipo.COMIDA,SubTipo.HAMBURGUESAS);
+			Producto producto6 = new Producto("Guacamole","Un medallón, cheddar, queso dambo, guacamole con limón, cebolla picada y mayonesa.","https://i.imgur.com/FwSEQff.jpg",15,650,Tipo.COMIDA,SubTipo.HAMBURGUESAS);
+			Producto producto7 = new Producto("Simple con queso","Dos medallones, extra cheddar y salsa Thousand Islands.","https://i.imgur.com/5X7lT23.jpg",15,700,Tipo.COMIDA,SubTipo.HAMBURGUESAS);
 			Producto producto8 = new Producto("Homenaje Stacker","Doble medallón,salsa stacker,cheddar y bacon.","https://i.imgur.com/yF7qz75.jpg",15,750,Tipo.COMIDA,SubTipo.HAMBURGUESAS);
-			Producto producto9 = new Producto("Honey Burger","Un medallón, cheddar, pancetas caramelizadas, panes invertidos tostados con manteca y baño de miel.","https://i.imgur.com/XhpdZNY.jpg",15,650,Tipo.COMIDA,SubTipo.HAMBURGUESAS);
-			Producto producto10 = new Producto("Mimozza Burger","Medallón simple, cheddar, panceta, bastones de mozzarella y salsa barbacoa.","https://i.imgur.com/uqdGKzy.jpg",15,700,Tipo.COMIDA,SubTipo.HAMBURGUESAS);
+			Producto producto9 = new Producto("Honey","Un medallón, cheddar, pancetas caramelizadas, panes invertidos tostados con manteca y baño de miel.","https://i.imgur.com/XhpdZNY.jpg",15,650,Tipo.COMIDA,SubTipo.HAMBURGUESAS);
+			Producto producto10 = new Producto("Mimozza","Medallón simple, cheddar, panceta, bastones de mozzarella y salsa barbacoa.","https://i.imgur.com/uqdGKzy.jpg",15,700,Tipo.COMIDA,SubTipo.HAMBURGUESAS);
 			Producto producto11 = new Producto("Oklahoma","Un medallón, extra cheddar, pepino alemanes, cebolla blanca a la plancha, Ketchup y mostaza.","https://i.imgur.com/L2lS50X.jpg",15,700,Tipo.COMIDA,SubTipo.HAMBURGUESAS);
 			Producto producto12 = new Producto("Onion Rings","Un medallón, cheddar, panceta, aros de cebolla y salsa barbacoa.","https://i.imgur.com/dpG0ReL.jpg",15,700,Tipo.COMIDA,SubTipo.HAMBURGUESAS);
 			Producto producto13 = new Producto("Promo Kids","2 hamburguesas con un medallón cada una, 2 fetas de cheddar c/u, salsa thousand islands o lechuga y tomate a elección.","https://i.imgur.com/6rCpvdW.jpg",15,700,Tipo.COMIDA,SubTipo.HAMBURGUESAS);
@@ -135,7 +135,7 @@ public class RoyalOakApplication {
 			Producto producto25 = new Producto("Pollo con champiñones","Harina italiana, parmesano y salsa de crema, mozzarella, Dorblu, pollo al horno, champiñones, pimiento morrón, orégano","https://i.imgur.com/v9aQHSt.png",15,900, Tipo.COMIDA, SubTipo.PIZZAS);
 			Producto producto26 = new Producto("Pollo con ananá","Harina italiana, salsa de tomate integral, mozzarella, pollo al horno, piña, pimiento morrón, mostaza de naranja, arándano, orégano","https://i.imgur.com/2MQVLns.png",15,900, Tipo.COMIDA, SubTipo.PIZZAS);
 			Producto producto27 = new Producto("Queso de cabra","Harina italiana, salsa de crema secreta de la abuela de alguien, mozzarella, queso de cabra, tubérculos, piñones","https://i.imgur.com/nqJYq2j.png",15,900, Tipo.COMIDA, SubTipo.PIZZAS);
-			Producto producto28 = new Producto("Queso de primera calidad","Harina italiana, salsa de nata y parmesano, mozzarella, DorBlue, parmesano, nuez, arándano","https://i.imgur.com/bG1skWd.png",15,900, Tipo.COMIDA, SubTipo.PIZZAS);
+			Producto producto28 = new Producto("Cuatro queso","Harina italiana, salsa de nata y parmesano, mozzarella, DorBlue, parmesano, nuez, arándano","https://i.imgur.com/bG1skWd.png",15,900, Tipo.COMIDA, SubTipo.PIZZAS);
 			Producto producto29 = new Producto("Salami","Harina italiana, mozzarella, salsa de tomate integral, salami premium, orégano","https://i.imgur.com/0LYWujF.png",15,900, Tipo.COMIDA, SubTipo.PIZZAS);
 			Producto producto30 = new Producto("Salmon y espinaca","Harina italiana, salsa de tomate integral, mozzarella, salmón, tomate, espinaca, Dorblu, ajo, limón, piñones, aceitunas, orégano.","https://i.imgur.com/Mt1xB6r.png",15,900, Tipo.COMIDA, SubTipo.PIZZAS);
 			Producto producto31 = new Producto("Panceta","Harina italiana, salsa de tomate integral, mozzarella, dorblu, tocino seco, pimiento picante, orégano","https://i.imgur.com/51YOG7S.png",15,900, Tipo.COMIDA, SubTipo.PIZZAS);
@@ -198,8 +198,8 @@ public class RoyalOakApplication {
 
 			Producto producto40 = new Producto("Papas Americanas","papas con bacon y cheddar de excelente calidad","https://i.imgur.com/iCNjRMn.jpg",15,550, Tipo.COMIDA, SubTipo.PICADAS);
 			Producto producto41 = new Producto("Papas Criollas","papas con salsa criolla y huevos fritos","https://i.imgur.com/04onzhI.jpg",15,550, Tipo.COMIDA, SubTipo.PICADAS);
-			Producto producto42 = new Producto("Picada 4 elementos","Abundante tabla de picada de fiambres,quesos,nuggets de pollo,papas y rabas.","https://i.imgur.com/tVqTiiw.jpg",15,550, Tipo.COMIDA, SubTipo.PICADAS);
-			Producto producto43 = new Producto("Picada Colombiana","Excelente tabla de picada con trocitos de carne,costillitas de cerdo,embutidos, verduras y salsas varias.","https://i.imgur.com/eTdRlG2.jpg",15,550, Tipo.COMIDA, SubTipo.PICADAS);
+			Producto producto42 = new Producto("4 elementos","Abundante tabla de picada de fiambres,quesos,nuggets de pollo,papas y rabas.","https://i.imgur.com/tVqTiiw.jpg",15,550, Tipo.COMIDA, SubTipo.PICADAS);
+			Producto producto43 = new Producto("Colombiana","Excelente tabla de picada con trocitos de carne,costillitas de cerdo,embutidos, verduras y salsas varias.","https://i.imgur.com/eTdRlG2.jpg",15,550, Tipo.COMIDA, SubTipo.PICADAS);
 			Producto producto44 = new Producto("Veracruzanas","Tortillas acompañadas de queso,cebollas picadas,tomates,frijoles refritos con chorizo y jalapeños","https://i.imgur.com/X6YUnMe.jpg",15,550, Tipo.COMIDA, SubTipo.PICADAS);
 			Producto producto45 = new Producto("Bastones de Muzza","Bastoncitos rellenos de queso mozzarella","https://i.imgur.com/Ovjma1V.jpg",15,550, Tipo.COMIDA, SubTipo.PICADAS);
 			producto40.setActivo(true);
@@ -224,6 +224,8 @@ public class RoyalOakApplication {
 			clienteProductoPedidoRepositorio.save(pedido);
 			ClienteProductoPedido pedido1 = new ClienteProductoPedido(3, factura, producto1);
 			clienteProductoPedidoRepositorio.save(pedido1);
+			ClienteProductoPedido pedido2 = new ClienteProductoPedido(2, factura, producto25);
+			clienteProductoPedidoRepositorio.save(pedido2);
 		};
 	}
 }

@@ -64,6 +64,7 @@ public class GeneradorPdfServiceImp implements GeneradorPdfService {
         document.addCreator("Royal Oak - Contabilidad");
 
         PdfPTable table = new PdfPTable(4);
+        table.setWidths(new int[]{2, 1, 1,1});
         //table.getDefaultCell().setHorizontalAlignment(Element.ALIGN_CENTER);
         //table.getDefaultCell().setHorizontalAlignment(Element.ALIGN_CENTER);
 
@@ -74,10 +75,10 @@ public class GeneradorPdfServiceImp implements GeneradorPdfService {
 
         for (ClienteProductoPedidoDTO item:
                 pedidos) {
-            table.addCell(item.getProducto());
+            table.addCell(item.getProducto()+ " - " + item.getSubTipo());
             table.addCell(String.valueOf(item.getCantidad()));
             table.addCell(String.valueOf(item.getPrecio()));
-            table.addCell(String.valueOf(item.getTotal()));
+            table.addCell(String.valueOf("$"+item.getTotal()));
         }
 
         table.addCell("Total");
