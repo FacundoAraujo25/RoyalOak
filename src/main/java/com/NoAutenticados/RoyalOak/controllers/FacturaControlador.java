@@ -101,4 +101,22 @@ public class FacturaControlador {
     }
 
 //-------------------------------------------Fin Modificar carrito------------------------------------------------------
+
+    @DeleteMapping("/productos/carrito/borrar")
+    public ResponseEntity<Object> borrarPedidoCarrito(Authentication authentication,
+                                                         @RequestParam long idPedido){
+
+        Cliente cliente = clienteServicio.findByEmail(authentication.getName());
+        Factura factura = cliente.getFacturas().stream().filter(fact -> fact.getEstadoFactura() == EstadoFactura.CARRITO).findFirst().orElse(null);
+
+        assert factura != null;
+        if (factura.getClienteProductoPedidos().stream().filter(pedido -> pedido.getId() == idPedido).findFirst().orElse(null) == null){
+            return new ResponseEntity<>("El pedido no está en el carrito", HttpStatus.FORBIDDEN);
+        }
+
+        ClienteProductoPedido borrarPedido = factura.getClienteProductoPedidos().stream().filter(pedido -> pedido.getId() == idPedido).findFirst().orElse(null);
+        clienteProductoPedidoRepositorio.delete(borrarPedido);
+        return new ResponseEntity<>(HttpStatus.ACCEPTED);
+
+    }
 }
