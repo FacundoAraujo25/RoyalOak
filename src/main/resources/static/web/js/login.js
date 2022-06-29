@@ -4,6 +4,7 @@ Vue.createApp({
         return {
             email:"",
             contraseña:"",
+            cliente:[],
 
             nombreR:"",
             apellidoR:"",
@@ -16,6 +17,7 @@ Vue.createApp({
     },
 
     created() {
+
         
         
     },
@@ -35,7 +37,12 @@ Vue.createApp({
                     width: "40%",
                 })
                 .then(response =>{
-                    window.location.href = './index.html'
+                    if (this.email.includes('esteban@gmail.com') || this.email.includes('facu@gmail.com')||this.email.includes('daphnecollao@gmail.com')){
+                        window.location.href = './admin.html' 
+                    } else {
+                        window.location.href = './index.html' 
+                    }
+                    
                 })
             })
             .catch(response => {

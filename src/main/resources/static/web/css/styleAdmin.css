@@ -5,6 +5,7 @@
     box-sizing: border-box;
 }
 
+
 /* HTML */
 html{
     overflow-x: hidden;
@@ -192,6 +193,11 @@ p{
 
 .principal{
     height: 100vh;
+}
+
+.principal img{
+    width: 92%;
+    margin-left: 8%;
 }
 
 a,
@@ -474,10 +480,10 @@ a:hover {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-/* .swal2-styled.swal2-confirm{
-    background-color: #225f6d !important;
-    color: #CCCCCC !important;
-} */
+.swal2-styled.swal2-confirm{
+    /* background-color: #225f6d !important;
+    color: #CCCCCC !important; */
+}
 
 /* VIDEO */
 /* Cerveza */
@@ -897,3 +903,26 @@ input[type="checkbox"]:checked ~ .nav
 .dark{
     background-color: #0F292F;
 } */
+
+/* SECCION ADMIN */
+.borrar{
+    margin-bottom: 210px;
+    margin-left: 190px;
+}
+
+.add{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #15373f;
+    transition-duration: 1s;
+}
+
+.add:hover{
+    background-color: #116460;
+   transition-duration: 1s;
+}
+
+.add a{
+    font-size: 10em
+}

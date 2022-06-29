@@ -7,14 +7,9 @@ const app = Vue.createApp({
             tipo:[],
             subtipos:[],
 
-            clientes:[],
+            cliente:[],
 
-            comida:[],
-            hamburguesas:[],
-            pizzas:[],
-            ensaladas:[],
-            bebidas:[],
-            picadas:[],
+            email:""
 
         }
     },
@@ -26,9 +21,13 @@ const app = Vue.createApp({
             .then(data => {
                 this.productos = data.data
                 console.log(this.productos)
-                /* this.comida = this.productos.comida
-                console.log(this.comida) */
             })
+            
+            /* axios.get('http://localhost:8585/api/clientes')
+            .then(data => {
+                this.cliente = data.data
+                this.email = this.cliente.email
+            }) */
         
 
     },
@@ -43,6 +42,26 @@ const app = Vue.createApp({
                 confirmButtonText: 'Entendido',
                 footer: '<a href="">Agregar al carro</a>'
               })
+        },
+
+        eliminarProducto(){
+            Swal.fire({
+                title:'Confirmar eliminacion',
+                text: '¿Estas seguro que quieres eliminar este producto?',
+                icon:'warning',
+                confirmButtonColor: '#12A098',
+                cancelButtonColor: '#d33',
+                confirmButtonText: true,
+                confirmButtonText: 'Eliminar',
+                showCancelButton: true,
+                cancelButtonText: 'Cancelar',
+                })
+                .then((result) => {
+                    if (result.isConfirmed) {
+                        axios.delete('/api/productos')
+                        window.location.href = './admin.html'
+                    }
+                  })
         },
 
         mostrarCategorias(){
@@ -88,8 +107,6 @@ const app = Vue.createApp({
                 confirmButtonText: 'Si, salir',
                 showCancelButton: true,
                 cancelButtonText: 'No, volver!',
-                
-                
                 })
                 .then((result) => {
                     if (result.isConfirmed) {
@@ -97,7 +114,7 @@ const app = Vue.createApp({
                         window.location.href = './login.html'
                     }
                   })
-        }
+            }
         
 
     },
