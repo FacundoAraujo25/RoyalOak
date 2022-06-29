@@ -163,7 +163,7 @@
                 <!-- DIVISOR HAMBURGUESAS -->
                 <div data-aos="fade-up" class="divisor d-flex">
                         <div class="tipoDeComida">
-                                <img src="media/logo-royaloak-2.png" alt="">
+                                <img src="./media/logo-royaloak-2.png" alt="">
                                 <h3>Hamburguesas</h3>
                         </div>
                         <div id="divisorBurgers">
@@ -196,14 +196,15 @@
                         <div class="container">
                                 <div class="row">
                                         <!-- Single Product -->
-                                        <div v-for="producto in productos.filter(producto=> producto.subtipo=='HAMBURGUESAS')" class="col-md-6 col-lg-4 col-xl-3">
-                                                <div  id="product-1" class="single-product">
+                                        <div v-for="hamburguesa in hamburguesas" class="col-md-6 col-lg-4 col-xl-3">
+                                                <div class="single-product" v-bind:style='{ backgroundImage: "url(" + hamburguesa.imagen + ")", }'>
                                                         <div class="part-1">
+                                                                <!-- <img :src="hamburguesa.imagen" class="imgHamburguesa"> -->
                                                                 <ul>
                                                                         <li><a href="#"><i class="fa-solid fa-cart-plus"></i></a></li>        
                                                                         <li><a href="#"><i class="fas fa-heart"></i></a></li>
                                                                         <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                                                                        <li v-if="producto.nombre.includes('Veggie')"><a href="#"><i class="fas fa-seedling"></i></a></li>
+                                                                        <li v-if="hamburguesa.nombre.includes('Veggie')"><a href="#"><i class="fas fa-seedling"></i></a></li>
                                                                         <li @click="mostrarIngredientes"><a href="#"><i class="fas fa-info"></i></a></li>
                                                                     </ul>
                                                                     <ul>
@@ -211,10 +212,10 @@
                                                                     </ul>
                                                         </div>
                                                         <div class="part-2">
-                                                                <h3 class="product-title">{{producto.nombre}}</h3>
-                                                                <p>{{producto.descripcion}}</p>
+                                                                <h3 class="product-title">{{hamburguesa.nombre}}</h3>
+                                                                <p>{{hamburguesa.descripcion}}</p>
                                                                 <h4 class="product-old-price">$79.99</h4>
-                                                                <h4 class="product-price">{{producto.precio}}</h4>
+                                                                <h4 class="product-price">{{hamburguesa.precio}}</h4>
                                                         </div>
                                                         
                                                 </div>
@@ -234,7 +235,7 @@
                         </div>
                         <div id="divisorBurgers2">
                                 <video id="video" autoplay loop muted>
-                                        <source src="media/Recursos  Vídeos de fondo  Cerveza[720p].mp4"
+                                        <source src="./media/Recursos  Vídeos de fondo  Cerveza[720p].mp4"
                                                 type="video/mp4">
                                         su navegador no puede reproducir este formato de video
                                 </video>
