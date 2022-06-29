@@ -93,9 +93,13 @@
                         <a  href=""><img src="../media/royal_menuH.png"></a>
                         <p>Royal Oak</p>
                     </div>
-                    <div>
+                    <div v-if="cliente.length == 0">
                         <a  href=""><img src="../media/register_menuH.webp"></a>
                         <p>Registrarme</p>
+                    </div>
+                    <div v-else>
+                        <a  href=""><img src="../media/register_menuH.webp"></a>
+                        <p>Perfil</p>
                     </div>
                     <div>
                         <a  href=""><img src="../media/logout_menuH.png"></a>
@@ -141,10 +145,15 @@
                                         alt=""></a>
                         <p>Royal</p>
                 </div>
-                <div>
+                <div v-if="cliente.length == 0">
                         <a href="../login.html"><img class="scale-up-center " src="../media/Register.webp"
                                         alt=""></a>
                         <p>Registro</p>
+                </div>
+                <div v-else>
+                    <a href="../login.html"><img class="scale-up-center " src="../media/Register.webp"
+                                    alt=""></a>
+                    <p>Perfil</p>
                 </div>
                 <div id="salir">
                         <a href=""><img class="scale-up-center" src="../media/cerrarSesion.png" alt=""></a>
@@ -172,27 +181,39 @@
                     <label class="product-details">Product</label>
                     <label class="product-price labels">Precio</label>
                     <label class="product-quantity labels">Cantidad</label>
+                    <label class="agregar-producto">Modificar</label>
                     <label class="product-removal">Remover</label>
                     <label class="product-line-price labels">Subtotal</label>
                 </div>
 
-                <div class="product" data-aos="fade-up">
+                <div class="product" data-aos="fade-up" v-for="pedido in pedidos">
                     <div class="product-image" data-aos="zoom-in">
-                    <img src="https://s.cdpn.io/3/dingo-dog-bones.jpg">
+                    <img src="../assets/logo-royaloak-2.png">
                     </div>
                     <div class="product-details">
-                    <div class="product-title"><p class="labels">Dingo Dog Bones</p></div>
+                    <div class="product-title"><p class="labels">{{pedido.producto}}</p></div>
                     </div>
-                    <div class="product-price arreglo">12.99</div>
+                    <div class="product-price arreglo">{{pedido.precio}}</div>
                     <div class="product-quantity arreglo">
-                    <input type="number" value="2" min="1">
+                        <button type="button" @click="quitarPedido(pedido)"
+                        class="btn btn-outline-secondary stock1">&#45;</button>
+                        <input type="text" disabled class="inputCantidad" :placeholder="pedido.cantidad"></input>
+                        <button type="button" @click="sumarPedido(pedido)"
+                        class="btn btn-outline-secondary stock2">&#43;</button>
+                    </div>
+                    <div class="botones">
+                    <div class="agregar-producto arreglo">
+                            <button type="submit" class="agregar" @click="modificarPedido">
+                                Modificar Pedido
+                            </button>
                     </div>
                     <div class="product-removal arreglo">
-                    <button class="remove-product labels">
-                        Remover
+                    <button class="remove-product" @click="borrarPedido(pedido.id)">
+                        Borrar Productos
                     </button>
                     </div>
-                    <div class="product-line-price arreglo">25.98</div>
+                </div>
+                    <div class="product-line-price arreglo">{{pedido.total}}</div>
                 </div>
 
 
@@ -200,9 +221,9 @@
                 <div class="totals">
                     <div class="totals-item">
                     <label class="labels">Subtotal</label>
-                    <div class="totals-value" id="cart-subtotal">71.97</div>
+                    <div class="totals-value" id="cart-subtotal">{{subtotalTotal}}</div>
                     </div>
-                    <div class="totals-item d-flex justify-content-end">
+                    <div class="totals-item totals-input d-flex justify-content-end">
                         <div>
                         <input type="radio" id="radioDelivery" required value="delivery" class="btn-check" v-model="envioValue"></input>
                         <label for="radioDelivery" class="btn">
@@ -216,13 +237,14 @@
                         </label>
                     </div>
                     </div>
-                    <div class="totals-item" v-if="envioValue == 'delivery'">
+                    <div class="totals-item" v-if="envioValue == 'delivery' && 2500 > subtotalTotal">
                     <label class="labels">Envío</label>
                     <div class="totals-value" id="cart-shipping">150.00</div>
                     </div>
                     <div class="totals-item totals-item-total">
                     <label class="labels">Total</label>
-                    <div class="totals-value" id="cart-total">90.57</div>
+                    <div class="totals-value" id="cart-total" v-if="envioValue == 'delivery' && 2500 > subtotalTotal">{{subtotalTotal+150}}</div>
+                    <div class="totals-value" id="cart-total" v-else>{{subtotalTotal}}</div>
                     </div>
                 </div>
 
@@ -256,7 +278,6 @@
     <script src="https://unpkg.com/vue@3"></script>
     <script src="../js/carrito.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="sweetalert2.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({

@@ -56,6 +56,10 @@ public class ClienteControlador {
         return new ClienteDTO(cliente);
     }
 
+    @GetMapping("/clientes/actual")
+    public ClienteDTO getTodos(Authentication authentication){
+        return clienteServicio.getClienteLogueado(authentication.getName());
+    }
     @PostMapping("/clientes")
     public ResponseEntity<Object> registrarCliente(@RequestParam String nombre,
                                                    @RequestParam String apellido,
