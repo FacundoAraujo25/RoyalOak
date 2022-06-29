@@ -1,6 +1,5 @@
 package com.NoAutenticados.RoyalOak.models;
 
-import com.NoAutenticados.RoyalOak.evento.SubTipo;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;

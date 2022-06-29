@@ -2,7 +2,7 @@ package com.NoAutenticados.RoyalOak.controllers;
 
 import com.NoAutenticados.RoyalOak.dtos.ProductoDTO;
 import com.NoAutenticados.RoyalOak.models.Producto;
-import com.NoAutenticados.RoyalOak.evento.SubTipo;
+import com.NoAutenticados.RoyalOak.models.SubTipo;
 import com.NoAutenticados.RoyalOak.models.Tipo;
 import com.NoAutenticados.RoyalOak.services.ProductoServicio;
 import org.springframework.beans.factory.annotation.Autowired;

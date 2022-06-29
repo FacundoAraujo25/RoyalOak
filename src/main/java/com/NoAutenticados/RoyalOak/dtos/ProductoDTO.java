@@ -1,7 +1,7 @@
 package com.NoAutenticados.RoyalOak.dtos;
 
 import com.NoAutenticados.RoyalOak.models.Producto;
-import com.NoAutenticados.RoyalOak.evento.SubTipo;
+import com.NoAutenticados.RoyalOak.models.SubTipo;
 import com.NoAutenticados.RoyalOak.models.Tipo;
 
 public class ProductoDTO {
