@@ -1,11 +1,10 @@
 package com.NoAutenticados.RoyalOak.models;
 
+import com.NoAutenticados.RoyalOak.evento.SubTipo;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 

@@ -2,7 +2,7 @@ package com.NoAutenticados.RoyalOak.controllers;
 
 import com.NoAutenticados.RoyalOak.dtos.ProductoDTO;
 import com.NoAutenticados.RoyalOak.models.Producto;
-import com.NoAutenticados.RoyalOak.models.SubTipo;
+import com.NoAutenticados.RoyalOak.evento.SubTipo;
 import com.NoAutenticados.RoyalOak.models.Tipo;
 import com.NoAutenticados.RoyalOak.services.ProductoServicio;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,10 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.lang.reflect.Array;
-import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api")

@@ -12,10 +12,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
-
 @SpringBootApplication
 public class RoyalOakApplication {
 
@@ -65,7 +61,7 @@ public class RoyalOakApplication {
 			clienteRepositorio.save(cliente7);
 
 
-			Producto producto1 = new Producto("Classic", "Hamburguesa clásica con carne,queso cheddar,verduras y Ali oli.", "https://i.imgur.com/7n3AQpO.jpg", 25, 550,Tipo.COMIDA,SubTipo.HAMBURGUESAS);
+			Producto producto1 = new Producto("Classic", "Hamburguesa clásica con carne,queso cheddar,verduras y Ali oli.", "https://i.imgur.com/7n3AQpO.jpg", 25, 550,Tipo.COMIDA, SubTipo.HAMBURGUESAS);
 			Producto producto2 = new Producto("Bacon","Bacon y cheddar con hamburguesa acompañada de mayonesa y cebolla caramelizada.","https://i.imgur.com/NB5THSY.jpg",20,650,Tipo.COMIDA,SubTipo.HAMBURGUESAS);
 			Producto producto3 = new Producto("Butter Burger","Un medallón, cheddar,cebolla caramelizada con manteca en el medallón.","https://i.imgur.com/52tsTkG.jpg",15,600,Tipo.COMIDA,SubTipo.HAMBURGUESAS);
 			Producto producto4 = new Producto("Crispy Burger","Medallón simple, cheddar, lechuga, tomate, cebolla crispy y Alí Oli.","https://i.imgur.com/46E6lnG.jpg",35,600,Tipo.COMIDA,SubTipo.HAMBURGUESAS);
@@ -214,6 +210,56 @@ public class RoyalOakApplication {
 			productoRepositorio.save(producto43);
 			productoRepositorio.save(producto44);
 			productoRepositorio.save(producto45);
+
+			Producto producto46 = new Producto("Agua mineral 1.5L","Agua mineral grande sin/con gas.(La marca puede variar)","https://i.imgur.com/M3crNon.png",50,170,Tipo.BEBIDA,SubTipo.SIN_ALCOHOL);
+			Producto producto47 = new Producto("Agua mineral 500 ml","Agua mineral chica sin/con gas.(La marca puede variar)","https://i.imgur.com/S5pdG4Y.png",50,100,Tipo.BEBIDA,SubTipo.SIN_ALCOHOL);
+			Producto producto48 = new Producto("Coca-Cola 350ml","Coca chica de vidrio.(Más fría que el corazón de eia)","https://i.imgur.com/U0Wdi8c.png",50,120,Tipo.BEBIDA,SubTipo.SIN_ALCOHOL);
+			Producto producto49 = new Producto("Coca-Cola 1.5L","Coca-Cola mediana con envase retornable y no-retornable.","https://i.imgur.com/Jo4vD6l.png",50,250,Tipo.BEBIDA,SubTipo.SIN_ALCOHOL);
+			Producto producto50 = new Producto("Seven-Up 350ml","Seven-Up chica de vidrio.","https://i.imgur.com/k49xksL.png",50,120,Tipo.BEBIDA,SubTipo.SIN_ALCOHOL);
+			Producto producto51 = new Producto("Seven-Up 1.5L","Seven-Up mediana con envase retornable y no-retornable.","https://i.imgur.com/yeQ5IQB.png",50,250,Tipo.BEBIDA,SubTipo.SIN_ALCOHOL);
+			Producto producto52 = new Producto("Fanta Naranja 1.5L","Fanta mediana con envase retornable y no-retornable.","https://i.imgur.com/weCwvlx.png",50,250,Tipo.BEBIDA,SubTipo.SIN_ALCOHOL);
+			Producto producto53 = new Producto("Fanta Naranja 500ml","Fanta naranja chica.","https://i.imgur.com/Qc6rrCV.png",50,150,Tipo.BEBIDA,SubTipo.SIN_ALCOHOL);
+			Producto producto54 = new Producto("Cerveza Miller 330ml","Cerveza rubia que está 4 veces filtrada en frío, por eso tiene una frescura intensa, un sabor suave y un dorado inigualable.","https://i.imgur.com/sfNUzWp.jpg",50,350,Tipo.BEBIDA,SubTipo.CON_ALCOHOL);
+			Producto producto55 = new Producto("Cerveza Heineken 330ml","Cerveza rubia cuyo sabor distintivo y único está dado por el uso exclusivo de la Levadura A, especialmente desarrollada por un discípulo de Louis Pasteur","https://i.imgur.com/TsSDN5a.jpg",50,350,Tipo.BEBIDA,SubTipo.CON_ALCOHOL);
+			Producto producto56 = new Producto("Cerveza Budweiser 330ml","Cerveza rubia de origen checo, patentada en los Estados Unidos y una de las más populares en ese país.","https://i.imgur.com/YQipDhC.png",50,350,Tipo.BEBIDA,SubTipo.CON_ALCOHOL);
+			Producto producto57 = new Producto("Cerveza Corona 330ml","Cerveza rubia mexicana fundada en 1926 y muy popular en todo el mundo","https://i.imgur.com/dAjuPW0.png",50,200,Tipo.BEBIDA,SubTipo.CON_ALCOHOL);
+			Producto producto58 = new Producto("Daiquiri","Cóctel escarchado hecho con ron blanco, jugo de limón o de lima y azúcar.","https://i.imgur.com/9QlBBd6.jpg",50,550,Tipo.BEBIDA,SubTipo.CON_ALCOHOL);
+			Producto producto59 = new Producto("Mojito","El mojito es un cóctel popular originario de Cuba, compuesto de ron, limón, menta o eucalipto y agua mineral.","https://i.imgur.com/8VlPNcg.png",50,600,Tipo.BEBIDA,SubTipo.CON_ALCOHOL);
+			Producto producto60 = new Producto("Margarita","La margarita es un cóctel compuesto por tequila, triple sec y jugo de lima o limón. ","https://i.imgur.com/5LBHQsZ.png",50,600,Tipo.BEBIDA,SubTipo.CON_ALCOHOL);
+			Producto producto61 = new Producto("Tekila Sunrise","El tequila sunrise o Acapulco es un cóctel preparado de dos maneras diferentes: la original, con tequila, crème de cassis, jugo de lima y agua con gas; la forma más popular está hecha con tequila, jugo de naranja y granadina","https://i.imgur.com/gWOIFKr.png",50,600,Tipo.BEBIDA,SubTipo.CON_ALCOHOL);
+			producto46.setActivo(true);
+			producto47.setActivo(true);
+			producto48.setActivo(true);
+			producto49.setActivo(true);
+			producto50.setActivo(true);
+			producto51.setActivo(true);
+			producto52.setActivo(true);
+			producto53.setActivo(true);
+			producto54.setActivo(true);
+			producto55.setActivo(true);
+			producto56.setActivo(true);
+			producto57.setActivo(true);
+			producto58.setActivo(true);
+			producto59.setActivo(true);
+			producto60.setActivo(true);
+			producto61.setActivo(true);
+
+			productoRepositorio.save(producto46);
+			productoRepositorio.save(producto47);
+			productoRepositorio.save(producto48);
+			productoRepositorio.save(producto49);
+			productoRepositorio.save(producto50);
+			productoRepositorio.save(producto51);
+			productoRepositorio.save(producto52);
+			productoRepositorio.save(producto53);
+			productoRepositorio.save(producto54);
+			productoRepositorio.save(producto55);
+			productoRepositorio.save(producto56);
+			productoRepositorio.save(producto57);
+			productoRepositorio.save(producto58);
+			productoRepositorio.save(producto59);
+			productoRepositorio.save(producto60);
+			productoRepositorio.save(producto61);
 
 
 			Factura factura = new Factura();
