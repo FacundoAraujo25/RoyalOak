@@ -195,6 +195,11 @@ p{
     height: 100vh;
 }
 
+.principal img{
+    width: 92%;
+    margin-left: 8%;
+}
+
 a,
 a:hover {
     text-decoration: none;
@@ -898,3 +903,26 @@ input[type="checkbox"]:checked ~ .nav
 .dark{
     background-color: #0F292F;
 } */
+
+/* SECCION ADMIN */
+.borrar{
+    margin-bottom: 210px;
+    margin-left: 190px;
+}
+
+.add{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #15373f;
+    transition-duration: 1s;
+}
+
+.add:hover{
+    background-color: #116460;
+   transition-duration: 1s;
+}
+
+.add a{
+    font-size: 10em
+}

@@ -10,11 +10,11 @@
                 integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
                 crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
-        <link rel="stylesheet" href="./css/style.css">
+        <link rel="stylesheet" href="./css/styleAdmin.css">
         <link rel="stylesheet" href="./css/footer.css">
         <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
         <link rel="icon" href="assets/logo-royaloak-2 (1).ico">
-        <title>Document</title>
+        <title>Administrador</title>
 </head>
 
 <body>
@@ -81,7 +81,7 @@
                 <header>
                         <div class="nav">
                                 <div id="marca">
-                                        <a href="#"><img src="./media/logo-royaloak.png" alt="Logo"></a>
+                                        <a href="#"><img src="media/logo-royaloak.png" alt="Logo"></a>
                                 </div>
                                 <div id="menu">
                                         <a href=#divisorBurgers><img class="scale-up-center" id="iconos"
@@ -98,10 +98,10 @@
                                                         alt=""></a>
                                         <p>Royal</p>
                                 </div>
-                                <div v-if="email == 'facu@gmail.com'">
-                                        <a href="./admin.html"><img class="scale-up-center" src="https://cdn-icons-png.flaticon.com/512/81/81591.png"
+                                <div >
+                                        <a href="./index.html"><img class="scale-up-center" src="https://cdn-icons-png.flaticon.com/512/81/81591.png"
                                                         alt=""></a>
-                                        <p>Admin</p>
+                                        <p>Vista cliente</p>
                                 </div>
                                 <div>
                                         <a href="./login.html"><img class="scale-up-center " src="media/Register.webp"
@@ -114,19 +114,11 @@
                                 </div>
                         </div>
 
-                        <!-- <box-icon name='user-pin' type='solid' ></box-icon>
-                        <box-icon type='solid' name='dice-5'></box-icon>
-                        <box-icon name='cart-download' type='solid' ></box-icon>
-                        <box-icon name='dish' type='solid'></box-icon>
-                        <box-icon name='user-pin' type='solid' ></box-icon> -->
 
                         <div class="center">
                                 <div class="principal">
-                                        <video id="video2" autoplay loop muted>
-                                                <source src="media/Burger Handheld B-roll  Drumlife Production[720p]_Trim (2).mp4"
-                                                        type="video/mp4">
-                                                su navegador no puede reproducir este formato de video
-                                        </video>
+                                    <img src="https://www.hostelshopping.com/wp-content/uploads/2016/11/restaurante-personal.jpg" alt="">
+                                        
                                 </div>
                         </div>
                 </header>
@@ -183,14 +175,25 @@
                 <!-- SECCION HAMBURGUESAS -->
                 <section data-aos="fade-up"  class="section-products">
                         <div class="container">
-                                <!-- <div class="row justify-content-center text-center">
-                            <div class="col-md-8 col-lg-6">
-                                    <div class="header">
-                                            <h3>Seccion de productos</h3>
-                                            <h2>Nuestras Hamburguesas</h2>
-                                    </div>
-                            </div>
-                                </div> -->
+                                <div class="row">
+                                        <!-- Add Product -->
+                                        <div class="col-md-6 col-lg-4 col-xl-3">
+                                                <div class="single-product ">
+                                                        <div class="part-1 add ">
+                                                             <a ><i class="bi bi-plus"></i></a>  
+                                                        </div>
+                                                        <div class="part-2">
+                                                                <h3 class="product-title">Agregar producto</h3>
+                                                                <p>agrega un nuevo producto a royal Oak</p>
+                                                                <h4 class="product-price">$0</h4>
+                                                        </div>
+                                                        
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                        
+                        <div class="container">
                                 <div class="row">
                                         <!-- Single Product -->
                                         <div v-for="producto in productos.filter(producto=> producto.subtipo=='HAMBURGUESAS')" class="col-md-6 col-lg-4 col-xl-3">
@@ -200,12 +203,12 @@
                                                                         <li><a href="#"><i class="fa-solid fa-cart-plus"></i></a></li>        
                                                                         <li><a href="#"><i class="fas fa-heart"></i></a></li>
                                                                         <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                                                                        <!-- <li v-if="producto in productos.filter(producto=> producto.descripcion.includes('vegan')"><a href="#"><i class="fas fa-seedling"></i></a></li> -->
+                                                                        <li v-if="producto.nombre.includes('Veggie')"><a href="#"><i class="fas fa-seedling"></i></a></li>
                                                                         <li @click="mostrarIngredientes"><a href="#"><i class="fas fa-info"></i></a></li>
-                                                                        
-                                                                        
-                                                                                                 
-                                                                </ul>
+                                                                    </ul>
+                                                                    <ul>
+                                                                        <li @click="eliminarProducto" class="borrar" ><a href="#"><i class="fa-solid fa-trash-can"></i></a></li>                                                                                          
+                                                                    </ul>
                                                         </div>
                                                         <div class="part-2">
                                                                 <h3 class="product-title">{{producto.nombre}}</h3>
@@ -242,13 +245,6 @@
                 <!-- SECCION BEBIDAS -->
                 <section data-aos="fade-up" class="section-products">
                         <div class="container">
-                                <!-- <div class="row justify-content-center text-center">
-                        <div class="col-md-8 col-lg-6">
-                                <div class="header">
-                                        <h2>Nuestras Bebidas</h2>
-                                </div>
-                        </div>
-                        </div> -->
                                 <div class="row">
                                         <!-- Single Product -->
                                         <div class="col-md-6 col-lg-4 col-xl-3">
@@ -383,13 +379,6 @@
                 <!-- SECCION PICADAS -->
                 <section data-aos="fade-up" class="section-products">
                         <div class="container">
-                                <!-- <div class="row justify-content-center text-center">
-                        <div class="col-md-8 col-lg-6">
-                                <div class="header">
-                                        <h2>Nuestras Bebidas</h2>
-                                </div>
-                        </div>
-                        </div> -->
                                 <div class="row">
                                         <!-- Single Product -->
                                         <div class="col-md-6 col-lg-4 col-xl-3">
@@ -524,13 +513,7 @@
                 <!-- SECCION PIZZAS -->
                 <section data-aos="fade-up" class="section-products">
                         <div class="container">
-                                <!-- <div class="row justify-content-center text-center">
-                        <div class="col-md-8 col-lg-6">
-                                <div class="header">
-                                        <h2>Nuestras Bebidas</h2>
-                                </div>
-                        </div>
-                        </div> -->
+                               
                                 <div class="row">
                                         <!-- Single Product -->
                                         <div v-for="producto in productos.filter(producto=> producto.subtipo=='PIZZAS')" class="col-md-6 col-lg-4 col-xl-3">
@@ -541,6 +524,9 @@
                                                                         <li><a href="#"><i class="fas fa-heart"></i></a></li>
                                                                         <li><a href="#"><i class="fas fa-plus"></i></a></li>
                                                                         <li><a href="#"><i class="fas fa-seedling"></i></a></li>
+                                                                </ul>
+                                                                <ul>
+                                                                        <li @click="eliminarProducto" class="borrar" ><a href="#"><i class="fa-solid fa-trash-can"></i></a></li>                                                                                          
                                                                 </ul>
                                                         </div>
                                                         <div class="part-2">
@@ -574,13 +560,7 @@
                 <!-- SECCION ENSALADAS -->
                 <section data-aos="fade-up" class="section-products">
                         <div class="container">
-                                <!-- <div class="row justify-content-center text-center">
-                        <div class="col-md-8 col-lg-6">
-                                <div class="header">
-                                        <h2>Nuestras Bebidas</h2>
-                                </div>
-                        </div>
-                        </div> -->
+                                
                                 <div class="row">
                                         <!-- Single Product -->
                                         <div v-for="producto in productos.filter(producto=> producto.subtipo=='ENSALADAS')" class="col-md-6 col-lg-4 col-xl-3">
@@ -591,6 +571,9 @@
                                                                         <li><a href="#"><i class="fas fa-heart"></i></a></li>
                                                                         <li><a href="#"><i class="fas fa-plus"></i></a></li>
                                                                         <li><a href="#"><i class="fas fa-seedling"></i></a></li>
+                                                                </ul>
+                                                                <ul>
+                                                                        <li @click="eliminarProducto" class="borrar" ><a href="#"><i class="fa-solid fa-trash-can"></i></a></li>                                                                                          
                                                                 </ul>
                                                         </div>
                                                         <div class="part-2">
@@ -613,85 +596,6 @@
 
 
         </div>
-
-        <!-- FOOTER NACHO -->
-        <!-- <div id="contenedorInfo">
-                <button class="botoninfo" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample"
-                        aria-expanded="false" aria-controls="collapseExample">
-                        <i class="bi bi-chevron-up"></i> Más información
-                </button>
-        </div>
-        <div class="collapse" id="collapseExample">
-        <div class="card card-body card-informacion">
-        <div id="masInformacion-contenedor"
-                class="container-fluid-p0 d-flex justify-content-around pt-4 pb-4 text-dark flex-wrap row">
-
-                <div class="col-lg-2">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2942.0966932595034!2d-83.14328548503491!3d42.48949693491102!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8824cf69a6accbd7%3A0x56e7427bdbdafa3f!2sRoyal%20Oak%20Farmers%20Market!5e0!3m2!1ses-419!2sar!4v1656171816975!5m2!1ses-419!2sar" width="225" height="225" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-
-                <div class="col-lg-2 extrainfo">
-                <h3>Somos Royal Oak</h3>
-                <ul>
-                <li><a href="./login.html">Registrarme</a></li>
-                <li><a href="#" >Ver Menu</a></li>
-                </ul>
-                </div>
-
-                <div class="col-lg-2 extrainfo">
-                <h3>Servicio al cliente</h3>
-                <ul>
-                <li><a class="swal-preguntas-frecuentes" onclick="preguntasFrecuentes()">Preguntas Frecuentes</a></li>
-                <li><a class="swal-atencion-al-cliente" onclick="atencionAlCliente()">Atencion al cliente</a></li>
-                <li><a class="swal-terminos-y-condiciones" onclick="terminosYCondiciones()">Terminos y condiciones</a></li>
-                <li><a class="swal-medios-de-pago" onclick="mediosDePago()">Medios de Pago</a></li>
-                </ul>
-                </div>
-
-                <div class="col-lg-2 extrainfo">
-                <h3>Sobre Nosotros</h3>
-                <ul>
-                <li><a class="swal-quienes-somos" onclick="quienesSomos()">Quiénes Somos</a></li>
-                <li><a class="swal-quienes-somos"  onclick="contacto()">Contacto</a></li>
-                </ul>
-                </div>
-
-                <div class="col-lg-2 infocontacto d-flex flex-column ">
-                <h6>Contáctanos</h6>
-                <span class="d-flex gap-3 pb-2"><a href="#" target="_blank"><i
-                        class="bi bi-facebook" style="font-size:25px"></i></a>
-                <a href="#" target="_blank"><i class="bi bi-instagram"
-                        style="font-size:25px"></i></a>
-                <a href="#" target="_blank"><i class="bi bi-twitter"
-                        style="font-size:25px"></i></a></span>
-
-
-                <a href="">RoyalOak@gmail.com</a>
-                <a href="tel:+5491124966463">+1 408 548 4536</a>
-                <p>316 Eleven Street, Chicago, Estados Unidos</p>
-                </div>
-
-        </div>
-        </div>
-        </div>
-
-  <footer class="d-flex align-items-center justify-content-around p-2 flex-wrap">
-    <div>
-        <p class="ps-5">&copy;Royal Oak 2022 - Todos los derechos reservados</p>
-    </div>
-    <div id="metodos" class="d-flex ">
-        <div>
-                <img id="mp" src="./media/mercadopago1.png" alt="mercado pago" >
-        </div>
-        <div>
-                <img id="uala" src="./media/uala2.png" alt="mercado pago" >
-        </div>
-        <div>
-                <img id="dataFiscal" src="./media/Datafiscal.jpg" alt="data fiscal" >
-        </div>
-    </div>
-  </footer> -->
-        <!-- FOOTER NACHO -->
 
         <!-- FOOTER CARO -->
         <footer class="containerF text-bg-dark">
@@ -772,7 +676,7 @@
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
         <script>AOS.init({ duration: 1200, })</script>
         <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-        <script src="./js/index.js"></script>
+        <script src="./js/indexAdmin.js"></script>
         <script src="./js/sweetAlert.js"></script>
         <script src="https://unpkg.com/boxicons@2.1.2/dist/boxicons.js"></script>
 </body>
