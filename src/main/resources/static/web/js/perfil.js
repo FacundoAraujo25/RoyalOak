@@ -61,6 +61,14 @@ Vue.createApp({
                     }
                 })
         },
+        
+        confirmarContraseña(){
+            Swal.fire({
+                html: ``,
+                title: 'Ingrese su contraseña',
+                icon: 'warning',
+            })
+        },
 
         eliminarDireccion(param) {
             Swal.fire({

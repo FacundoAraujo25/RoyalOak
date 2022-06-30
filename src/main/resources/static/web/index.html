@@ -47,17 +47,10 @@
                                     </div>
                                 </nav>
                             </div>
-            
-                            <div id="hamburguesitas">
-                                <div>
-                                    <a href=""><img src="./media/iconoBurger.png"></a>
-                                    <p>Menu</p>
-                                </div>
-                        </div>
 
-                       <!-- <div id="hamburguesitas">
+                       <div id="hamburguesitas">
                                 <div>
-                                <a  href=""><img src="media/iconoBurger.png"></a>
+                                <a  href=""><img src="./media/iconoBurger.png"></a>
                                 <p>Menu</p>
                                 </div>
                                 <div>
@@ -69,6 +62,10 @@
                                     <p>Registrarme</p>
                                 </div>
                                 <div>
+                                        <a href="./pages/perfil.html"><img src="./media/Register.webp"></a>
+                                        <p>Perfil</p>
+                                    </div>
+                                <div>
                                     <a @click="salir"><img src="./media/cerrarSesion.png"></a>
                                     <p>Salir</p>
                                 </div>
@@ -76,7 +73,7 @@
                         </div>
                         <nav id="menu_hamburguesa" class="navbar navbar-dark">
                             <div id="container_fluid" class="d-flex justify-between">
-                                <div>
+                                <!-- <div>
                                     <img id="carritoHamburguesa" src="./media/canastaIcono.png" alt="">
                                         <a href="./pages/random.html"><img class="scale-up-center"
                                                         src="https://cdn-icons-png.flaticon.com/512/30/30569.png"
@@ -87,7 +84,7 @@
                                         <a href="./admin.html"><img class="scale-up-center" src="https://cdn-icons-png.flaticon.com/512/81/81591.png"
                                                         alt=""></a>
                                         <p>Admin</p>
-                                </div>
+                                </div> -->
                                 <div>
                                     <img src="https://res.cloudinary.com/royal-oak-imagenes/image/upload/v1656443334/logo-simplificado_xcuvzo.png" alt="">
                                 </div>
@@ -114,17 +111,21 @@
                             </div>
                             <div>
                                 <a href="./pages/carrito.html"><img class="scale-up-center" src="./media/iconoBolsita.webp"
-                                        alt=""></a>
+                                        alt="pedido"></a>
                                 <p>Pedido</p>
                             </div>
                             <div>
                                 <a href="./pages/random.html"><img class="scale-up-center" src="https://cdn-icons-png.flaticon.com/512/30/30569.png"
-                                        alt=""></a>
+                                        alt="random"></a>
                                 <p>Royal</p>
                             </div>
-                            <div>
-                                <a href="./login.html"><img class="scale-up-center " src="./media/Register.webp" alt=""></a>
+                            <div v-if="cliente.length == 0">
+                                <a href="./login.html"><img class="scale-up-center " src="./media/Register.webp" alt="registro"></a>
                                 <p>Registro</p>
+                            </div>
+                            <div v-else>
+                                <a href="./pages/perfil.html"><img class="scale-up-center " src="./media/Register.webp" alt="perfil"></a>
+                                <p>Perfil</p>
                             </div>
                             <div id="salir">
                                 <a @click="salir"><img class="scale-up-center" src="./media/cerrarSesion.png" alt=""></a>
@@ -171,7 +172,7 @@
 
 
                 <!-- DIVISOR HAMBURGUESAS -->
-                <div data-aos="fade-up" class="divisor d-flex">
+                <div data-aos="fade-up" class="divisor d-flex" id="hamburguesas">
                         <div class="tipoDeComida">
                                 <img src="media/logo-royaloak-2.png" alt="">
                                 <h3>Hamburguesas</h3>
@@ -183,7 +184,7 @@
                 <!-- FIN DIVISOR HAMBURGUESAS -->
 
                 <!-- SECCION HAMBURGUESAS -->
-                <section data-aos="fade-up" class="section-products" id="hamburguesas">
+                <section data-aos="fade-up" class="section-products">
                         <div class="container">
                                 <div class="row">
                                         <!-- Single Product -->
@@ -254,9 +255,9 @@
 
 
                 <!-- DIVISOR PIZZAS -->
-                <div data-aos="fade-up" class="divisor d-flex">
+                <div data-aos="fade-up" class="divisor d-flex" id="pizzas1">
                         <div class="tipoDeComida">
-                                <img src="media/logo-royaloak-2.png" alt="">
+                                <img src="./media/logo-royaloak-2.png" alt="logo">
                                 <h3>Pizzas</h3>
                         </div>
                         <div id="divisorBurgers4">
@@ -266,7 +267,7 @@
                 <!-- FIN DIVISOR PIZZAS -->
 
                 <!-- SECCION PIZZAS -->
-                <section data-aos="fade-up" class="section-products" id="pizzas1">
+                <section data-aos="fade-up" class="section-products">
 
                         <div class="container">
                                 <div class="row">
@@ -341,9 +342,9 @@
 
 
                 <!-- DIVISOR PICADAS -->
-                <div data-aos="fade-up" class="divisor d-flex">
+                <div data-aos="fade-up" class="divisor d-flex" id="picadas">
                         <div class="tipoDeComida">
-                                <img src="media/logo-royaloak-2.png" alt="">
+                                <img src=".media/logo-royaloak-2.png" alt="logo">
                                 <h3>Picadas</h3>
                         </div>
                         <div id="divisorBurgers3">
@@ -353,7 +354,7 @@
                 <!-- FIN DIVISOR PICADAS -->
 
                 <!-- SECCION PICADAS -->
-                <section data-aos="fade-up" class="section-products" id="picadas">
+                <section data-aos="fade-up" class="section-products">
 
                         <div class="container">
                                 <div class="row">
@@ -427,9 +428,9 @@
 
 
                 <!-- DIVISOR ENSALADAS -->
-                <div data-aos="fade-up" class="divisor d-flex">
+                <div data-aos="fade-up" class="divisor d-flex" id="ensaladas">
                         <div class="tipoDeComida">
-                                <img src="media/logo-royaloak-2.png" alt="">
+                                <img src="./media/logo-royaloak-2.png" alt="logo">
                                 <h3>Ensaladas</h3>
                         </div>
                         <div id="divisorBurgers5">
@@ -439,7 +440,7 @@
                 <!-- FIN DIVISOR ENSALADAS -->
 
                 <!-- SECCION ENSALADAS -->
-                <section data-aos="fade-up" class="section-products" id="ensaladas">
+                <section data-aos="fade-up" class="section-products">
                         <div class="container">
                                 <div class="row">
                                         <!-- Single Product -->
@@ -512,9 +513,9 @@
 
 
                 <!-- DIVISOR BEBIDAS -->
-                <div data-aos="fade-up" class="divisor d-flex">
+                <div data-aos="fade-up" class="divisor d-flex" id="bebidas">
                         <div class="tipoDeComida">
-                                <img src="./media/logo-royaloak-2.png" alt="">
+                                <img src="./media/logo-royaloak-2.png" alt="logo">
                                 <h3>Bebidas</h3>
                         </div>
                         <div id="divisorBurgers2">
@@ -528,7 +529,7 @@
                 <!-- FIN DIVISOR BEBIDAS -->
 
                 <!-- SECCION BEBIDAS -->
-                <section data-aos="fade-up" class="section-products" id="bebidas">
+                <section data-aos="fade-up" class="section-products">
 
                         <div class="container">
                                 <div class="row">
