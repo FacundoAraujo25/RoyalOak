@@ -30,10 +30,14 @@ header {
 }
 
 .nav div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     padding: 0.5rem;
-    width: 4rem;
+    width: 3rem;
     transition-duration: 0.3s;
-    margin-bottom: 0.3rem;
+    /* margin-bottom: 0.3rem; */
 }
 
 .nav div:hover {
@@ -121,7 +125,7 @@ p {
     display: flex;
 }
 
-@media(min-width: 570px){
+@media(min-width: 700px){
     #hamburguesa{
         display: none;
     }
@@ -131,7 +135,7 @@ p {
     }
 }
 
-@media(max-width: 570px){
+@media(max-width: 700px){
 
 .nav{
         display: none;

@@ -11,9 +11,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com/%22%3E">
   <link rel=" preconnect" href="https://fonts.gstatic.com/" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&family=Potta+One&display=swap" rel="stylesheet">
-
   <script src="https://kit.fontawesome.com/19135af981.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="/web/css/perfil.css">
+  <link rel="stylesheet" href="../css/perfil.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/navbar.css">
+  <link rel="icon" href="../media/logo-royaloak-2 (1).ico">
   <title>Tu Perfil</title>
 </head>
 
@@ -23,107 +25,105 @@
     <div id="hamburguesa">
 
       <div class="collapse" id="navbarToggleExternalContent">
-
-        <div>
-          <nav id="menu_hamburguesa" class="navbar navbar-dark">
-            <div id="container_fluid" class="d-flex justify-between">
               <div>
-                <img id="carritoHamburguesa" src="media/canastaIcono.png" alt="">
+                      <nav id="menu_hamburguesa" class="navbar navbar-dark">
+                              <div id="container_fluid" class="d-flex justify-between">
+                                      <div>
+                                              <img id="carritoHamburguesa" src="../media/canastaIcono.png" alt="">
+                                      </div>
+                                      <div>
+                                              <img src="https://res.cloudinary.com/royal-oak-imagenes/image/upload/v1656443334/logo-simplificado_xcuvzo.png" alt="">
+                                      </div>
+                                      <div id="botonHamburguesa">
+                                              <button id="boton_hamburguesa" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                                                      <i class="bi bi-x-square"></i>
+                                              </button>
+                                      </div>
+                              </div>
+                      </nav>   
+              </div>
+
+          <div id="hamburguesitas">
+              <div>
+                  <a href="../index.html"><img src="../media/menuH.png"></a>
+                  <p>Menu</p>   
               </div>
               <div>
-                <img src="/web/media/logo-royaloak-2.png" alt="">
+                  <a href="../pages/random.html"><img src="../media/royal_menuH.png"></a>
+                  <p>Royal</p>
               </div>
-              <div id="botonHamburguesa">
-                <button id="boton_hamburguesa" class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
-                  aria-expanded="false" aria-label="Toggle navigation">
-                  <i class="bi bi-x-square"></i>
-                </button>
+              <div v-if="cliente.length == 0">
+                  <a href="../login.html"><img src="../media/register_menuH.webp"></a>
+                  <p>Registrarme</p>
               </div>
-            </div>
-          </nav>
-        </div>
-
-        <div id="hamburguesitas">
-          <div>
-            <a href=""><img src="media/iconoBurger.png"></a>
-            <p>Menu</p>
+              <div v-else>
+                  <a href="../pages/perfil.html"><img src="../media/perfil_menuH.png"></a>
+                  <p>Perfil</p>
+              </div>
+              <div>
+                  <a href="#" @click="salir"><img src="../media/logout_menuH.png"></a>
+                  <p>Salir</p>
+              </div>
           </div>
-          <div>
-            <a href=""><img src="https://cdn-icons-png.flaticon.com/512/30/30569.png"></a>
-            <p>Royal Oak</p>
-          </div>
-          <div>
-            <a href=""><img src="media/Register.webp"></a>
-            <p>Registrarme</p>
-          </div>
-          <div>
-            <a href=""><img src="media/cerrarSesion.png"></a>
-            <p>Salir</p>
-          </div>
-        </div>
       </div>
       <nav id="menu_hamburguesa" class="navbar navbar-dark">
-        <div id="container_fluid" class="d-flex justify-between">
+          <div id="container_fluid" class="d-flex justify-between">
           <div>
-            <img id="carritoHamburguesa" src="media/canastaIcono.png" alt="">
+              <img id="carritoHamburguesa" src="../media/canastaIcono.png" alt="">
           </div>
           <div>
-            <img src="media/logo-royaloak-2.png" alt="">
+              <img src="https://res.cloudinary.com/royal-oak-imagenes/image/upload/v1656443334/logo-simplificado_xcuvzo.png" alt="logo">
           </div>
           <div id="botonHamburguesa">
-            <button id="boton_hamburguesa" class="navbar-toggler" type="button" data-bs-toggle="collapse"
-              data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
-              aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
+              <button id="boton_hamburguesa" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
           </div>
-        </div>
+          </div>
       </nav>
-    </div>
+</div>
 
-    <!-- ======= Header ======= -->
-    <header>
-      <div class="nav">
-        <div id="marca">
-          <a href="#"><img src="/web/media/logo-royaloak.png" alt="Logo"></a>
-        </div>
-        <div id="menu">
-          <a href="../index.html"><img class="scale-up-center" id="iconos" src="/web/media/iconoBurger.png"
-              alt="menu"></a>
-          <p>Menu</p>
-        </div>
-        <div>
-          <a href="#"><img class="scale-up-center" src="/web/media/iconoBolsita.webp" alt=""></a>
-          <p>Pedido</p>
-        </div>
-        <div>
-          <a href="#"><img class="scale-up-center" src="https://cdn-icons-png.flaticon.com/512/30/30569.png" alt=""></a>
-          <p>Royal</p>
-        </div>
-        <div>
-          <a href="../login.html"><img class="scale-up-center " src="/web/media/Register.webp" alt=""></a>
-          <p>Registro</p>
-        </div>
-        <div id="salir">
-          <a href=""><img class="scale-up-center" src="/web/media/cerrarSesion.png" alt=""></a>
-          <p>Salir</p>
-        </div>
-      </div>
-      <div data-aos="fade-up" class="divisor d-flex">
-        <div class="tipoDeComida">
-          <img src="/web/media/logo-royaloak-2.png" alt="Burger Rain">
-        </div>
-        <div id="divisorBurgers">
-
-        </div>
-      </div>
-    </header>
+      <!-- ======= Header ======= -->
+      <header>
+        <div class="nav">
+          <div id="marca">
+                  <a href="../index.html"><img src="https://res.cloudinary.com/royal-oak-imagenes/image/upload/v1656443334/logo-simplificado_xcuvzo.png" alt="Logo"></a>
+          </div>
+          <div id="menu">
+                  <a href="../index.html"><img class="scale-up-center" id="iconos"
+                                  src="../media/iconoBurger.png" alt="menu"></a>
+                  <p>Menu</p>
+          </div>
+          <div>
+                  <a href="#"><img class="scale-up-center" src="../media/iconoBolsita.webp"
+                                  alt="pedido"></a>
+                  <p>Pedido</p>
+          </div>
+          <div>
+                  <a href="../pages/random.html"><img class="scale-up-center" src="https://cdn-icons-png.flaticon.com/512/30/30569.png"
+                                  alt="royal"></a>
+                  <p>Royal</p>
+          </div>
+          <div v-if="cliente.length == 0">
+                  <a href="../login.html"><img class="scale-up-center " src="../media/Register.webp"
+                                  alt="registro"></a>
+                  <p>Registro</p>
+          </div>
+          <div v-else>
+              <a href="../pages/perfil.html"><img src="../media/perfil.png" alt="perfil"></a>
+              <p>Perfil</p>
+          </div>
+          <div id="salir">
+                  <a href="#" @click="salir"><img class="scale-up-center" src="../media/cerrarSesion.png" alt="salir"></a>
+                  <p>Salir</p>
+          </div>
+  </div>   
+      </header>
 
     <!-- ======= Main ======= -->
     <main>
 
-      
+
 
       <div class="container-xl px-4 mt-5">
         <div class="row justify-content-center">
@@ -132,7 +132,7 @@
             <div class="card col-12 mb-4 card-datos">
               <div class="card-body text-center">
                 <!-- Profile picture image-->
-                <img class="img-account-profile rounded-circle mb-1" src="/web/assets/hambur1.png" alt="">
+                <img class="img-account-profile rounded-circle mb-1" src="../media/hambur1.png" alt="">
                 <!-- Profile picture help block-->
                 <h2 id="saludo">Hola {{nombreCliente}}!</h2>
 
@@ -207,7 +207,7 @@
           </div>
         </div>
         <div class="row d-flex justify-content-center align-items-center divLogo">
-          <img src="/web/assets/logo-royaloak-2.png" alt="RoyalOak - Logo" id="logo-intermedio">
+          <img src="../media/logo-royaloak-2.png" alt="RoyalOak - Logo" id="logo-intermedio">
         </div>
 
         <div class="row d-flex justify-content-center align-items-center">
@@ -290,9 +290,8 @@
   <!-- Script de Axios - Vue.js - Javascript - SweetAlert -->
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="https://unpkg.com/vue@3"></script>
-  <script src="/web/js/perfil.js"></script>
+  <script src="../js/perfil.js"></script>
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <script src="sweetalert2.min.js"></script>
 </body>
 
 </html>

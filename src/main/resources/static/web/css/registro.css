@@ -28,7 +28,9 @@ body {
     font-weight: 700;
     color: var(--verdeClaro);
 }
-
+main{
+    margin-top: 30vh;
+}
 main h1 {
     font-family: var(--fuenteTitulo);
 }
