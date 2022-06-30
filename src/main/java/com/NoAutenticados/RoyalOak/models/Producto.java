@@ -3,9 +3,7 @@ package com.NoAutenticados.RoyalOak.models;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -16,11 +14,10 @@ public class Producto {
     @GenericGenerator(name = "native", strategy =  "native")
     private long id;
     private String nombre, descripcion, imagen;
+    private Tipo tipo;
+    private SubTipo subTipo;
     private int stock;
     private double precio;
-    @ElementCollection
-    @Column(name="ingredientes")
-    private List<String> ingredientes = new ArrayList<>();
 
     @OneToMany(mappedBy="producto", fetch=FetchType.EAGER)
     private Set<ClienteProductoPedido> clienteProductoPedidos = new HashSet<>();
@@ -28,13 +25,18 @@ public class Producto {
 
     public Producto() {}
 
-    public Producto(String nombre, String descripcion, String imagen, int stock, double precio) {
+
+    public Producto(String nombre, String descripcion, String imagen, int stock, double precio, Tipo tipo, SubTipo subTipo) {
+
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.imagen = imagen;
         this.stock = stock;
         this.precio = precio;
         this.activo = false;
+        this.tipo = tipo;
+        this.subTipo = subTipo;
+
     }
 
     public long getId() {
@@ -76,13 +78,6 @@ public class Producto {
     public void setActivo(boolean activo) {
         this.activo = activo;
     }
-    public List<String> getIngredientes() {
-        return ingredientes;
-    }
-    public void setIngredientes(List<String> ingredientes) {
-        this.ingredientes = ingredientes;
-    }
-
     public Set<ClienteProductoPedido> getClienteProductoPedidos() {
         return clienteProductoPedidos;
     }
@@ -95,5 +90,21 @@ public class Producto {
     public void addClienteProductoPedido(ClienteProductoPedido clienteProductoPedido) {
         clienteProductoPedido.setProducto(this);
         clienteProductoPedidos.add(clienteProductoPedido);
+    }
+
+    public Tipo getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(Tipo tipo) {
+        this.tipo = tipo;
+    }
+
+    public SubTipo getSubTipo() {
+        return subTipo;
+    }
+
+    public void setSubTipo(SubTipo subTipo) {
+        this.subTipo = subTipo;
     }
 }

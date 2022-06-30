@@ -3,6 +3,7 @@ package com.NoAutenticados.RoyalOak.controllers;
 import com.NoAutenticados.RoyalOak.dtos.ClienteDTO;
 import com.NoAutenticados.RoyalOak.evento.OnRegistrationSuccessEvent;
 import com.NoAutenticados.RoyalOak.models.Cliente;
+import com.NoAutenticados.RoyalOak.models.RolUsuario;
 import com.NoAutenticados.RoyalOak.repositories.ClienteRepositorio;
 import com.NoAutenticados.RoyalOak.services.ClienteServicio;
 import com.NoAutenticados.RoyalOak.utils.Utils;
@@ -51,8 +52,8 @@ public class ClienteControlador {
 
 
     @GetMapping("/clientes/actual")
-    public ClienteDTO getUser(Authentication authentication) {
-        Cliente cliente = clienteServicio.getClientCurrent(authentication);
+    public ClienteDTO getClient(Authentication authentication) {
+        Cliente cliente = clienteServicio.findByEmail(authentication.getName());
         return new ClienteDTO(cliente);
     }
 
@@ -102,6 +103,49 @@ public class ClienteControlador {
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
+    @PostMapping("/clientes/direcciones")
+    public ResponseEntity<Object> agregarDirecciones (@RequestParam String direccionNueva,
+                                                      Authentication authentication){
+
+        Cliente cliente = clienteServicio.findByEmail(authentication.getName());
+
+        if(direccionNueva.isEmpty())
+        {
+            return new ResponseEntity<>("Dirección vacía.", HttpStatus.FORBIDDEN);
+        }
+        if(cliente.getDirecciones().contains(direccionNueva))
+        {
+            return new ResponseEntity<>("Dirección repetida.", HttpStatus.FORBIDDEN);
+        }
+
+        cliente.addDireccion(direccionNueva);
+        clienteServicio.guardarCliente(cliente);
+
+        return new ResponseEntity<>("Dirección guardada exitosamente.", HttpStatus.CREATED);
+    }
+
+    @DeleteMapping("/clientes/direcciones")
+    public ResponseEntity<Object> borrarDirecciones (@RequestParam String direccionBorrada,
+                                                      Authentication authentication){
+
+        Cliente cliente = clienteServicio.findByEmail(authentication.getName());
+
+        if(direccionBorrada.isEmpty())
+        {
+            return new ResponseEntity<>("Dirección vacía.", HttpStatus.FORBIDDEN);
+        }
+        if(!cliente.getDirecciones().contains(direccionBorrada))
+        {
+            return new ResponseEntity<>("No se ha encontrado la dirección.", HttpStatus.FORBIDDEN);
+        }
+
+        cliente.getDirecciones().remove(direccionBorrada);
+
+        clienteServicio.guardarCliente(cliente);
+
+        return new ResponseEntity<>("Dirección guardada exitosamente.", HttpStatus.CREATED);
+    }
+
     @GetMapping("/registro/{token}")
     public ResponseEntity<Object> confirmacionRegistro(HttpServletRequest request,
                                                        @PathVariable String token) {
@@ -125,10 +169,32 @@ public class ClienteControlador {
         }
 
         cliente.setEnable(true);
-        Utils.borrarToken(tokencito, cliente);
+        Utils.borrarToken(tokencito);
         clienteRepositorio.save(cliente);
 
         return new ResponseEntity<>("Registro de cliente confirmado", HttpStatus.CREATED);
+    }
+    @PatchMapping("/clientes/roles")
+    public ResponseEntity<Object> asignarRoles(@RequestParam long idUsuario,
+                                                @RequestParam String mailUsuario,
+                                               Authentication authentication){
+        if(clienteServicio.findById(idUsuario) == null){
+            return new ResponseEntity<>("El usuario no existe.", HttpStatus.FORBIDDEN);
+        }
+
+        Cliente usuario = clienteServicio.findById(idUsuario);
+        if(!usuario.getEmail().equals(mailUsuario)){
+            return new ResponseEntity<>("El email no corresponde al usuario.", HttpStatus.FORBIDDEN);
+        }
+        usuario.setRolUsuario(RolUsuario.ADMIN);
+        clienteServicio.guardarCliente(usuario);
+
+        return new ResponseEntity<>("Usuario con rol de Admin confirmado", HttpStatus.CREATED);
+    }
+
+    @GetMapping("clientes/{token}")
+    public Cliente getClientePorToken(@PathVariable String token) {
+        return clienteServicio.findByToken(token);
     }
 
     @PatchMapping("/clientes/actual/modificar")

@@ -12,9 +12,12 @@ public interface ClienteServicio {
     List<ClienteDTO> getClientesDto();
     ClienteDTO getCliente(@PathVariable Long id);
     ClienteDTO getClienteLogueado(String mail);
+    Cliente findById(long id);
     Cliente findByEmail(String email);
     Cliente findByTelefono(String telefono);
     Cliente getClientCurrent (Authentication authentication);
     void guardarCliente(Cliente cliente);
+
+    Cliente findByToken(String token);
 
 }
