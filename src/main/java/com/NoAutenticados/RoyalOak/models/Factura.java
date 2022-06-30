@@ -18,6 +18,7 @@ public class Factura {
     @JoinColumn(name = "cliente_id")
     private Cliente cliente;
     private double total;
+    private int totalProductos;
     private EstadoFactura estadoFactura;
 
     @OneToMany(mappedBy="factura", fetch=FetchType.EAGER)
@@ -46,6 +47,12 @@ public class Factura {
     }
     public void setTotal(double total) {
         this.total = total;
+    }
+    public int getTotalProductos() {
+        return totalProductos;
+    }
+    public void setTotalProductos(int totalProductos) {
+        this.totalProductos = totalProductos;
     }
 
     public Set<ClienteProductoPedido> getClienteProductoPedidos() {

@@ -12,5 +12,6 @@ public interface FacturaServicio {
 
     Factura getFacturaEnCarrito(Cliente cliente);
 
+    Factura getFacturaById(long id);
     void guardarFactura(Factura factura);
 }

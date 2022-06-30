@@ -15,7 +15,8 @@ public class ProductoServicioImp implements ProductoServicio {
     @Autowired
     private ProductoRepositorio productoRepositorio;
 
-    public List<ProductoDTO> getAll(){
+    @Override
+    public List<ProductoDTO> getAllActive(){
         return productoRepositorio.findAll().stream().filter(producto -> producto.isActivo()).map(producto -> new ProductoDTO(producto)).collect(Collectors.toList());
     }
 
