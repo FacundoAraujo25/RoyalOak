@@ -4,20 +4,18 @@ const app = Vue.createApp({
     data() {
         return {
             productos:[],
+            hamburguesas:[],
             tipo:[],
             subtipos:[],
-            hamburguesas:[],
-            ensaladas:[],
-            pizzas:[],
-            picadas:[],
-            clientes:[],
+
+            cliente:[],
 
             hamburguesas:[],
             picadas:[],
             pizzas:[],
             comida:[],
             ensaladas:[],
-            bebidas:[],
+            bebidasSA:[],
 
         }
     },
@@ -28,33 +26,88 @@ const app = Vue.createApp({
             axios.get('http://localhost:8585/api/productos')
             .then(data => {
                 this.productos = data.data
-                this.hamburguesas = this.productos.filter(producto => producto.subTipo == 'HAMBURGUESAS')
-                this.pizzas = this.productos.filter(producto => producto.sunTipo == 'PIZZAS')
-                this.picadas = this.productos.filter(producto => producto.subTipo == 'PICADAS')
-                this.ensaladas = this.productos.filter(producto => producto.subTipo == 'ENSALADAS')
+
                 console.log(this.productos)
-                this.hamburguesas = this.productos.filter(productos=> productos.subTipo=='HAMBURGUESAS')
+                this.hamburguesas = this.productos.filter(productos=> productos.subTipo == 'HAMBURGUESAS')
                 console.log(this.hamburguesas)
-                this.picadas = this.productos.filter(productos=> productos.subTipo=='PICADAS')
-                console.log(this.picadas)
                 this.pizzas = this.productos.filter(productos=> productos.subTipo=='PIZZAS')
                 console.log(this.pizzas)
+                this.picadas = this.productos.filter(productos=> productos.subTipo=='PICADAS')
+                console.log(this.picadas)
+                this.bebidasSA = this.productos.filter(productos=> productos.subTipo=='SIN_ALCOHOL')
+                console.log(this.bebidasSA)
+
             })
+            
+            /* axios.get('http://localhost:8585/api/clientes')
+            .then(data => {
+                this.cliente = data.data
+                this.email = this.cliente.email
+            }) */
         
 
     },
 
 
+
     methods: {
         
-        mostrarIngredientes(producto){
+        mostrarIngredientes(){
             Swal.fire({
-                title:`${producto.nombre}`,
-                text: `${producto.descripcion}`,
+                title:'${hamburguesa.nombre}',
+                text: 'hamburguesa.descripcion',
                 confirmButtonText: 'Entendido',
-                footer: '<a href="">Agregar al carro</a>'
+                footer: '<a href="">Ok</a>'
               })
         },
+
+        eliminarProducto(id){
+            Swal.fire({
+                title:'Confirmar eliminacion',
+                text: '¿Estas seguro que quieres eliminar este producto?',
+                icon:'warning',
+                confirmButtonColor: '#12A098',
+                cancelButtonColor: '#d33',
+                confirmButtonText: true,
+                confirmButtonText: 'Eliminar',
+                showCancelButton: true,
+                cancelButtonText: 'Cancelar',
+                })
+                .then((result) => {
+                    if (result.isConfirmed) {
+                        axios.delete(`http://localhost:8585/api/productos?idProducto=${id}`)
+                        .then(response =>{
+                            console.log("delete succcesfull")
+                            Swal.fire({
+                                title:'Producto Eliminado',
+                                text: 'producto eliminado correctamente',
+                                icon:'success',
+                                confirmButtonColor: '#12A098',
+                                cancelButtonColor: '#d33',
+                                confirmButtonText: true,
+                                confirmButtonText: 'Ok',
+                                })
+                                .then( result =>{
+                                    location.reload()    
+                                })
+                        })
+                        .catch(error => 
+                            console.log("error"))
+                            Swal.fire({
+                                title:'Error',
+                                text: 'error al eliminar el producto',
+                                icon:'error',
+                                confirmButtonColor: '#12A098',
+                                cancelButtonColor: '#d33',
+                                confirmButtonText: true,
+                                confirmButtonText: 'Ok',
+                                })
+                    }
+                })
+
+        },
+
+        
 
         mostrarCategorias(){
             Swal.fire({
@@ -99,8 +152,6 @@ const app = Vue.createApp({
                 confirmButtonText: 'Si, salir',
                 showCancelButton: true,
                 cancelButtonText: 'No, volver!',
-                
-                
                 })
                 .then((result) => {
                     if (result.isConfirmed) {
@@ -108,7 +159,7 @@ const app = Vue.createApp({
                         window.location.href = './login.html'
                     }
                   })
-        }
+            }
         
 
     },

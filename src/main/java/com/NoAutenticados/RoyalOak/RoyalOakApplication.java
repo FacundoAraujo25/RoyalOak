@@ -28,9 +28,9 @@ public class RoyalOakApplication {
 			Cliente cliente2 = new Cliente("Facu", "Araujo", "facu@gmail.com", "264654564", passwordEncoder.encode("123"));
 			Cliente cliente3 = new Cliente("Daphne", "Collao", "daphnecollao@gmail.com", "5649848594", passwordEncoder.encode("123"));
 			Cliente cliente4 = new Cliente("Nacho", "Ferrero", "nacho@gmail.com", "78895656", passwordEncoder.encode("123"));
-			Cliente cliente5 = new Cliente("Andres", "Garcia", "andres@gmail.com", "84354635", "123");
-			Cliente cliente6 = new Cliente("Caro", "Cardiello", "caro@gmail.com", "48964564564", "123");
-			Cliente cliente7 = new Cliente("Walter", "Peralta", "walter@gmail.com", "6573575357", "123");
+			Cliente cliente5 = new Cliente("Andres", "Garcia", "andres@gmail.com", "84354635", passwordEncoder.encode("123"));
+			Cliente cliente6 = new Cliente("Caro", "Cardiello", "caro@gmail.com", "48964564564", passwordEncoder.encode("123"));
+			Cliente cliente7 = new Cliente("Walter", "Peralta", "walter@gmail.com", "6573575357", passwordEncoder.encode("123"));
 			String direccion = "Cordoba";
 			String direccion1 = "San Juan";
 			String direccion2 = "Salta";
@@ -67,7 +67,7 @@ public class RoyalOakApplication {
 			Producto producto4 = new Producto("Crispy Burger","Medallón simple, cheddar, lechuga, tomate, cebolla crispy y Alí Oli.","https://i.imgur.com/46E6lnG.jpg",35,600,Tipo.COMIDA,SubTipo.HAMBURGUESAS);
 			Producto producto5 = new Producto("Doble Cuarto","Dos medallones, extra cheddar, cebolla caramelizada, pepinos alemanes, mostaza y Ketchup Heinz.","https://i.imgur.com/twjNv49.jpg",15,700,Tipo.COMIDA,SubTipo.HAMBURGUESAS);
 			Producto producto6 = new Producto("Guacamole Burger","Un medallón, cheddar, queso dambo, guacamole con limón, cebolla picada y mayonesa.","https://i.imgur.com/FwSEQff.jpg",15,650,Tipo.COMIDA,SubTipo.HAMBURGUESAS);
-			Producto producto7 = new Producto("Hamburguesa simple con queso","Dos medallones, extra cheddar y salsa Thousand Islands.","https://i.imgur.com/5X7lT23.jpg",15,700,Tipo.COMIDA,SubTipo.HAMBURGUESAS);
+			Producto producto7 = new Producto("Simple con queso","Dos medallones, extra cheddar y salsa Thousand Islands.","https://i.imgur.com/5X7lT23.jpg",15,700,Tipo.COMIDA,SubTipo.HAMBURGUESAS);
 			Producto producto8 = new Producto("Homenaje Stacker","Doble medallón,salsa stacker,cheddar y bacon.","https://i.imgur.com/yF7qz75.jpg",15,750,Tipo.COMIDA,SubTipo.HAMBURGUESAS);
 			Producto producto9 = new Producto("Honey Burger","Un medallón, cheddar, pancetas caramelizadas, panes invertidos tostados con manteca y baño de miel.","https://i.imgur.com/XhpdZNY.jpg",15,650,Tipo.COMIDA,SubTipo.HAMBURGUESAS);
 			Producto producto10 = new Producto("Mimozza Burger","Medallón simple, cheddar, panceta, bastones de mozzarella y salsa barbacoa.","https://i.imgur.com/uqdGKzy.jpg",15,700,Tipo.COMIDA,SubTipo.HAMBURGUESAS);

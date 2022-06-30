@@ -5,6 +5,7 @@ import com.NoAutenticados.RoyalOak.models.Cliente;
 import com.NoAutenticados.RoyalOak.repositories.ClienteRepositorio;
 import com.NoAutenticados.RoyalOak.services.ClienteServicio;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -57,5 +58,8 @@ public class ClienteServicioImp implements ClienteServicio {
     public Cliente findById(long id) {
         return clienteRepositorio.findById(id).orElse(null);
     }
+
+    @Override
+    public  Cliente getClientCurrent (Authentication authentication){ return clienteRepositorio.findByEmail(authentication.getName());}
 
 }

@@ -5,6 +5,7 @@
     box-sizing: border-box;
 }
 
+
 /* HTML */
 html{
     overflow-x: hidden;
@@ -49,7 +50,6 @@ header{
 }
 
 .nav div{
-    padding:0.5rem ;
     width: 3rem; /* 4rem */
     transition-duration: 0.3s;
     /* margin-bottom: 0.3rem; */
@@ -147,6 +147,12 @@ p{
     padding-bottom: 0;
 }
 
+.product-price{
+    margin-top: 3%;
+    margin-left: 1%;
+    font-family: fantasy;
+}
+
 #pizzas{
     width: 92%;
     display: flex;
@@ -194,6 +200,11 @@ p{
     height: 100vh;
 }
 
+.principal img{
+    width: 92%;
+    margin-left: 8%;
+}
+
 a,
 a:hover {
     text-decoration: none;
@@ -232,17 +243,12 @@ a:hover {
 }
 
 .single-product h3{
-    text-align: center;
-    background-color: #0F292F;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1200 800'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='600' y1='25' x2='600' y2='777'%3E%3Cstop offset='0' stop-color='%230F292F'/%3E%3Cstop offset='1' stop-color='%23501F3A'/%3E%3C/linearGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='650' y1='25' x2='650' y2='777'%3E%3Cstop offset='0' stop-color='%230d2a34'/%3E%3Cstop offset='1' stop-color='%235a2140'/%3E%3C/linearGradient%3E%3ClinearGradient id='c' gradientUnits='userSpaceOnUse' x1='700' y1='25' x2='700' y2='777'%3E%3Cstop offset='0' stop-color='%230c2b38'/%3E%3Cstop offset='1' stop-color='%23652345'/%3E%3C/linearGradient%3E%3ClinearGradient id='d' gradientUnits='userSpaceOnUse' x1='750' y1='25' x2='750' y2='777'%3E%3Cstop offset='0' stop-color='%230f2b3d'/%3E%3Cstop offset='1' stop-color='%236f254b'/%3E%3C/linearGradient%3E%3ClinearGradient id='e' gradientUnits='userSpaceOnUse' x1='800' y1='25' x2='800' y2='777'%3E%3Cstop offset='0' stop-color='%23142b41'/%3E%3Cstop offset='1' stop-color='%237a2650'/%3E%3C/linearGradient%3E%3ClinearGradient id='f' gradientUnits='userSpaceOnUse' x1='850' y1='25' x2='850' y2='777'%3E%3Cstop offset='0' stop-color='%231c2a44'/%3E%3Cstop offset='1' stop-color='%23852855'/%3E%3C/linearGradient%3E%3ClinearGradient id='g' gradientUnits='userSpaceOnUse' x1='900' y1='25' x2='900' y2='777'%3E%3Cstop offset='0' stop-color='%23252946'/%3E%3Cstop offset='1' stop-color='%2390295a'/%3E%3C/linearGradient%3E%3ClinearGradient id='h' gradientUnits='userSpaceOnUse' x1='950' y1='25' x2='950' y2='777'%3E%3Cstop offset='0' stop-color='%232e2846'/%3E%3Cstop offset='1' stop-color='%239c2a5e'/%3E%3C/linearGradient%3E%3ClinearGradient id='i' gradientUnits='userSpaceOnUse' x1='1000' y1='25' x2='1000' y2='777'%3E%3Cstop offset='0' stop-color='%23372646'/%3E%3Cstop offset='1' stop-color='%23a72b63'/%3E%3C/linearGradient%3E%3ClinearGradient id='j' gradientUnits='userSpaceOnUse' x1='1050' y1='25' x2='1050' y2='777'%3E%3Cstop offset='0' stop-color='%23402443'/%3E%3Cstop offset='1' stop-color='%23b32c67'/%3E%3C/linearGradient%3E%3ClinearGradient id='k' gradientUnits='userSpaceOnUse' x1='1100' y1='25' x2='1100' y2='777'%3E%3Cstop offset='0' stop-color='%2349213f'/%3E%3Cstop offset='1' stop-color='%23bf2c6b'/%3E%3C/linearGradient%3E%3ClinearGradient id='l' gradientUnits='userSpaceOnUse' x1='1150' y1='25' x2='1150' y2='777'%3E%3Cstop offset='0' stop-color='%23501F3A'/%3E%3Cstop offset='1' stop-color='%23CB2D6F'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg fill-opacity='0.12'%3E%3Crect fill='url(%23a)' width='1200' height='800'/%3E%3Crect fill='url(%23b)' x='100' width='1100' height='800'/%3E%3Crect fill='url(%23c)' x='200' width='1000' height='800'/%3E%3Crect fill='url(%23d)' x='300' width='900' height='800'/%3E%3Crect fill='url(%23e)' x='400' width='800' height='800'/%3E%3Crect fill='url(%23f)' x='500' width='700' height='800'/%3E%3Crect fill='url(%23g)' x='600' width='600' height='800'/%3E%3Crect fill='url(%23h)' x='700' width='500' height='800'/%3E%3Crect fill='url(%23i)' x='800' width='400' height='800'/%3E%3Crect fill='url(%23j)' x='900' width='300' height='800'/%3E%3Crect fill='url(%23k)' x='1000' width='200' height='800'/%3E%3Crect fill='url(%23l)' x='1100' width='100' height='800'/%3E%3C/g%3E%3C/svg%3E");
-    background-attachment: fixed;
-    background-size: cover;
-    padding: .5rem;
-    box-shadow: #12A098 2px 2px 5px;
+    text-align: start;
 }
 
 .section-products .single-product {
-    margin-bottom: 26px;
+    margin-bottom: 0px;
+    background-size: cover !important;
 }
 
 .section-products .single-product .part-1 {
@@ -251,7 +257,6 @@ a:hover {
     max-height: 290px;
     margin-bottom: 20px;
     overflow: hidden;
-    background-size: cover !important;
 }
 
 .section-products .single-product .part-1::before {
@@ -265,9 +270,39 @@ a:hover {
 		transition: all 0.3s;
 }
 
-.section-products .single-product:hover .part-1:hover {
-		transform: scale(1.1,1.1) rotate(2deg);
+.section-products .single-product:hover .part-1::before {
+		transform: scale(1.2,1.2) rotate(5deg);
 }
+
+.col-md-6 {
+    padding-bottom: 1rem;
+}
+
+/* .section-products #product-1 .part-1::before {
+    
+    background-size: cover;
+    transition: all 0.3s;
+}
+
+.section-products #product-2 .part-1::before {
+    background: url("https://fondosmil.com/fondo/73253.jpg") no-repeat center;
+    background-size: cover;
+}
+
+.section-products #product-3 .part-1::before {
+    background-size: cover;
+}
+
+.section-products #product-4 .part-1::before {
+    background: url("https://fondosmil.com/fondo/65802.jpg") no-repeat center;
+    background-size: cover;
+}
+
+.section-products #product-5 .part-1::before {
+    background: url("https://images5.alphacoders.com/826/826208.jpg") no-repeat center;
+    background-size: cover;
+} */
+
 
 
 .section-products .single-product .part-1 .discount,
@@ -325,13 +360,36 @@ a:hover {
 }
 
 .section-products .single-product .part-2 .product-title {
-    font-size: 2rem;
-    font-family: 'Kdam Thmor Pro', sans-serif;
+    font-size: 1rem;
 }
-.precio{
-    margin-top: 1rem;
-    margin-left: 2rem;
-    font-size: 2rem;
+
+.product-title{
+    text-align: center;
+    font-family: fantasy;
+}
+
+.section-products .single-product .part-2 h4 {
+    display: inline-block;
+    font-size: 1rem;
+
+}
+
+.section-products .single-product .part-2 .product-old-price {
+    position: relative;
+    padding: 0 7px;
+    margin-right: 2px;
+    opacity: 0.6;
+}
+
+.section-products .single-product .part-2 .product-old-price::after {
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #444444;
+    transform: translateY(-50%);
 }
 
 /*PALETA DE COLORES
@@ -437,10 +495,10 @@ a:hover {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-/* .swal2-styled.swal2-confirm{
-    background-color: #225f6d !important;
-    color: #CCCCCC !important;
-} */
+.swal2-styled.swal2-confirm{
+    /* background-color: #225f6d !important;
+    color: #CCCCCC !important; */
+}
 
 /* VIDEO */
 /* Cerveza */
@@ -626,6 +684,33 @@ a:hover {
   .modal{
     display:flex;
   }
+
+  #addd{
+    display: flex;
+    justify-content: center;
+    margin-top: 3%;
+  }
+
+  .col-xl-3-p{
+    width: 50%;
+  }
+
+  .contenedorAdd{
+    display: flex;
+    justify-content: space-around;
+    width: 92%;
+    margin-left: 8%;
+  }
+
+  #inactivo{
+    transform: rotate(-45deg);
+    color: red;
+    position: absolute;
+    bottom: 13rem;
+    left: -0.5rem;
+    font-size: xx-large;
+    font-family: fantasy;
+  }
   
   
   
@@ -704,6 +789,23 @@ a:hover {
     
   }
 
+  .principal img{
+    width: 100%;
+    margin-left: 0;
+}
+
+    .contenedorAdd {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        margin-left: 0%;
+
+    }
+
+    .col-xl-3-p {
+        width: 100%;
+    }
+
 }
 
 /* MENU HAMBURGUESA */
@@ -771,7 +873,6 @@ a:hover {
     /* background-color: #0F292F; */
     padding: 3px;
     color: #0F292F;
-    font-size: xx-large;
     }
 
     #hamburguesitas{
@@ -860,3 +961,27 @@ input[type="checkbox"]:checked ~ .nav
 .dark{
     background-color: #0F292F;
 } */
+
+/* SECCION ADMIN */
+.borrar{
+    margin-bottom: 210px;
+    margin-left: 190px;
+    cursor: pointer;
+}
+
+.add{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #15373f;
+    transition-duration: 1s;
+}
+
+.add:hover{
+    background-color: #116460;
+   transition-duration: 1s;
+}
+
+.add a{
+    font-size: 10em
+}

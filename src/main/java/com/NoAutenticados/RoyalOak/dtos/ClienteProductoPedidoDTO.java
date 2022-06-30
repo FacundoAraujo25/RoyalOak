@@ -14,6 +14,7 @@ public class ClienteProductoPedidoDTO {
     private String producto;
     private long idProducto;
     private int stockProducto;
+    private String imagen;
 
 
     public ClienteProductoPedidoDTO() {}
@@ -26,6 +27,7 @@ public class ClienteProductoPedidoDTO {
         this.total = clienteProductoPedido.getTotal();
         this.idProducto = clienteProductoPedido.getProducto().getId();
         this.stockProducto = clienteProductoPedido.getProducto().getStock();
+        this.imagen = clienteProductoPedido.getProducto().getImagen();
 
     }
 
@@ -70,5 +72,8 @@ public class ClienteProductoPedidoDTO {
     }
     public void setStockProducto(int stockProducto) {
         this.stockProducto = stockProducto;
+    }
+    public String getImagen() {
+        return imagen;
     }
 }
