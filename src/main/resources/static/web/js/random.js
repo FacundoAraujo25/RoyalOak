@@ -77,7 +77,7 @@ const app = Vue.createApp({
                 ok = true
                 while(ok){
                     num = idRandom(38,53)
-                    if(!ids.includes(num)){
+                    if(!ids.includes(num) && this.bebidas.find(product=>product.id == num) != undefined){
                         this.productosRandom.push(this.bebidas.find(producto => producto.id == num))
                         ids.push(num)
                         ok = false
