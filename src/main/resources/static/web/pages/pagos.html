@@ -9,22 +9,57 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&family=Potta+One&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-    crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
-<link rel="stylesheet" href="../css/navbar.css">
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/pagos.css">
     <title>Pago | Royal Oak</title>
 </head>
 
 <body>
     <div id="app">
-        <div id="hamburguesa">
+        <svg
+   width="24"
+   height="24"
+   version="1.1"
+   id="svg4"
+   sodipodi:docname="bx-up-arrow-left.svg"
+   inkscape:version="1.1.2 (b8e25be833, 2022-02-05)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg%22%3E">
+  <defs
+     id="defs8" />
+  <sodipodi:namedview
+     id="namedview6"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="16"
+     inkscape:cx="12.34375"
+     inkscape:cy="9.875"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg4" />
+  <path
+     d="M 7.949469,10.023244 17.917243,20 20,17.921578 10.032226,7.9448209 l 8.93461,0.00668 0.0022,-2.9410845 L 5.010404,5 5,18.950394 l 2.942824,0.0022 z"
+     id="path2"
+     style="stroke-width:1.47119"/>
+</svg>
+        <!-- <div id="hamburguesa">
 
             <div class="collapse" id="navbarToggleExternalContent">
 
                 <div>
-                    <nav id="menu_hamburguesa" class="navbar navbar-dark">
+                    <nav class="menu_hamburguesa navbar navbar-dark">
                         <div id="container_fluid" class="d-flex justify-between">
                             <div>
                                 <img id="carritoHamburguesa" src="../media/canastaIcono.png" alt="">
@@ -63,7 +98,7 @@
                     </div>
                 </div>
             </div>
-            <nav id="menu_hamburguesa" class="navbar navbar-dark">
+            <nav class="menu_hamburguesa navbar navbar-dark">
                 <div id="container_fluid" class="d-flex justify-between">
                     <div>
                         <img id="carritoHamburguesa" src="../media/canastaIcono.png" alt="">
@@ -111,13 +146,49 @@
                     <p>Salir</p>
                 </div>
             </div>
-        </header>
+        </header> -->
+        <nav class="navbar navbar-expand-lg bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="../index.html"> <img width="65" src="https://res.cloudinary.com/royal-oak-imagenes/image/upload/v1656443334/logo-simplificado_xcuvzo.png" alt="">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item d-flex row justify-content-center">
+                            <a href=""><img width="35" src="../media/iconoBurger.png"></a>
+                            <p>Menu</p>
+                        </li>
+                        <li class="nav-item">
+                            <a href=""><img width="35" src="https://cdn-icons-png.flaticon.com/512/30/30569.png"></a>
+                            <p>Royal Oak</p>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./login.html"><img width="35" src="../media/Register.webp"></a>
+                            <p>Registrarme</p>
+                        </li>
+                        <li class="nav-item">
+                            <a @click="salir"><img width="35" src="../media/cerrarSesion.png"></a>
+                            <p>Salir</p>
+                        </li>
 
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
         <main>
             <!-- Divisor Hamburguesa -->
             <div data-aos="fade-up" class="divisor d-flex">
                 <div class="tipoDeComida">
-                    <img src="https://res.cloudinary.com/royal-oak-imagenes/image/upload/v1656443334/logo-simplificado_xcuvzo.png" alt="">
+                    <img src="https://res.cloudinary.com/royal-oak-imagenes/image/upload/v1656443334/logo-simplificado_xcuvzo.png"
+                        alt="">
                     <h3>Pago</h3>
                 </div>
                 <div id="divisorBurgers">
@@ -159,7 +230,8 @@
                             <label for="ccv">CCV</label>
                             <input id="ccv" type="num" maxlength="3" v-model="cvv" />
                         </fieldset>
-                        <button class="btnPasarela" type="submit" @click.prevent="confirmacionPagoFunc">Confirmar pago</button>
+                        <button class="btnPasarela" type="submit" @click.prevent="confirmacionPagoFunc">Confirmar
+                            pago</button>
                     </form>
                 </div>
             </div>
@@ -168,13 +240,13 @@
     </div>
 </body>
 
-        <!-- Script de Bootstrap -->
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
-                integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
-                crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
-                integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
-                crossorigin="anonymous"></script>
+<!-- Script de Bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+    integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+    integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+    crossorigin="anonymous"></script>
 
 <!-- Script de Axios - Vue.js - Javascript - SweetAlert -->
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>

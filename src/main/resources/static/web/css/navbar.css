@@ -146,7 +146,7 @@ p {
         text-align: right;
         height: 100vh;
     }
-    #menu_hamburguesa{
+    .menu_hamburguesa{
         display: contents;
     }
     #container_fluid{
