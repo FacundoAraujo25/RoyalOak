@@ -4,5 +4,10 @@ public enum SubTipo {
     HAMBURGUESAS,
     PIZZAS,
     ENSALADAS,
-    PICADAS
+    PICADAS,
+    SIN_ALCOHOL,
+    CON_ALCOHOL
+
 }
+
+

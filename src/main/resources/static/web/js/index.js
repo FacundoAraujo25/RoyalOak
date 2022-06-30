@@ -3,23 +3,110 @@ const app = Vue.createApp({
     //CREAR Y USAR VARIABLES
     data() {
         return {
-            clientes:[],
+            datos:[],
+            cliente:[],
+            productos:[],
+            tipo:[],
+            subtipos:[],
             hamburguesas:[],
-
+            ensaladas:[],
+            pizzas:[],
+            picadas:[],
+            clientes:[],
+            bebidas:[],
+            bebidasSinAlc:[],
+            bebidasConAlc:[],
         }
     },
 
     created(){
-        axios
+            const urlParams = new URLSearchParams(window.location.search);
+            const id = urlParams.get('id');
+            axios.get('http://localhost:8585/api/clientes/actual')
+            .then(data => {this.cliente = data.data})
+            axios.get('http://localhost:8585/api/productos')
+            .then(data => {
+                this.datos = data.data
+                this.productos = this.datos.map(producto=>{
+                    let productoNuevo = {
+                        id:producto.id,
+                        nombre:producto.nombre,
+                        descripcion:producto.descripcion,
+                        precio:producto.precio,
+                        stock:producto.stock,
+                        imagen:producto.imagen,
+                        tipo:producto.tipo,
+                        subTipo:producto.subTipo,
+                        vendidos:producto.vendidos,
+                        activo:producto.activo,
+                        cantidad:0
+                    }
+                    return productoNuevo
+                })
+                this.hamburguesas = this.productos.filter(producto => producto.subTipo == 'HAMBURGUESAS')
+                this.pizzas = this.productos.filter(producto => producto.subTipo == 'PIZZAS')
+                this.picadas = this.productos.filter(producto => producto.subTipo == 'PICADAS')
+                this.ensaladas = this.productos.filter(producto => producto.subTipo == 'ENSALADAS')
+                this.bebidas = this.productos.filter(producto => producto.tipo == 'BEBIDA')
+                this.bebidasConAlc = this.productos.filter(producto => producto.subTipo == 'CON_ALCOHOL')
+                this.bebidasSinAlc = this.productos.filter(producto => producto.subTipo == 'SIN_ALCOHOL')
+            })
+        
+
     },
 
 
     methods: {
+
+        añadirAlPedido(cantidad, idProducto){
+            axios.post(`http://localhost:8585/api/productos/carrito/agregar?cantidad=${cantidad}&idProducto=${idProducto}`,
+            { headers: { "content-type": "application/x-www-form-urlencoded" } })
+            .then(function (response){
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: 'Producto agregado al pedido',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+                setTimeout= (function(){
+                window.location.href = "http://localhost:8585/web/index.html", 1800})
+            })
+            .catch(error =>{
+                Swal.fire({
+                    position: 'center',
+                    icon: 'question',
+                    title: `${error.response.data}`
+                })
+            })
+        },
         
-        mostrarIngredientes(){
+        sumarProducto(producto){
+            let boton = document.querySelector(".stock2")
+            if(producto.cantidad < producto.stock){
+                producto.cantidad++
+                boton.disabled = false
+            }
+            else if(producto.cantidad > producto.stock){
+                boton.disabled = true
+            }
+        },
+
+        restarProducto(producto){
+            let boton = document.querySelector(".stock1")
+            if(producto.cantidad > 0){
+                producto.cantidad--
+                boton.disabled = false
+            }
+            else if(producto.cantidad < 0){
+                boton.disabled = true
+            }
+        },
+
+        mostrarIngredientes(producto){
             Swal.fire({
-                title:'Nombre Hamburguesa',
-                text: 'Una hamburguesa es un sándwich hecho a base de carne molida o de origen vegetal, aglutinada en forma de filete cocinado a la parrilla o a la plancha, aunque también puede freírse u hornearse. Fuera del ámbito de habla hispana, es más común encontrar la denominación estadounidense burger, acortamiento de hamburger.',
+                title:`${producto.nombre}`,
+                text: `${producto.descripcion}`,
                 confirmButtonText: 'Entendido',
                 footer: '<a href="">Agregar al carro</a>'
               })
@@ -78,8 +165,6 @@ const app = Vue.createApp({
                     }
                   })
         }
-
-        
         
 
     },

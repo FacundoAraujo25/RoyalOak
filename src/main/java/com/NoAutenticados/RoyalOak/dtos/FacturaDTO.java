@@ -11,6 +11,7 @@ import java.util.stream.Collectors;
 public class FacturaDTO {
     private long id;
     private double total = 0;
+    private int totalProductos = 0;
     private Set<ClienteProductoPedidoDTO> pedidos = new HashSet<>();
     private EstadoFactura estadoFactura;
 
@@ -22,6 +23,7 @@ public class FacturaDTO {
         this.pedidos = factura.getClienteProductoPedidos().stream().map(clienteProductoPedido -> new ClienteProductoPedidoDTO(clienteProductoPedido)).collect(Collectors.toSet());
         this.total = factura.getClienteProductoPedidos().stream().mapToDouble(producto -> producto.getTotal()).sum();
         this.estadoFactura = factura.getEstadoFactura();
+        this.totalProductos = factura.getTotalProductos();
     }
 
     public long getId() {
@@ -44,5 +46,11 @@ public class FacturaDTO {
     }
     public void setEstadoFactura(EstadoFactura estadoFactura) {
         this.estadoFactura = estadoFactura;
+    }
+    public int getTotalProductos() {
+        return totalProductos;
+    }
+    public void setTotalProductos(int totalProductos) {
+        this.totalProductos = totalProductos;
     }
 }

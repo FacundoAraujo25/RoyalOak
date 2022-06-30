@@ -1,42 +1,52 @@
 package com.NoAutenticados.RoyalOak.controllers;
 
 import com.NoAutenticados.RoyalOak.dtos.ProductoDTO;
-import com.NoAutenticados.RoyalOak.models.Producto;
-import com.NoAutenticados.RoyalOak.models.SubTipo;
-import com.NoAutenticados.RoyalOak.models.Tipo;
+import com.NoAutenticados.RoyalOak.models.*;
+import com.NoAutenticados.RoyalOak.services.ClienteServicio;
 import com.NoAutenticados.RoyalOak.services.ProductoServicio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
-import java.lang.reflect.Array;
-import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api")
 public class ProductoControlador {
     @Autowired
     private ProductoServicio productoServicio;
+    @Autowired
+    private ClienteServicio clienteServicio;
 
     @GetMapping("/productos")
-    public List<ProductoDTO> getAll(){
+    public List<ProductoDTO> getAllActives(){
+        return productoServicio.getAllActive();
+    }
+
+    @GetMapping("/productos/admin")
+    public  List<ProductoDTO> getAll(){
         return productoServicio.getAll();
     }
 
     @PostMapping("/productos")
-    public ResponseEntity<Object> agregarProductos(@RequestParam String nombre,
-                                                   @RequestParam String descripcion,
-                                                   @RequestParam String imagen,
-                                                   @RequestParam double precio,
-                                                   @RequestParam int stock,
-                                                   @RequestParam String ingredientes,
-                                                   @RequestParam Tipo tipo,
-                                                   @RequestParam SubTipo subtipo,
-                                                   @RequestParam boolean activo) {
+    public ResponseEntity<Object> crearProductos(
+            @RequestParam String nombre,
+            @RequestParam String descripcion,
+            @RequestParam String imagen,
+            @RequestParam double precio,
+            @RequestParam int stock,
+            @RequestParam String ingredientes,
+            @RequestParam Tipo tipo,
+            @RequestParam SubTipo subtipo,
+            @RequestParam boolean activo,
+            Authentication authentication) {
 
+        Cliente cliente = clienteServicio.findByEmail(authentication.getName());
+        if(cliente.getRolUsuario() != RolUsuario.ADMIN){
+            return new ResponseEntity<>("No eres administrador", HttpStatus.FORBIDDEN);
+        }
         if(nombre.isEmpty()){
             return new ResponseEntity<>("Faltan datos: Nombre", HttpStatus.FORBIDDEN);
         }
@@ -70,9 +80,14 @@ public class ProductoControlador {
                                                    @RequestParam Tipo tipo,
                                                    @RequestParam SubTipo subtipo,
                                                    @RequestParam boolean activo,
-                                                     @RequestParam long idProducto) {
+                                                     @RequestParam long idProducto,
+                                                     Authentication authentication) {
 
+        Cliente cliente = clienteServicio.findByEmail(authentication.getName());
 
+        if(cliente.getRolUsuario() != RolUsuario.ADMIN){
+            return new ResponseEntity<>("No eres administrador", HttpStatus.FORBIDDEN);
+        }
         if(productoServicio.findById(idProducto)==null)
         {
             return new ResponseEntity<>("El producto no existe.", HttpStatus.FORBIDDEN);
@@ -101,8 +116,6 @@ public class ProductoControlador {
         if(subtipo.toString().isEmpty()){
             return new ResponseEntity<>("Faltan datos: subtipo de producto", HttpStatus.FORBIDDEN);
         }
-//        String[] ingredientesArray = ingredientes.split(" ");
-//        producto.setIngredientes(Arrays.stream(ingredientesArray).collect(Collectors.toList()));
 
         producto.setNombre(nombre);
         producto.setDescripcion(descripcion);
@@ -117,8 +130,12 @@ public class ProductoControlador {
     }
 
     @DeleteMapping("/productos")
-    public ResponseEntity<Object> borrarProducto(@RequestParam long idProducto){
+    public ResponseEntity<Object> borrarProducto(@RequestParam long idProducto, Authentication authentication){
 
+        Cliente cliente = clienteServicio.findByEmail(authentication.getName());
+        if(cliente.getRolUsuario() != RolUsuario.ADMIN){
+            return new ResponseEntity<>("No eres administrador", HttpStatus.FORBIDDEN);
+        }
         if(productoServicio.findById(idProducto)==null)
         {
             return new ResponseEntity<>("El producto no existe.", HttpStatus.FORBIDDEN);

@@ -32,9 +32,9 @@ public class RoyalOakApplication {
 			Cliente cliente2 = new Cliente("Facu", "Araujo", "facu@gmail.com", "264654564", passwordEncoder.encode("123"));
 			Cliente cliente3 = new Cliente("Daphne", "Collao", "daphnecollao@gmail.com", "5649848594", passwordEncoder.encode("123"));
 			Cliente cliente4 = new Cliente("Nacho", "Ferrero", "nacho@gmail.com", "78895656", passwordEncoder.encode("123"));
-			Cliente cliente5 = new Cliente("Andres", "Garcia", "andres@gmail.com", "84354635", "123");
-			Cliente cliente6 = new Cliente("Caro", "Cardiello", "caro@gmail.com", "48964564564", "123");
-			Cliente cliente7 = new Cliente("Walter", "Peralta", "walter@gmail.com", "6573575357", "123");
+			Cliente cliente5 = new Cliente("Andres", "Garcia", "andres@gmail.com", "84354635", passwordEncoder.encode("123"));
+			Cliente cliente6 = new Cliente("Caro", "Cardiello", "caro@gmail.com", "48964564564", passwordEncoder.encode("123"));
+			Cliente cliente7 = new Cliente("Walter", "Peralta", "walter@gmail.com", "6573575357", passwordEncoder.encode("123"));
 			String direccion = "Cordoba";
 			String direccion1 = "San Juan";
 			String direccion2 = "Salta";
@@ -65,16 +65,16 @@ public class RoyalOakApplication {
 			clienteRepositorio.save(cliente7);
 
 
-			Producto producto1 = new Producto("Classic", "Hamburguesa clásica con carne,queso cheddar,verduras y Ali oli.", "https://i.imgur.com/7n3AQpO.jpg", 25, 550,Tipo.COMIDA,SubTipo.HAMBURGUESAS);
+			Producto producto1 = new Producto("Classic", "Hamburguesa clásica con carne,queso cheddar,verduras y Ali oli.", "https://i.imgur.com/7n3AQpO.jpg", 25, 550,Tipo.COMIDA, SubTipo.HAMBURGUESAS);
 			Producto producto2 = new Producto("Bacon","Bacon y cheddar con hamburguesa acompañada de mayonesa y cebolla caramelizada.","https://i.imgur.com/NB5THSY.jpg",20,650,Tipo.COMIDA,SubTipo.HAMBURGUESAS);
-			Producto producto3 = new Producto("Butter","Un medallón, cheddar,cebolla caramelizada con manteca en el medallón.","https://i.imgur.com/52tsTkG.jpg",15,600,Tipo.COMIDA,SubTipo.HAMBURGUESAS);
-			Producto producto4 = new Producto("Crispy","Medallón simple, cheddar, lechuga, tomate, cebolla crispy y Alí Oli.","https://i.imgur.com/46E6lnG.jpg",35,600,Tipo.COMIDA,SubTipo.HAMBURGUESAS);
+			Producto producto3 = new Producto("Butter Burger","Un medallón, cheddar,cebolla caramelizada con manteca en el medallón.","https://i.imgur.com/52tsTkG.jpg",15,600,Tipo.COMIDA,SubTipo.HAMBURGUESAS);
+			Producto producto4 = new Producto("Crispy Burger","Medallón simple, cheddar, lechuga, tomate, cebolla crispy y Alí Oli.","https://i.imgur.com/46E6lnG.jpg",35,600,Tipo.COMIDA,SubTipo.HAMBURGUESAS);
 			Producto producto5 = new Producto("Doble Cuarto","Dos medallones, extra cheddar, cebolla caramelizada, pepinos alemanes, mostaza y Ketchup Heinz.","https://i.imgur.com/twjNv49.jpg",15,700,Tipo.COMIDA,SubTipo.HAMBURGUESAS);
-			Producto producto6 = new Producto("Guacamole","Un medallón, cheddar, queso dambo, guacamole con limón, cebolla picada y mayonesa.","https://i.imgur.com/FwSEQff.jpg",15,650,Tipo.COMIDA,SubTipo.HAMBURGUESAS);
+			Producto producto6 = new Producto("Guacamole Burger","Un medallón, cheddar, queso dambo, guacamole con limón, cebolla picada y mayonesa.","https://i.imgur.com/FwSEQff.jpg",15,650,Tipo.COMIDA,SubTipo.HAMBURGUESAS);
 			Producto producto7 = new Producto("Simple con queso","Dos medallones, extra cheddar y salsa Thousand Islands.","https://i.imgur.com/5X7lT23.jpg",15,700,Tipo.COMIDA,SubTipo.HAMBURGUESAS);
 			Producto producto8 = new Producto("Homenaje Stacker","Doble medallón,salsa stacker,cheddar y bacon.","https://i.imgur.com/yF7qz75.jpg",15,750,Tipo.COMIDA,SubTipo.HAMBURGUESAS);
-			Producto producto9 = new Producto("Honey","Un medallón, cheddar, pancetas caramelizadas, panes invertidos tostados con manteca y baño de miel.","https://i.imgur.com/XhpdZNY.jpg",15,650,Tipo.COMIDA,SubTipo.HAMBURGUESAS);
-			Producto producto10 = new Producto("Mimozza","Medallón simple, cheddar, panceta, bastones de mozzarella y salsa barbacoa.","https://i.imgur.com/uqdGKzy.jpg",15,700,Tipo.COMIDA,SubTipo.HAMBURGUESAS);
+			Producto producto9 = new Producto("Honey Burger","Un medallón, cheddar, pancetas caramelizadas, panes invertidos tostados con manteca y baño de miel.","https://i.imgur.com/XhpdZNY.jpg",15,650,Tipo.COMIDA,SubTipo.HAMBURGUESAS);
+			Producto producto10 = new Producto("Mimozza Burger","Medallón simple, cheddar, panceta, bastones de mozzarella y salsa barbacoa.","https://i.imgur.com/uqdGKzy.jpg",15,700,Tipo.COMIDA,SubTipo.HAMBURGUESAS);
 			Producto producto11 = new Producto("Oklahoma","Un medallón, extra cheddar, pepino alemanes, cebolla blanca a la plancha, Ketchup y mostaza.","https://i.imgur.com/L2lS50X.jpg",15,700,Tipo.COMIDA,SubTipo.HAMBURGUESAS);
 			Producto producto12 = new Producto("Onion Rings","Un medallón, cheddar, panceta, aros de cebolla y salsa barbacoa.","https://i.imgur.com/dpG0ReL.jpg",15,700,Tipo.COMIDA,SubTipo.HAMBURGUESAS);
 			Producto producto13 = new Producto("Promo Kids","2 hamburguesas con un medallón cada una, 2 fetas de cheddar c/u, salsa thousand islands o lechuga y tomate a elección.","https://i.imgur.com/6rCpvdW.jpg",15,700,Tipo.COMIDA,SubTipo.HAMBURGUESAS);
@@ -182,19 +182,14 @@ public class RoyalOakApplication {
 			producto37.setActivo(true);
 			producto38.setActivo(true);
 			producto39.setActivo(true);
-			productoRepositorio.save(producto19);
-			productoRepositorio.save(producto20);
-			productoRepositorio.save(producto21);
-			productoRepositorio.save(producto22);
-			productoRepositorio.save(producto23);
-			productoRepositorio.save(producto24);
-			productoRepositorio.save(producto25);
-			productoRepositorio.save(producto26);
-			productoRepositorio.save(producto27);
-			productoRepositorio.save(producto28);
-			productoRepositorio.save(producto29);
-			productoRepositorio.save(producto30);
-			productoRepositorio.save(producto31);
+			productoRepositorio.save(producto32);
+			productoRepositorio.save(producto33);
+			productoRepositorio.save(producto34);
+			productoRepositorio.save(producto35);
+			productoRepositorio.save(producto36);
+			productoRepositorio.save(producto37);
+			productoRepositorio.save(producto38);
+			productoRepositorio.save(producto39);
 
 			Producto producto40 = new Producto("Papas Americanas","papas con bacon y cheddar de excelente calidad","https://i.imgur.com/iCNjRMn.jpg",15,550, Tipo.COMIDA, SubTipo.PICADAS);
 			Producto producto41 = new Producto("Papas Criollas","papas con salsa criolla y huevos fritos","https://i.imgur.com/04onzhI.jpg",15,550, Tipo.COMIDA, SubTipo.PICADAS);
@@ -215,6 +210,56 @@ public class RoyalOakApplication {
 			productoRepositorio.save(producto44);
 			productoRepositorio.save(producto45);
 
+			Producto producto46 = new Producto("Agua mineral 1.5L","Agua mineral grande sin/con gas.(La marca puede variar)","https://i.imgur.com/vbohLZ3.png",50,170,Tipo.BEBIDA,SubTipo.SIN_ALCOHOL);
+			Producto producto47 = new Producto("Agua mineral 500 ml","Agua mineral chica sin/con gas.(La marca puede variar)","https://i.imgur.com/S5pdG4Y.png",50,100,Tipo.BEBIDA,SubTipo.SIN_ALCOHOL);
+			Producto producto48 = new Producto("Coca-Cola 350ml","Coca chica de vidrio.(Más fría que el corazón de eia)","https://i.imgur.com/GD3hMpp.png",50,120,Tipo.BEBIDA,SubTipo.SIN_ALCOHOL);
+			Producto producto49 = new Producto("Coca-Cola 1.5L","Coca-Cola mediana con envase retornable y no-retornable.","https://i.imgur.com/Jo4vD6l.png",50,250,Tipo.BEBIDA,SubTipo.SIN_ALCOHOL);
+			Producto producto50 = new Producto("Seven-Up 350ml","Seven-Up chica de vidrio.","https://i.imgur.com/k49xksL.png",50,120,Tipo.BEBIDA,SubTipo.SIN_ALCOHOL);
+			Producto producto51 = new Producto("Seven-Up 1.5L","Seven-Up mediana con envase retornable y no-retornable.","https://i.imgur.com/yeQ5IQB.png",50,250,Tipo.BEBIDA,SubTipo.SIN_ALCOHOL);
+			Producto producto52 = new Producto("Fanta Naranja 1.5L","Fanta mediana con envase retornable y no-retornable.","https://i.imgur.com/ovgoaye.png",50,250,Tipo.BEBIDA,SubTipo.SIN_ALCOHOL);
+			Producto producto53 = new Producto("Fanta Naranja 500ml","Fanta naranja chica.","https://i.imgur.com/Qc6rrCV.png",50,150,Tipo.BEBIDA,SubTipo.SIN_ALCOHOL);
+			Producto producto54 = new Producto("Cerveza Miller 330ml","Cerveza rubia que está 4 veces filtrada en frío, por eso tiene una frescura intensa, un sabor suave y un dorado inigualable.","https://i.imgur.com/lemAEIl.png",50,350,Tipo.BEBIDA,SubTipo.CON_ALCOHOL);
+			Producto producto55 = new Producto("Cerveza Heineken 330ml","Cerveza rubia cuyo sabor distintivo y único está dado por el uso exclusivo de la Levadura A, especialmente desarrollada por un discípulo de Louis Pasteur","https://i.imgur.com/aGBHaXW.png",50,350,Tipo.BEBIDA,SubTipo.CON_ALCOHOL);
+			Producto producto56 = new Producto("Cerveza Budweiser 330ml","Cerveza rubia de origen checo, patentada en los Estados Unidos y una de las más populares en ese país.","https://i.imgur.com/YQipDhC.png",50,350,Tipo.BEBIDA,SubTipo.CON_ALCOHOL);
+			Producto producto57 = new Producto("Cerveza Corona 330ml","Cerveza rubia mexicana fundada en 1926 y muy popular en todo el mundo","https://i.imgur.com/dAjuPW0.png",50,200,Tipo.BEBIDA,SubTipo.CON_ALCOHOL);
+			Producto producto58 = new Producto("Daiquiri","Cóctel escarchado hecho con ron blanco, jugo de limón o de lima y azúcar.","https://i.imgur.com/9QlBBd6.jpg",50,550,Tipo.BEBIDA,SubTipo.CON_ALCOHOL);
+			Producto producto59 = new Producto("Mojito","El mojito es un cóctel popular originario de Cuba, compuesto de ron, limón, menta o eucalipto y agua mineral.","https://i.imgur.com/8VlPNcg.png",50,600,Tipo.BEBIDA,SubTipo.CON_ALCOHOL);
+			Producto producto60 = new Producto("Margarita","La margarita es un cóctel compuesto por tequila, triple sec y jugo de lima o limón. ","https://i.imgur.com/5LBHQsZ.png",50,600,Tipo.BEBIDA,SubTipo.CON_ALCOHOL);
+			Producto producto61 = new Producto("Tekila Sunrise","El tequila sunrise o Acapulco es un cóctel preparado de dos maneras diferentes: la original, con tequila, crème de cassis, jugo de lima y agua con gas; la forma más popular está hecha con tequila, jugo de naranja y granadina","https://i.imgur.com/gWOIFKr.png",50,600,Tipo.BEBIDA,SubTipo.CON_ALCOHOL);
+			producto46.setActivo(true);
+			producto47.setActivo(true);
+			producto48.setActivo(true);
+			producto49.setActivo(true);
+			producto50.setActivo(true);
+			producto51.setActivo(true);
+			producto52.setActivo(true);
+			producto53.setActivo(true);
+			producto54.setActivo(true);
+			producto55.setActivo(true);
+			producto56.setActivo(true);
+			producto57.setActivo(true);
+			producto58.setActivo(true);
+			producto59.setActivo(true);
+			producto60.setActivo(true);
+			producto61.setActivo(true);
+
+			productoRepositorio.save(producto46);
+			productoRepositorio.save(producto47);
+			productoRepositorio.save(producto48);
+			productoRepositorio.save(producto49);
+			productoRepositorio.save(producto50);
+			productoRepositorio.save(producto51);
+			productoRepositorio.save(producto52);
+			productoRepositorio.save(producto53);
+			productoRepositorio.save(producto54);
+			productoRepositorio.save(producto55);
+			productoRepositorio.save(producto56);
+			productoRepositorio.save(producto57);
+			productoRepositorio.save(producto58);
+			productoRepositorio.save(producto59);
+			productoRepositorio.save(producto60);
+			productoRepositorio.save(producto61);
+
 
 			Factura factura = new Factura();
 			factura.setEstadoFactura(EstadoFactura.CARRITO);
@@ -224,8 +269,6 @@ public class RoyalOakApplication {
 			clienteProductoPedidoRepositorio.save(pedido);
 			ClienteProductoPedido pedido1 = new ClienteProductoPedido(3, factura, producto1);
 			clienteProductoPedidoRepositorio.save(pedido1);
-			ClienteProductoPedido pedido2 = new ClienteProductoPedido(2, factura, producto25);
-			clienteProductoPedidoRepositorio.save(pedido2);
 		};
 	}
 }
