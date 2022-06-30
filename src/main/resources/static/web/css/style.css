@@ -265,8 +265,15 @@ a:hover {
 		transition: all 0.3s;
 }
 
+
 .section-products .single-product:hover {
 		transform: scale(1.1,1.1);
+}
+/* evitar giro div */
+.section-products #product-1 .part-1::before {
+    background: url("https://www.lavoz.com.ar/resizer/JkTjWJu6dTBQ2k0LJiAbKSdlfIs=/1023x682/smart/cloudfront-us-east-1.images.arcpublishing.com/grupoclarin/A5L4SSFSFJCVHFYFMDWBLH72ZY.png") no-repeat center;
+    background-size: cover;
+    transition: all 0.3s;
 }
 
 .section-products .single-product .part-1 .new {
@@ -333,6 +340,18 @@ a:hover {
     margin: 0 !important;
     margin-top: 1rem !important;
 }
+
+.section-products .single-product .part-2 .product-old-price::after {
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #444444;
+    transform: translateY(-50%);
+}
+
 /*PALETA DE COLORES
 #501F3A       BORDO
 #CB2D6F       ROSA

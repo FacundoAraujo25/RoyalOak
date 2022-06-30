@@ -12,6 +12,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
 @SpringBootApplication
 public class RoyalOakApplication {
 
@@ -131,7 +135,7 @@ public class RoyalOakApplication {
 			Producto producto25 = new Producto("Pollo con champiñones","Harina italiana, parmesano y salsa de crema, mozzarella, Dorblu, pollo al horno, champiñones, pimiento morrón, orégano","https://i.imgur.com/v9aQHSt.png",15,900, Tipo.COMIDA, SubTipo.PIZZAS);
 			Producto producto26 = new Producto("Pollo con ananá","Harina italiana, salsa de tomate integral, mozzarella, pollo al horno, piña, pimiento morrón, mostaza de naranja, arándano, orégano","https://i.imgur.com/2MQVLns.png",15,900, Tipo.COMIDA, SubTipo.PIZZAS);
 			Producto producto27 = new Producto("Queso de cabra","Harina italiana, salsa de crema secreta de la abuela de alguien, mozzarella, queso de cabra, tubérculos, piñones","https://i.imgur.com/nqJYq2j.png",15,900, Tipo.COMIDA, SubTipo.PIZZAS);
-			Producto producto28 = new Producto("Queso de primera calidad","Harina italiana, salsa de nata y parmesano, mozzarella, DorBlue, parmesano, nuez, arándano","https://i.imgur.com/bG1skWd.png",15,900, Tipo.COMIDA, SubTipo.PIZZAS);
+			Producto producto28 = new Producto("Cuatro queso","Harina italiana, salsa de nata y parmesano, mozzarella, DorBlue, parmesano, nuez, arándano","https://i.imgur.com/bG1skWd.png",15,900, Tipo.COMIDA, SubTipo.PIZZAS);
 			Producto producto29 = new Producto("Salami","Harina italiana, mozzarella, salsa de tomate integral, salami premium, orégano","https://i.imgur.com/0LYWujF.png",15,900, Tipo.COMIDA, SubTipo.PIZZAS);
 			Producto producto30 = new Producto("Salmon y espinaca","Harina italiana, salsa de tomate integral, mozzarella, salmón, tomate, espinaca, Dorblu, ajo, limón, piñones, aceitunas, orégano.","https://i.imgur.com/Mt1xB6r.png",15,900, Tipo.COMIDA, SubTipo.PIZZAS);
 			Producto producto31 = new Producto("Panceta","Harina italiana, salsa de tomate integral, mozzarella, dorblu, tocino seco, pimiento picante, orégano","https://i.imgur.com/51YOG7S.png",15,900, Tipo.COMIDA, SubTipo.PIZZAS);
@@ -189,8 +193,8 @@ public class RoyalOakApplication {
 
 			Producto producto40 = new Producto("Papas Americanas","papas con bacon y cheddar de excelente calidad","https://i.imgur.com/iCNjRMn.jpg",15,550, Tipo.COMIDA, SubTipo.PICADAS);
 			Producto producto41 = new Producto("Papas Criollas","papas con salsa criolla y huevos fritos","https://i.imgur.com/04onzhI.jpg",15,550, Tipo.COMIDA, SubTipo.PICADAS);
-			Producto producto42 = new Producto("Picada 4 elementos","Abundante tabla de picada de fiambres,quesos,nuggets de pollo,papas y rabas.","https://i.imgur.com/tVqTiiw.jpg",15,550, Tipo.COMIDA, SubTipo.PICADAS);
-			Producto producto43 = new Producto("Picada Colombiana","Excelente tabla de picada con trocitos de carne,costillitas de cerdo,embutidos, verduras y salsas varias.","https://i.imgur.com/eTdRlG2.jpg",15,550, Tipo.COMIDA, SubTipo.PICADAS);
+			Producto producto42 = new Producto("4 elementos","Abundante tabla de picada de fiambres,quesos,nuggets de pollo,papas y rabas.","https://i.imgur.com/tVqTiiw.jpg",15,550, Tipo.COMIDA, SubTipo.PICADAS);
+			Producto producto43 = new Producto("Colombiana","Excelente tabla de picada con trocitos de carne,costillitas de cerdo,embutidos, verduras y salsas varias.","https://i.imgur.com/eTdRlG2.jpg",15,550, Tipo.COMIDA, SubTipo.PICADAS);
 			Producto producto44 = new Producto("Veracruzanas","Tortillas acompañadas de queso,cebollas picadas,tomates,frijoles refritos con chorizo y jalapeños","https://i.imgur.com/X6YUnMe.jpg",15,550, Tipo.COMIDA, SubTipo.PICADAS);
 			Producto producto45 = new Producto("Bastones de Muzza","Bastoncitos rellenos de queso mozzarella","https://i.imgur.com/Ovjma1V.jpg",15,550, Tipo.COMIDA, SubTipo.PICADAS);
 			producto40.setActivo(true);
@@ -216,12 +220,12 @@ public class RoyalOakApplication {
 			Producto producto53 = new Producto("Fanta Naranja 500ml","Fanta naranja chica.","https://i.imgur.com/Qc6rrCV.png",50,150,Tipo.BEBIDA,SubTipo.SIN_ALCOHOL);
 			Producto producto54 = new Producto("Cerveza Miller 330ml","Cerveza rubia que está 4 veces filtrada en frío, por eso tiene una frescura intensa, un sabor suave y un dorado inigualable.","https://i.imgur.com/lemAEIl.png",50,350,Tipo.BEBIDA,SubTipo.CON_ALCOHOL);
 			Producto producto55 = new Producto("Cerveza Heineken 330ml","Cerveza rubia cuyo sabor distintivo y único está dado por el uso exclusivo de la Levadura A, especialmente desarrollada por un discípulo de Louis Pasteur","https://i.imgur.com/aGBHaXW.png",50,350,Tipo.BEBIDA,SubTipo.CON_ALCOHOL);
-			Producto producto56 = new Producto("Cerveza Budweiser 330ml","Cerveza rubia de origen checo, patentada en los Estados Unidos y una de las más populares en ese país.","https://i.imgur.com/YQipDhC.png",50,350,Tipo.BEBIDA,SubTipo.CON_ALCOHOL);
-			Producto producto57 = new Producto("Cerveza Corona 330ml","Cerveza rubia mexicana fundada en 1926 y muy popular en todo el mundo","https://i.imgur.com/dAjuPW0.png",50,200,Tipo.BEBIDA,SubTipo.CON_ALCOHOL);
-			Producto producto58 = new Producto("Daiquiri","Cóctel escarchado hecho con ron blanco, jugo de limón o de lima y azúcar.","https://i.imgur.com/9QlBBd6.jpg",50,550,Tipo.BEBIDA,SubTipo.CON_ALCOHOL);
-			Producto producto59 = new Producto("Mojito","El mojito es un cóctel popular originario de Cuba, compuesto de ron, limón, menta o eucalipto y agua mineral.","https://i.imgur.com/8VlPNcg.png",50,600,Tipo.BEBIDA,SubTipo.CON_ALCOHOL);
-			Producto producto60 = new Producto("Margarita","La margarita es un cóctel compuesto por tequila, triple sec y jugo de lima o limón. ","https://i.imgur.com/5LBHQsZ.png",50,600,Tipo.BEBIDA,SubTipo.CON_ALCOHOL);
-			Producto producto61 = new Producto("Tekila Sunrise","El tequila sunrise o Acapulco es un cóctel preparado de dos maneras diferentes: la original, con tequila, crème de cassis, jugo de lima y agua con gas; la forma más popular está hecha con tequila, jugo de naranja y granadina","https://i.imgur.com/gWOIFKr.png",50,600,Tipo.BEBIDA,SubTipo.CON_ALCOHOL);
+			Producto producto56 = new Producto("Cerveza Budweiser 330ml","Cerveza rubia de origen checo, patentada en los Estados Unidos y una de las más populares en ese país.","https://i.imgur.com/2oLtM8s.png",50,350,Tipo.BEBIDA,SubTipo.CON_ALCOHOL);
+			Producto producto57 = new Producto("Cerveza Corona 330ml","Cerveza rubia mexicana fundada en 1926 y muy popular en todo el mundo","https://i.imgur.com/Z3EYLck.png",50,200,Tipo.BEBIDA,SubTipo.CON_ALCOHOL);
+			Producto producto58 = new Producto("Daiquiri","Cóctel escarchado hecho con ron blanco, jugo de limón o de lima y azúcar.","https://i.imgur.com/gCUXaYS.png",50,550,Tipo.BEBIDA,SubTipo.CON_ALCOHOL);
+			Producto producto59 = new Producto("Mojito","El mojito es un cóctel popular originario de Cuba, compuesto de ron, limón, menta o eucalipto y agua mineral.","https://i.imgur.com/Ls9aVR2.png",50,600,Tipo.BEBIDA,SubTipo.CON_ALCOHOL);
+			Producto producto60 = new Producto("Margarita","La margarita es un cóctel compuesto por tequila, triple sec y jugo de lima o limón. ","https://i.imgur.com/NQgB2bh.png",50,600,Tipo.BEBIDA,SubTipo.CON_ALCOHOL);
+			Producto producto61 = new Producto("Tekila Sunrise","El tequila sunrise o Acapulco es un cóctel preparado de dos maneras diferentes: la original, con tequila, crème de cassis, jugo de lima y agua con gas; la forma más popular está hecha con tequila, jugo de naranja y granadina","https://i.imgur.com/CaBFQqb.png",50,600,Tipo.BEBIDA,SubTipo.CON_ALCOHOL);
 			producto46.setActivo(true);
 			producto47.setActivo(true);
 			producto48.setActivo(true);
@@ -238,7 +242,6 @@ public class RoyalOakApplication {
 			producto59.setActivo(true);
 			producto60.setActivo(true);
 			producto61.setActivo(true);
-
 			productoRepositorio.save(producto46);
 			productoRepositorio.save(producto47);
 			productoRepositorio.save(producto48);

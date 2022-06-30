@@ -48,7 +48,7 @@
                         <a  href=""><img src="../media/royal_menuH.png"></a>
                         <p>Royal Oak</p>
                     </div>
-                    <div v-if="cliente.length == 0">
+                    <div>
                         <a  href=""><img src="../media/register_menuH.webp"></a>
                         <p>Registrarme</p>
                     </div>
@@ -131,7 +131,6 @@
                     <label class="product-details">Product</label>
                     <label class="product-price labels">Precio</label>
                     <label class="product-quantity labels">Cantidad</label>
-                    <label class="agregar-producto">Modificar</label>
                     <label class="product-removal">Remover</label>
                     <label class="product-line-price labels">Subtotal</label>
                 </div>
@@ -219,6 +218,7 @@
     <script src="https://unpkg.com/vue@3"></script>
     <script src="../js/carrito.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="sweetalert2.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({
