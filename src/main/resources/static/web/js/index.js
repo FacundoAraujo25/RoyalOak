@@ -4,6 +4,7 @@ const app = Vue.createApp({
     data() {
         return {
             datos:[],
+            clientes:[],
             cliente:[],
             productos:[],
             tipo:[],
@@ -22,6 +23,8 @@ const app = Vue.createApp({
     created(){
             const urlParams = new URLSearchParams(window.location.search);
             const id = urlParams.get('id');
+            axios.get('http://localhost:8585/api/clientes')
+            .then(data => {this.clientes = data.data})
             axios.get('http://localhost:8585/api/clientes/actual')
             .then(data => {this.cliente = data.data})
             axios.get('http://localhost:8585/api/productos')
@@ -69,15 +72,22 @@ const app = Vue.createApp({
                     showConfirmButton: false,
                     timer: 1500
                 })
-                setTimeout= (function(){
-                window.location.href = "http://localhost:8585/web/index.html", 1800})
             })
             .catch(error =>{
-                Swal.fire({
-                    position: 'center',
-                    icon: 'question',
-                    title: `${error.response.data}`
-                })
+                if(error.response.status == 401){
+                    Swal.fire({
+                        position: 'center',
+                        icon: 'question',
+                        title: 'Debes iniciar sesión para realizar un pedido'
+                    })
+                }
+                else if (error.response.status == 400){
+                    Swal.fire({
+                        position: 'center',
+                        icon: 'warning',
+                        title: 'Por favor selecciona la cantidad de productos que deseas agregar al pedido'
+                    })
+                }
             })
         },
         

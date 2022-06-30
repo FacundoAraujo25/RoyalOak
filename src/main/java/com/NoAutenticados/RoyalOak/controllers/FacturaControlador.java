@@ -54,7 +54,7 @@ public class FacturaControlador {
             factura.setEstadoFactura(EstadoFactura.CARRITO);
         }
         if (cantidad <= 0) {
-            return new ResponseEntity<>("Faltan datos: Cantidad", HttpStatus.FORBIDDEN);
+            return new ResponseEntity<>("Faltan datos: Cantidad", HttpStatus.BAD_REQUEST);
         }
         if (productoServicio.findById(idProducto) == null) {
             return new ResponseEntity<>("Producto inexistente", HttpStatus.FORBIDDEN);

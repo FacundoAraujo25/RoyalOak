@@ -26,109 +26,95 @@
                 <div id="hamburguesa">
 
                         <div class="collapse" id="navbarToggleExternalContent">
-
+            
+                            <div>
+                                <nav id="menu_hamburguesa" class="navbar navbar-dark">
+                                    <div id="container_fluid" class="d-flex justify-between">
+                                        <div>
+                                            <img id="carritoHamburguesa" src="./media/canastaIcono.png" alt="">
+                                        </div>
+                                        <div>
+                                            <img src="https://res.cloudinary.com/royal-oak-imagenes/image/upload/v1656443334/logo-simplificado_xcuvzo.png" alt="">
+                                        </div>
+                                        <div id="botonHamburguesa">
+                                            <button id="boton_hamburguesa" class="navbar-toggler" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent"
+                                                aria-controls="navbarToggleExternalContent" aria-expanded="false"
+                                                aria-label="Toggle navigation">
+                                                <i class="bi bi-x-square"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </nav>
+                            </div>
+            
+                            <div id="hamburguesitas">
                                 <div>
-                                        <nav id="menu_hamburguesa" class="navbar navbar-dark">
-                                                <div id="container_fluid" class="d-flex justify-between">
-                                                        <div>
-                                                                <img id="carritoHamburguesa"
-                                                                        src="media/canastaIcono.png" alt="">
-                                                        </div>
-                                                        <div>
-                                                                <img src="media/logo-royaloak-2.png" alt="">
-                                                        </div>
-                                                        <div id="botonHamburguesa">
-                                                                <button id="boton_hamburguesa" class="navbar-toggler"
-                                                                        type="button" data-bs-toggle="collapse"
-                                                                        data-bs-target="#navbarToggleExternalContent"
-                                                                        aria-controls="navbarToggleExternalContent"
-                                                                        aria-expanded="false"
-                                                                        aria-label="Toggle navigation">
-                                                                        <i class="bi bi-x-square"></i>
-                                                                </button>
-                                                        </div>
-                                                </div>
-                                        </nav>
+                                    <a href=""><img src="./media/iconoBurger.png"></a>
+                                    <p>Menu</p>
                                 </div>
-
-                                <div id="hamburguesitas">
-                                        <div>
-                                                <a href=""><img src="media/iconoBurger.png"></a>
-                                                <p>Menu</p>
-                                        </div>
-                                        <div>
-                                                <a href=""><img
-                                                                src="https://cdn-icons-png.flaticon.com/512/30/30569.png"></a>
-                                                <p>Royal Oak</p>
-                                        </div>
-                                        <div>
-                                                <a href=""><img src="media/Register.webp"></a>
-                                                <p>Registrarme</p>
-                                        </div>
-                                        <div>
-                                                <a href=""><img src="media/cerrarSesion.png"></a>
-                                                <p>Salir</p>
-                                        </div>
-                                </div> 
+                                <div>
+                                    <a href=""><img src="https://cdn-icons-png.flaticon.com/512/30/30569.png"></a>
+                                    <p>Royal Oak</p>
+                                </div>
+                                <div>
+                                    <a href="./login.html"><img src="./media/Register.webp"></a>
+                                    <p>Registrarme</p>
+                                </div>
+                                <div>
+                                    <a @click="salir"><img src="./media/cerrarSesion.png"></a>
+                                    <p>Salir</p>
+                                </div>
+                            </div>
                         </div>
-
-                       <!-- <div id="hamburguesitas">
+                        <nav id="menu_hamburguesa" class="navbar navbar-dark">
+                            <div id="container_fluid" class="d-flex justify-between">
                                 <div>
-                                <a  href=""><img src="media/iconoBurger.png"></a>
-                                <p>Menu</p>   
+                                    <img id="carritoHamburguesa" src="./media/canastaIcono.png" alt="">
                                 </div>
                                 <div>
-                                <a  href=""><img src="https://cdn-icons-png.flaticon.com/512/30/30569.png"></a>
-                                <p>Royal Oak</p>
+                                    <img src="https://res.cloudinary.com/royal-oak-imagenes/image/upload/v1656443334/logo-simplificado_xcuvzo.png" alt="">
                                 </div>
-                                <div>
-                                <a  href="./login.html"><img src="media/Register.webp"></a>
-                                <p>Registrarme</p>
+                                <div id="botonHamburguesa">
+                                    <button id="boton_hamburguesa" class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+                                        aria-expanded="false" aria-label="Toggle navigation">
+                                        <span class="navbar-toggler-icon"></span>
+                                    </button>
                                 </div>
-                                <div>
-                                <a @click="salir"><img src="media/cerrarSesion.png"></a>
-                                <p>Salir</p>
-                                </div>
-                        </div>-->
-                </div>
-
-                <header>
+                            </div>
+                        </nav>
+                    </div>
+            
+                    <header>
                         <div class="nav">
-                                <div id="marca">
-                                        <a href="#"><img src="./media/logo-royaloak.png" alt="Logo"></a>
-                                </div>
-                                <div id="menu">
-                                        <a href=#divisorBurgers><img class="scale-up-center" id="iconos"
-                                                        src="media/iconoBurger.png" alt="menu"></a>
-                                        <p>Menu</p>
-                                </div>
-                                <div>
-                                        <a href="./pages/carrito.html"><img class="scale-up-center"
-                                                        src="media/iconoBolsita.webp" alt=""></a>
-                                        <p>Pedido</p>
-                                </div>
-                                <div>
-                                        <a href=""><img class="scale-up-center"
-                                                        src="https://cdn-icons-png.flaticon.com/512/30/30569.png"
-                                                        alt=""></a>
-                                        <p>Royal</p>
-                                </div>
-                                <div v-if="email == 'facu@gmail.com'">
-                                        <a href="./admin.html"><img class="scale-up-center" src="https://cdn-icons-png.flaticon.com/512/81/81591.png"
-                                                        alt=""></a>
-                                        <p>Admin</p>
-                                </div>
-                                <div>
-                                        <a href="./login.html"><img class="scale-up-center " src="media/Register.webp"
-                                                        alt=""></a>
-                                        <p>Registro</p>
-                                </div>
-                                <div id="salir">
-                                        <a @click="salir"><img class="scale-up-center" src="media/cerrarSesion.png" alt=""></a>
-                                        <p>Salir</p>
-                                </div>
+                            <div id="marca">
+                                <a href="#"><img src="https://res.cloudinary.com/royal-oak-imagenes/image/upload/v1656443331/logo-ro_xmp8hl.png" alt="Logo"></a>
+                            </div>
+                            <div id="menu">
+                                <a href=#divisorBurgers><img class="scale-up-center" id="iconos" src="./media/iconoBurger.png"
+                                        alt="menu"></a>
+                                <p>Menu</p>
+                            </div>
+                            <div>
+                                <a href="./pages/carrito.html"><img class="scale-up-center" src="./media/iconoBolsita.webp"
+                                        alt=""></a>
+                                <p>Pedido</p>
+                            </div>
+                            <div>
+                                <a href="./pages/random.html"><img class="scale-up-center" src="https://cdn-icons-png.flaticon.com/512/30/30569.png"
+                                        alt=""></a>
+                                <p>Royal</p>
+                            </div>
+                            <div>
+                                <a href="./login.html"><img class="scale-up-center " src="./media/Register.webp" alt=""></a>
+                                <p>Registro</p>
+                            </div>
+                            <div id="salir">
+                                <a @click="salir"><img class="scale-up-center" src="./media/cerrarSesion.png" alt=""></a>
+                                <p>Salir</p>
+                            </div>
                         </div>
-
 
                         <div class="center">
                                 <div class="principal">
@@ -139,7 +125,7 @@
                                         </video>
                                 </div>
                         </div>
-                </header>
+                    </header>
 
 
                 <div id="contenedorCategorias">
@@ -151,21 +137,13 @@
                 </div>
 
                 <div id="pizzas">
-                        <img src="https://cdn-icons-png.flaticon.com/512/1404/1404945.png" alt="1">
-                        <img src="https://cdn-icons-png.flaticon.com/512/198/198416.png" alt="2">
-                        <img src="https://cdn-icons-png.flaticon.com/512/3076/3076134.png" alt="3">
-                        <img src="https://cdn-icons-png.flaticon.com/512/1691/1691169.png" alt="4">
-                        <img src="https://cdn.pixabay.com/photo/2014/12/21/23/34/swiss-cheese-575541_1280.png" alt="5">
-                        <img src="https://cdn3.iconfinder.com/data/icons/food-drink-56/100/shushi-512.png" alt="6">
-                        <img src="https://cdn-icons-png.flaticon.com/512/941/941758.png" alt="7">
-                        <img src="https://images.vexels.com/media/users/3/185216/isolated/preview/577e52c9f916cf36bed97b3df404c214-icono-de-papas-fritas.png"
-                                alt="8">
-                        <img src="https://cdn-icons-png.flaticon.com/512/184/184559.png" alt="9">
-                        <img src="https://cdn-icons-png.flaticon.com/512/4515/4515697.png" alt="10">
-                        <img src="https://i.pinimg.com/originals/67/ac/6f/67ac6ff9c411816ed8bbc9ae34368e8f.png"
-                                alt="11">
-                        <img src="https://images.vexels.com/media/users/3/143088/isolated/preview/f565debc52083dacca60da22284e4083-icono-de-pierna-de-pollo.png"
-                                alt="12">
+                        <a href="#pizzas1"><img src="https://cdn-icons-png.flaticon.com/512/1404/1404945.png" alt="1"></a>
+                        <a href="#hamburguesas"><img src="https://cdn-icons-png.flaticon.com/512/198/198416.png" alt="2"></a>
+                        <a href="#bebidas"><img src="https://cdn-icons-png.flaticon.com/512/3076/3076134.png" alt="3"></a>
+                        <a href="#picadas"><img src="https://cdn.pixabay.com/photo/2014/12/21/23/34/swiss-cheese-575541_1280.png" alt="5"></a>
+                        <a href="#picadas"><img src="https://images.vexels.com/media/users/3/185216/isolated/preview/577e52c9f916cf36bed97b3df404c214-icono-de-papas-fritas.png"
+                                alt="8"></a>
+                        <a href="#ensaladas"><img src="https://cdn-icons-png.flaticon.com/512/184/184559.png" alt="9"></a>
                 </div>
                 
 
@@ -183,7 +161,7 @@
                 <!-- FIN DIVISOR HAMBURGUESAS -->
 
                 <!-- SECCION HAMBURGUESAS -->
-                <section data-aos="fade-up" class="section-products">
+                <section data-aos="fade-up" class="section-products" id="hamburguesas">
                         <div class="container">
                                 <div class="row">
                                         <!-- Single Product -->
@@ -191,61 +169,59 @@
                                                 <div class="single-product">
 
                                                         <div id="product-1" class="part-1" v-bind:style='{ background: "url(" + hamburguesa.imagen + ") center", }'>
-
+                                                                <div class="product-price">
+                                                                        <h4 class="precio">${{hamburguesa.precio}}</h4>
+                                                                </div>
                                                                 <ul>
                                                                         <li><a href="#" data-bs-toggle="modal" :data-bs-target="'#producto' + hamburguesa.id"><i class="fa-solid fa-cart-plus"></i></a></li>        
-                                                                        <!-- <li v-if="hamburguesa in hamburguesas.filter(hamburguesa=> hamburguesa.descripcion.includes('vegan')"><a href="#"><i class="fas fa-seedling"></i></a></li> -->
                                                                         <li @click="mostrarIngredientes(hamburguesa)"><a href="#"><i class="fas fa-info"></i></a></li>                          
                                                                 </ul>
                                                         </div>
+                                                                
+                                                        <div class="part-2">
+                                                                <h3 class="product-title">{{hamburguesa.nombre}}</h3>
+                                                        </div>
 
+                                                        
                                         <!-----------------MODAL ---------------->
 
                                 <div class="modal fade" :id="'producto' + hamburguesa.id" data-bs-backdrop="static" data-bs-keyboard="false"
-                                        tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content">
-                                                <div class="modal-body">
-                                                        <div class="product-title">
-                                                                <h3 class="product-title">{{hamburguesa.nombre}}</h3>
-                                                        </div>
-                                                        <div class="single-product">
-                                                        <div class="part-1" v-bind:style='{ background: "url(" + hamburguesa.imagen + ") center"}'>
-                                                        </div>
-                                                        <div class="part-2 d-flex justify-content-center">
-                                                                <div class="product-price">
-                                                                        <h4 class="precio">${{hamburguesa.precio}} x {{hamburguesa.cantidad}}</h4>
-                                                                </div>
-                                                                <div class="d-flex p-3 gap-3">
-                                                                        <button type="button" @click="restarProducto(hamburguesa)"
-                                                                        class="btn btn-outline-secondary stock1">&#45;</button>
-                                                                        <button type="button" @click="sumarProducto(hamburguesa)"
-                                                                        class="btn btn-outline-secondary stock2">&#43;</button>
-                                                                </div>
-                                                        </div>
-                                                        <div class="d-flex justify-content-center">
-                                                                <h4 class="precio">Subtotal= ${{hamburguesa.precio * hamburguesa.cantidad}}</h4>
-                                                        </div>
-                                                        </div>
-                                                </div>
+                                tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-body">
 
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Seguir viendo</button>
-                                                    <button type="submit" class="btn submitCheck" @click="añadirAlPedido(hamburguesa.cantidad, hamburguesa.id)">Agregar al pedido</button>
+                                                <div class="single-product">
+                                                <div class="part-1" v-bind:style='{ background: "url(" + hamburguesa.imagen + ") center"}'>
                                                 </div>
-                                            </div>
+                                                <div>
+                                                <p>{{hamburguesa.descripcion}}</p>
+                                                </div>
+                                                <div class="part-2 d-flex justify-content-center">
+                                                        <div class="product-price">
+                                                                <h4 class="precio2">${{hamburguesa.precio}} x {{hamburguesa.cantidad}}</h4>
+                                                        </div>
+                                                        <div class="d-flex px-2 gap-2">
+                                                                <button type="button" @click="restarProducto(hamburguesa)"
+                                                                class="btn btn-outline-secondary stock1">&#45;</button>
+                                                                <button type="button" @click="sumarProducto(hamburguesa)"
+                                                                class="btn btn-outline-secondary stock2">&#43;</button>
+                                                        </div>
+                                                </div>
+                                                <div class="d-flex justify-content-center">
+                                                        <h4 class="precio2">Subtotal= ${{hamburguesa.precio * hamburguesa.cantidad}}</h4>
+                                                </div>
+                                                </div>
                                         </div>
+
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Seguir viendo</button>
+                                            <button type="submit" class="btn submitCheck" @click="añadirAlPedido(hamburguesa.cantidad, hamburguesa.id)">Agregar al pedido</button>
+                                        </div>
+                                    </div>
                                 </div>
-                                                                <!-------------------- FIN MODAL --------------------------------->
-                                                                
-                                                        <div class="part-2">
-
-                                                                <h3 class="product-title">{{hamburguesa.nombre}}</h3>
-                                                                <p>{{hamburguesa.descripcion}}</p>
-                                                                <h4 class="product-old-price">$79.99</h4>
-                                                                <h4 class="product-price">{{hamburguesa.precio}}</h4>
-
-                                                        </div>
+                        </div>
+                                                        <!-------------------- FIN MODAL --------------------------------->
                                                         
                                                 </div>
                                         </div>
@@ -268,7 +244,7 @@
                 <!-- FIN DIVISOR PIZZAS -->
 
                 <!-- SECCION PIZZAS -->
-                <section data-aos="fade-up" class="section-products">
+                <section data-aos="fade-up" class="section-products" id="pizzas1">
 
                         <div class="container">
                                 <div class="row">
@@ -282,55 +258,55 @@
                                                                 </div>
                                                                 <ul>
                                                                         <li><a href="#" data-bs-toggle="modal" :data-bs-target="'#producto' + pizza.id"><i class="fa-solid fa-cart-plus"></i></a></li>        
-                                                                        <!-- <li v-if="pizza in pizzas.filter(pizza=> pizza.descripcion.includes('vegan')"><a href="#"><i class="fas fa-seedling"></i></a></li> -->
                                                                         <li @click="mostrarIngredientes(pizza)"><a href="#"><i class="fas fa-info"></i></a></li>                          
                                                                 </ul>
                                                         </div>
-
-                                        <!-----------------MODAL ---------------->
-
-                                        <div class="modal fade" :id="'producto' + pizza.id" data-bs-backdrop="static" data-bs-keyboard="false"
-                                        tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content">
-                                                <div class="modal-body">
-                                                        <div class="product-title">
-                                                                <h3 class="product-title">{{pizza.nombre}}</h3>
-                                                        </div>
-                                                        <div class="single-product">
-                                                        <div class="part-1" v-bind:style='{ background: "url(" + pizza.imagen + ") center"}'>
-                                                        </div>
-                                                        <div class="part-2 d-flex justify-content-center">
-                                                                <div class="product-price">
-                                                                        <h4 class="precio">${{pizza.precio}} x {{pizza.cantidad}}</h4>
-                                                                </div>
-                                                                <div class="d-flex p-3 gap-3">
-                                                                        <button type="button" @click="restarProducto(pizza)"
-                                                                        class="btn btn-outline-secondary stock1">&#45;</button>
-                                                                        <button type="button" @click="sumarProducto(pizza)"
-                                                                        class="btn btn-outline-secondary stock2">&#43;</button>
-                                                                </div>
-                                                        </div>
-                                                        <div class="d-flex justify-content-center">
-                                                                <h4 class="precio">Subtotal= ${{pizza.precio * pizza.cantidad}}</h4>
-                                                        </div>
-                                                        </div>
-                                                </div>
-
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Seguir viendo</button>
-                                                    <button type="submit" class="btn submitCheck" @click="añadirAlPedido(pizza.cantidad, pizza.id)">Agregar al pedido</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                </div>
-                                                                <!-------------------- FIN MODAL --------------------------------->
 
                                                         <div class="part-2">
                                                                 <div class="product-title">
                                                                         <h3 class="product-title">{{pizza.nombre}}</h3>
                                                                 </div>
                                                         </div>
+
+                                                                                                <!-----------------MODAL ---------------->
+
+                                <div class="modal fade" :id="'producto' + pizza.id" data-bs-backdrop="static" data-bs-keyboard="false"
+                                tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-body">
+
+                                                <div class="single-product">
+                                                <div class="part-1" v-bind:style='{ background: "url(" + pizza.imagen + ") center"}'>
+                                                </div>
+                                                <div>
+                                                <p>{{pizza.descripcion}}</p>
+                                                </div>
+                                                <div class="part-2 d-flex justify-content-center">
+                                                        <div class="product-price">
+                                                                <h4 class="precio2">${{pizza.precio}} x {{pizza.cantidad}}</h4>
+                                                        </div>
+                                                        <div class="d-flex px-2 gap-2">
+                                                                <button type="button" @click="restarProducto(pizza)"
+                                                                class="btn btn-outline-secondary stock1">&#45;</button>
+                                                                <button type="button" @click="sumarProducto(pizza)"
+                                                                class="btn btn-outline-secondary stock2">&#43;</button>
+                                                        </div>
+                                                </div>
+                                                <div class="d-flex justify-content-center">
+                                                        <h4 class="precio2">Subtotal= ${{pizza.precio * pizza.cantidad}}</h4>
+                                                </div>
+                                                </div>
+                                        </div>
+
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Seguir viendo</button>
+                                            <button type="submit" class="btn submitCheck" @click="añadirAlPedido(pizza.cantidad, pizza.id)">Agregar al pedido</button>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                                                        <!-------------------- FIN MODAL --------------------------------->
                                                         
                                                 </div>
                                         </div>
@@ -355,68 +331,68 @@
                 <!-- FIN DIVISOR PICADAS -->
 
                 <!-- SECCION PICADAS -->
-                <section data-aos="fade-up" class="section-products">
+                <section data-aos="fade-up" class="section-products" id="picadas">
 
                         <div class="container">
                                 <div class="row">
                                         <!-- Single Product -->
                                         <div v-for="picada in picadas" class="col-md-6 col-lg-4 col-xl-3">
                                                 <div class="single-product">
-                                                        <div class="part-1" v-bind:style='{ background: "url(" + picada.imagen + ") center", }'>
+                                                        <div class="part-1" v-bind:style='{ background: "url(" + picada.imagen + ") center"}'>
                                                                 <div class="product-price">
                                                                         <h4 class="precio">${{picada.precio}}</h4>
                                                                 </div>
                                                                 <ul>
                                                                         <li><a href="#" data-bs-toggle="modal" :data-bs-target="'#producto' + picada.id"><i class="fa-solid fa-cart-plus"></i></a></li>        
-                                                                        <!-- <li v-if="picada in picadas.filter(picada=> picada.descripcion.includes('vegan')"><a href="#"><i class="fas fa-seedling"></i></a></li> -->
                                                                         <li @click="mostrarIngredientes(picada)"><a href="#"><i class="fas fa-info"></i></a></li>                          
                                                                 </ul>
                                                         </div>
-
-                                        <!-----------------MODAL ---------------->
-
-                                        <div class="modal fade" :id="'producto' + picada.id" data-bs-backdrop="static" data-bs-keyboard="false"
-                                        tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content">
-                                                <div class="modal-body">
-                                                        <div class="product-title">
-                                                                <h3 class="product-title">{{picada.nombre}}</h3>
-                                                        </div>
-                                                        <div class="single-product">
-                                                        <div class="part-1" v-bind:style='{ background: "url(" + picada.imagen + ") center"}'>
-                                                        </div>
-                                                        <div class="part-2 d-flex justify-content-center">
-                                                                <div class="product-price">
-                                                                        <h4 class="precio">${{picada.precio}} x {{picada.cantidad}}</h4>
-                                                                </div>
-                                                                <div class="d-flex p-3 gap-3">
-                                                                        <button type="button" @click="restarProducto(picada)"
-                                                                        class="btn btn-outline-secondary stock1">&#45;</button>
-                                                                        <button type="button" @click="sumarProducto(picada)"
-                                                                        class="btn btn-outline-secondary stock2">&#43;</button>
-                                                                </div>
-                                                        </div>
-                                                        <div class="d-flex justify-content-center">
-                                                                <h4 class="precio">Subtotal= ${{picada.precio * picada.cantidad}}</h4>
-                                                        </div>
-                                                        </div>
-                                                </div>
-
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Seguir viendo</button>
-                                                    <button type="submit" class="btn submitCheck" @click="añadirAlPedido(picada.cantidad, picada.id)">Agregar al pedido</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                </div>
-                                                                <!-------------------- FIN MODAL --------------------------------->
 
                                                         <div class="part-2">
                                                                 <div class="product-title">
                                                                         <h3 class="product-title">{{picada.nombre}}</h3>
                                                                 </div>
                                                         </div>
+
+                                                                                                <!-----------------MODAL ---------------->
+
+                                <div class="modal fade" :id="'producto' + picada.id" data-bs-backdrop="static" data-bs-keyboard="false"
+                                tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-body">
+
+                                                <div class="single-product">
+                                                <div class="part-1" v-bind:style='{ background: "url(" + picada.imagen + ") center"}'>
+                                                </div>
+                                                <div>
+                                                <p>{{picada.descripcion}}</p>
+                                                </div>
+                                                <div class="part-2 d-flex justify-content-center">
+                                                        <div class="product-price">
+                                                                <h4 class="precio2">${{picada.precio}} x {{picada.cantidad}}</h4>
+                                                        </div>
+                                                        <div class="d-flex px-2 gap-2">
+                                                                <button type="button" @click="restarProducto(picada)"
+                                                                class="btn btn-outline-secondary stock1">&#45;</button>
+                                                                <button type="button" @click="sumarProducto(picada)"
+                                                                class="btn btn-outline-secondary stock2">&#43;</button>
+                                                        </div>
+                                                </div>
+                                                <div class="d-flex justify-content-center">
+                                                        <h4 class="precio2">Subtotal= ${{picada.precio * picada.cantidad}}</h4>
+                                                </div>
+                                                </div>
+                                        </div>
+
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Seguir viendo</button>
+                                            <button type="submit" class="btn submitCheck" @click="añadirAlPedido(picada.cantidad, picada.id)">Agregar al pedido</button>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                                                        <!-------------------- FIN MODAL --------------------------------->
                                                         
                                                 </div>
                                         </div>
@@ -441,67 +417,67 @@
                 <!-- FIN DIVISOR ENSALADAS -->
 
                 <!-- SECCION ENSALADAS -->
-
+                <section data-aos="fade-up" class="section-products" id="ensaladas">
                         <div class="container">
                                 <div class="row">
                                         <!-- Single Product -->
                                         <div v-for="ensalada in ensaladas" class="col-md-6 col-lg-4 col-xl-3">
                                                 <div class="single-product">
-                                                        <div class="part-1" v-bind:style='{ background: "url(" + ensalada.imagen + ") center", }'>
+                                                        <div class="part-1" v-bind:style='{ background: "url(" + ensalada.imagen + ") center"}'>
                                                                 <div class="product-price">
                                                                         <h4 class="precio">${{ensalada.precio}}</h4>
                                                                 </div>
                                                                 <ul>
                                                                         <li><a href="#" data-bs-toggle="modal" :data-bs-target="'#producto' + ensalada.id"><i class="fa-solid fa-cart-plus"></i></a></li>        
-                                                                        <!-- <li v-if="ensalada in ensaladas.filter(ensalada=> ensalada.descripcion.includes('vegan')"><a href="#"><i class="fas fa-seedling"></i></a></li> -->
                                                                         <li @click="mostrarIngredientes(ensalada)"><a href="#"><i class="fas fa-info"></i></a></li>                          
                                                                 </ul>
                                                         </div>
-
-                                        <!-----------------MODAL ---------------->
-
-                                        <div class="modal fade" :id="'producto' + ensalada.id" data-bs-backdrop="static" data-bs-keyboard="false"
-                                        tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content">
-                                                <div class="modal-body">
-                                                        <div class="product-title">
-                                                                <h3 class="product-title">{{ensalada.nombre}}</h3>
-                                                        </div>
-                                                        <div class="single-product">
-                                                        <div class="part-1" v-bind:style='{ background: "url(" + ensalada.imagen + ") center"}'>
-                                                        </div>
-                                                        <div class="part-2 d-flex justify-content-center">
-                                                                <div class="product-price">
-                                                                        <h4 class="precio">${{ensalada.precio}} x {{ensalada.cantidad}}</h4>
-                                                                </div>
-                                                                <div class="d-flex p-3 gap-3">
-                                                                        <button type="button" @click="restarProducto(ensalada)"
-                                                                        class="btn btn-outline-secondary stock1">&#45;</button>
-                                                                        <button type="button" @click="sumarProducto(ensalada)"
-                                                                        class="btn btn-outline-secondary stock2">&#43;</button>
-                                                                </div>
-                                                        </div>
-                                                        <div class="d-flex justify-content-center">
-                                                                <h4 class="precio">Subtotal= ${{ensalada.precio * ensalada.cantidad}}</h4>
-                                                        </div>
-                                                        </div>
-                                                </div>
-
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Seguir viendo</button>
-                                                    <button type="submit" class="btn submitCheck" @click="añadirAlPedido(ensalada.cantidad, ensalada.id)">Agregar al pedido</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                </div>
-                                                                <!-------------------- FIN MODAL --------------------------------->
 
                                                         <div class="part-2">
                                                                 <div class="product-title">
                                                                         <h3 class="product-title">{{ensalada.nombre}}</h3>
                                                                 </div>
                                                         </div>
+
+                                                                                                <!-----------------MODAL ---------------->
+
+                                <div class="modal fade" :id="'producto' + ensalada.id" data-bs-backdrop="static" data-bs-keyboard="false"
+                                tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-body">
+
+                                                <div class="single-product">
+                                                <div class="part-1" v-bind:style='{ background: "url(" + ensalada.imagen + ") center"}'>
+                                                </div>
+                                                <div>
+                                                <p>{{ensalada.descripcion}}</p>
+                                                </div>
+                                                <div class="part-2 d-flex justify-content-center">
+                                                        <div class="product-price">
+                                                                <h4 class="precio2">${{ensalada.precio}} x {{ensalada.cantidad}}</h4>
+                                                        </div>
+                                                        <div class="d-flex px-2 gap-2">
+                                                                <button type="button" @click="restarProducto(ensalada)"
+                                                                class="btn btn-outline-secondary stock1">&#45;</button>
+                                                                <button type="button" @click="sumarProducto(ensalada)"
+                                                                class="btn btn-outline-secondary stock2">&#43;</button>
+                                                        </div>
+                                                </div>
+                                                <div class="d-flex justify-content-center">
+                                                        <h4 class="precio2">Subtotal= ${{ensalada.precio * ensalada.cantidad}}</h4>
+                                                </div>
+                                                </div>
+                                        </div>
+
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Seguir viendo</button>
+                                            <button type="submit" class="btn submitCheck" @click="añadirAlPedido(ensalada.cantidad, ensalada.id)">Agregar al pedido</button>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                                                        <!-------------------- FIN MODAL --------------------------------->
                                                       
                                                 </div>
                                         </div>
@@ -530,7 +506,7 @@
                 <!-- FIN DIVISOR BEBIDAS -->
 
                 <!-- SECCION BEBIDAS -->
-                <section data-aos="fade-up" class="section-products">
+                <section data-aos="fade-up" class="section-products" id="bebidas">
 
                         <div class="container">
                                 <div class="row">
@@ -543,56 +519,56 @@
                                                                 </div>
                                                                 <ul>
                                                                         <li><a href="#" data-bs-toggle="modal" :data-bs-target="'#producto' + bebida.id"><i class="fa-solid fa-cart-plus"></i></a></li>        
-                                                                        <!-- <li v-if="bebida in bebidas.filter(bebida=> bebida.descripcion.includes('vegan')"><a href="#"><i class="fas fa-seedling"></i></a></li> -->
                                                                         <li @click="mostrarIngredientes(bebida)"><a href="#"><i class="fas fa-info"></i></a></li>      
                                                                 </ul>
 
                                                         </div>
-
-                                        <!-----------------MODAL ---------------->
-
-                                        <div class="modal fade" :id="'producto' + bebida.id" data-bs-backdrop="static" data-bs-keyboard="false"
-                                        tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content">
-                                                <div class="modal-body">
-                                                        <div class="product-title">
-                                                                <h3 class="product-title">{{bebida.nombre}}</h3>
-                                                        </div>
-                                                        <div class="single-product">
-                                                        <div class="part-1" v-bind:style='{ background: "url(" + bebida.imagen + ") center"}'>
-                                                        </div>
-                                                        <div class="part-2 d-flex justify-content-center">
-                                                                <div class="product-price">
-                                                                        <h4 class="precio">${{bebida.precio}} x {{bebida.cantidad}}</h4>
-                                                                </div>
-                                                                <div class="d-flex p-3 gap-3">
-                                                                        <button type="button" @click="restarProducto(bebida)"
-                                                                        class="btn btn-outline-secondary stock1">&#45;</button>
-                                                                        <button type="button" @click="sumarProducto(bebida)"
-                                                                        class="btn btn-outline-secondary stock2">&#43;</button>
-                                                                </div>
-                                                        </div>
-                                                        <div class="d-flex justify-content-center">
-                                                                <h4 class="precio">Subtotal= ${{bebida.precio * bebida.cantidad}}</h4>
-                                                        </div>
-                                                        </div>
-                                                </div>
-
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Seguir viendo</button>
-                                                    <button type="submit" class="btn submitCheck" @click="añadirAlPedido(bebida.cantidad, bebida.id)">Agregar al pedido</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                </div>
-                                                                <!-------------------- FIN MODAL --------------------------------->
 
                                                         <div class="part-2">
                                                                 <div class="product-title">
                                                                         <h3 class="product-title">{{bebida.nombre}}</h3>
                                                                 </div>
                                                         </div>
+
+                                                                                                <!-----------------MODAL ---------------->
+
+                                <div class="modal fade" :id="'producto' + bebida.id" data-bs-backdrop="static" data-bs-keyboard="false"
+                                tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-body">
+
+                                                <div class="single-product">
+                                                <div class="part-1" v-bind:style='{ background: "url(" + bebida.imagen + ") center"}'>
+                                                </div>
+                                                <div>
+                                                <p>{{bebida.descripcion}}</p>
+                                                </div>
+                                                <div class="part-2 d-flex justify-content-center">
+                                                        <div class="product-price">
+                                                                <h4 class="precio2">${{bebida.precio}} x {{bebida.cantidad}}</h4>
+                                                        </div>
+                                                        <div class="d-flex px-2 gap-2">
+                                                                <button type="button" @click="restarProducto(bebida)"
+                                                                class="btn btn-outline-secondary stock1">&#45;</button>
+                                                                <button type="button" @click="sumarProducto(bebida)"
+                                                                class="btn btn-outline-secondary stock2">&#43;</button>
+                                                        </div>
+                                                </div>
+                                                <div class="d-flex justify-content-center">
+                                                        <h4 class="precio2">Subtotal= ${{bebida.precio * bebida.cantidad}}</h4>
+                                                </div>
+                                                </div>
+                                        </div>
+
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Seguir viendo</button>
+                                            <button type="submit" class="btn submitCheck" @click="añadirAlPedido(bebida.cantidad, bebida.id)">Agregar al pedido</button>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                                                        <!-------------------- FIN MODAL --------------------------------->
                                                         
                                                 </div>
                                         </div>
