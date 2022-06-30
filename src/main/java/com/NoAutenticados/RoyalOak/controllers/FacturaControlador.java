@@ -68,7 +68,7 @@ public class FacturaControlador {
        else{
            ClienteProductoPedido pedidoRepetido = factura.getClienteProductoPedidos().stream().filter(pedidito -> pedidito.getProducto()==producto).findAny().orElse(null);
            assert pedidoRepetido != null;
-           pedidoRepetido.setCantidad(pedidoRepetido.getCantidad() + cantidad);
+           pedidoRepetido.setCantidad(cantidad);
            pedidoRepetido.setTotal(producto.getPrecio()*pedidoRepetido.getCantidad());
            clienteProductoPedidoRepositorio.save(pedidoRepetido);
        }
