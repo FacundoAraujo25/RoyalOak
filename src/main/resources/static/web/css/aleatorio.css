@@ -1,5 +1,5 @@
 /* Reset */
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -7,38 +7,45 @@
 
 
 /* HTML */
-html{
+html {
     overflow-x: hidden;
+}
+
+:root {
+    /* Paleta de Colores */
+    --bordo: #501F3A;
+    --rosa: #CB2D6F;
+    --blanco: #CCCCCC;
+    --verdeClaro: #12A098;
+    --verdeOscuro: #0F292F;
+
+    /* Fuente Titulos y Contenido */
+    --fuenteTitulo: 'Potta One', cursive;
+    --fuenteContenido: 'Kdam Thmor Pro', sans-serif;
+
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
 
 
 /* Body */
-body{
-    background-color: #0F292F;
+body {
+    background-color: var(--verdeOscuro);
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1200 800'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='600' y1='25' x2='600' y2='777'%3E%3Cstop offset='0' stop-color='%230F292F'/%3E%3Cstop offset='1' stop-color='%23501F3A'/%3E%3C/linearGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='650' y1='25' x2='650' y2='777'%3E%3Cstop offset='0' stop-color='%230d2a34'/%3E%3Cstop offset='1' stop-color='%235a2140'/%3E%3C/linearGradient%3E%3ClinearGradient id='c' gradientUnits='userSpaceOnUse' x1='700' y1='25' x2='700' y2='777'%3E%3Cstop offset='0' stop-color='%230c2b38'/%3E%3Cstop offset='1' stop-color='%23652345'/%3E%3C/linearGradient%3E%3ClinearGradient id='d' gradientUnits='userSpaceOnUse' x1='750' y1='25' x2='750' y2='777'%3E%3Cstop offset='0' stop-color='%230f2b3d'/%3E%3Cstop offset='1' stop-color='%236f254b'/%3E%3C/linearGradient%3E%3ClinearGradient id='e' gradientUnits='userSpaceOnUse' x1='800' y1='25' x2='800' y2='777'%3E%3Cstop offset='0' stop-color='%23142b41'/%3E%3Cstop offset='1' stop-color='%237a2650'/%3E%3C/linearGradient%3E%3ClinearGradient id='f' gradientUnits='userSpaceOnUse' x1='850' y1='25' x2='850' y2='777'%3E%3Cstop offset='0' stop-color='%231c2a44'/%3E%3Cstop offset='1' stop-color='%23852855'/%3E%3C/linearGradient%3E%3ClinearGradient id='g' gradientUnits='userSpaceOnUse' x1='900' y1='25' x2='900' y2='777'%3E%3Cstop offset='0' stop-color='%23252946'/%3E%3Cstop offset='1' stop-color='%2390295a'/%3E%3C/linearGradient%3E%3ClinearGradient id='h' gradientUnits='userSpaceOnUse' x1='950' y1='25' x2='950' y2='777'%3E%3Cstop offset='0' stop-color='%232e2846'/%3E%3Cstop offset='1' stop-color='%239c2a5e'/%3E%3C/linearGradient%3E%3ClinearGradient id='i' gradientUnits='userSpaceOnUse' x1='1000' y1='25' x2='1000' y2='777'%3E%3Cstop offset='0' stop-color='%23372646'/%3E%3Cstop offset='1' stop-color='%23a72b63'/%3E%3C/linearGradient%3E%3ClinearGradient id='j' gradientUnits='userSpaceOnUse' x1='1050' y1='25' x2='1050' y2='777'%3E%3Cstop offset='0' stop-color='%23402443'/%3E%3Cstop offset='1' stop-color='%23b32c67'/%3E%3C/linearGradient%3E%3ClinearGradient id='k' gradientUnits='userSpaceOnUse' x1='1100' y1='25' x2='1100' y2='777'%3E%3Cstop offset='0' stop-color='%2349213f'/%3E%3Cstop offset='1' stop-color='%23bf2c6b'/%3E%3C/linearGradient%3E%3ClinearGradient id='l' gradientUnits='userSpaceOnUse' x1='1150' y1='25' x2='1150' y2='777'%3E%3Cstop offset='0' stop-color='%23501F3A'/%3E%3Cstop offset='1' stop-color='%23CB2D6F'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg fill-opacity='0.12'%3E%3Crect fill='url(%23a)' width='1200' height='800'/%3E%3Crect fill='url(%23b)' x='100' width='1100' height='800'/%3E%3Crect fill='url(%23c)' x='200' width='1000' height='800'/%3E%3Crect fill='url(%23d)' x='300' width='900' height='800'/%3E%3Crect fill='url(%23e)' x='400' width='800' height='800'/%3E%3Crect fill='url(%23f)' x='500' width='700' height='800'/%3E%3Crect fill='url(%23g)' x='600' width='600' height='800'/%3E%3Crect fill='url(%23h)' x='700' width='500' height='800'/%3E%3Crect fill='url(%23i)' x='800' width='400' height='800'/%3E%3Crect fill='url(%23j)' x='900' width='300' height='800'/%3E%3Crect fill='url(%23k)' x='1000' width='200' height='800'/%3E%3Crect fill='url(%23l)' x='1100' width='100' height='800'/%3E%3C/g%3E%3C/svg%3E");
     background-attachment: fixed;
     background-size: cover;
-    font-family: 'Courier New', Courier, monospace;
-    color: #CCCCCC;
+    font-family: var(--fuenteContenido);
+    color: var(--blanco);
 }
 
-/*PALETA DE COLORES
-#501F3A       BORDO
-#CB2D6F       ROSA
-#CCCCCC       BLANCO     
-#12A098       VERDE CLARO     
-#0F292F       VERDE OSCURO*/
-
-header{
+header {
     width: 100%;
     display: flex;
     justify-content: space-between;
 }
 
-.nav{
-    background-color:#CCCCCC ;
+.nav {
+    background-color: var(--blanco);
     width: 8%;
     display: flex;
     flex-direction: column;
@@ -47,121 +54,125 @@ header{
     height: 100%;
 }
 
-.nav div{
-    padding:0.5rem ;
+.nav div {
+    padding: 0.5rem;
     width: 4rem;
     transition-duration: 0.5s;
     margin-bottom: 0.3rem;
 }
 
 
-.nav div:hover{
+.nav div:hover {
     width: 4.2rem;
     transition-duration: 0.5s;
-    
+
 }
 
 
-#marca{
+#marca {
     width: auto;
 }
 
-.center{
-    width: 100%; /* REVISAR */
+.center {
+    width: 100%;
+    /* REVISAR */
 }
 
 
 .scale-up-center {
-	-webkit-animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-	        animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    -webkit-animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
 
 @-webkit-keyframes scale-up-center {
     0% {
-      -webkit-transform: scale(0.5);
-              transform: scale(0.5);
+        -webkit-transform: scale(0.5);
+        transform: scale(0.5);
     }
+
     100% {
-      -webkit-transform: scale(1);
-              transform: scale(1);
+        -webkit-transform: scale(1);
+        transform: scale(1);
     }
-  }
-  @keyframes scale-up-center {
+}
+
+@keyframes scale-up-center {
     0% {
-      -webkit-transform: scale(0.5);
-              transform: scale(0.5);
+        -webkit-transform: scale(0.5);
+        transform: scale(0.5);
     }
+
     100% {
-      -webkit-transform: scale(1);
-              transform: scale(1);
+        -webkit-transform: scale(1);
+        transform: scale(1);
     }
-  }
-  
-  
-  
+}
 
 
-img{
+
+
+
+img {
     width: 92%;
     margin-left: 8%
 }
 
 
-.center img{
+.center img {
     background-size: cover;
     height: 100vh;
 }
 
-p{
+p {
     text-align: center;
     color: black;
 }
 
 
-.section-products p{
-    color: #CCCCCC;
+.section-products p {
+    color: var(--blanco);
 }
 
-.section-products{
+.section-products {
     width: 92%;
     margin-left: 8%;
     padding-bottom: 0;
 }
 
-#pizzas{
+#pizzas {
     width: 92%;
     display: flex;
     justify-content: center;
-    background-color: #CCCCCC;
+    background-color: var(--blanco);
     margin-left: 8%;
 }
 
-#pizzas img{
+#pizzas img {
     padding: 0.5rem;
     margin-left: 3%;
     width: 5rem;
 }
 
-#pizzas div:hover{
-    size:10px ;
-  }
+#pizzas div:hover {
+    size: 10px;
+}
 
-.contenedorDeVariedades{
+.contenedorDeVariedades {
     justify-content: space-around;
     width: 92%;
     margin-left: 8%;
-    /* background-color: #0F292F; */
-    color: #CCCCCC;
+    /* background-color: var(--verdeOscuro); */
+    color: var(--blanco);
     text-align: center;
     padding-top: 1rem;
     padding-right: 1rem;
 }
 
-.contenedorBotones{
+.contenedorBotones {
     background-color: black;
 }
 
-.modal-backdrop{
+.modal-backdrop {
     position: relative
 }
 
@@ -171,7 +182,7 @@ p{
 
 /* body {
     font-family: "Poppins", sans-serif;
-    color: #CCCCCC;
+    color: var(--blanco);
 } */
 
 a,
@@ -186,32 +197,25 @@ a:hover {
 
 .section-products .header {
     margin-bottom: 50px;
-    background-color: #12A098;
+    background-color: var(--verdeClaro);
     width: 100%;
 }
 
-/*PALETA DE COLORES
-#501F3A       BORDO
-#CB2D6F       ROSA
-#CCCCCC       BLANCO     
-#12A098       VERDE CLARO     
-#0F292F       VERDE OSCURO*/
-
 .section-products .header h3 {
     font-size: 1rem;
-    color: #CCCCCC;
+    color: var(--blanco);
     font-weight: 500;
 }
 
 .section-products .header h2 {
     font-size: 2.2rem;
     font-weight: 400;
-    color: #CCCCCC;
-    background-color: #12A098; 
+    color: var(--blanco);
+    background-color: var(--verdeClaro);
     border-radius: 5px;
 }
 
-.single-product h3{
+.single-product h3 {
     text-align: start;
 }
 
@@ -228,18 +232,18 @@ a:hover {
 }
 
 .section-products .single-product .part-1::before {
-		position: absolute;
-		content: "";
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		z-index: -1;
-		transition: all 0.3s;
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    transition: all 0.3s;
 }
 
 .section-products .single-product:hover .part-1::before {
-		transform: scale(1.2,1.2) rotate(5deg);
+    transform: scale(1.2, 1.2) rotate(5deg);
 }
 
 .section-products #product-1 .part-1::before {
@@ -384,15 +388,8 @@ a:hover {
     transform: translateY(-50%);
 }
 
-/*PALETA DE COLORES
-#501F3A       BORDO
-#CB2D6F       ROSA
-#CCCCCC       BLANCO     
-#12A098       VERDE CLARO     
-#0F292F       VERDE OSCURO*/
-
 /* DIVISORES */
-.divisor{
+.divisor {
     width: 88%;
     height: 10%;
     margin-left: 10%;
@@ -401,62 +398,62 @@ a:hover {
     padding-bottom: 1%;
 }
 
-.tipoDeComida{
+.tipoDeComida {
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: black;
-    color: #CCCCCC;
-    font-family:cursive;
-    /* border-right: 1px solid #CCCCCC; */
+    color: var(--blanco);
+    font-family: var(--fuenteTitulo);
+    /* border-right: 1px solid var(--blanco); */
     padding-right: 1%;
-    
+
 }
 
-.tipoDeComida img{
+.tipoDeComida img {
     width: auto;
     height: 15vh;
     margin: 0;
 }
 
-.tipoDeComida h3{
+.tipoDeComida h3 {
     width: min-content;
     height: min-content;
     margin-bottom: 0;
     font-weight: 100;
-    color: #CCCCCC;
-    background-color: #12a099b9;
+    color: var(--blanco);
+    background-color: var(--verdeClaro);
     border-radius: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family:fantasy ;
+    font-family: var(--fuenteContenido);
 }
 
-#divisorBurgers{
+#divisorBurgers {
     width: 100%;
     height: 15vh;
     background-image: url(https://us.123rf.com/450wm/kbolbik/kbolbik2010/kbolbik201000595/157596716-patr%C3%B3n-transparente-de-vector-de-hamburguesas-de-contorno-negro-fondo-para-banner-embalaje-men%C3%BA-.jpg?ver=6);
     background-size: auto;
 }
 
-#divisorBurgers2{
+#divisorBurgers2 {
     width: 100%;
     height: 15vh;
     background-image: url();
     background-size: auto;
 }
 
-#divisorBurgers img{
+#divisorBurgers img {
     width: 100%;
     height: 100%;
 }
 
-#divisorBurgers div{
+#divisorBurgers div {
     width: 10%;
     justify-content: center;
     align-items: center;
-    
+
 }
 
 /* VIDEO */
@@ -481,66 +478,66 @@ a:hover {
 
 
 /* RESPONSIVE*/
-@media screen and (max-width: 1000px){
+@media screen and (max-width: 1000px) {
 
-  header{
-    flex-direction: column;
-  }  
+    header {
+        flex-direction: column;
+    }
 
-  .nav{
-    position: fixed;
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: 10vh;
-    justify-content: space-around;
-    z-index: 10;
-  }
+    .nav {
+        position: fixed;
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 10vh;
+        justify-content: space-around;
+        z-index: 10;
+    }
 
-  #marca{
-    width: 4.5rem;
-    padding: 0;
-    margin-bottom: 1.5rem;
-    padding: 0.3rem;
-  }
+    #marca {
+        width: 4.5rem;
+        padding: 0;
+        margin-bottom: 1.5rem;
+        padding: 0.3rem;
+    }
 
-  img{
-    width: 100%;
-    margin-left: 0;
-  }
+    img {
+        width: 100%;
+        margin-left: 0;
+    }
 
-  .center img{
-    height: 100%;
-  }
+    .center img {
+        height: 100%;
+    }
 
-  #pizzas{
-    width: 100%;
-    margin: 0%;
-    flex-wrap: wrap;
-  }
+    #pizzas {
+        width: 100%;
+        margin: 0%;
+        flex-wrap: wrap;
+    }
 
-  .nav div{
-    width: 3.5rem;
-  }
+    .nav div {
+        width: 3.5rem;
+    }
 
-  #pizzas img{
-    width: 4rem;
-    margin-left: 5%;
-  }
+    #pizzas img {
+        width: 4rem;
+        margin-left: 5%;
+    }
 
-  .section-products{
-    width: 100%;
-    margin-left: 0;
-  }
+    .section-products {
+        width: 100%;
+        margin-left: 0;
+    }
 
 }
 
 /* MENU HAMBURGUESA */
 
 /* #pushed{
-    color: #12A098;
+    color: var(--verdeClaro);
     font-weight: bold;
-    background-color: #12A098;
+    background-color: var(--verdeClaro);
     padding: 5px;
 }
 
@@ -553,7 +550,7 @@ a:hover {
     header{
         height: fit-content;
         width: 100%;
-        background-color: #12A098;
+        background-color: var(--verdeClaro);
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -569,11 +566,11 @@ a:hover {
     }
     #hamburguesa{
         display: contents;
-        color: #0F292F;
+        color: var(--verdeOscuro);
     }
     #navbarToggleExternalContent{
-        color: #0F292F;
-        background-color: #0F292F;
+        color: var(--verdeOscuro);
+        background-color: var(--verdeOscuro);
         text-align: right;
     }
     #menu_hamburguesa{
@@ -581,24 +578,24 @@ a:hover {
     }
     #container_fluid{
     height: 15vw;
-    background-color: #CCCCCC;
+    background-color: var(--blanco);
     display: flex;
     justify-content: flex-end;
     align-items: center;
     padding-right: 5vw;
     }
     #boton_hamburguesa{
-    background-color: #0F292F;
+    background-color: var(--verdeOscuro);
     }
     .navbar-toggler-icon{
-    background-color: #0F292F;
+    background-color: var(--verdeOscuro);
     }
 }    */
 
 /* Estilos pagina random*/
 
 #random {
-    color: #0F292F;
+    color: var(--verdeOscuro);
     width: 92%;
     margin-left: 8%;
     height: 100vh;
@@ -607,7 +604,7 @@ a:hover {
     align-items: center;
 }
 
-#random img{
+#random img {
     width: 10%;
     height: 30%;
     margin-top: 3rem;
@@ -615,7 +612,7 @@ a:hover {
     justify-content: center;
 }
 
-#comestible{
+#comestible {
     background-color: #a05712;
     width: 10rem;
     height: 10rem;

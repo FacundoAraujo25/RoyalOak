@@ -14,8 +14,8 @@ Vue.createApp({
         }
     },
     created() {
-        axios.get('http://localhost:8585/api/clientes')
-        .then(datos => this.clientes= datos.data)
+        // axios.get('http://localhost:8585/api/clientes')
+        // .then(datos => this.clientes= datos.data)
         axios.get('http://localhost:8585/api/clientes/actual')
         .then(datos => {
             this.cliente = datos.data
@@ -23,6 +23,7 @@ Vue.createApp({
             this.facturas = this.facturas.filter(factura => factura.estadoFactura == 'CARRITO')
             this.pedidos = this.facturas[0].pedidos.sort((p1,p2)=> p1.id - p2.id);
             this.subtotalTotal = this.facturas[0].total
+            console.log(this.facturas)
         })
     },
     methods: {

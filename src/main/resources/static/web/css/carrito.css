@@ -10,6 +10,20 @@ html{
     overflow-x: hidden;
 }
 
+:root {
+  /* Paleta de Colores */
+  --bordo: #501F3A;
+  --rosa: #CB2D6F;
+  --blanco: #CCCCCC;
+  --verdeClaro: #12A098;
+  --verdeOscuro: #0F292F;
+
+  /* Fuente Titulos y Contenido */
+  --fuenteTitulo: 'Potta One', cursive;
+  --fuenteContenido: 'Kdam Thmor Pro', sans-serif;
+
+}
+
 /* Body */
 body{
     width: 100vw;
