@@ -8,6 +8,8 @@ Vue.createApp({
             direccionCliente: [],
             direccionNueva: [],
             contrasenaCliente: "",
+            cliente: [],
+
         }
     },
     created() {
@@ -61,8 +63,8 @@ Vue.createApp({
                     }
                 })
         },
-        
-        confirmarContraseña(){
+
+        confirmarContraseña() {
             Swal.fire({
                 html: ``,
                 title: 'Ingrese su contraseña',
@@ -83,14 +85,14 @@ Vue.createApp({
                     if (result.isConfirmed) {
                         axios.delete(`http://localhost:8585/api/clientes/actual/eliminarDireccion?direccionBorrada=${param}&contraseña=${this.contrasenaCliente}`)
                             .then(() => {
-                               
+
                                 Swal.fire({
                                     icon: 'success',
                                     title: 'Exito!',
                                     text: 'La direccion ha sido eliminada!',
                                     timer: 3000
                                 })
-                                .then(() => location.reload())
+                                    .then(() => location.reload())
                             })
                             .catch((error) => {
                                 console.log(error.response.data)
@@ -98,9 +100,9 @@ Vue.createApp({
                                     icon: 'error',
                                     text: error.response.data,
                                 })
-                                .then(() => location.reload())
+                                    .then(() => location.reload())
                             })
-                            
+
                     }
 
                 })
@@ -108,6 +110,28 @@ Vue.createApp({
 
 
         },
+        salir() {
+            Swal.fire({
+                title: '¿Estas seguro que quieres cerrar sesion?',
+                text: 'Si cierras sesion solo podras ver nuestra seccion de productos pero no podras ordenar tu compra',
+                popup: '',
+                icon: 'warning',
+                confirmButtonColor: '#12A098',
+                cancelButtonColor: '#d33',
+                confirmButtonText: true,
+                confirmButtonText: 'Si, salir',
+                showCancelButton: true,
+                cancelButtonText: 'No, volver!',
+
+
+            })
+                .then((result) => {
+                    if (result.isConfirmed) {
+                        axios.post('/api/logout')
+                        window.location.href = './login.html'
+                    }
+                })
+        }
 
     },
     computed: {
