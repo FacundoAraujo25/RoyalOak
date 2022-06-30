@@ -16,6 +16,7 @@ const app = Vue.createApp({
             comida:[],
             ensaladas:[],
             bebidasSA:[],
+            bebidasCA:[],
 
         }
     },
@@ -27,15 +28,19 @@ const app = Vue.createApp({
             .then(data => {
                 this.productos = data.data
 
-                console.log(this.productos)
                 this.hamburguesas = this.productos.filter(productos=> productos.subTipo == 'HAMBURGUESAS')
-                console.log(this.hamburguesas)
                 this.pizzas = this.productos.filter(productos=> productos.subTipo=='PIZZAS')
-                console.log(this.pizzas)
                 this.picadas = this.productos.filter(productos=> productos.subTipo=='PICADAS')
-                console.log(this.picadas)
+                this.ensaladas = this.productos.filter(productos=> productos.subTipo=='ENSALADAS')
                 this.bebidasSA = this.productos.filter(productos=> productos.subTipo=='SIN_ALCOHOL')
+                this.bebidasCO = this.productos.filter(productos=> productos.subTipo=='CON_ALCOHOL')
+                console.log(this.productos)
+                console.log(this.hamburguesas)
+                console.log(this.pizzas)
+                console.log(this.picadas)
+                console.log(this.ensaladas)
                 console.log(this.bebidasSA)
+                console.log(this.bebidasCA)
 
             })
             
@@ -52,10 +57,10 @@ const app = Vue.createApp({
 
     methods: {
         
-        mostrarIngredientes(){
+        mostrarIngredientes(producto){
             Swal.fire({
-                title:'${hamburguesa.nombre}',
-                text: 'hamburguesa.descripcion',
+                title:`${producto.nombre}`,
+                text: `${producto.descripcion}`,
                 confirmButtonText: 'Entendido',
                 footer: '<a href="">Ok</a>'
               })

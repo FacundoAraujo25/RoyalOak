@@ -94,7 +94,7 @@
                                         <p>Pedido</p>
                                 </div>
                                 <div>
-                                        <a href=""><img class="scale-up-center" src="https://cdn-icons-png.flaticon.com/512/30/30569.png"
+                                        <a href="./pages/random.html"><img class="scale-up-center" src="https://cdn-icons-png.flaticon.com/512/30/30569.png"
                                                         alt=""></a>
                                         <p>Royal</p>
                                 </div>
@@ -220,19 +220,17 @@
                                                 <div id="product-3" class="single-product" v-bind:style='{ background: "url(" + hamburguesa.imagen + ") center", }'>
                                                         <div class="part-1">
                                                                 <h4 class="product-price">${{hamburguesa.precio}}</h4>
-                                                                <h4 id="inactivo">INACTIVO</h4>
+                                                                <h4 v-if='hamburguesa.activo == "false"' id="inactivo">INACTIVO</h4>
                                                                 <ul>
                                                                         <li @click="eliminarProducto(hamburguesa.id)" class="borrar" ><a ><i class="fa-solid fa-trash-can"></i></a></li>                                                                                          
                                                                 </ul>
 
                                                                 <ul>
-                                                                        <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                                                                        <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                                                                        <li><a href="#"><i class="fas fa-plus"></i></a></li>
-
+                                                                        <li><a href="#"><i class="fas fa-cart-plus"></i></a></li>
+                                                                        <!-- <li><a href="#"><i class="fas fa-heart"></i></a></li> -->
+                                                                        <!-- <li><a href="#"><i class="fas fa-plus"></i></a></li> -->
                                                                         <li><a href="#"><i class="fas fa-seedling"></i></a></li>
-
-                                                                        <li @click="mostrarIngredientes"><a href="#"><i class="fas fa-info"></i></a></li>
+                                                                        <li @click="mostrarIngredientes(hamburguesa)"><a href="#"><i class="fas fa-info"></i></a></li>
                                                                 </ul>
 
                                                         </div>
@@ -270,7 +268,7 @@
                 </div>
                 <!-- FIN DIVISOR BEBIDAS -->
 
-                <!-- SECCION BEBIDAS -->
+                <!-- SECCION BEBIDAS SIN ALCOHOL-->
                 <section data-aos="fade-up" class="section-products">
                         <div class="container">
                                 <div class="row">
@@ -284,14 +282,11 @@
                                                                         <li @click="eliminarProducto(bebida.id)" class="borrar" ><a><i class="fa-solid fa-trash-can"></i></a></li>                                                                                          
                                                                 </ul>
                                                                 <ul>
-                                                                        <li><a href="#"><i class="fas fa-shopping-cart"></i></a>
-                                                                        </li>
-                                                                        <li><a href="#"><i class="fas fa-heart"></i></a>
-                                                                        </li>
-                                                                        <li><a href="#"><i class="fas fa-plus"></i></a>
-                                                                        </li>
-                                                                        <li><a href="#"><i class="fas fa-seedling"></i></a>
-                                                                        </li>
+                                                                        <li><a href="#"><i class="fas fa-cart-plus"></i></a></li>
+                                                                        <!-- <li><a href="#"><i class="fas fa-heart"></i></a></li> -->
+                                                                        <!-- <li><a href="#"><i class="fas fa-plus"></i></a></li> -->
+                                                                        <li><a href="#"><i class="fas fa-seedling"></i></a></li>
+                                                                        <li @click="mostrarIngredientes"><a href="#"><i class="fas fa-info"></i></a></li>
                                                                 </ul>
                                                         </div>
                                                 </div>
@@ -304,7 +299,7 @@
                                 </div>
                         </div>
                 </section>
-                <!-- FIN SECCION BEBIDAS -->
+                <!-- FIN SECCION BEBIDAS SIN ALCOHOL -->
 
 
 
@@ -334,14 +329,11 @@
                                                                         <li @click="eliminarProducto(picada.id)" class="borrar" ><a ><i class="fa-solid fa-trash-can"></i></a></li>                                                                                          
                                                                 </ul>
                                                                 <ul>
-                                                                        <li><a href="#"><i class="fas fa-shopping-cart"></i></a>
-                                                                        </li>
-                                                                        <li><a href="#"><i class="fas fa-heart"></i></a>
-                                                                        </li>
-                                                                        <li><a href="#"><i class="fas fa-plus"></i></a>
-                                                                        </li>
-                                                                        <li><a href="#"><i class="fas fa-seedling"></i></a>
-                                                                        </li>
+                                                                        <li><a href="#"><i class="fas fa-cart-plus"></i></a></li>
+                                                                        <!-- <li><a href="#"><i class="fas fa-heart"></i></a></li> -->
+                                                                        <!-- <li><a href="#"><i class="fas fa-plus"></i></a></li> -->
+                                                                        <li><a href="#"><i class="fas fa-seedling"></i></a></li>
+                                                                        <li @click="mostrarIngredientes(picada)"><a href="#"><i class="fas fa-info"></i></a></li>
                                                                 </ul>
                                                         </div>
                                                 </div>
@@ -356,6 +348,58 @@
                 </section>
                 <!-- FIN SECCION PICADAS -->
 
+
+
+                <!-- DIVISOR BEBIDAS CON ALCOHOL -->
+                <div data-aos="fade-up" class="divisor d-flex">
+                        <div class="tipoDeComida">
+                                <img src="media/logo-royaloak-2.png" alt="">
+                                <h3>Bebidas</h3>
+                        </div>
+                        <div id="divisorBurgers2">
+                                <video id="video" autoplay loop muted>
+
+                                        <source src="https://res.cloudinary.com/royal-oak-imagenes/video/upload/v1656514446/Recursos_V%C3%ADdeos_de_fondo_Cerveza_720p_m0quix.mp4"
+
+                                                type="video/mp4">
+                                        su navegador no puede reproducir este formato de video
+                                </video>
+                        </div>
+                </div>
+                <!-- FIN DIVISOR BEBIDAS CON ALCOHOL -->
+
+                <!-- SECCION BEBIDAS CON ALCOHOL-->
+                <section data-aos="fade-up" class="section-products">
+                        <div class="container">
+                                <div class="row">
+                                        <!-- Single Product -->
+                                        <div v-for="bebida in bebidasCO" class="col-md-6 col-lg-4 col-xl-3">
+                                                <div id="product-3" class="single-product" v-bind:style='{ background: "url(" + bebida.imagen + ") center", }'>
+                                                        <div class="part-1">
+                                                                <h4 class="product-price">${{bebida.precio}}</h4>
+                                                                <h4 id="inactivo">INACTIVO</h4>
+                                                                <ul>
+                                                                        <li @click="eliminarProducto(bebida.id)" class="borrar" ><a><i class="fa-solid fa-trash-can"></i></a></li>                                                                                          
+                                                                </ul>
+                                                                <ul>
+                                                                        <li><a href="#"><i class="fas fa-cart-plus"></i></a></li>
+                                                                        <!-- <li><a href="#"><i class="fas fa-heart"></i></a></li> -->
+                                                                        <!-- <li><a href="#"><i class="fas fa-plus"></i></a></li> -->
+                                                                        <li><a href="#"><i class="fas fa-seedling"></i></a></li>
+                                                                        <li @click="mostrarIngredientes(bebida)"><a href="#"><i class="fas fa-info"></i></a></li>
+                                                                </ul>
+                                                        </div>
+                                                </div>
+                                                        <div class="part-2">
+                                                                <h3 class="product-title">{{bebida.nombre}}</h3>
+                                                                
+                                                                
+                                                        </div>
+                                        </div>
+                                </div>
+                        </div>
+                </section>
+                <!-- FIN SECCION BEBIDAS CON ALCOHOL -->
 
 
                 <!-- DIVISOR PIZZAS -->
@@ -384,14 +428,11 @@
                                                                         <li @click="eliminarProducto(pizza.id)" class="borrar"><a><i class="fa-solid fa-trash-can"></i></a></li>                                                                                          
                                                                 </ul>
                                                                 <ul>
-                                                                        <li><a href="#"><i class="fas fa-shopping-cart"></i></a>
-                                                                        </li>
-                                                                        <li><a href="#"><i class="fas fa-heart"></i></a>
-                                                                        </li>
-                                                                        <li><a href="#"><i class="fas fa-plus"></i></a>
-                                                                        </li>
-                                                                        <li><a href="#"><i class="fas fa-seedling"></i></a>
-                                                                        </li>
+                                                                        <li><a href="#"><i class="fas fa-cart-plus"></i></a></li>
+                                                                        <!-- <li><a href="#"><i class="fas fa-heart"></i></a></li> -->
+                                                                        <!-- <li><a href="#"><i class="fas fa-plus"></i></a></li> -->
+                                                                        <li><a href="#"><i class="fas fa-seedling"></i></a></li>
+                                                                        <li @click="mostrarIngredientes(pizza)"><a href="#"><i class="fas fa-info"></i></a></li>
                                                                 </ul>
                                                         </div>
                                                 </div>
@@ -409,7 +450,7 @@
 
 
                 <!-- DIVISOR ENSALADAS -->
-               <!--  <div data-aos="fade-up" class="divisor d-flex">
+                <div data-aos="fade-up" class="divisor d-flex">
                         <div class="tipoDeComida">
                                 <img src="media/logo-royaloak-2.png" alt="">
                                 <h3>Ensaladas</h3>
@@ -417,39 +458,40 @@
                         <div id="divisorBurgers5">
                                 
                         </div>
-                </div> -->
+                </div>
                 <!-- FIN DIVISOR ENSALADAS -->
 
                 <!-- SECCION ENSALADAS -->
-                <!-- <section data-aos="fade-up" class="section-products">
+                <section data-aos="fade-up" class="section-products">
                         <div class="container">
-                                
                                 <div class="row">
-                                        Single Product
-                                        <div v-for="producto in productos.filter(producto=> producto.subtipo=='ENSALADAS')" class="col-md-6 col-lg-4 col-xl-3">
-                                                <div id="product-5" class="single-product">
+                                        <!-- Single Product -->
+                                        <div v-for="ensalada in ensaladas" class="col-md-6 col-lg-4 col-xl-3">
+                                                <div id="product-3" class="single-product" v-bind:style='{ background: "url(" + ensalada.imagen + ") center", }'>
                                                         <div class="part-1">
+                                                                <h4 class="product-price">${{ensalada.precio}}</h4>
+                                                                <h4 id="inactivo">INACTIVO</h4>
                                                                 <ul>
-                                                                        <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                                                                        <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                                                                        <li><a href="#"><i class="fas fa-plus"></i></a></li>
+                                                                        <li @click="eliminarProducto(ensalada.id)" class="borrar"><a><i class="fa-solid fa-trash-can"></i></a></li>                                                                                          
+                                                                </ul>
+                                                                <ul>
+                                                                        <li><a href="#"><i class="fas fa-cart-plus"></i></a></li>
+                                                                        <!-- <li><a href="#"><i class="fas fa-heart"></i></a></li> -->
+                                                                        <!-- <li><a href="#"><i class="fas fa-plus"></i></a></li> -->
                                                                         <li><a href="#"><i class="fas fa-seedling"></i></a></li>
+                                                                        <li @click="mostrarIngredientes(ensalada)"><a href="#"><i class="fas fa-info"></i></a></li>
                                                                 </ul>
-                                                                <ul>
-                                                                        <li @click="eliminarProducto" class="borrar" ><a href="#"><i class="fa-solid fa-trash-can"></i></a></li>                                                                                          
-                                                                </ul>
-                                                        </div>
-                                                        <div class="part-2">
-                                                                <h3 class="product-title">{{producto.nombre}}</h3>
-                                                                <p>{{producto.descripcion}}</p>
-                                                                <h4 class="product-old-price">$79.99</h4>
-                                                                <h4 class="product-price">{{producto.precio}}</h4>
                                                         </div>
                                                 </div>
+                                                        <div class="part-2">
+                                                                <h3 class="product-title">{{ensalada.nombre}}</h3>
+                                                                
+                                                                
+                                                        </div>
                                         </div>
                                 </div>
                         </div>
-                </section> -->
+                </section>
                 <!-- FIN SECCION ENSALADAS -->
 
 

@@ -8,7 +8,6 @@ const app = Vue.createApp({
             imagen:"",
             precio:"",
             stock:"",
-            ingredientes:"",
             tipo:"",
             subTipo:"",
             activo:""
@@ -28,9 +27,11 @@ const app = Vue.createApp({
     methods: {
         
         crearProducto(){
-            axios.post('http://localhost:8585/api/productos',`nombre=${this.nombre}&descripcion=${this.descripcion}&imagen=${this.imagen}&precio=${this.precio}&stock=${this.stock}&ingredientes=${this.ingredientes}&tipo=${this.tipo}&subtipo=${this.subTipo}&activo=${this.activo}`,{headers:{'content-type':'application/x-www-form-urlencoded'}})
+            console.log(this.nombre,this.descripcion,this.imagen,this.precio,this.stock,this.tipo,this.subTipo,this.activo)
+            axios.post('http://localhost:8585/api/productos',`nombre=${this.nombre}&descripcion=${this.descripcion}&imagen=${this.imagen}&precio=${this.precio}&stock=${this.stock}&tipo=${this.tipo}&subtipo=${this.subTipo}&activo=${this.activo}`,{headers:{'content-type':'application/x-www-form-urlencoded'}})
             .then(response => {
                 console.log("producto creado con exito")
+                
                 Swal.fire({
                     title: "Producto creado",
                     text: "Tu nuevo producto fue creado exitosamente",

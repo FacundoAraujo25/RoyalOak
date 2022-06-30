@@ -62,7 +62,9 @@ public class ProductoControlador {
               return new ResponseEntity<>("El precio no puede ser menor o igual a 0", HttpStatus.FORBIDDEN);
         }
 
-//        String[] ingredientesArray = ingredientes.split(" ");
+
+
+
         Producto producto = new Producto(nombre, descripcion, imagen,stock, precio,tipo,subtipo);
         producto.setActivo(true);
         productoServicio.guardarProducto(producto);
