@@ -21,13 +21,21 @@ public class WebAuthorization extends WebSecurityConfigurerAdapter {
 
         http.authorizeRequests()
                 .antMatchers("/rest/**", "/h2-console/**").hasAuthority("ADMIN")
-                .antMatchers(HttpMethod.GET, "/api/clientes/actual").hasAuthority("CLIENTE")
-                .antMatchers(HttpMethod.GET, "/api/clientes/**").hasAuthority("ADMIN")
-                .antMatchers(HttpMethod.POST, "/api/clientes", "/api/clientes/**","/api/productos/**").permitAll()
-//                .antMatchers(HttpMethod.GET, "/api/clients", "/api/accounts", "/api/cards").hasAuthority("ADMIN")
-                .antMatchers("/web/index.html", "/web/login.html", "/web/registro.html", "/web/pages/contacto.html").permitAll()
-                .antMatchers("/web/pages/carrito.html").hasAuthority("CLIENT")
-                .antMatchers(HttpMethod.POST, "/web/index.html").permitAll();
+                .antMatchers(HttpMethod.GET, "/api/clientes/**","/api/productos/admin", "/api/facturas", "/api/productos/admin").hasAuthority("ADMIN")
+                .antMatchers(HttpMethod.POST, "/api/productos").hasAuthority("ADMIN")
+                .antMatchers(HttpMethod.PATCH, "/api/clientes/actual/modificar", "/api/clientes/roles", "/api/facturas", "/api/productos").hasAuthority("ADMIN")
+                .antMatchers(HttpMethod.DELETE,"/api/productos").hasAuthority("ADMIN")
+
+                .antMatchers(HttpMethod.GET, "/api/clientes/actual","/api/registro/**").hasAuthority("CLIENTE")
+                .antMatchers(HttpMethod.POST, "/api/clientes","/api/clientes/direcciones", "/api/productos/carrito/agregar", "/api/facturas/confirmadas").hasAuthority("CLIENTE")
+                .antMatchers(HttpMethod.PATCH, "/api/productos/carrito/modificar").hasAuthority("CLIENTE")
+                .antMatchers(HttpMethod.DELETE, "/clientes/actual/eliminarDireccion", "/api/productos/carrito/borrar").hasAuthority("CLIENTE")
+
+                .antMatchers(HttpMethod.GET, "/api/registro/**", "/api/productos").permitAll()
+                .antMatchers(HttpMethod.POST, "/api/clientes","/api/clientes/**","/api/productos/**").permitAll()
+                .antMatchers(HttpMethod.POST, "/web/index.html").permitAll()
+                .antMatchers("/web/index.html", "/web/login.html", "/web/registro.html", "/web/pages/contacto.html","/web/pages/random.html").permitAll()
+                .antMatchers("/web/pages/carrito.html").hasAuthority("CLIENT");
 
 
 
