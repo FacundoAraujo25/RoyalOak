@@ -19,12 +19,17 @@ public class ProductoControlador {
     private ProductoServicio productoServicio;
 
     @GetMapping("/productos")
-    public List<ProductoDTO> getAll(){
+    public List<ProductoDTO> getAllActives(){
+        return productoServicio.getAllActive();
+    }
+
+    @GetMapping("/productos/admin")
+    public  List<ProductoDTO> getAll(){
         return productoServicio.getAll();
     }
 
     @PostMapping("/productos")
-    public ResponseEntity<Object> agregarProductos(@RequestParam String nombre,
+    public ResponseEntity<Object> crearProductos(@RequestParam String nombre,
                                                    @RequestParam String descripcion,
                                                    @RequestParam String imagen,
                                                    @RequestParam double precio,

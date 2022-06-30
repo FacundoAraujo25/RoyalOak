@@ -10,7 +10,9 @@ import java.util.Set;
 public interface FacturaServicio {
     Set<FacturaDTO> getFacturasDTO();
 
-    Factura getFacturaEnCarrito(Cliente cliente);
+    Factura getFacturaEnCarrito(Authentication authentication);
+    Set<FacturaDTO> getFacturasConfirmadas(Authentication authentication);
 
+    Factura getFacturaById(long id);
     void guardarFactura(Factura factura);
 }
