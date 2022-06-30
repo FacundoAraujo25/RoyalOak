@@ -66,18 +66,16 @@ public class FacturaControlador {
         facturaServicio.guardarFactura(factura);
 
         productoServicio.guardarProducto(producto); //duda
-       if(factura.getClienteProductoPedidos().stream().filter(pedidito -> pedidito.getProducto()==producto).findAny().orElse(null)==null)
-       {
-           ClienteProductoPedido clienteProductoPedido = new ClienteProductoPedido(cantidad, factura, producto);
-           clienteProductoPedidoRepositorio.save(clienteProductoPedido);
-       }
-       else{
-           ClienteProductoPedido pedidoRepetido = factura.getClienteProductoPedidos().stream().filter(pedidito -> pedidito.getProducto()==producto).findAny().orElse(null);
-           assert pedidoRepetido != null;
-           pedidoRepetido.setCantidad(pedidoRepetido.getCantidad() + cantidad);
-           pedidoRepetido.setTotal(producto.getPrecio()*pedidoRepetido.getCantidad());
-           clienteProductoPedidoRepositorio.save(pedidoRepetido);
-       }
+        if (factura.getClienteProductoPedidos().stream().filter(pedidito -> pedidito.getProducto() == producto).findAny().orElse(null) == null) {
+            ClienteProductoPedido clienteProductoPedido = new ClienteProductoPedido(cantidad, factura, producto);
+            clienteProductoPedidoRepositorio.save(clienteProductoPedido);
+        } else {
+            ClienteProductoPedido pedidoRepetido = factura.getClienteProductoPedidos().stream().filter(pedidito -> pedidito.getProducto() == producto).findAny().orElse(null);
+            assert pedidoRepetido != null;
+            pedidoRepetido.setCantidad(cantidad);
+            pedidoRepetido.setTotal(producto.getPrecio() * pedidoRepetido.getCantidad());
+            clienteProductoPedidoRepositorio.save(pedidoRepetido);
+        }
 
         return new ResponseEntity<>(HttpStatus.CREATED);
     }

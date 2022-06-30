@@ -9,4 +9,5 @@ public interface ProductoServicio {
     List<ProductoDTO> getAllActive();
     void guardarProducto (Producto producto);
     Producto findById(long id);
+    List<ProductoDTO> getAll();
 }

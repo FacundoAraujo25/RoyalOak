@@ -23,6 +23,11 @@ public class ProductoControlador {
         return productoServicio.getAllActive();
     }
 
+    @GetMapping("/productos/admin")
+    public  List<ProductoDTO> getAll(){
+        return productoServicio.getAll();
+    }
+
     @PostMapping("/productos")
     public ResponseEntity<Object> crearProductos(@RequestParam String nombre,
                                                    @RequestParam String descripcion,
