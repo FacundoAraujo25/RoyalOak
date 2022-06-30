@@ -265,17 +265,6 @@ a:hover {
 		transition: all 0.3s;
 }
 
-
-.section-products .single-product:hover {
-		transform: scale(1.1,1.1);
-}
-/* evitar giro div */
-.section-products #product-1 .part-1::before {
-    background: url("https://www.lavoz.com.ar/resizer/JkTjWJu6dTBQ2k0LJiAbKSdlfIs=/1023x682/smart/cloudfront-us-east-1.images.arcpublishing.com/grupoclarin/A5L4SSFSFJCVHFYFMDWBLH72ZY.png") no-repeat center;
-    background-size: cover;
-    transition: all 0.3s;
-}
-
 .section-products .single-product .part-1 .new {
     left: 0;
     background-color: #444444;

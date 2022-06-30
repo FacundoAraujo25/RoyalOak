@@ -52,6 +52,7 @@ main h3 {
     animation: heartbeat 4s steps(2, end) infinite both;
 }
 
+
 @-webkit-keyframes heartbeat {
     from {
         -webkit-transform: scale(1);

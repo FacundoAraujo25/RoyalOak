@@ -285,7 +285,7 @@ label {
   margin-top: 20px;
   padding: 6px 30px;
   background-color: #12A098;
-  color: #CCCCCC;
+  color: #CCCCCC !important;
   font-size: 25px;
   border-radius: 3px;
 }

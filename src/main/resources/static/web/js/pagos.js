@@ -25,14 +25,12 @@ Vue.createApp({
     methods: {
         confirmacionPagoFunc(){
             let numTarjeta = this.numUno+this.numDos+this.numTres+this.numCuatro;
-            
-            axios.post(this.apiHbanking,
-                `{
-                    "cardNumber": "1234123412341234",
-                    "securityCode": "856",
-                    "amount":${this.totalFactura},
-                    "detail": "Factura N°: "++${this.factura.id},
-                }`)
+            axios.post('https://homebanking-mh.herokuapp.com/api/transactions/payments',    {
+                "cardNumber": "1234123412341234",
+                "securityCode": "856",
+                "amount": this.totalFactura,
+                "detail": "N° Factura: " + this.factura.id
+    })
                 .then(data =>{
                     Swal.fire({
                         title: "Compra exitosa",
@@ -42,21 +40,24 @@ Vue.createApp({
                         confirmButtonText: "Vamos por la comida!🍔",
                         width: "40%",
                     })
-                    axios.get("/api/clientes/factura")
-                        .then(response =>{
-                            window.location.href="./index.html"
-                        })
-                        .catch(error =>{
-                            Swal.fire({
-                                title: "Fallo descarga factura",
-                                text: "No se pudo descargar tu factura, no te preocupes en un momento la encontraras en tu perfil",
-                                icon: "error",
-                                width: "30%",
-                            })
-                        })
+                    .then(response =>{
+                        window.location.href="http://localhost:8585/api/clientes/factura"
+                    })
+                    // .then(
+                    //     axios.post("http://localhost:8585/api/clientes/factura")
+                    //         .catch(error =>{
+                    //             Swal.fire({
+                    //                 title: "Fallo descarga factura",
+                    //                 text: "No se pudo descargar tu factura, no te preocupes en un momento la encontraras en tu perfil",
+                    //                 icon: "error",
+                    //                 width: "30%",
+                    //             })
+                    //         })
+                    // )
 
                 })
                 .catch(error =>{
+                    console.log(error.response)
                     Swal.fire({
                         title: "Fallo de pago",
                         text: "Error en el procesamiento de tu pago, vuelve a intentar",

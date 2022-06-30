@@ -27,6 +27,7 @@ const app = Vue.createApp({
             .then(data => {this.clientes = data.data})
             axios.get('http://localhost:8585/api/clientes/actual')
             .then(data => {this.cliente = data.data})
+            console.log(this.cliente)
             axios.get('http://localhost:8585/api/productos')
             .then(data => {
                 this.datos = data.data
@@ -74,7 +75,7 @@ const app = Vue.createApp({
                 })
             })
             .catch(error =>{
-                if(error.response.status == 401){
+                if(error.response.status == 500){
                     Swal.fire({
                         position: 'center',
                         icon: 'question',
