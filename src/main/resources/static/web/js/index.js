@@ -6,15 +6,18 @@ const app = Vue.createApp({
             productos:[],
             tipo:[],
             subtipos:[],
-
+            hamburguesas:[],
+            ensaladas:[],
+            pizzas:[],
+            picadas:[],
             clientes:[],
 
-            comida:[],
             hamburguesas:[],
+            picadas:[],
             pizzas:[],
+            comida:[],
             ensaladas:[],
             bebidas:[],
-            picadas:[],
 
         }
     },
@@ -25,9 +28,17 @@ const app = Vue.createApp({
             axios.get('http://localhost:8585/api/productos')
             .then(data => {
                 this.productos = data.data
+                this.hamburguesas = this.productos.filter(producto => producto.subTipo == 'HAMBURGUESAS')
+                this.pizzas = this.productos.filter(producto => producto.sunTipo == 'PIZZAS')
+                this.picadas = this.productos.filter(producto => producto.subTipo == 'PICADAS')
+                this.ensaladas = this.productos.filter(producto => producto.subTipo == 'ENSALADAS')
                 console.log(this.productos)
-                /* this.comida = this.productos.comida
-                console.log(this.comida) */
+                this.hamburguesas = this.productos.filter(productos=> productos.subTipo=='HAMBURGUESAS')
+                console.log(this.hamburguesas)
+                this.picadas = this.productos.filter(productos=> productos.subTipo=='PICADAS')
+                console.log(this.picadas)
+                this.pizzas = this.productos.filter(productos=> productos.subTipo=='PIZZAS')
+                console.log(this.pizzas)
             })
         
 
@@ -36,10 +47,10 @@ const app = Vue.createApp({
 
     methods: {
         
-        mostrarIngredientes(){
+        mostrarIngredientes(producto){
             Swal.fire({
-                title:'Nombre Hamburguesa',
-                text: 'Una hamburguesa es un sándwich hecho a base de carne molida o de origen vegetal, aglutinada en forma de filete cocinado a la parrilla o a la plancha, aunque también puede freírse u hornearse. Fuera del ámbito de habla hispana, es más común encontrar la denominación estadounidense burger, acortamiento de hamburger.',
+                title:`${producto.nombre}`,
+                text: `${producto.descripcion}`,
                 confirmButtonText: 'Entendido',
                 footer: '<a href="">Agregar al carro</a>'
               })

@@ -50,7 +50,6 @@ header{
 }
 
 .nav div{
-    padding:0.5rem ;
     width: 3rem; /* 4rem */
     transition-duration: 0.3s;
     /* margin-bottom: 0.3rem; */
@@ -148,6 +147,12 @@ p{
     padding-bottom: 0;
 }
 
+.product-price{
+    margin-top: 3%;
+    margin-left: 1%;
+    font-family: fantasy;
+}
+
 #pizzas{
     width: 92%;
     display: flex;
@@ -242,7 +247,8 @@ a:hover {
 }
 
 .section-products .single-product {
-    margin-bottom: 26px;
+    margin-bottom: 0px;
+    background-size: cover !important;
 }
 
 .section-products .single-product .part-1 {
@@ -268,8 +274,12 @@ a:hover {
 		transform: scale(1.2,1.2) rotate(5deg);
 }
 
-.section-products #product-1 .part-1::before {
-    background: url("https://i.postimg.cc/XvDJnkQJ/image.jpg") no-repeat center;
+.col-md-6 {
+    padding-bottom: 1rem;
+}
+
+/* .section-products #product-1 .part-1::before {
+    
     background-size: cover;
     transition: all 0.3s;
 }
@@ -280,7 +290,6 @@ a:hover {
 }
 
 .section-products #product-3 .part-1::before {
-    background: url("https://cdn.lavoz.com.ar/sites/default/files/styles/landscape_565_318/public/nota_periodistica/NOTHOPPI2_1601916843.jpg") no-repeat center;
     background-size: cover;
 }
 
@@ -292,7 +301,7 @@ a:hover {
 .section-products #product-5 .part-1::before {
     background: url("https://images5.alphacoders.com/826/826208.jpg") no-repeat center;
     background-size: cover;
-}
+} */
 
 
 
@@ -354,9 +363,15 @@ a:hover {
     font-size: 1rem;
 }
 
+.product-title{
+    text-align: center;
+    font-family: fantasy;
+}
+
 .section-products .single-product .part-2 h4 {
     display: inline-block;
     font-size: 1rem;
+
 }
 
 .section-products .single-product .part-2 .product-old-price {
@@ -669,6 +684,33 @@ a:hover {
   .modal{
     display:flex;
   }
+
+  #addd{
+    display: flex;
+    justify-content: center;
+    margin-top: 3%;
+  }
+
+  .col-xl-3-p{
+    width: 50%;
+  }
+
+  .contenedorAdd{
+    display: flex;
+    justify-content: space-around;
+    width: 92%;
+    margin-left: 8%;
+  }
+
+  #inactivo{
+    transform: rotate(-45deg);
+    color: red;
+    position: absolute;
+    bottom: 13rem;
+    left: -0.5rem;
+    font-size: xx-large;
+    font-family: fantasy;
+  }
   
   
   
@@ -747,6 +789,23 @@ a:hover {
     
   }
 
+  .principal img{
+    width: 100%;
+    margin-left: 0;
+}
+
+    .contenedorAdd {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        margin-left: 0%;
+
+    }
+
+    .col-xl-3-p {
+        width: 100%;
+    }
+
 }
 
 /* MENU HAMBURGUESA */
@@ -814,7 +873,6 @@ a:hover {
     /* background-color: #0F292F; */
     padding: 3px;
     color: #0F292F;
-    font-size: xx-large;
     }
 
     #hamburguesitas{
@@ -908,6 +966,7 @@ input[type="checkbox"]:checked ~ .nav
 .borrar{
     margin-bottom: 210px;
     margin-left: 190px;
+    cursor: pointer;
 }
 
 .add{
