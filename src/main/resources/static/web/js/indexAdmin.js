@@ -10,7 +10,12 @@ const app = Vue.createApp({
 
             cliente:[],
 
-            email:""
+            hamburguesas:[],
+            picadas:[],
+            pizzas:[],
+            comida:[],
+            ensaladas:[],
+            bebidasSA:[],
 
         }
     },
@@ -21,8 +26,17 @@ const app = Vue.createApp({
             axios.get('http://localhost:8585/api/productos')
             .then(data => {
                 this.productos = data.data
-                this.hamburguesas = this.productos.filter(producto => producto.subTipo == 'HAMBURGUESAS')
+
+                console.log(this.productos)
+                this.hamburguesas = this.productos.filter(productos=> productos.subTipo == 'HAMBURGUESAS')
                 console.log(this.hamburguesas)
+                this.pizzas = this.productos.filter(productos=> productos.subTipo=='PIZZAS')
+                console.log(this.pizzas)
+                this.picadas = this.productos.filter(productos=> productos.subTipo=='PICADAS')
+                console.log(this.picadas)
+                this.bebidasSA = this.productos.filter(productos=> productos.subTipo=='SIN_ALCOHOL')
+                console.log(this.bebidasSA)
+
             })
             
             /* axios.get('http://localhost:8585/api/clientes')
@@ -35,18 +49,19 @@ const app = Vue.createApp({
     },
 
 
+
     methods: {
         
         mostrarIngredientes(){
             Swal.fire({
-                title:'Nombre Hamburguesa',
-                text: 'Una hamburguesa es un sándwich hecho a base de carne molida o de origen vegetal, aglutinada en forma de filete cocinado a la parrilla o a la plancha, aunque también puede freírse u hornearse. Fuera del ámbito de habla hispana, es más común encontrar la denominación estadounidense burger, acortamiento de hamburger.',
+                title:'${hamburguesa.nombre}',
+                text: 'hamburguesa.descripcion',
                 confirmButtonText: 'Entendido',
-                footer: '<a href="">Agregar al carro</a>'
+                footer: '<a href="">Ok</a>'
               })
         },
 
-        eliminarProducto(){
+        eliminarProducto(id){
             Swal.fire({
                 title:'Confirmar eliminacion',
                 text: '¿Estas seguro que quieres eliminar este producto?',
@@ -60,11 +75,39 @@ const app = Vue.createApp({
                 })
                 .then((result) => {
                     if (result.isConfirmed) {
-                        axios.delete('/api/productos')
-                        window.location.href = './admin.html'
+                        axios.delete(`http://localhost:8585/api/productos?idProducto=${id}`)
+                        .then(response =>{
+                            console.log("delete succcesfull")
+                            Swal.fire({
+                                title:'Producto Eliminado',
+                                text: 'producto eliminado correctamente',
+                                icon:'success',
+                                confirmButtonColor: '#12A098',
+                                cancelButtonColor: '#d33',
+                                confirmButtonText: true,
+                                confirmButtonText: 'Ok',
+                                })
+                                .then( result =>{
+                                    location.reload()    
+                                })
+                        })
+                        .catch(error => 
+                            console.log("error"))
+                            Swal.fire({
+                                title:'Error',
+                                text: 'error al eliminar el producto',
+                                icon:'error',
+                                confirmButtonColor: '#12A098',
+                                cancelButtonColor: '#d33',
+                                confirmButtonText: true,
+                                confirmButtonText: 'Ok',
+                                })
                     }
-                  })
+                })
+
         },
+
+        
 
         mostrarCategorias(){
             Swal.fire({

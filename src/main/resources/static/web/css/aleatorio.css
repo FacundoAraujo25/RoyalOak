@@ -20,8 +20,7 @@ body{
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1200 800'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='600' y1='25' x2='600' y2='777'%3E%3Cstop offset='0' stop-color='%230F292F'/%3E%3Cstop offset='1' stop-color='%23501F3A'/%3E%3C/linearGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='650' y1='25' x2='650' y2='777'%3E%3Cstop offset='0' stop-color='%230d2a34'/%3E%3Cstop offset='1' stop-color='%235a2140'/%3E%3C/linearGradient%3E%3ClinearGradient id='c' gradientUnits='userSpaceOnUse' x1='700' y1='25' x2='700' y2='777'%3E%3Cstop offset='0' stop-color='%230c2b38'/%3E%3Cstop offset='1' stop-color='%23652345'/%3E%3C/linearGradient%3E%3ClinearGradient id='d' gradientUnits='userSpaceOnUse' x1='750' y1='25' x2='750' y2='777'%3E%3Cstop offset='0' stop-color='%230f2b3d'/%3E%3Cstop offset='1' stop-color='%236f254b'/%3E%3C/linearGradient%3E%3ClinearGradient id='e' gradientUnits='userSpaceOnUse' x1='800' y1='25' x2='800' y2='777'%3E%3Cstop offset='0' stop-color='%23142b41'/%3E%3Cstop offset='1' stop-color='%237a2650'/%3E%3C/linearGradient%3E%3ClinearGradient id='f' gradientUnits='userSpaceOnUse' x1='850' y1='25' x2='850' y2='777'%3E%3Cstop offset='0' stop-color='%231c2a44'/%3E%3Cstop offset='1' stop-color='%23852855'/%3E%3C/linearGradient%3E%3ClinearGradient id='g' gradientUnits='userSpaceOnUse' x1='900' y1='25' x2='900' y2='777'%3E%3Cstop offset='0' stop-color='%23252946'/%3E%3Cstop offset='1' stop-color='%2390295a'/%3E%3C/linearGradient%3E%3ClinearGradient id='h' gradientUnits='userSpaceOnUse' x1='950' y1='25' x2='950' y2='777'%3E%3Cstop offset='0' stop-color='%232e2846'/%3E%3Cstop offset='1' stop-color='%239c2a5e'/%3E%3C/linearGradient%3E%3ClinearGradient id='i' gradientUnits='userSpaceOnUse' x1='1000' y1='25' x2='1000' y2='777'%3E%3Cstop offset='0' stop-color='%23372646'/%3E%3Cstop offset='1' stop-color='%23a72b63'/%3E%3C/linearGradient%3E%3ClinearGradient id='j' gradientUnits='userSpaceOnUse' x1='1050' y1='25' x2='1050' y2='777'%3E%3Cstop offset='0' stop-color='%23402443'/%3E%3Cstop offset='1' stop-color='%23b32c67'/%3E%3C/linearGradient%3E%3ClinearGradient id='k' gradientUnits='userSpaceOnUse' x1='1100' y1='25' x2='1100' y2='777'%3E%3Cstop offset='0' stop-color='%2349213f'/%3E%3Cstop offset='1' stop-color='%23bf2c6b'/%3E%3C/linearGradient%3E%3ClinearGradient id='l' gradientUnits='userSpaceOnUse' x1='1150' y1='25' x2='1150' y2='777'%3E%3Cstop offset='0' stop-color='%23501F3A'/%3E%3Cstop offset='1' stop-color='%23CB2D6F'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg fill-opacity='0.12'%3E%3Crect fill='url(%23a)' width='1200' height='800'/%3E%3Crect fill='url(%23b)' x='100' width='1100' height='800'/%3E%3Crect fill='url(%23c)' x='200' width='1000' height='800'/%3E%3Crect fill='url(%23d)' x='300' width='900' height='800'/%3E%3Crect fill='url(%23e)' x='400' width='800' height='800'/%3E%3Crect fill='url(%23f)' x='500' width='700' height='800'/%3E%3Crect fill='url(%23g)' x='600' width='600' height='800'/%3E%3Crect fill='url(%23h)' x='700' width='500' height='800'/%3E%3Crect fill='url(%23i)' x='800' width='400' height='800'/%3E%3Crect fill='url(%23j)' x='900' width='300' height='800'/%3E%3Crect fill='url(%23k)' x='1000' width='200' height='800'/%3E%3Crect fill='url(%23l)' x='1100' width='100' height='800'/%3E%3C/g%3E%3C/svg%3E");
     background-attachment: fixed;
     background-size: cover;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
+    font-family: 'Courier New', Courier, monospace;
     color: #CCCCCC;
 }
 
@@ -39,50 +38,32 @@ header{
 }
 
 .nav{
-    background-color:#CCCCCC;
+    background-color:#CCCCCC ;
     width: 8%;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
     align-items: center;
     position: fixed;
     height: 100%;
 }
 
 .nav div{
-    width: 3rem; /* 4rem */
-    transition-duration: 0.3s;
-    /* margin-bottom: 0.3rem; */
+    padding:0.5rem ;
+    width: 4rem;
+    transition-duration: 0.5s;
+    margin-bottom: 0.3rem;
 }
 
 
 .nav div:hover{
-    width: 3.5rem;
-    transition-duration: 0.3s;
+    width: 4.2rem;
+    transition-duration: 0.5s;
+    
 }
-
-
 
 
 #marca{
     width: auto;
-}
-
-#marca:hover{
-    transform: rotate(15deg);
-}
-
-#menu{
-    border-top: 2px solid black;
-}
-
-#salir{
-    border-top: 2px solid black;
-    cursor: pointer;
-}
-
-box-icon{
-   width: 48px; 
 }
 
 .center{
@@ -120,7 +101,7 @@ box-icon{
   
 
 
-.nav img{
+img{
     width: 92%;
     margin-left: 8%
 }
@@ -147,30 +128,18 @@ p{
     padding-bottom: 0;
 }
 
-.product-price{
-    margin-top: 3%;
-    margin-left: 1%;
-    font-family: fantasy;
-}
-
 #pizzas{
     width: 92%;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     background-color: #CCCCCC;
     margin-left: 8%;
 }
 
 #pizzas img{
     padding: 0.5rem;
+    margin-left: 3%;
     width: 5rem;
-    transition-duration: 0.3s;
-}
-
-#pizzas img:hover{
-    transform: rotate(15deg);
-    cursor: pointer;
-    transition-duration: 0.3s;
 }
 
 #pizzas div:hover{
@@ -196,14 +165,14 @@ p{
     position: relative
 }
 
-.principal{
-    height: 100vh;
-}
 
-.principal img{
-    width: 92%;
-    margin-left: 8%;
-}
+/* SECCION PRODUCTOS */
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap'); */
+
+/* body {
+    font-family: "Poppins", sans-serif;
+    color: #CCCCCC;
+} */
 
 a,
 a:hover {
@@ -247,8 +216,7 @@ a:hover {
 }
 
 .section-products .single-product {
-    margin-bottom: 0px;
-    background-size: cover !important;
+    margin-bottom: 26px;
 }
 
 .section-products .single-product .part-1 {
@@ -274,36 +242,66 @@ a:hover {
 		transform: scale(1.2,1.2) rotate(5deg);
 }
 
-.col-md-6 {
-    padding-bottom: 1rem;
-}
-
-/* .section-products #product-1 .part-1::before {
-    
+.section-products #product-1 .part-1::before {
+    background: url("https://www.lavoz.com.ar/resizer/JkTjWJu6dTBQ2k0LJiAbKSdlfIs=/1023x682/smart/cloudfront-us-east-1.images.arcpublishing.com/grupoclarin/A5L4SSFSFJCVHFYFMDWBLH72ZY.png") no-repeat center;
     background-size: cover;
     transition: all 0.3s;
 }
 
 .section-products #product-2 .part-1::before {
-    background: url("https://fondosmil.com/fondo/73253.jpg") no-repeat center;
+    background: url("https://images.rappi.com.ar/products/287038-1540490885.png") no-repeat center;
     background-size: cover;
 }
 
 .section-products #product-3 .part-1::before {
+    background: url("https://cdn.lavoz.com.ar/sites/default/files/styles/landscape_565_318/public/nota_periodistica/NOTHOPPI2_1601916843.jpg") no-repeat center;
     background-size: cover;
 }
 
 .section-products #product-4 .part-1::before {
-    background: url("https://fondosmil.com/fondo/65802.jpg") no-repeat center;
+    background: url("https://static.wixstatic.com/media/fc266a_95b3c98dd25449fd952dfceb7eac91ed~mv2.jpg/v1/fill/w_321,h_401,al_c,q_90/fc266a_95b3c98dd25449fd952dfceb7eac91ed~mv2.jpg") no-repeat center;
     background-size: cover;
 }
 
 .section-products #product-5 .part-1::before {
-    background: url("https://images5.alphacoders.com/826/826208.jpg") no-repeat center;
+    background: url("https://sommelier.com.pe/wp-content/uploads/photo-1572802419224-296b0aeee0d9.jpg") no-repeat center;
     background-size: cover;
-} */
+}
 
+.section-products #product-6 .part-1::before {
+    background: url("https://s1.1zoom.me/big0/951/Fast_food_Hamburger_Buns_French_fries_Vegetables_566270_1280x853.jpg") no-repeat center;
+    background-size: cover;
+}
 
+.section-products #product-7 .part-1::before {
+    background: url("https://media.istockphoto.com/photos/favourite-burger-toppings-picture-id469660542?k=20&m=469660542&s=612x612&w=0&h=1LfG2K-CgB78QgcXJllD8riD3WyPLFUfR0tfihlEmhw=") no-repeat center;
+    background-size: cover;
+}
+
+.section-products #product-8 .part-1::before {
+    background: url("https://i.pinimg.com/736x/c4/d8/97/c4d897a5e56d2a906522029f1334b7d9.jpg") no-repeat center;
+    background-size: cover;
+}
+
+.section-products #product-9 .part-1::before {
+    background: url("https://images.unsplash.com/photo-1592892111425-15e04305f961?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGNvY2ElMjBjb2xhfGVufDB8fDB8fA%3D%3D&w=1000&q=80") no-repeat center;
+    background-size: cover;
+}
+
+.section-products #product-10 .part-1::before {
+    background: url("https://c0.wallpaperflare.com/preview/398/729/224/alcohol-alcoholic-beverage-beer-beer-bottle.jpg") no-repeat center;
+    background-size: cover;
+}
+
+.section-products #product-11 .part-1::before {
+    background: url("https://r1.ilikewallpaper.net/iphone-wallpapers/download-133454/sprite.jpg") no-repeat center;
+    background-size: cover;
+}
+
+.section-products #product-12 .part-1::before {
+    background: url("https://babycocina.com/wp-content/uploads/2020/09/limonada-sin-azucar.jpg") no-repeat center;
+    background-size: cover;
+}
 
 .section-products .single-product .part-1 .discount,
 .section-products .single-product .part-1 .new {
@@ -363,15 +361,9 @@ a:hover {
     font-size: 1rem;
 }
 
-.product-title{
-    text-align: center;
-    font-family: fantasy;
-}
-
 .section-products .single-product .part-2 h4 {
     display: inline-block;
     font-size: 1rem;
-
 }
 
 .section-products .single-product .part-2 .product-old-price {
@@ -451,28 +443,8 @@ a:hover {
 #divisorBurgers2{
     width: 100%;
     height: 15vh;
+    background-image: url();
     background-size: auto;
-}
-
-#divisorBurgers3{
-    width: 100%;
-    height: 15vh;
-    background-image: url(https://s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2018/06/13172547/picadas-destacada.jpg);
-    background-size: cover;
-}
-
-#divisorBurgers4{
-    width: 100%;
-    height: 15vh;
-    background-image: url(https://s1.1zoom.me/big0/862/Fast_food_Pizza_Tomatoes_Pepper_Wood_planks_528059_1280x853.jpg);
-    background-size: cover;
-}
-
-#divisorBurgers5{
-    width: 100%;
-    height: 15vh;
-    background-image: url(https://images.hola.com/imagenes/tag/ensaladas-tag.jpg);
-    background-size: cover;
 }
 
 #divisorBurgers img{
@@ -485,19 +457,6 @@ a:hover {
     justify-content: center;
     align-items: center;
     
-}
-
-/* SWEET ALERT */
-.swal2-popup{
-    
-    background-color: #CCCCCC;
-    color: black;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-.swal2-styled.swal2-confirm{
-    /* background-color: #225f6d !important;
-    color: #CCCCCC !important; */
 }
 
 /* VIDEO */
@@ -514,208 +473,10 @@ a:hover {
 #video2 {
     top: 0;
     left: 0;
-    width: 92%;
-    margin-left: 8%;
+    width: 100%;
     height: 100vh;
     object-fit: cover;
 }
-
-
-/* DARK MODE */
-  /* body {
-    height: 100%;
-    background: linear-gradient(#ffad00 50%, #d58500);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  } */
-  
-  form {
-    width: 600px;
-    height: 350px;
-    margin: -4px -2px; 
-    border-radius: 500px;
-    background: linear-gradient(#ffbd00, #ca7900);
-    box-shadow: 0 1px 5px hsla(41, 100%, 40%, 0.3),
-           -3px 25px 25px hsla(41, 100%, 35%, 0.5),
-           -6px 50px 50px hsla(41, 100%, 30%, 0.3),
-           -9px 65px 65px hsla(41, 100%, 20%, 0.3);
-  }
-  
-  .toggle {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 600px;
-    height: 350px;
-    background: #ffad00;
-    border-radius: 500px;
-    border: solid 5px transparent;
-    background-clip: padding-box;
-    cursor: pointer;
-  }
-  
-  .toggle__wrapper {
-    width: 500px;
-    height: 250px;
-    margin: -4px -2px; 
-    border-radius: 500px;
-    background: linear-gradient(hsla(39, 100%, 44%, 1), hsla(39, 100%, 42%, 0.1));
-    box-shadow: 0px 5px 1px 0 hsla(41, 100%, 57%, 0.7);
-  }
-  
-  .toggle__bg {
-    width: 500px;
-    height: 250px;
-    background: hsla(199, 43%, 59%, 1);
-    background: linear-gradient(to right, hsla(199, 43%, 59%, 1) 50%, hsla(18, 77%, 50%, 1) 50% 100%);
-    background-size: 200% 100%;
-    background-position: 75%;
-    border-radius: 500px;
-    border: solid 5px transparent;
-    background-clip: padding-box;
-    box-shadow: inset 0px 30px 50px 15px hsla(0, 0%, 0%, 0.30);
-    transition: all 0.85s ease-in-out;
-  }
-  
-  .toggle__sphere {
-    position: relative;
-    height: 238px;
-    width: 238px;
-    background: hsla(18, 100%, 62%, 1);
-    background: 
-      linear-gradient(to right, hsla(199, 43%, 59%, 1) 50%, hsla(18, 77%, 50%, 1) 50% 100%);
-    border-radius: 50%;
-    transform-origin: top left;
-    transform: translateY(1px);
-    box-shadow:  
-      2px 0px 5px 1px hsla(18, 77%, 15%, 0.05), 
-      0px 10px 10px 1px hsla(18, 77%, 15%, 0.2), 
-      -3px 0px 3px 1px hsla(0, 0%, 0%, 0.75);
-    transition: all 0.85s ease-in-out;
-  }
-  
-  .toggle__sphere:before, 
-  .toggle__sphere:after {
-    content: '';
-    position: absolute;
-    left: calc(50% - 20px);
-    height: 1px;
-    width: 40px;
-    background: hsla(0, 0%, 0%, 0.25);
-    border-radius: 50%;
-    box-shadow: 0px 0px 10px 0px hsla(0, 0%, 0%, 0.25);
-  }
-  
-  .toggle__sphere:before {
-    top: -2px;
-  }
-  
-  .toggle__sphere:after {
-    bottom: -1px;
-  }
-  
-  .toggle__sphere-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: transparent;
-    border-radius: 50%;
-    box-shadow: inset 0px -30px 30px 15px hsla(0, 0%, 0%, 0.1)
-  }
-  
-  .toggle__sphere-bg {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transform-style: preserve-3d;
-    border-radius: 50%;
-    transition: transform 0.85s ease-in-out;
-  }
-  
-  .toggle__sphere-bg:before, 
-  .toggle__sphere-bg:after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-  }
-  
-  .toggle__sphere-bg:before {
-    background-color: hsla(18, 77%, 50%, 1);
-    border-radius: 50%;
-  }
-  
-  .toggle__sphere-bg:after {
-    background-color: hsla(199, 43%, 59%, 1);
-    transform: rotateY(180deg);
-    border-radius: 50%;
-  }
-  
-  input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-    position: absolute;
-  }
-  
-  input:checked + .toggle__bg {
-    background-position: 25%;
-  }
-  
-  input:checked + .toggle__bg .toggle__sphere {
-    transform: translateX(250px) translateY(1px);
-    box-shadow:  
-      -2px 0px 5px 1px hsla(18, 77%, 15%, 0.05), 
-      0px 10px 10px 1px hsla(18, 77%, 15%, 0.2), 
-      3px 0px 3px 0px hsla(0, 0%, 0%, 0.75);
-  }
-  
-  input:checked + .toggle__bg .toggle__sphere-bg {
-    transform: rotateY(180deg);
-  }
-  
-  .modal{
-    display:flex;
-  }
-
-  #addd{
-    display: flex;
-    justify-content: center;
-    margin-top: 3%;
-  }
-
-  .col-xl-3-p{
-    width: 50%;
-  }
-
-  .contenedorAdd{
-    display: flex;
-    justify-content: space-around;
-    width: 92%;
-    margin-left: 8%;
-  }
-
-  #inactivo{
-    transform: rotate(-45deg);
-    color: red;
-    position: absolute;
-    bottom: 13rem;
-    left: -0.5rem;
-    font-size: xx-large;
-    font-family: fantasy;
-  }
-  
-  
-  
-  
-  
 
 
 
@@ -730,11 +491,10 @@ a:hover {
     position: fixed;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
     width: 100%;
-    height: 5rem;
-    z-index: 100;
+    height: 10vh;
+    justify-content: space-around;
+    z-index: 10;
   }
 
   #marca{
@@ -773,61 +533,36 @@ a:hover {
     margin-left: 0;
   }
 
-  #video2{
-    width: 100%;
-    margin-left: 0;
-  }
-
-  .divisor{
-    width: 88%;
-    height: 10%;
-    margin-left: 6%;
-  }
-
-  #menu, #salir{
-    border: none;
-    
-  }
-
-  .principal img{
-    width: 100%;
-    margin-left: 0;
-}
-
-    .contenedorAdd {
-        display: flex;
-        justify-content: space-around;
-        width: 100%;
-        margin-left: 0%;
-
-    }
-
-    .col-xl-3-p {
-        width: 100%;
-    }
-
 }
 
 /* MENU HAMBURGUESA */
+
+/* #pushed{
+    color: #12A098;
+    font-weight: bold;
+    background-color: #12A098;
+    padding: 5px;
+}
 
 #hamburguesitas{
     display: flex;
 }
 
-@media(min-width: 570px){
-    #hamburguesa{
-        display: none;
-    }
-
-    #categorias{
-        display: none;
-    }
-  
-}
-
-
-
 @media(max-width: 570px){
+    
+    header{
+        height: fit-content;
+        width: 100%;
+        background-color: #12A098;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        margin: 0;
+        gap: 15px;
+        padding: 20px 0 20px 0;
+    }
 
 .nav{
         display: none;
@@ -840,148 +575,58 @@ a:hover {
         color: #0F292F;
         background-color: #0F292F;
         text-align: right;
-        height: 100vh;
     }
     #menu_hamburguesa{
         display: contents;
     }
     #container_fluid{
-    width: 100%;
-    height: 10vh;
+    height: 15vw;
     background-color: #CCCCCC;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
-    padding-right: 3%;
-    position: fixed;
-    z-index: 10;
+    padding-right: 5vw;
     }
-
-    #container_fluid img{
-        height: 9vh;
-    }
-
-    #carritoHamburguesa{
-        margin-left: 15%;
-    }
-
-    #container_fluid #carritoHamburguesa {
-        height: 5vh;
-    }
-
     #boton_hamburguesa{
-    /* background-color: #0F292F; */
-    padding: 3px;
-    color: #0F292F;
+    background-color: #0F292F;
     }
-
-    #hamburguesitas{
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-
-    #hamburguesitas div{
-        height: 12vh;
-        align-items: center;
-        margin-top: 15%;
-    }
-
-    #hamburguesitas img{
-        height: 80%;
-        width: auto;
-    }
-
     .navbar-toggler-icon{
     background-color: #0F292F;
     }
+}    */
 
-    #pizzas{
-        display: none;
-    }
+/* Estilos pagina random*/
 
-    #pizza{
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
-    }
-
-    #pizza img{
-        width:4rem;
-        margin: 3%;
-    }
-
-    #contenedorCategorias{
-        display: flex;
-        justify-content: center;
-    }
-
-    #categorias{
-        display: flex;
-        justify-content: center;
-        background-color: #cccccc;
-        width: fit-content;
-        border-radius: 15px;
-        margin: 3% 0%;
-    }
-}   
-
-/* DARK MODE */
-.form-check{
-    display: flex;
-    justify-content: end;
+#random {
+    color: #0F292F;
     width: 92%;
     margin-left: 8%;
-    padding-right: 3%;
-    padding-top: 1%;
-}
-
-.form-check input{
-    opacity: 1;
-}
-
-input[type="checkbox"]:checked ~ .nav
-{
-    background-color: #0F292F;
-}
-
-/* DARK MODE */
-/* .switch{
-    background-color: #0F292F;
-    border-radius: 1000px;
-    border: none;
-    position: relative;
-    cursor: pointer;
+    height: 100vh;
     display: flex;
-    outline: none;
+    flex-direction: column;
+    align-items: center;
 }
 
-.dark{
-    background-color: #0F292F;
-} */
-
-/* SECCION ADMIN */
-.borrar{
-    margin-bottom: 210px;
-    margin-left: 190px;
-    cursor: pointer;
-}
-
-.add{
+#random img{
+    width: 10%;
+    height: 30%;
+    margin-top: 3rem;
     display: flex;
     justify-content: center;
+}
+
+#comestible{
+    background-color: #a05712;
+    width: 10rem;
+    height: 10rem;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    background-color: #15373f;
-    transition-duration: 1s;
 }
 
-.add:hover{
-    background-color: #116460;
-   transition-duration: 1s;
+#seccionAleatoria {
+    margin-left: 8%;
+
 }
 
-.add a{
-    font-size: 10em
-}
+/* #selccionAleatoria .producto */

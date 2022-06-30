@@ -27,10 +27,18 @@ public class FacturaServicioImp implements FacturaServicio {
     }
 
     @Override
-
-    public Factura getFacturaEnCarrito(Cliente cliente) {
+    public Factura getFacturaEnCarrito(Authentication authentication) {
+        Cliente cliente = clienteRepositorio.findByEmail(authentication.getName());
         return cliente.getFacturas().stream().filter(factura -> factura.getEstadoFactura()== EstadoFactura.CARRITO).findFirst().orElse(null);
-
+    }
+    @Override
+    public Set<FacturaDTO> getFacturasConfirmadas(Authentication authentication) {
+        Cliente cliente = clienteRepositorio.findByEmail(authentication.getName());
+        return cliente.getFacturas().stream().filter(factura -> factura.getEstadoFactura()==EstadoFactura.CONFIRMADO).map(factura -> new FacturaDTO(factura)).collect(Collectors.toSet());
+    }
+    @Override
+    public Factura getFacturaById(long id) {
+        return facturaRepositorio.findById(id).orElse(null);
     }
 
     @Override

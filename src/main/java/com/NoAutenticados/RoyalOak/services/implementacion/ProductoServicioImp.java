@@ -15,9 +15,11 @@ public class ProductoServicioImp implements ProductoServicio {
     @Autowired
     private ProductoRepositorio productoRepositorio;
 
-    public List<ProductoDTO> getAll(){
+    @Override
+    public List<ProductoDTO> getAllActive(){
         return productoRepositorio.findAll().stream().filter(producto -> producto.isActivo()).map(producto -> new ProductoDTO(producto)).collect(Collectors.toList());
     }
+
 
     @Override
     public void guardarProducto(Producto producto) {
@@ -27,5 +29,10 @@ public class ProductoServicioImp implements ProductoServicio {
     @Override
     public Producto findById(long id) {
         return productoRepositorio.findById(id).orElse(null);
+    }
+
+    @Override
+    public List<ProductoDTO> getAll() {
+        return productoRepositorio.findAll().stream().map(producto -> new ProductoDTO(producto)).collect(Collectors.toList());
     }
 }

@@ -104,12 +104,6 @@ p {
 
 FOOTER
 
-footer {
-    display: flex;
-    width: 92%;
-    margin-left: 8%;
-    background-color: #CCCCCC;
-}
 
 footer p{
     color: #000000;
@@ -133,9 +127,9 @@ footer p{
 
 #metodos img{
     align-items: center;
-}
+} */
 
-
+/*
 RESPONSIVE
 @media(max-width: 1000px){
 
@@ -162,7 +156,7 @@ RESPONSIVE
         justify-content: center;
     }
 
-} */
+} 
 /* FOOTER NACHO */
 
 
