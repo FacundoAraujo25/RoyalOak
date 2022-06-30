@@ -75,7 +75,7 @@ public class GeneradorPdfServiceImp implements GeneradorPdfService {
 
         for (ClienteProductoPedidoDTO item:
                 pedidos) {
-            table.addCell(item.getProducto()+ " - " + item.getSubTipo());
+            table.addCell(item.getProducto()+ " - " + item.getSubTipo().toString().toLowerCase());
             table.addCell(String.valueOf(item.getCantidad()));
             table.addCell(String.valueOf(item.getPrecio()));
             table.addCell(String.valueOf("$"+item.getTotal()));
