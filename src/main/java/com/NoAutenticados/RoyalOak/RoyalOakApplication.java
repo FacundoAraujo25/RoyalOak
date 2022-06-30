@@ -12,6 +12,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
 @SpringBootApplication
 public class RoyalOakApplication {
 
@@ -131,7 +135,7 @@ public class RoyalOakApplication {
 			Producto producto25 = new Producto("Pollo con champiñones","Harina italiana, parmesano y salsa de crema, mozzarella, Dorblu, pollo al horno, champiñones, pimiento morrón, orégano","https://i.imgur.com/v9aQHSt.png",15,900, Tipo.COMIDA, SubTipo.PIZZAS);
 			Producto producto26 = new Producto("Pollo con ananá","Harina italiana, salsa de tomate integral, mozzarella, pollo al horno, piña, pimiento morrón, mostaza de naranja, arándano, orégano","https://i.imgur.com/2MQVLns.png",15,900, Tipo.COMIDA, SubTipo.PIZZAS);
 			Producto producto27 = new Producto("Queso de cabra","Harina italiana, salsa de crema secreta de la abuela de alguien, mozzarella, queso de cabra, tubérculos, piñones","https://i.imgur.com/nqJYq2j.png",15,900, Tipo.COMIDA, SubTipo.PIZZAS);
-			Producto producto28 = new Producto("Queso de primera calidad","Harina italiana, salsa de nata y parmesano, mozzarella, DorBlue, parmesano, nuez, arándano","https://i.imgur.com/bG1skWd.png",15,900, Tipo.COMIDA, SubTipo.PIZZAS);
+			Producto producto28 = new Producto("Cuatro queso","Harina italiana, salsa de nata y parmesano, mozzarella, DorBlue, parmesano, nuez, arándano","https://i.imgur.com/bG1skWd.png",15,900, Tipo.COMIDA, SubTipo.PIZZAS);
 			Producto producto29 = new Producto("Salami","Harina italiana, mozzarella, salsa de tomate integral, salami premium, orégano","https://i.imgur.com/0LYWujF.png",15,900, Tipo.COMIDA, SubTipo.PIZZAS);
 			Producto producto30 = new Producto("Salmon y espinaca","Harina italiana, salsa de tomate integral, mozzarella, salmón, tomate, espinaca, Dorblu, ajo, limón, piñones, aceitunas, orégano.","https://i.imgur.com/Mt1xB6r.png",15,900, Tipo.COMIDA, SubTipo.PIZZAS);
 			Producto producto31 = new Producto("Panceta","Harina italiana, salsa de tomate integral, mozzarella, dorblu, tocino seco, pimiento picante, orégano","https://i.imgur.com/51YOG7S.png",15,900, Tipo.COMIDA, SubTipo.PIZZAS);
@@ -178,24 +182,19 @@ public class RoyalOakApplication {
 			producto37.setActivo(true);
 			producto38.setActivo(true);
 			producto39.setActivo(true);
-			productoRepositorio.save(producto19);
-			productoRepositorio.save(producto20);
-			productoRepositorio.save(producto21);
-			productoRepositorio.save(producto22);
-			productoRepositorio.save(producto23);
-			productoRepositorio.save(producto24);
-			productoRepositorio.save(producto25);
-			productoRepositorio.save(producto26);
-			productoRepositorio.save(producto27);
-			productoRepositorio.save(producto28);
-			productoRepositorio.save(producto29);
-			productoRepositorio.save(producto30);
-			productoRepositorio.save(producto31);
+			productoRepositorio.save(producto32);
+			productoRepositorio.save(producto33);
+			productoRepositorio.save(producto34);
+			productoRepositorio.save(producto35);
+			productoRepositorio.save(producto36);
+			productoRepositorio.save(producto37);
+			productoRepositorio.save(producto38);
+			productoRepositorio.save(producto39);
 
 			Producto producto40 = new Producto("Papas Americanas","papas con bacon y cheddar de excelente calidad","https://i.imgur.com/iCNjRMn.jpg",15,550, Tipo.COMIDA, SubTipo.PICADAS);
 			Producto producto41 = new Producto("Papas Criollas","papas con salsa criolla y huevos fritos","https://i.imgur.com/04onzhI.jpg",15,550, Tipo.COMIDA, SubTipo.PICADAS);
-			Producto producto42 = new Producto("Picada 4 elementos","Abundante tabla de picada de fiambres,quesos,nuggets de pollo,papas y rabas.","https://i.imgur.com/tVqTiiw.jpg",15,550, Tipo.COMIDA, SubTipo.PICADAS);
-			Producto producto43 = new Producto("Picada Colombiana","Excelente tabla de picada con trocitos de carne,costillitas de cerdo,embutidos, verduras y salsas varias.","https://i.imgur.com/eTdRlG2.jpg",15,550, Tipo.COMIDA, SubTipo.PICADAS);
+			Producto producto42 = new Producto("4 elementos","Abundante tabla de picada de fiambres,quesos,nuggets de pollo,papas y rabas.","https://i.imgur.com/tVqTiiw.jpg",15,550, Tipo.COMIDA, SubTipo.PICADAS);
+			Producto producto43 = new Producto("Colombiana","Excelente tabla de picada con trocitos de carne,costillitas de cerdo,embutidos, verduras y salsas varias.","https://i.imgur.com/eTdRlG2.jpg",15,550, Tipo.COMIDA, SubTipo.PICADAS);
 			Producto producto44 = new Producto("Veracruzanas","Tortillas acompañadas de queso,cebollas picadas,tomates,frijoles refritos con chorizo y jalapeños","https://i.imgur.com/X6YUnMe.jpg",15,550, Tipo.COMIDA, SubTipo.PICADAS);
 			Producto producto45 = new Producto("Bastones de Muzza","Bastoncitos rellenos de queso mozzarella","https://i.imgur.com/Ovjma1V.jpg",15,550, Tipo.COMIDA, SubTipo.PICADAS);
 			producto40.setActivo(true);
@@ -211,13 +210,13 @@ public class RoyalOakApplication {
 			productoRepositorio.save(producto44);
 			productoRepositorio.save(producto45);
 
-			Producto producto46 = new Producto("Agua mineral 1.5L","Agua mineral grande sin/con gas.(La marca puede variar)","https://i.imgur.com/M3crNon.png",50,170,Tipo.BEBIDA,SubTipo.SIN_ALCOHOL);
+			Producto producto46 = new Producto("Agua mineral 1.5L","Agua mineral grande sin/con gas.(La marca puede variar)","https://i.imgur.com/vbohLZ3.png",50,170,Tipo.BEBIDA,SubTipo.SIN_ALCOHOL);
 			Producto producto47 = new Producto("Agua mineral 500 ml","Agua mineral chica sin/con gas.(La marca puede variar)","https://i.imgur.com/S5pdG4Y.png",50,100,Tipo.BEBIDA,SubTipo.SIN_ALCOHOL);
-			Producto producto48 = new Producto("Coca-Cola 350ml","Coca chica de vidrio.(Más fría que el corazón de eia)","https://i.imgur.com/U0Wdi8c.png",50,120,Tipo.BEBIDA,SubTipo.SIN_ALCOHOL);
+			Producto producto48 = new Producto("Coca-Cola 350ml","Coca chica de vidrio.(Más fría que el corazón de eia)","https://i.imgur.com/GD3hMpp.png",50,120,Tipo.BEBIDA,SubTipo.SIN_ALCOHOL);
 			Producto producto49 = new Producto("Coca-Cola 1.5L","Coca-Cola mediana con envase retornable y no-retornable.","https://i.imgur.com/Jo4vD6l.png",50,250,Tipo.BEBIDA,SubTipo.SIN_ALCOHOL);
 			Producto producto50 = new Producto("Seven-Up 350ml","Seven-Up chica de vidrio.","https://i.imgur.com/k49xksL.png",50,120,Tipo.BEBIDA,SubTipo.SIN_ALCOHOL);
 			Producto producto51 = new Producto("Seven-Up 1.5L","Seven-Up mediana con envase retornable y no-retornable.","https://i.imgur.com/yeQ5IQB.png",50,250,Tipo.BEBIDA,SubTipo.SIN_ALCOHOL);
-			Producto producto52 = new Producto("Fanta Naranja 1.5L","Fanta mediana con envase retornable y no-retornable.","https://i.imgur.com/weCwvlx.png",50,250,Tipo.BEBIDA,SubTipo.SIN_ALCOHOL);
+			Producto producto52 = new Producto("Fanta Naranja 1.5L","Fanta mediana con envase retornable y no-retornable.","https://i.imgur.com/ovgoaye.png",50,250,Tipo.BEBIDA,SubTipo.SIN_ALCOHOL);
 			Producto producto53 = new Producto("Fanta Naranja 500ml","Fanta naranja chica.","https://i.imgur.com/Qc6rrCV.png",50,150,Tipo.BEBIDA,SubTipo.SIN_ALCOHOL);
 			Producto producto54 = new Producto("Cerveza Miller 330ml","Cerveza rubia que está 4 veces filtrada en frío, por eso tiene una frescura intensa, un sabor suave y un dorado inigualable.","https://i.imgur.com/lemAEIl.png",50,350,Tipo.BEBIDA,SubTipo.CON_ALCOHOL);
 			Producto producto55 = new Producto("Cerveza Heineken 330ml","Cerveza rubia cuyo sabor distintivo y único está dado por el uso exclusivo de la Levadura A, especialmente desarrollada por un discípulo de Louis Pasteur","https://i.imgur.com/aGBHaXW.png",50,350,Tipo.BEBIDA,SubTipo.CON_ALCOHOL);
@@ -243,7 +242,6 @@ public class RoyalOakApplication {
 			producto59.setActivo(true);
 			producto60.setActivo(true);
 			producto61.setActivo(true);
-
 			productoRepositorio.save(producto46);
 			productoRepositorio.save(producto47);
 			productoRepositorio.save(producto48);

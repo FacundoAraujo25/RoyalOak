@@ -27,7 +27,6 @@ public class ProductoDTO {
         this.activo = producto.isActivo();
         this.tipo = producto.getTipo();
         this.subTipo = producto.getSubTipo();
-
     }
 
     public long getId() {

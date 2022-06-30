@@ -1,0 +1,234 @@
+:root {
+    /* Paleta de Colores */
+    --bordo: #501F3A;
+    --rosa: #CB2D6F;
+    --blanco: #CCCCCC;
+    --verdeClaro: #12A098;
+    --verdeOscuro: #0F292F;
+
+    /* Fuente Titulos y Contenido */
+    --fuenteTitulo: 'Potta One', cursive;
+    --fuenteContenido: 'Kdam Thmor Pro', sans-serif;
+
+}
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav {
+    background-color: var(--blanco);
+    width: 8%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    height: 100%;
+}
+
+.nav div {
+    padding: 0.5rem;
+    width: 4rem;
+    transition-duration: 0.3s;
+    margin-bottom: 0.3rem;
+}
+
+.nav div:hover {
+    width: 4.5rem;
+    transition-duration: 0.3s;
+}
+
+#marca {
+    width: auto;
+}
+
+#marca:hover {
+    transform: rotate(15deg);
+}
+
+#menu {
+    border-top: 2px solid black;
+}
+
+#salir {
+    border-top: 2px solid black;
+    cursor: pointer;
+}
+
+.box-icon {
+    width: 48px;
+}
+
+.center {
+    width: 100%;
+    /* REVISAR */
+}
+
+
+.scale-up-center {
+    -webkit-animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+@-webkit-keyframes scale-up-center {
+    0% {
+        -webkit-transform: scale(0.5);
+        transform: scale(0.5);
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+@keyframes scale-up-center {
+    0% {
+        -webkit-transform: scale(0.5);
+        transform: scale(0.5);
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+.nav img {
+    width: 92%;
+    margin-left: 8%
+}
+
+
+.center img {
+    background-size: cover;
+    height: 100vh;
+}
+
+p {
+    text-align: center;
+    color: black;
+}
+
+/* nav-hamburguesa */
+
+/* MENU HAMBURGUESA */
+
+#hamburguesitas{
+    display: flex;
+}
+
+@media(min-width: 570px){
+    #hamburguesa{
+        display: none;
+    }
+
+    #categorias{
+        display: none;
+    }
+}
+
+@media(max-width: 570px){
+
+.nav{
+        display: none;
+    }
+    #hamburguesa{
+        display: contents;
+        color: var(--verdeOscuro);
+    }
+    #navbarToggleExternalContent{
+        color: var(--verdeOscuro);
+        background-color: var(--verdeOscuro);
+        text-align: right;
+        height: 100vh;
+    }
+    #menu_hamburguesa{
+        display: contents;
+    }
+    #container_fluid{
+    width: 100%;
+    height: 10vh;
+    background-color: var(--blanco);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 3%;
+    position: fixed;
+    z-index: 10;
+    }
+
+    #container_fluid img{
+        height: 9vh;
+    }
+
+    #carritoHamburguesa{
+        margin-left: 15%;
+    }
+
+    #container_fluid #carritoHamburguesa {
+        height: 5vh;
+    }
+
+    #boton_hamburguesa{
+    /* background-color: #0F292F; */
+    padding: 3px;
+    color: var(--verdeOscuro);
+    font-size: xx-large;
+    }
+
+    #hamburguesitas{
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #hamburguesitas div{
+        height: 12vh;
+        align-items: center;
+        margin-top: 15%;
+    }
+
+    #hamburguesitas img{
+        height: 80%;
+        width: auto;
+    }
+
+    .navbar-toggler-icon{
+    background-color: var(--verdeOscuro);
+    }
+
+    #pizzas{
+        display: none;
+    }
+
+    #pizza{
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    #pizza img{
+        width:4rem;
+        margin: 3%;
+    }
+
+    #contenedorCategorias{
+        display: flex;
+        justify-content: center;
+    }
+
+    #categorias{
+        display: flex;
+        justify-content: center;
+        background-color: var(--blanco);
+        width: fit-content;
+        border-radius: 15px;
+        margin: 3% 0%;
+    }
+}   
