@@ -12,12 +12,12 @@ const app = Vue.createApp({
             picadas:[],
             clientes:[],
 
-            comida:[],
             hamburguesas:[],
+            picadas:[],
             pizzas:[],
+            comida:[],
             ensaladas:[],
             bebidas:[],
-            picadas:[],
 
         }
     },
@@ -33,8 +33,12 @@ const app = Vue.createApp({
                 this.picadas = this.productos.filter(producto => producto.subTipo == 'PICADAS')
                 this.ensaladas = this.productos.filter(producto => producto.subTipo == 'ENSALADAS')
                 console.log(this.productos)
-                /* this.comida = this.productos.comida
-                console.log(this.comida) */
+                this.hamburguesas = this.productos.filter(productos=> productos.subTipo=='HAMBURGUESAS')
+                console.log(this.hamburguesas)
+                this.picadas = this.productos.filter(productos=> productos.subTipo=='PICADAS')
+                console.log(this.picadas)
+                this.pizzas = this.productos.filter(productos=> productos.subTipo=='PIZZAS')
+                console.log(this.pizzas)
             })
         
 
