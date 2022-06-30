@@ -67,13 +67,17 @@
                     <article v-if='subTipo=="HAMBURGUESAS"' id="product" class="shadow"><img src="https://fondosmil.com/fondo/75567.jpg" alt="casa"></article>
                     <article v-else-if='subTipo== "PIZZAS"' id="product" class="shadow"><img src="https://fondosmil.com/fondo/65797.jpg" alt="auto"></article>
                     <article v-else-if='subTipo == "PICADAS"' id="product" class="shadow"><img src="https://i.pinimg.com/736x/2b/9e/8a/2b9e8af5b4ebd70cdde1228f92563de1.jpg" alt="auto"></article>
-                    <article v-else-if='subTipo == "BEBIDAS"' id="product" class="shadow"><img src="https://p4.wallpaperbetter.com/wallpaper/443/613/274/alcohol-cocktail-bottle-drinks-wallpaper-preview.jpg" alt="auto"></article>
+                    <article v-else-if='subTipo == "ENSALADAS"' id="product" class="shadow"><img src="" alt="auto"></article>
+                    <article v-else-if='subTipo == "CON_ALCOHOL"' id="product" class="shadow"><img src="https://p4.wallpaperbetter.com/wallpaper/443/613/274/alcohol-cocktail-bottle-drinks-wallpaper-preview.jpg" alt="auto"></article>
+                    <article v-else-if='subTipo == "SIN_ALCOHOL"' id="product" class="shadow"><img src="" alt="auto"></article>
                     <article v-else="" id="product" class="shadow"><img src="https://neilpatel.com/wp-content/uploads/2017/08/How-To-Generate-Buzz-When-You-Launch-a-New-Product.jpg" alt="auto"></article>
                     
                     <h1 v-if='subTipo=="HAMBURGUESAS"'>Nueva hamburguesa</h1>
                     <h1 v-else-if='subTipo== "PIZZAS"'>Nueva pizza </h1>
                     <h1 v-else-if='subTipo== "PICADAS"'>Nueva picada</h1>
-                    <h1 v-else-if='subTipo == "BEBIDAS"' >nueva bebida</h1>
+                    <h1 v-else-if='subTipo== "ENSALADAS"'>Nueva ensaladita</h1>
+                    <h1 v-else-if='subTipo == "CON_ALCOHOL"' >Bebida con alcohol</h1>
+                    <h1 v-else-if='subTipo == "SIN_ALCOHOL"' >Bebida sin alcohol</h1>
                     <article id="checkoutCard" class="shadow">
                         <div id="details">
                             <dl class="">
@@ -81,7 +85,9 @@
                                 <dd v-if="subTipo == 'HAMBURGUESAS'"><img id="thumbnail" src="https://fondosmil.com/fondo/75567.jpg" alt="Lunar 2"></dd>
                                 <dd v-else-if="subTipo == 'PIZZAS'"><img id="thumbnail" src="https://img.freepik.com/foto-gratis/pizza-pepperoni-sobre-mesa_140725-5396.jpg?w=2000" alt="Lunar 2"></dd>
                                 <dd v-else-if="subTipo == 'PICADAS'"><img id="thumbnail" src="https://picadasboom.com.ar/wp-content/uploads/2020/11/25.jpg" alt="Lunar 2"></dd>
-                                <dd v-else-if="subTipo == 'BEBIDAS'"><img id="thumbnail" src="https://images5.alphacoders.com/406/406996.jpg" alt="Lunar 2"></dd>
+                                <dd v-else-if="subTipo == 'ENSALADAS'"><img id="thumbnail" src="" alt="Lunar 2"></dd>
+                                <dd v-else-if="subTipo == 'CON_ALCOHOL'"><img id="thumbnail" src="https://images5.alphacoders.com/406/406996.jpg" alt="Lunar 2"></dd>
+                                <dd v-else-if="subTipo == 'SIN_ALCOHOL'"><img id="thumbnail" src="" alt="Lunar 2"></dd>
                                 <dd v-else="" ><img id="thumbnail" src="https://www.desab.com.ar/wp-content/uploads/2020/11/producto-nuevo-png-1-300x297.png" alt="Lunar 2"></dd>
                                 <dt>Tipo producto</dt>
                                 <select v-model="tipo" class="inputbox" name="subTipo" id="loantype" required>
@@ -91,15 +97,9 @@
                                     
                                 </select>
                                 <dt>Stock</dt>
-                                <input id="stock" type="number" placeholder="0">
-                                <!-- <dd v-if='subTipo=="HAMBURGUESAS"'> $100 </dd>
-                                <dd v-else-if='subTipo=="PIZZAS"'> $650 </dd>
-                                <dd v-else-if='subTipo=="PICADAS"'> $400 </dd>
-                                <dd v-else-if='subTipo=="BEBIDAS"'> $300 </dd>
-                                <dd v-else=''> $0 </dd> -->
+                                <input v-model="stock" id="stock" type="number" placeholder="0">
                                 
-                                
-                            </dl>
+                                </dl>
                         </div>
                         <form action="">
                             <div id="cards">
@@ -116,7 +116,9 @@
                                     <option value="HAMBURGUESAS">HAMBURGUESAS</option>
                                     <option value="PIZZAS">PIZZAS</option>
                                     <option value="PICADAS">PICADAS</option>
-                                    <option value="BEBIDAS">BEBIDAS</option>
+                                    <option value="ENSALADAS">ENSALADAS</option>
+                                    <option value="SIN_ALCOHOL">BEBIDA SIN ALCOHOL</option>
+                                    <option value="CON_ALCOHOL">BEBIDAS CON ALCOHOL</option>
                                 </select>
                             </div>
                             <label for="">Nombre del producto</label>
@@ -131,20 +133,16 @@
                             <div id="cardNumber">
                                 <input v-model="imagen" type="text" name="select" id="12" placeholder="Agrega URL del producto">
                             </div>
-                            <label for="">ingredientes</label>
-                            <div id="cardNumber">
-                                <input v-model="ingredientes" type="text" name="select" id="12" placeholder="Agrega los ingredientes">
-                            </div>
                             <label for="">Producto Activo</label>
                             <div id="cardNumber">
                                 <label for="1">activo</label>
-                                <input value="true" type="radio" name="select" id="1" placeholder="Agrega los ingredientes">
+                                <input v-model="activo" value="true" type="radio" name="true" id="1" placeholder="Agrega los ingredientes">
                                 <label for="2">inactivo</label>
-                                <input value="false" type="radio" name="select" id="2" placeholder="Agrega los ingredientes">
+                                <input v-model="activo" value="false" type="radio" name="false" id="2" placeholder="Agrega los ingredientes">
                             </div>
     
     
-                            <input  type="button" class="button" value="Crear" id="btnSubmit" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+                            <input type="button" class="button" value="Crear" id="btnSubmit" data-bs-toggle="modal" data-bs-target="#exampleModal2">
     
                             <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
                                 <div class="modal-dialog">

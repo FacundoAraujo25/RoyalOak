@@ -3,6 +3,7 @@ package com.NoAutenticados.RoyalOak.dtos;
 import com.NoAutenticados.RoyalOak.models.ClienteProductoPedido;
 import com.NoAutenticados.RoyalOak.models.Factura;
 import com.NoAutenticados.RoyalOak.models.Producto;
+import com.NoAutenticados.RoyalOak.models.SubTipo;
 import com.itextpdf.text.pdf.PdfPCell;
 
 
@@ -15,6 +16,7 @@ public class ClienteProductoPedidoDTO {
     private long idProducto;
     private int stockProducto;
     private String imagen;
+    private SubTipo subTipo;
 
 
     public ClienteProductoPedidoDTO() {}
@@ -28,6 +30,7 @@ public class ClienteProductoPedidoDTO {
         this.idProducto = clienteProductoPedido.getProducto().getId();
         this.stockProducto = clienteProductoPedido.getProducto().getStock();
         this.imagen = clienteProductoPedido.getProducto().getImagen();
+        this.subTipo = clienteProductoPedido.getProducto().getSubTipo();
 
     }
 
@@ -76,4 +79,6 @@ public class ClienteProductoPedidoDTO {
     public String getImagen() {
         return imagen;
     }
+    public SubTipo getSubTipo() {return subTipo;}
+    public void setSubTipo(SubTipo subTipo) {this.subTipo = subTipo;}
 }

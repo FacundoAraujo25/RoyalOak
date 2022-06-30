@@ -37,7 +37,6 @@ public class ProductoControlador {
             @RequestParam String imagen,
             @RequestParam double precio,
             @RequestParam int stock,
-            @RequestParam String ingredientes,
             @RequestParam Tipo tipo,
             @RequestParam SubTipo subtipo,
             @RequestParam boolean activo,
@@ -62,10 +61,8 @@ public class ProductoControlador {
         if(precio < 0){
               return new ResponseEntity<>("El precio no puede ser menor o igual a 0", HttpStatus.FORBIDDEN);
         }
-        if(ingredientes.isEmpty()){
-            return new ResponseEntity<>("Faltan datos: Ingredientes", HttpStatus.FORBIDDEN);
-        }
-//        String[] ingredientesArray = ingredientes.split(" ");
+
+
         Producto producto = new Producto(nombre, descripcion, imagen,stock, precio,tipo,subtipo);
         producto.setActivo(true);
         productoServicio.guardarProducto(producto);
