@@ -34,7 +34,7 @@ public class ClienteControlador {
     public PasswordEncoder passwordEncoder;
 
 
-    @RequestMapping("/clientes") //asigna ruta a un controlador específico
+    @GetMapping("/clientes") //asigna ruta a un controlador específico
     public List<ClienteDTO> getClientes() {
 
         //return clientRepository.findAll().stream().map(client -> new ClientDTO(client)).collect(toList());
@@ -45,7 +45,7 @@ public class ClienteControlador {
 
     }
 
-    @RequestMapping("clientes/{id}")
+    @GetMapping("/clientes/{id}")
     public ClienteDTO getCliente(@PathVariable Long id) {
         return clienteServicio.getCliente(id);
     }
@@ -192,7 +192,7 @@ public class ClienteControlador {
         return new ResponseEntity<>("Usuario con rol de Admin confirmado", HttpStatus.CREATED);
     }
 
-    @GetMapping("clientes/{token}")
+    @GetMapping("/clientes/{token}")
     public Cliente getClientePorToken(@PathVariable String token) {
         return clienteServicio.findByToken(token);
     }
