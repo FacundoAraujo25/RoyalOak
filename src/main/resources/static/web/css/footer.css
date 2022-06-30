@@ -6,6 +6,7 @@
 #0F292F       VERDE OSCURO*/
 
 
+/*
 #contenedorInfo{
     width: 92%;
     margin-left: 8%;
@@ -102,14 +103,7 @@ p {
 }
 
 
-/* FOOTER */
 
-footer {
-    display: flex;
-    width: 92%;
-    margin-left: 8%;
-    background-color: #CCCCCC;
-}
 
 footer p{
     color: #000000;
@@ -133,11 +127,11 @@ footer p{
 
 #metodos img{
     align-items: center;
-}
+} */
 
 
 /* RESPONSIVE */
-@media(max-width: 1000px){
+/*@media(max-width: 1000px){
 
     #contenedorInfo {
         width: 100%;
@@ -162,4 +156,72 @@ footer p{
         justify-content: center;
     }
 
+}*/
+
+.baby-icons {
+    background-color: #8f2953;
+}
+
+.baby-icons2 {
+    background-color: #501F3A;
+}
+
+.large-icons {
+    color: #14A098;
+}
+
+#contact-title {
+    color: #8f2953;
+    font-weight: 600;
+}
+
+footer {
+    background-color: #CCCCCC;
+    color: #8f2953;
+    font-weight: 300;
+    width: 92% !important;
+    margin-left: 8% !important;
+
+}
+
+.baby-icons-row {
+    height: 2rem;
+}
+
+a {
+    color: #CCCCCC;
+    text-decoration: none;
+}
+
+.divLogo {
+    width: 92% !important;
+    margin-left: 8% !important;
+}
+
+#logo-intermedio {
+    width: 20rem;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+
+.contact-text {
+    color: black;
+    font-size: 1.25rem;
+    font-weight: 450;
+}
+
+.contact-subtitles{
+    font-weight: 600;
+}
+
+.info{
+    font-weight: 550;
+}
+/* RESPONSIVE */
+@media(max-width: 1000px){
+
+    .containter {
+        width: 100% !important;
+        margin-left: 0 !important;
+    }
 }
