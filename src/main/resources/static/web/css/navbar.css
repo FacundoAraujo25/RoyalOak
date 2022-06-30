@@ -1,3 +1,17 @@
+:root {
+    /* Paleta de Colores */
+    --bordo: #501F3A;
+    --rosa: #CB2D6F;
+    --blanco: #CCCCCC;
+    --verdeClaro: #12A098;
+    --verdeOscuro: #0F292F;
+
+    /* Fuente Titulos y Contenido */
+    --fuenteTitulo: 'Potta One', cursive;
+    --fuenteContenido: 'Kdam Thmor Pro', sans-serif;
+
+}
+
 header {
     width: 100%;
     display: flex;
@@ -5,7 +19,7 @@ header {
 }
 
 .nav {
-    background-color: #CCCCCC;
+    background-color: var(--blanco);
     width: 8%;
     display: flex;
     flex-direction: column;
@@ -22,14 +36,10 @@ header {
     margin-bottom: 0.3rem;
 }
 
-
 .nav div:hover {
     width: 4.5rem;
     transition-duration: 0.3s;
 }
-
-
-
 
 #marca {
     width: auto;
@@ -48,7 +58,7 @@ header {
     cursor: pointer;
 }
 
-box-icon {
+.box-icon {
     width: 48px;
 }
 
@@ -119,26 +129,7 @@ p {
     #categorias{
         display: none;
     }
-  
 }
-
-
-
-#hamburguesitas{
-    display: flex;
-}
-
-@media(min-width: 570px){
-    #hamburguesa{
-        display: none;
-    }
-
-    #categorias{
-        display: none;
-    }
-}
-
-
 
 @media(max-width: 570px){
 
@@ -147,11 +138,11 @@ p {
     }
     #hamburguesa{
         display: contents;
-        color: #0F292F;
+        color: var(--verdeOscuro);
     }
     #navbarToggleExternalContent{
-        color: #0F292F;
-        background-color: #0F292F;
+        color: var(--verdeOscuro);
+        background-color: var(--verdeOscuro);
         text-align: right;
         height: 100vh;
     }
@@ -161,7 +152,7 @@ p {
     #container_fluid{
     width: 100%;
     height: 10vh;
-    background-color: #CCCCCC;
+    background-color: var(--blanco);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -185,7 +176,7 @@ p {
     #boton_hamburguesa{
     /* background-color: #0F292F; */
     padding: 3px;
-    color: #0F292F;
+    color: var(--verdeOscuro);
     font-size: xx-large;
     }
 
@@ -209,7 +200,7 @@ p {
     }
 
     .navbar-toggler-icon{
-    background-color: #0F292F;
+    background-color: var(--verdeOscuro);
     }
 
     #pizzas{
@@ -235,7 +226,7 @@ p {
     #categorias{
         display: flex;
         justify-content: center;
-        background-color: #cccccc;
+        background-color: var(--blanco);
         width: fit-content;
         border-radius: 15px;
         margin: 3% 0%;
