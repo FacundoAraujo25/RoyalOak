@@ -4,6 +4,7 @@ const app = Vue.createApp({
     data() {
         return {
             productos:[],
+            hamburguesas:[],
             tipo:[],
             subtipos:[],
 
@@ -25,6 +26,7 @@ const app = Vue.createApp({
             axios.get('http://localhost:8585/api/productos')
             .then(data => {
                 this.productos = data.data
+
                 console.log(this.productos)
                 this.hamburguesas = this.productos.filter(productos=> productos.subTipo == 'HAMBURGUESAS')
                 console.log(this.hamburguesas)
@@ -34,6 +36,7 @@ const app = Vue.createApp({
                 console.log(this.picadas)
                 this.bebidasSA = this.productos.filter(productos=> productos.subTipo=='SIN_ALCOHOL')
                 console.log(this.bebidasSA)
+
             })
             
             /* axios.get('http://localhost:8585/api/clientes')
