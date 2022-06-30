@@ -5,14 +5,8 @@
 #12A098       VERDE CLARO     
 #0F292F       VERDE OSCURO*/
 
-<<<<<<< HEAD
-
-/*
-#contenedorInfo{
-=======
 /* FOOTER NACHO */
 /* #contenedorInfo{
->>>>>>> Main
     width: 92%;
     margin-left: 8%;
     display: flex;
@@ -108,10 +102,7 @@ p {
 }
 
 
-<<<<<<< HEAD
-=======
 FOOTER
->>>>>>> Main
 
 
 footer p{
@@ -138,14 +129,9 @@ footer p{
     align-items: center;
 } */
 
-
-<<<<<<< HEAD
-/* RESPONSIVE */
-/*@media(max-width: 1000px){
-=======
+/*
 RESPONSIVE
 @media(max-width: 1000px){
->>>>>>> Main
 
     #contenedorInfo {
         width: 100%;
@@ -170,10 +156,7 @@ RESPONSIVE
         justify-content: center;
     }
 
-<<<<<<< HEAD
-}*/
-=======
-} */
+} 
 /* FOOTER NACHO */
 
 
@@ -185,7 +168,6 @@ footer {
     width: 92% ;
     margin-left: 8% ;
 }
->>>>>>> Main
 
 .baby-icons {
     background-color: #8f2953;
@@ -204,15 +186,6 @@ footer {
     font-weight: 600;
 }
 
-<<<<<<< HEAD
-footer {
-    background-color: #CCCCCC;
-    color: #8f2953;
-    font-weight: 300;
-    width: 92% !important;
-    margin-left: 8% !important;
-
-=======
 
 .rowF{
     --bs-gutter-x: 0;
@@ -222,7 +195,6 @@ footer {
     margin-top: calc(-1 * var(--bs-gutter-y));
     margin-right: calc(-.5 * var(--bs-gutter-x));
     margin-left: calc(-.5 * var(--bs-gutter-x));
->>>>>>> Main
 }
 
 .baby-icons-row {
@@ -258,15 +230,6 @@ a {
 .info{
     font-weight: 550;
 }
-<<<<<<< HEAD
-/* RESPONSIVE */
-@media(max-width: 1000px){
-
-    .containter {
-        width: 100% !important;
-        margin-left: 0 !important;
-    }
-=======
 
 .bi-twitter:hover{
     color: #00acee;
@@ -292,5 +255,4 @@ a {
     .rowF{
         justify-content: center;
     }
->>>>>>> Main
 }
