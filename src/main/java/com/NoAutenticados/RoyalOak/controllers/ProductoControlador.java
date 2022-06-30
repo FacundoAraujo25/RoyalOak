@@ -63,6 +63,8 @@ public class ProductoControlador {
         }
 
 
+
+
         Producto producto = new Producto(nombre, descripcion, imagen,stock, precio,tipo,subtipo);
         producto.setActivo(true);
         productoServicio.guardarProducto(producto);
