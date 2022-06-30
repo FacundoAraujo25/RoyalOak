@@ -1,5 +1,6 @@
 package com.NoAutenticados.RoyalOak.models;
 
+import com.itextpdf.text.pdf.PdfPCell;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;

@@ -3,6 +3,7 @@ package com.NoAutenticados.RoyalOak.controllers;
 import com.NoAutenticados.RoyalOak.dtos.ClienteDTO;
 import com.NoAutenticados.RoyalOak.evento.OnRegistrationSuccessEvent;
 import com.NoAutenticados.RoyalOak.models.Cliente;
+import com.NoAutenticados.RoyalOak.models.RolUsuario;
 import com.NoAutenticados.RoyalOak.repositories.ClienteRepositorio;
 import com.NoAutenticados.RoyalOak.services.ClienteServicio;
 import com.NoAutenticados.RoyalOak.utils.Utils;
@@ -10,12 +11,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.Random;
+import java.util.Set;
 
 @RestController
 @RequestMapping("/api")
@@ -48,15 +51,11 @@ public class ClienteControlador {
     }
 
 
-    //@RequestMapping("/clients/current")
-
-    //public ClienteDTO getAll(Authentication authentication) {
-
-        //return clientService.getCurrentClient(authentication.getName());   //getName = getUsernameParameter("mail")
-
-        //return new ClienteDTO(clienteRepositorio.findByEmail(authentication.getName()));
-
-    //}
+    @GetMapping("/clientes/actual")
+    public ClienteDTO getClient(Authentication authentication) {
+        Cliente cliente = clienteServicio.findByEmail(authentication.getName());
+        return new ClienteDTO(cliente);
+    }
 
     @PostMapping("/clientes")
     public ResponseEntity<Object> registrarCliente(@RequestParam String nombre,
@@ -65,48 +64,91 @@ public class ClienteControlador {
                                                    @RequestParam String telefono,
                                                    @RequestParam String direccion,
                                                    @RequestParam String contraseña,
-                                                   HttpServletRequest request){
+                                                   HttpServletRequest request) {
         String pepe;
 
-        if(nombre.isEmpty()){
+        if (nombre.isEmpty()) {
             return new ResponseEntity<>("Faltan datos: Nombre", HttpStatus.FORBIDDEN);
         }
-        if(apellido.isEmpty()){
+        if (apellido.isEmpty()) {
             return new ResponseEntity<>("Faltan datos: Apellido", HttpStatus.FORBIDDEN);
         }
-        if(email.isEmpty()){
+        if (email.isEmpty()) {
             return new ResponseEntity<>("Faltan datos: Email", HttpStatus.FORBIDDEN);
         }
-        if(telefono.isEmpty()){
+        if (telefono.isEmpty()) {
             return new ResponseEntity<>("Faltan datos: Telefono", HttpStatus.FORBIDDEN);
         }
-        if(direccion.isEmpty()){
+        if (direccion.isEmpty()) {
             return new ResponseEntity<>("Faltan datos: Dirección", HttpStatus.FORBIDDEN);
         }
-        if(contraseña.isEmpty()){
+        if (contraseña.isEmpty()) {
             return new ResponseEntity<>("Faltan datos: Contraseña", HttpStatus.FORBIDDEN);
         }
-        if(clienteServicio.findByEmail(email) != null){
+        if (clienteServicio.findByEmail(email) != null) {
             return new ResponseEntity<>("El email ingresado ya existe", HttpStatus.FORBIDDEN);
         }
-        if(clienteServicio.findByTelefono(telefono) != null){
+        if (clienteServicio.findByTelefono(telefono) != null) {
             return new ResponseEntity<>("El telefono ingresado ya existe", HttpStatus.FORBIDDEN);
         }
 
-        String generarToken = Utils.getToken(65,90,8,new Random());
+        String generarToken = Utils.getToken(65, 90, 8, new Random());
         String urlApp = request.getContextPath();
-        Cliente cliente = new Cliente(nombre, apellido,email,telefono, passwordEncoder.encode(contraseña));
+        Cliente cliente = new Cliente(nombre, apellido, email, telefono, passwordEncoder.encode(contraseña));
         cliente.addDireccion(direccion);
         cliente.setToken(generarToken);
         cliente.setEnable(false);
         clienteRepositorio.save(cliente);
-        eventoPublicador.publishEvent(new OnRegistrationSuccessEvent(cliente,urlApp));
+        eventoPublicador.publishEvent(new OnRegistrationSuccessEvent(cliente, urlApp));
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
+    @PostMapping("/clientes/direcciones")
+    public ResponseEntity<Object> agregarDirecciones (@RequestParam String direccionNueva,
+                                                      Authentication authentication){
+
+        Cliente cliente = clienteServicio.findByEmail(authentication.getName());
+
+        if(direccionNueva.isEmpty())
+        {
+            return new ResponseEntity<>("Dirección vacía.", HttpStatus.FORBIDDEN);
+        }
+        if(cliente.getDirecciones().contains(direccionNueva))
+        {
+            return new ResponseEntity<>("Dirección repetida.", HttpStatus.FORBIDDEN);
+        }
+
+        cliente.addDireccion(direccionNueva);
+        clienteServicio.guardarCliente(cliente);
+
+        return new ResponseEntity<>("Dirección guardada exitosamente.", HttpStatus.CREATED);
+    }
+
+//    @DeleteMapping("/clientes/direcciones")
+//    public ResponseEntity<Object> borrarDirecciones (@RequestParam String direccionBorrada,
+//                                                      Authentication authentication){
+//
+//        Cliente cliente = clienteServicio.findByEmail(authentication.getName());
+//
+//        if(direccionBorrada.isEmpty())
+//        {
+//            return new ResponseEntity<>("Dirección vacía.", HttpStatus.FORBIDDEN);
+//        }
+//        if(!cliente.getDirecciones().contains(direccionBorrada))
+//        {
+//            return new ResponseEntity<>("No se ha encontrado la dirección.", HttpStatus.FORBIDDEN);
+//        }
+//
+//        cliente.getDirecciones().remove(direccionBorrada);
+//
+//        clienteServicio.guardarCliente(cliente);
+//
+//        return new ResponseEntity<>("Dirección guardada exitosamente.", HttpStatus.CREATED);
+//    }
+
     @GetMapping("/registro/{token}")
-    public ResponseEntity<Object> confirmacionRegistro (HttpServletRequest request,
-                                                        @PathVariable String token) {
+    public ResponseEntity<Object> confirmacionRegistro(HttpServletRequest request,
+                                                       @PathVariable String token) {
 
         Cliente cliente;
         String tokencito;
@@ -127,10 +169,100 @@ public class ClienteControlador {
         }
 
         cliente.setEnable(true);
-        Utils.borrarToken(tokencito, cliente);
+        Utils.borrarToken(tokencito);
         clienteRepositorio.save(cliente);
 
         return new ResponseEntity<>("Registro de cliente confirmado", HttpStatus.CREATED);
     }
+    @PatchMapping("/clientes/roles")
+    public ResponseEntity<Object> asignarRoles(@RequestParam long idUsuario,
+                                                @RequestParam String mailUsuario,
+                                               Authentication authentication){
+        if(clienteServicio.findById(idUsuario) == null){
+            return new ResponseEntity<>("El usuario no existe.", HttpStatus.FORBIDDEN);
+        }
 
+        Cliente usuario = clienteServicio.findById(idUsuario);
+        if(!usuario.getEmail().equals(mailUsuario)){
+            return new ResponseEntity<>("El email no corresponde al usuario.", HttpStatus.FORBIDDEN);
+        }
+        usuario.setRolUsuario(RolUsuario.ADMIN);
+        clienteServicio.guardarCliente(usuario);
+
+        return new ResponseEntity<>("Usuario con rol de Admin confirmado", HttpStatus.CREATED);
+    }
+
+    @GetMapping("clientes/{token}")
+    public Cliente getClientePorToken(@PathVariable String token) {
+        return clienteServicio.findByToken(token);
+    }
+
+    @PatchMapping("/clientes/actual/modificar")
+    public ResponseEntity<Object> modificarCliente(@RequestParam String nombre,
+                                                   @RequestParam String apellido,
+                                                   @RequestParam String email,
+                                                   @RequestParam String telefono,
+                                                   @RequestParam Set<String> direccion,
+                                                   @RequestParam String contraseña,
+                                                   Authentication authentication) {
+
+        Cliente cliente = clienteServicio.getClientCurrent(authentication);
+
+        if (nombre.isEmpty()) {
+            return new ResponseEntity<>("Faltan datos: Nombre", HttpStatus.FORBIDDEN);
+        }
+        if (apellido.isEmpty()) {
+            return new ResponseEntity<>("Faltan datos: Apellido", HttpStatus.FORBIDDEN);
+        }
+        if (email.isEmpty()) {
+            return new ResponseEntity<>("Faltan datos: Email", HttpStatus.FORBIDDEN);
+        }
+        if (telefono.isEmpty()) {
+            return new ResponseEntity<>("Faltan datos: Telefono", HttpStatus.FORBIDDEN);
+        }
+        if (direccion.isEmpty()) {
+            return new ResponseEntity<>("Faltan datos: Dirección", HttpStatus.FORBIDDEN);
+        }
+        if (contraseña.isEmpty()) {
+            return new ResponseEntity<>("Faltan datos: Contraseña", HttpStatus.FORBIDDEN);
+        }
+        if (!passwordEncoder.matches(contraseña, cliente.getContraseña())) {
+            return new ResponseEntity<>("La contraseña es incorrecta", HttpStatus.FORBIDDEN);
+        }
+
+        cliente.setApellido(apellido);
+        cliente.setContraseña(passwordEncoder.encode(contraseña));
+        cliente.setDirecciones(direccion);
+        cliente.setNombre(nombre);
+        cliente.setTelefono(telefono);
+        cliente.setEmail(email);
+        clienteServicio.guardarCliente(cliente);
+        return new ResponseEntity<>("Cambios Guardados", HttpStatus.ACCEPTED);
+    }
+
+    @DeleteMapping("/clientes/actual/eliminarDireccion")
+    public ResponseEntity<Object> eliminarDireccion(@RequestParam String direccionBorrada,
+                                                    @RequestParam String contraseña,
+                                                    Authentication authentication) {
+
+        Cliente cliente = clienteServicio.findByEmail(authentication.getName());
+
+        if (direccionBorrada.isEmpty()) {
+            return new ResponseEntity<>("Completar Campo Direccion a Borrar", HttpStatus.FORBIDDEN);
+        }
+        if (contraseña.isEmpty()) {
+            return new ResponseEntity<>("Completar Campo Contraseña", HttpStatus.FORBIDDEN);
+        }
+        if (!cliente.getDirecciones().contains(direccionBorrada)) {
+            return new ResponseEntity<>("Direccion no encontrada", HttpStatus.FORBIDDEN);
+        }
+        if (!passwordEncoder.matches(contraseña, cliente.getContraseña())) {
+            return new ResponseEntity<>("La contraseña es incorrecta", HttpStatus.FORBIDDEN);
+        }
+
+        cliente.getDirecciones().remove(direccionBorrada);
+
+        clienteServicio.guardarCliente(cliente);
+        return new ResponseEntity<>("Direccion Borrada Exitosamente!", HttpStatus.ACCEPTED);
+    }
 }
