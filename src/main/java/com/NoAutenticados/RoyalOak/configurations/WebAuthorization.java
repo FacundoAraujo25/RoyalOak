@@ -20,6 +20,24 @@ public class WebAuthorization extends WebSecurityConfigurerAdapter {
 
 
         http.authorizeRequests()
+<<<<<<< HEAD
+                .antMatchers("/rest/**", "/h2-console/**").hasAuthority("ADMIN")
+                .antMatchers(HttpMethod.GET, "/api/productos/admin", "/api/facturas", "/api/productos/admin").hasAuthority("ADMIN")
+                .antMatchers(HttpMethod.POST, "/api/productos").hasAuthority("ADMIN")
+                .antMatchers(HttpMethod.PATCH, "/api/clientes/actual/modificar", "/api/clientes/roles", "/api/facturas", "/api/productos").hasAuthority("ADMIN")
+                .antMatchers(HttpMethod.DELETE,"/api/productos").hasAuthority("ADMIN")
+
+                .antMatchers(HttpMethod.GET, "/api/clientes/actual","/api/registro/**").hasAnyAuthority("CLIENTE","ADMIN")
+                .antMatchers(HttpMethod.POST, "/api/clientes","/api/clientes/direcciones", "/api/productos/carrito/agregar", "/api/facturas/confirmadas").hasAnyAuthority("CLIENTE", "ADMIN")
+                .antMatchers(HttpMethod.PATCH, "/api/productos/carrito/modificar").hasAnyAuthority("CLIENTE","ADMIN")
+                .antMatchers(HttpMethod.DELETE, "/clientes/actual/eliminarDireccion", "/api/productos/carrito/borrar").hasAuthority("CLIENTE")
+
+                .antMatchers(HttpMethod.GET, "/api/registro/**", "/api/productos").permitAll()
+                .antMatchers(HttpMethod.POST, "/api/clientes","/api/clientes/**","/api/productos/**").permitAll()
+                .antMatchers(HttpMethod.POST, "/web/index.html").permitAll()
+                .antMatchers("/web/index.html", "/web/login.html", "/web/registro.html", "/web/pages/contacto.html","/web/pages/random.html").permitAll()
+                .antMatchers("/web/pages/carrito.html").hasAnyAuthority("CLIENTE", "ADMIN");
+=======
 //                .antMatchers("/rest/**", "/h2-console/**").hasAuthority("ADMIN")
 //                .antMatchers(HttpMethod.GET, "/api/clientes/**","/api/productos/admin", "/api/facturas", "/api/productos/admin").hasAuthority("ADMIN")
 //                .antMatchers(HttpMethod.POST, "/api/productos").hasAuthority("ADMIN")
@@ -43,6 +61,7 @@ public class WebAuthorization extends WebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.PATCH, "/api/**").permitAll()
                 .antMatchers(HttpMethod.DELETE,"/api/**").permitAll();
 
+>>>>>>> main
 
 
 
