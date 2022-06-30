@@ -19,7 +19,8 @@ const app = Vue.createApp({
             totalPagar : 0,
             comidas : [],
             bebidas : [],
-            deshabilitar : true
+            deshabilitar : true,
+            agregado:0
         }
     },
 
@@ -27,10 +28,8 @@ const app = Vue.createApp({
         axios.get('http://localhost:8585/api/productos')
             .then(respose=>{
                 this.productos = respose.data
-                this.comidas = this.productos.filter(producto => producto.tipo == 'COMIDA')
-                this.bebidas = this.productos.filter(producto => producto.tipo == 'BEBIDA')
-                console.log(this.bebidas)
-                console.log(this.bebidas.length)
+                this.comidas = this.productos.filter(producto => producto.tipo == 'COMIDA' && producto.activo)
+                this.bebidas = this.productos.filter(producto => producto.tipo == 'BEBIDA' && producto.activo)
             })
     },
 
@@ -62,11 +61,12 @@ const app = Vue.createApp({
             let num
             let ids = []
             let ok
+            this.seccionRandom = false
             for (let index = 0; index < this.cantComida; index++) {
                 ok = true
                 while(ok){
                     num = idRandom(1,this.comidas.length)
-                    if(!ids.includes(num)){
+                    if(!ids.includes(num) && this.comidas.find(product=>product.id == num) != undefined){
                         this.productosRandom.push(this.comidas.find(producto => producto.id == num))
                         ids.push(num)
                         ok = false
@@ -76,7 +76,7 @@ const app = Vue.createApp({
             for (let index = 0; index < this.cantBebida; index++) {
                 ok = true
                 while(ok){
-                    num = idRandom(40,this.bebidas.length)
+                    num = idRandom(38,53)
                     if(!ids.includes(num)){
                         this.productosRandom.push(this.bebidas.find(producto => producto.id == num))
                         ids.push(num)
@@ -84,7 +84,6 @@ const app = Vue.createApp({
                     }
                 }
             }
-            console.log(this.productosRandom)
             this.productosRandom.forEach(producto => {
                 producto.cant = 1
             })
@@ -92,20 +91,20 @@ const app = Vue.createApp({
         eliminarProducto(producto){
             this.productosRandom = this.productosRandom.filter(product => product != producto)
         },
-        // ordenar(){
-        //     this.productosRandom.forEach(producto => {
-        //         axios.post('http://localhost:8585/api/productos/carrito/agregar',`cantidad=${producto.cant}&idProducto=${producto.id}`)
-        //             .then(response => console.log('añadido al carrito'))
-        //             .catch(error => console.log('no añadido '+producto.nombre))
-        //     })
-        // }
         agregar(producto){
                 axios.post('http://localhost:8585/api/productos/carrito/agregar',`cantidad=${producto.cant}&idProducto=${producto.id}`)
-                    .then(response => this.productosRandom = this.productosRandom.filter(product => product != producto))
+                    .then(response => {
+                        let elem = document.querySelector(`#btn-${producto.id}`)
+                        elem.innerHTML = '<div class="btn-group align-self-center" role="group" aria-label="First group"><button  type="button" disabled class="btn btn-outline-secondary stock2 d-flex justify-content-center align-items-center"><i class="material-icons">check</i> Añadido al carrito</button></div>'
+                        this.agregado++
+                    })
                     .catch(error => console.log('no añadido '+producto.nombre))
         },
         verCarrito(){
             window.location.href = './carrito.html'
+        },
+        revisarOtraVez(){
+            this.seccionAleatoria = false
         }
 
     },

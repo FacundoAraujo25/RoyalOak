@@ -109,7 +109,7 @@
                     </div>
           </header>
 
-        <div id="random" class="d-flex row justify-content-center align-items-start align-content-start gap-3 p-3">
+        <div v-if="!seccionAleatoria" id="random" class="d-flex row justify-content-center align-items-start align-content-start gap-3 p-3">
             <img src="../media/logo-simplificado.png" alt="logo" class="col-12">
             <h2 class="text-light text-center" style="font-family: 'Potta One'">Royal</h2>
             <p class="text-light texto">¿No sabés qué pedir? <br> Presiona el botón y deja la elección al azar.</p>
@@ -136,33 +136,34 @@
             </div>
             <button class="btn btn-verificar col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3" @click="random"><a href="#seccionAleatoria" class="fw-bold text-light">Verificar</a></button>
         </div>
-        <!---->
-        <div id="seccion-aleatoria"  v-show="seccionAleatoria" class="p-3 seccionAleatoria gap-3"> 
+        <div v-else id="seccion-aleatoria"  class="p-3 seccionAleatoria gap-3"> 
             <div id="divisorBurgers" class="d-flex justify-content-center align-items-center">
                 <h2 class="text-center fw-bold text-light" style="font-family: 'Potta One'">Resultado de la selección al azar</h2>
             </div>
-            <div class="d-flex justify-content-around producto-random p-3 m-3" v-for="producto in productosRandom">
-                <img class="img-fluid col-2" src="../media/jgaXh2A4jVwLTXkTKBDIgFHZkgm06YF3g3Sva78a.jpeg" alt="">
-                <div class="d-flex row  col-6">
-                    <h3 class="text-light">{{producto.nombre}}</h3>
-                    <p class="text-start">{{producto.descripcion}}</p>
-                    <p class="text-start">Stock: {{producto.stock}}</p>
-                    <p class="text-start">Precio unitario: ${{producto.precio}}</p>
-                    
+            <div class="d-flex flex-wrap col-12 justify-content-center">
+                <div class="d-flex flex-wrap gap-3 justify-content-around producto-random p-3 m-3 col-lg-12 col-md-5 col-sm-8" v-for="producto in productosRandom" >
+                    <img class="img-fluid col-xl-3 col-lg-3 col-md-12 col-sm-12" :src="producto.imagen" :alt="producto.descripcion" />
+                    <div class="d-flex row  col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                        <h3 class="text-light fw-bold">{{producto.nombre}}</h3>
+                        <p class="text-start descripcion">{{producto.descripcion}}</p>
+                        <p class="text-start descripcion">Stock: {{producto.stock}}</p>
+                        <p class="text-start descripcion">Precio unitario: ${{producto.precio}}</p>
+                        <p class="text-start text-light fw-bold">Total: ${{producto.precio*producto.cant}}</p>
+                    </div>
+                    <div  class="btn-group align-self-center" role="group" aria-label="First group" :id="'btn-'+producto.id">
+                        <button type="button" @click="disminuirCantidad(producto)" class="btn btn-outline-secondary stock1 d-flex justify-content-center align-items-center"><i class="material-icons">remove</i></button>
+                        <button type="button" @click="aumentarCantidad(producto)"  class="btn btn-outline-secondary stock2 d-flex justify-content-center align-items-center"><i class="material-icons">add</i></button>
+                        <input type="text" style="width : 50px" disabled class="inputCantidad" :placeholder="producto.cant"></input>
+                        <button type="button" @click="eliminarProducto(producto)" class="btn btn-outline-secondary stock2 d-flex justify-content-center align-items-center"><i class="material-icons">clear</i></button>
+                        <button type="button" @click="agregar(producto)" class="btn btn-outline-secondary stock2 d-flex justify-content-center align-items-center"><i class="material-icons">check</i></button>
+                    </div>
                 </div>
-                <div class="btn-group align-self-center" role="group" aria-label="First group" >
-                    <button type="button" @click="disminuirCantidad(producto)" disabled class="btn btn-outline-secondary stock1 d-flex justify-content-center align-items-center"><i class="material-icons">remove</i></button>
-                    <button type="button" @click="aumentarCantidad(producto)" :disabled="1 == 2" class="btn btn-outline-secondary stock2 d-flex justify-content-center align-items-center"><i class="material-icons">add</i></button>
-                    <input type="text" style="width : 50px" disabled class="inputCantidad" :placeholder="producto.cant"></input>
-                    <button type="button" @click="eliminarProducto(producto)" class="btn btn-outline-secondary stock2 d-flex justify-content-center align-items-center"><i class="material-icons">clear</i></button>
-                    <button type="button" @click="agregar(producto)" class="btn btn-outline-secondary stock2 d-flex justify-content-center align-items-center"><i class="material-icons">check</i></button>
                 </div>
-            </div>
             {{total}}
             <h2 class="text-center text-light" v-if="productosRandom.length != 0">Total a pagar ${{totalPagar}}</h2>
             <div class="d-flex justify-content-center gap-2 mt-3">
-                <button class="btn col-3 btn-otravez fw-bold"  @click="random">Revisar otra vez</button> 
-                <button class="btn btn-carrito col-3 fw-bold" @click="verCarrito">Ir al carrito</button> 
+                <button class="btn col-3 btn-otravez fw-bold text-light"  @click="revisarOtraVez">Revisar otra vez</button> 
+                <button class="btn btn-verificar col-3 fw-bold text-light" @click="verCarrito">Ir al carrito</button> 
             </div>
         </div>
 
