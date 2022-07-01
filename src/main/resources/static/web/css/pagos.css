@@ -45,7 +45,7 @@ main{
         display: none;
     }
 }
-@media(max-width: 670px){
+@media(max-width: 755px){
 
     .nav{
             display: none;
@@ -145,7 +145,7 @@ main{
             border-radius: 15px;
             margin: 3% 0%;
         }
-    }   
+}   
     
 
 /* Divisor hamburguesa */
@@ -405,31 +405,41 @@ option {
     }
 }
 @media screen and (max-width:755px) {
+    .tipoDeComida{
+        width: 10rem;
+    }
+    .divisor {
+        width: 90%;
+        height: 10%;
+        margin-left: 0%;
+        margin-top: 3rem;
+    }
     .pasarela{
-        width: 580px;
+        width: 90%;
         height: 350px;
+        margin: 0;
     }
     .side .skew{
-        width: 43%;
-        left: 15px;
+        display: none;
     }
-    .side .skew h3{
-        font-size: 1.7rem;
+    .header{
+        width: 100%;
     }
     .formPasarela{
-        left: 18rem;
+        left: 3rem;
+        width: 100%;
     }
     .formPasarela .number label{
         width: 10rem;
     }
     .formPasarela .number input{
-        width: 4rem;
+        width: 5rem;
     }
     .formPasarela .name label{
-        width: 10rem;
+        width: 15rem;
     }
     .formPasarela .name input{
-        width: 17rem;
+        width: 21rem;
     }
     .formPasarela .exp{
         width: 9.9rem;
@@ -442,5 +452,9 @@ option {
     }
     .ccv input {
         width: 88%;
+    }
+    .btnPasarela{
+        width: 10rem;
+        margin: 1rem 0 2rem 7rem !important;
     }
 }

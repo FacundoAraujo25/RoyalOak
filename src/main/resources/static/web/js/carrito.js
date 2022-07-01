@@ -14,8 +14,8 @@ Vue.createApp({
         }
     },
     created() {
-        axios.get('http://localhost:8585/api/clientes')
-        .then(datos => this.clientes= datos.data)
+        // axios.get('http://localhost:8585/api/clientes')
+        // .then(datos => this.clientes= datos.data)
         axios.get('http://localhost:8585/api/clientes/actual')
         .then(datos => {
             this.cliente = datos.data
@@ -23,6 +23,7 @@ Vue.createApp({
             this.facturas = this.facturas.filter(factura => factura.estadoFactura == 'CARRITO')
             this.pedidos = this.facturas[0].pedidos.sort((p1,p2)=> p1.id - p2.id);
             this.subtotalTotal = this.facturas[0].total
+            console.log(this.facturas)
         })
     },
     methods: {
@@ -72,6 +73,27 @@ Vue.createApp({
             this.modificarCantidad = pedido.cantidad
             this.idProducto = pedido.idProducto
         },
+
+        salir(){
+            Swal.fire({
+                title:'¿Estas seguro que quieres cerrar sesion?',
+                text: 'Si cierras sesion solo podras ver nuestra seccion de productos pero no podras ordenar tu compra',
+                popup: '',
+                icon:'warning',
+                confirmButtonColor: '#12A098',
+                cancelButtonColor: '#d33',
+                confirmButtonText: true,
+                confirmButtonText: 'Si, salir',
+                showCancelButton: true,
+                cancelButtonText: 'No, volver!',    
+                })
+                .then((result) => {
+                    if (result.isConfirmed) {
+                        axios.post('/api/logout')
+                        window.location.href = './login.html'
+                    }
+                  })
+        }
 
     },
 
