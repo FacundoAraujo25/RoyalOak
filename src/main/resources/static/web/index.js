@@ -23,12 +23,12 @@ const app = Vue.createApp({
     created(){
             const urlParams = new URLSearchParams(window.location.search);
             const id = urlParams.get('id');
-            axios.get('http://localhost:8585/api/clientes')
+            axios.get('/api/clientes')
             .then(data => {this.clientes = data.data})
-            axios.get('http://localhost:8585/api/clientes/actual')
+            axios.get('/api/clientes/actual')
             .then(data => {this.cliente = data.data})
             console.log(this.cliente)
-            axios.get('http://localhost:8585/api/productos')
+            axios.get('/api/productos')
             .then(data => {
                 this.datos = data.data
                 this.productos = this.datos.map(producto=>{
@@ -63,7 +63,7 @@ const app = Vue.createApp({
     methods: {
 
         añadirAlPedido(cantidad, idProducto){
-            axios.post(`http://localhost:8585/api/productos/carrito/agregar?cantidad=${cantidad}&idProducto=${idProducto}`,
+            axios.post(`/api/productos/carrito/agregar?cantidad=${cantidad}&idProducto=${idProducto}`,
             { headers: { "content-type": "application/x-www-form-urlencoded" } })
             .then(function (response){
                 Swal.fire({

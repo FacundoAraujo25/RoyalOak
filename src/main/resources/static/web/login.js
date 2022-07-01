@@ -25,7 +25,7 @@ Vue.createApp({
     methods: {
 
         iniciarSesion(){
-            axios.post('http://localhost:8585/api/login',`email=${this.email}&password=${this.contraseña}`,{headers:{'content-type':'application/x-www-form-urlencoded'}})
+            axios.post('/api/login',`email=${this.email}&password=${this.contraseña}`,{headers:{'content-type':'application/x-www-form-urlencoded'}})
             .then(response => {
                 console.log("sesion iniciada con exito")
                 Swal.fire({
@@ -38,9 +38,9 @@ Vue.createApp({
                 })
                 .then(response =>{
                     if (this.email.includes('esteban@gmail.com') || this.email.includes('facu@gmail.com')||this.email.includes('daphnecollao@gmail.com')){
-                        window.location.href = 'http://localhost:8585/web/admin/admin.html' 
+                        window.location.href = '/web/admin/admin.html' 
                     } else {
-                        window.location.href = 'http://localhost:8585/web/index.html' 
+                        window.location.href = '/web/index.html' 
                     }
                     
                 })
@@ -59,7 +59,7 @@ Vue.createApp({
 
 
         registrarse(){
-            axios.post('http://localhost:8585/api/clientes',`nombre=${this.nombreR}&apellido=${this.apellidoR}&email=${this.emailR}&telefono=${this.telefonoR}&direccion=${this.direccionR}&contraseña=${this.contraseñaR}`, {headers:{'content-type':'application/x-www-form-urlencoded'}})
+            axios.post('/api/clientes',`nombre=${this.nombreR}&apellido=${this.apellidoR}&email=${this.emailR}&telefono=${this.telefonoR}&direccion=${this.direccionR}&contraseña=${this.contraseñaR}`, {headers:{'content-type':'application/x-www-form-urlencoded'}})
             .then(response => {
                 console.log("nuevo cliente registrado")
                 Swal.fire({
