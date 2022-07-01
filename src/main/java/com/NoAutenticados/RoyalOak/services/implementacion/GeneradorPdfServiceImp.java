@@ -43,14 +43,14 @@ public class GeneradorPdfServiceImp implements GeneradorPdfService {
         //Titulo de Factura - Tipo de letra
         Font letraTitulo = FontFactory.getFont(FontFactory.HELVETICA_BOLD);
         letraTitulo.setSize(18);
-        Paragraph parrafo = new Paragraph("Factura de Compra", letraTitulo);
+        Paragraph parrafo = new Paragraph("Comprobante de Compra", letraTitulo);
         parrafo.setAlignment(Paragraph.ALIGN_CENTER);
 
         //Contenido Factura - Tipo de letra
         Font letraContenido = FontFactory.getFont(FontFactory.HELVETICA);
         letraContenido.setSize(14);
         /* Valor automatico-dinamico */
-        Paragraph parrafo2 = new Paragraph("N° de Factura: "+ factura.getId() , letraContenido);
+        Paragraph parrafo2 = new Paragraph("N° de Comprobante: "+ factura.getId() , letraContenido);
         parrafo2.setAlignment(Paragraph.ALIGN_CENTER);
 
         Paragraph parrafo3 = new Paragraph("Royal Oak - Delivery Bar", letraContenido);

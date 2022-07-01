@@ -9,18 +9,18 @@ Vue.createApp({
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
         const paramToken = urlParams.get('token'); 
-        axios.get("http://localhost:8585/api/registro/"+`${paramToken}`)
+        axios.get("/api/registro/"+`${paramToken}`)
             .then(datos =>{
                 console.log("y funciona?")
                 
-                axios.get("http://localhost:8585/api/clientes/"+`${paramToken}`)
+                axios.get("/api/clientes/"+`${paramToken}`)
                     .then(datos => {
                         this.cliente = datos.data
                         console.log(this.cliente)
                         console.log(this.cliente.email)
                         console.log(this.cliente.contraseña)
                         setTimeout(this.logInFunc, 1000)
-                        setTimeout(function(){window.location.href = "http://localhost:8585/web/index.html"}, 4000)
+                        setTimeout(function(){window.location.href = "/web/index.html"}, 4000)
                     })
                     .catch(error => console.log(error))
             })
@@ -28,7 +28,7 @@ Vue.createApp({
     },
     methods: {
         logInFunc() {
-            axios.post("http://localhost:8080/api/login", 
+            axios.post("/api/login", 
                     `email=${this.cliente.email}&password=${this.cliente.contraseña}`,
                     {headers:{'content-type':'application/x-www-form-urlencoded'}})
                 .then(response => {

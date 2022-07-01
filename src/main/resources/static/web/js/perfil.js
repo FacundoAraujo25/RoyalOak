@@ -13,7 +13,7 @@ Vue.createApp({
         }
     },
     created() {
-        axios.get('http://localhost:8585/api/clientes/actual')
+        axios.get('/api/clientes/actual')
             .then(datos => {
                 this.nombreCliente = datos.data.nombre
                 this.apellidoCliente = datos.data.apellido
@@ -43,7 +43,7 @@ Vue.createApp({
                 .then((result) => {
                     if (result.isConfirmed) {
 
-                        axios.patch('http://localhost:8585/api/clientes/actual/modificar', `nombre=${this.nombreCliente}&apellido=${this.apellidoCliente}&email=${this.mailCliente}&telefono=${this.telefonoCliente}&direccion=${setDirecciones}&contraseña=${this.contrasenaCliente}`,
+                        axios.patch('/api/clientes/actual/modificar', `nombre=${this.nombreCliente}&apellido=${this.apellidoCliente}&email=${this.mailCliente}&telefono=${this.telefonoCliente}&direccion=${setDirecciones}&contraseña=${this.contrasenaCliente}`,
                             { headers: { 'content-type': 'application/x-www-form-urlencoded' } })
                             .then(() => {
                                 Swal.fire({
@@ -84,7 +84,7 @@ Vue.createApp({
             })
                 .then((result) => {
                     if (result.isConfirmed) {
-                        axios.delete(`http://localhost:8585/api/clientes/actual/eliminarDireccion?direccionBorrada=${param}&contraseña=${this.contrasenaCliente}`)
+                        axios.delete(`/api/clientes/actual/eliminarDireccion?direccionBorrada=${param}&contraseña=${this.contrasenaCliente}`)
                             .then(() => {
 
                                 Swal.fire({

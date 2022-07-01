@@ -14,9 +14,9 @@ Vue.createApp({
         }
     },
     created() {
-        axios.get('http://localhost:8585/api/clientes')
+        axios.get('/api/clientes')
         .then(datos => this.clientes= datos.data)
-        axios.get('http://localhost:8585/api/clientes/actual')
+        axios.get('/api/clientes/actual')
         .then(datos => {
             this.cliente = datos.data
             this.facturas = this.cliente.facturas.sort((f1,f2) => f1.id - f2.id);
@@ -27,9 +27,9 @@ Vue.createApp({
     },
     methods: {
         modificarPedido(){
-            axios.patch(`http://localhost:8585/api/productos/carrito/modificar?nuevaCantidad=${this.modificarCantidad}&idProducto=${this.idProducto}`)
+            axios.patch(`/api/productos/carrito/modificar?nuevaCantidad=${this.modificarCantidad}&idProducto=${this.idProducto}`)
             .then(function (response){
-                window.location.href = "http://localhost:8585/web/pages/carrito.html"
+                window.location.href = "/web/pages/carrito.html"
             })
             .catch(function (error){
                 console.log(error)
@@ -37,10 +37,10 @@ Vue.createApp({
         },
 
         borrarPedido(id){
-            axios.delete(`http://localhost:8585/api/productos/carrito/borrar?idPedido=${id}`,
+            axios.delete(`/api/productos/carrito/borrar?idPedido=${id}`,
             { headers: { "content-type": "application/x-www-form-urlencoded" } })
             .then(function (response){
-                window.location.href = "http://localhost:8585/web/pages/carrito.html"
+                window.location.href = "/web/pages/carrito.html"
             })
             .catch(function (error){
                 console.log(error)

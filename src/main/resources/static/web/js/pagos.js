@@ -16,7 +16,7 @@ Vue.createApp({
         }
     },
     created() {
-        axios.get("http://localhost:8585/api/clientes/actual")
+        axios.get("/api/clientes/actual")
             .then(datos =>{
                 this.factura = datos.data.facturas[0]
                 this.totalFactura = this.factura.total
@@ -41,18 +41,18 @@ Vue.createApp({
                         width: "40%",
                     })
                     .then(response =>{
-                        window.location.href="http://localhost:8585/api/clientes/factura"
+                        window.location.href="/api/clientes/factura"
                     })
                     .then(
-                        axios.post("http://localhost:8585/api/clientes/factura")
-                            .catch(error =>{
-                                Swal.fire({
-                                    title: "Fallo descarga factura",
-                                    text: "No se pudo descargar tu factura, no te preocupes en un momento la encontraras en tu perfil",
-                                    icon: "error",
-                                    width: "30%",
-                                })
-                            })
+                        axios.post("/api/clientes/factura")
+                            // .catch(error =>{
+                            //     Swal.fire({
+                            //         title: "Fallo descarga factura",
+                            //         text: "No se pudo descargar tu factura, no te preocupes en un momento la encontraras en tu perfil",
+                            //         icon: "error",
+                            //         width: "30%",
+                            //     })
+                            // })
                     )
 
                 })

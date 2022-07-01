@@ -26,10 +26,10 @@ const app = Vue.createApp({
     },
 
     created(){
-        axios.get('http://localhost:8585/api/clientes/actual')
+        axios.get('/api/clientes/actual')
         .then(data => {this.cliente = data.data})
 
-        axios.get('http://localhost:8585/api/productos')
+        axios.get('/api/productos')
             .then(respose=>{
                 this.productos = respose.data
                 this.comidas = this.productos.filter(producto => producto.tipo == 'COMIDA' && producto.activo)
@@ -96,7 +96,7 @@ const app = Vue.createApp({
             this.productosRandom = this.productosRandom.filter(product => product != producto)
         },
         agregar(producto){
-                axios.post('http://localhost:8585/api/productos/carrito/agregar',`cantidad=${producto.cant}&idProducto=${producto.id}`)
+                axios.post('/api/productos/carrito/agregar',`cantidad=${producto.cant}&idProducto=${producto.id}`)
                     .then(response => {
                         let elem = document.querySelector(`#btn-${producto.id}`)
                         elem.innerHTML = '<div class="btn-group align-self-center" role="group" aria-label="First group"><button  type="button" disabled class="btn btn-outline-secondary stock2 d-flex justify-content-center align-items-center"><i class="material-icons">check</i> Añadido al carrito</button></div>'
