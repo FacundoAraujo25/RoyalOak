@@ -10,11 +10,11 @@
                 integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
                 crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
-        <link rel="stylesheet" href="../admin/styleAdmin.css">
+        <link rel="stylesheet" href="./styleAdmin.css">
         <link rel="stylesheet" href="../css/footer.css">
         <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
         <link rel="icon" href="../media/logo-royaloak-2 (1).ico">
-        <title>Administrador</title>
+        <title>Administrador | Royal Oak</title>
 </head>
 
 <body>
@@ -28,10 +28,10 @@
                                 <nav id="menu_hamburguesa" class="navbar navbar-dark">
                                         <div id="container_fluid" class="d-flex justify-between">
                                                 <div>
-                                                        <img id="carritoHamburguesa" src="media/canastaIcono.png" alt="">
+                                                        <img id="carritoHamburguesa" src="../media/canastaIcono.png" alt="">
                                                 </div>
                                                 <div>
-                                                        <img src="media/logo-royaloak-2.png" alt="">
+                                                        <img src="https://res.cloudinary.com/royal-oak-imagenes/image/upload/v1656443334/logo-simplificado_xcuvzo.png" alt="">
                                                 </div>
                                                 <div id="botonHamburguesa">
                                                         <button id="boton_hamburguesa" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -44,19 +44,19 @@
 
                     <div id="hamburguesitas">
                         <div>
-                            <a  href=""><img src="media/iconoBurger.png"></a>
+                            <a  href=""><img src="../media/iconoBurger.png"></a>
                             <p>Menu</p>   
                         </div>
                         <div>
                             <a  href=""><img src="https://cdn-icons-png.flaticon.com/512/30/30569.png"></a>
-                            <p>Royal Oak</p>
+                            <p>Royal</p>
                         </div>
                         <div>
-                            <a  href="./login.html"><img src="media/Register.webp"></a>
+                            <a  href="../login.html"><img src="../media/Register.webp"></a>
                             <p>Registrarme</p>
                         </div>
                         <div>
-                            <a @click="salir"><img src="media/cerrarSesion.png"></a>
+                            <a @click="salir"><img src="../media/cerrarSesion.png"></a>
                             <p>Salir</p>
                         </div>
                     </div>
@@ -64,10 +64,10 @@
                 <nav id="menu_hamburguesa" class="navbar navbar-dark">
                     <div id="container_fluid" class="d-flex justify-between">
                     <div>
-                        <img id="carritoHamburguesa" src="media/canastaIcono.png" alt="">
+                        <img id="carritoHamburguesa" src="../media/canastaIcono.png" alt="">
                     </div>
                     <div>
-                        <img src="media/logo-royaloak-2.png" alt="">
+                        <img src="https://res.cloudinary.com/royal-oak-imagenes/image/upload/v1656443334/logo-simplificado_xcuvzo.png" alt="">
                     </div>
                     <div id="botonHamburguesa">
                         <button id="boton_hamburguesa" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -81,35 +81,35 @@
                 <header>
                         <div class="nav">
                                 <div id="marca">
-                                        <a href="#"><img src="media/logo-royaloak.png" alt="Logo"></a>
+                                        <a href="#"><img src="https://res.cloudinary.com/royal-oak-imagenes/image/upload/v1656443334/logo-simplificado_xcuvzo.png" alt="Logo"></a>
                                 </div>
                                 <div id="menu">
                                         <a href=#divisorBurgers><img class="scale-up-center" id="iconos"
-                                                        src="media/iconoBurger.png" alt="menu"></a>
+                                                        src="../media/iconoBurger.png" alt="menu"></a>
                                         <p>Menu</p>
                                 </div>
                                 <div>
-                                        <a href="./pages/carrito.html"><img class="scale-up-center" src="media/iconoBolsita.webp"
+                                        <a href="../pages/carrito.html"><img class="scale-up-center" src="../media/iconoBolsita.webp"
                                                         alt=""></a>
                                         <p>Pedido</p>
                                 </div>
                                 <div>
-                                        <a href="./pages/random.html"><img class="scale-up-center" src="https://cdn-icons-png.flaticon.com/512/30/30569.png"
+                                        <a href="../pages/random.html"><img class="scale-up-center" src="https://cdn-icons-png.flaticon.com/512/30/30569.png"
                                                         alt=""></a>
                                         <p>Royal</p>
                                 </div>
                                 <div >
-                                        <a href="./index.html"><img class="scale-up-center" src="https://cdn-icons-png.flaticon.com/512/81/81591.png"
+                                        <a href="../index.html"><img class="scale-up-center" src="https://cdn-icons-png.flaticon.com/512/81/81591.png"
                                                         alt=""></a>
                                         <p>Cliente</p>
                                 </div>
                                 <div>
-                                        <a href="./login.html"><img class="scale-up-center " src="media/Register.webp"
+                                        <a href="../login.html"><img class="scale-up-center " src="../media/Register.webp"
                                                         alt=""></a>
                                         <p>Registro</p>
                                 </div>
                                 <div id="salir">
-                                        <a @click="salir"><img class="scale-up-center" src="media/cerrarSesion.png" alt=""></a>
+                                        <a @click="salir"><img class="scale-up-center" src="../media/cerrarSesion.png" alt=""></a>
                                         <p>Salir</p>
                                 </div>
                         </div>
@@ -146,17 +146,6 @@
                         <img src="https://i.pinimg.com/originals/67/ac/6f/67ac6ff9c411816ed8bbc9ae34368e8f.png" alt="11">                         
                         <img src="https://images.vexels.com/media/users/3/143088/isolated/preview/f565debc52083dacca60da22284e4083-icono-de-pierna-de-pollo.png" alt="12"> -->                     
                 </div>
-
-                <!-- DARK MODE -->
-                <!-- <div class="form-check form-switch d-flex ">
-                        <div>
-                                <input class="form-check-input" type="checkbox" role="switch" id="switch">
-                        </div>
-                        
-                        <div>
-                                <label class="form-check-label" for="flexSwitchCheckDefault">Dark Mode</label>
-                        </div>
-                </div> -->
                 
                 <!-- AGREGAR PRODUCTOS -->
                 <div class="contenedorAdd">
@@ -167,7 +156,7 @@
                                                 <div class="single-product ">
                                                         <div class="part-1 add ">
                                                                 
-                                                        <a href="edit.html" ><i class="bi bi-plus"></i></a>  
+                                                        <a href="./edit.html" ><i class="bi bi-plus"></i></a>  
                                                         </div>
                                                         <div class="part-2">
                                                                 <h3 class="product-title text-center">Agregar producto</h3>
@@ -201,7 +190,7 @@
                 <!-- DIVISOR HAMBURGUESAS -->
                 <div data-aos="fade-up" class="divisor d-flex">
                         <div class="tipoDeComida">
-                                <img src="./media/logo-royaloak-2.png" alt="">
+                                <img src="https://res.cloudinary.com/royal-oak-imagenes/image/upload/v1656443334/logo-simplificado_xcuvzo.png" alt="Logo">
                                 <h3>Hamburguesas</h3>
                         </div>
                         <div id="divisorBurgers">
@@ -253,7 +242,7 @@
                 <!-- DIVISOR BEBIDAS -->
                 <div data-aos="fade-up" class="divisor d-flex">
                         <div class="tipoDeComida">
-                                <img src="media/logo-royaloak-2.png" alt="">
+                                <img src="https://res.cloudinary.com/royal-oak-imagenes/image/upload/v1656443334/logo-simplificado_xcuvzo.png" alt="Logo">
                                 <h3>Bebidas</h3>
                         </div>
                         <div id="divisorBurgers2">
@@ -306,7 +295,7 @@
                 <!-- DIVISOR PICADAS -->
                 <div data-aos="fade-up" class="divisor d-flex">
                         <div class="tipoDeComida">
-                                <img src="media/logo-royaloak-2.png" alt="">
+                                <img src="https://res.cloudinary.com/royal-oak-imagenes/image/upload/v1656443334/logo-simplificado_xcuvzo.png" alt="Logo">
                                 <h3>Picadas</h3>
                         </div>
                         <div id="divisorBurgers3">
@@ -353,7 +342,7 @@
                 <!-- DIVISOR BEBIDAS CON ALCOHOL -->
                 <div data-aos="fade-up" class="divisor d-flex">
                         <div class="tipoDeComida">
-                                <img src="media/logo-royaloak-2.png" alt="">
+                                <img src="https://res.cloudinary.com/royal-oak-imagenes/image/upload/v1656443334/logo-simplificado_xcuvzo.png" alt="Logo">
                                 <h3>Bebidas</h3>
                         </div>
                         <div id="divisorBurgers2">
@@ -405,7 +394,7 @@
                 <!-- DIVISOR PIZZAS -->
                 <div data-aos="fade-up" class="divisor d-flex">
                         <div class="tipoDeComida">
-                                <img src="media/logo-royaloak-2.png" alt="">
+                                <img src="https://res.cloudinary.com/royal-oak-imagenes/image/upload/v1656443334/logo-simplificado_xcuvzo.png" alt="Logo">
                                 <h3>Pizzas</h3>
                         </div>
                         <div id="divisorBurgers4">
@@ -452,7 +441,7 @@
                 <!-- DIVISOR ENSALADAS -->
                 <div data-aos="fade-up" class="divisor d-flex">
                         <div class="tipoDeComida">
-                                <img src="media/logo-royaloak-2.png" alt="">
+                                <img src="https://res.cloudinary.com/royal-oak-imagenes/image/upload/v1656443334/logo-simplificado_xcuvzo.png" alt="Logo">
                                 <h3>Ensaladas</h3>
                         </div>
                         <div id="divisorBurgers5">

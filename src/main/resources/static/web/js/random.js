@@ -9,6 +9,7 @@ const app = Vue.createApp({
     //CREAR Y USAR VARIABLES
     data() {
         return {
+            cliente:[],
             num: 12,
             cantidad: 1,
             cantComida: 1,
@@ -25,6 +26,9 @@ const app = Vue.createApp({
     },
 
     created(){
+        axios.get('http://localhost:8585/api/clientes/actual')
+        .then(data => {this.cliente = data.data})
+
         axios.get('http://localhost:8585/api/productos')
             .then(respose=>{
                 this.productos = respose.data

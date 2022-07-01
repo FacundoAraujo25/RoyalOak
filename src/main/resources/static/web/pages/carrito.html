@@ -129,16 +129,17 @@
                         
                 </div>
             </div>
-            <div v-if="cliente.length == 0">
+            <div v-if="pedidos.length == 0">
                 <h2>Aun no agregaste productos a tu pedido</h2>
             </div>
-                <div class="shopping-cart" v-else>
+            <div class="shopping-cart" v-show="pedidos.length != 0">
 
                 <div class="column-labels">
                     <label class="product-image">Image</label>
                     <label class="product-details">Product</label>
                     <label class="product-price labels">Precio</label>
                     <label class="product-quantity labels">Cantidad</label>
+                    <label class="product-removal">Remover</label>
                     <label class="product-removal">Remover</label>
                     <label class="product-line-price labels">Subtotal</label>
                 </div>
@@ -212,7 +213,7 @@
                 <div class="checkoutDiv">
                     <button class="checkout"><a href="../pages/pagos.html" class="text-decoration-none">Pagar</a></button>
                 </div>
-                </div>
+            </div>
         </main>
         <!-- ======= Footer ======= -->
     </div>

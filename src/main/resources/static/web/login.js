@@ -38,9 +38,9 @@ Vue.createApp({
                 })
                 .then(response =>{
                     if (this.email.includes('esteban@gmail.com') || this.email.includes('facu@gmail.com')||this.email.includes('daphnecollao@gmail.com')){
-                        window.location.href = './admin.html' 
+                        window.location.href = 'http://localhost:8585/web/admin/admin.html' 
                     } else {
-                        window.location.href = './index.html' 
+                        window.location.href = 'http://localhost:8585/web/index.html' 
                     }
                     
                 })

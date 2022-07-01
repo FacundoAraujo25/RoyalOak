@@ -30,7 +30,7 @@
                                                     <img id="carritoHamburguesa" src="../media/canastaIcono.png" alt="">
                                             </div>
                                             <div>
-                                                    <img src="../media/logo-royaloak-2.png" alt="">
+                                                    <img src="https://res.cloudinary.com/royal-oak-imagenes/image/upload/v1656443334/logo-simplificado_xcuvzo.png" alt="">
                                             </div>
                                             <div id="botonHamburguesa">
                                                     <button id="boton_hamburguesa" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -43,19 +43,23 @@
 
                 <div id="hamburguesitas">
                     <div>
-                        <a  href=""><img src="../media/iconoBurger.png"></a>
+                        <a  href=""><img src="../media/menuH.png"></a>
                         <p>Menu</p>   
                     </div>
                     <div>
-                        <a  href=""><img src="https://cdn-icons-png.flaticon.com/512/30/30569.png"></a>
-                        <p>Royal Oak</p>
+                        <a  href=""><img src="../media/royal_menuH.png"></a>
+                        <p>Royal</p>
                     </div>
-                    <div>
-                        <a  href="./login.html"><img src="../media/Register.webp"></a>
+                    <div v-if="cliente.length == 0">
+                        <a href="./login.html"><img src="../media/register_menuH.webp"></a>
                         <p>Registrarme</p>
                     </div>
+                    <div v-else>
+                        <a href="./perfil.html"><img src="../media/perfil_menuH.png"></a>
+                        <p>Perfil</p>
+                    </div>
                     <div>
-                        <a @click="salir"><img src="../media/cerrarSesion.png"></a>
+                        <a @click="salir"><img src="../media/logout_menuH.png"></a>
                         <p>Salir</p>
                     </div>
                 </div>
@@ -63,10 +67,10 @@
             <nav id="menu_hamburguesa" class="navbar navbar-dark">
                 <div id="container_fluid" class="d-flex justify-between">
                 <div>
-                    <img id="carritoHamburguesa" src="../media/canastaIcono.png" alt="">
+                    <img id="carritoHamburguesa" src="../media/canastaIcono.png" alt="Icono hamburguesa">
                 </div>
                 <div>
-                    <img src="../media/logo-royaloak-2.png" alt="">
+                    <img src="https://res.cloudinary.com/royal-oak-imagenes/image/upload/v1656443334/logo-simplificado_xcuvzo.png" alt="Logo">
                 </div>
                 <div id="botonHamburguesa">
                     <button id="boton_hamburguesa" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -80,7 +84,7 @@
             <header>
                     <div class="nav">
                             <div id="marca">
-                                    <a href="#"><img src="../media/logo-royaloak.png" alt="Logo"></a>
+                                    <a href="#"><img src="https://res.cloudinary.com/royal-oak-imagenes/image/upload/v1656443334/logo-simplificado_xcuvzo.png" alt="Logo"></a>
                             </div>
                             <div id="menu">
                                     <a href="../index.html"><img class="scale-up-center" id="iconos"
@@ -97,10 +101,13 @@
                                                     alt=""></a>
                                     <p>Royal</p>
                             </div>
-                            <div>
-                                    <a href="../login.html"><img class="scale-up-center " src="../media/Register.webp"
-                                                    alt=""></a>
-                                    <p>Registro</p>
+                            <div v-if="cliente.length == 0">
+                                <a href="./login.html"><img src="../media/Register.webp"></a>
+                                <p>Registrarme</p>
+                            </div>
+                            <div v-else>
+                                <a href="./perfil.html"><img src="../media/perfil.png"></a>
+                                <p>Perfil</p>
                             </div>
                             <div id="salir">
                                     <a @click="salir"><img class="scale-up-center" src="../media/cerrarSesion.png" alt=""></a>

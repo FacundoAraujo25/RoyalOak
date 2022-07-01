@@ -17,10 +17,6 @@ public class ClienteProductoPedidoDTO {
     private int stockProducto;
     private String imagen;
     private SubTipo subTipo;
-<<<<<<< HEAD
-=======
-
->>>>>>> main
 
     public ClienteProductoPedidoDTO() {}
 
@@ -34,10 +30,6 @@ public class ClienteProductoPedidoDTO {
         this.stockProducto = clienteProductoPedido.getProducto().getStock();
         this.imagen = clienteProductoPedido.getProducto().getImagen();
         this.subTipo = clienteProductoPedido.getProducto().getSubTipo();
-<<<<<<< HEAD
-=======
-
->>>>>>> main
     }
 
     public long getId() {
@@ -85,12 +77,8 @@ public class ClienteProductoPedidoDTO {
     public String getImagen() {
         return imagen;
     }
-<<<<<<< HEAD
-    public SubTipo getSubTipo() {
-        return subTipo;
-    }
-=======
+
     public SubTipo getSubTipo() {return subTipo;}
     public void setSubTipo(SubTipo subTipo) {this.subTipo = subTipo;}
->>>>>>> main
+
 }

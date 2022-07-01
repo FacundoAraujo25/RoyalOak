@@ -40,6 +40,9 @@ const app = Vue.createApp({
                     confirmButtonText: "Okey!🍔",
                     width: "40%",
                 })
+                .then(response => {
+                    window.location.reload()
+                })
             })
             .catch(response => {
                 console.log("error")

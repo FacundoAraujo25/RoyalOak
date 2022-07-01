@@ -21,6 +21,7 @@ Vue.createApp({
                 this.telefonoCliente = datos.data.telefono
                 this.direccionCliente = datos.data.direcciones
                 this.contrasenaCliente = datos.data.contraseña
+                this.cliente = datos.data
             })
 
 

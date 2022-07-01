@@ -30,7 +30,7 @@ Vue.createApp({
                 "securityCode": "856",
                 "amount": this.totalFactura,
                 "detail": "N° Factura: " + this.factura.id
-    })
+                })
                 .then(data =>{
                     Swal.fire({
                         title: "Compra exitosa",
@@ -43,17 +43,17 @@ Vue.createApp({
                     .then(response =>{
                         window.location.href="http://localhost:8585/api/clientes/factura"
                     })
-                    // .then(
-                    //     axios.post("http://localhost:8585/api/clientes/factura")
-                    //         .catch(error =>{
-                    //             Swal.fire({
-                    //                 title: "Fallo descarga factura",
-                    //                 text: "No se pudo descargar tu factura, no te preocupes en un momento la encontraras en tu perfil",
-                    //                 icon: "error",
-                    //                 width: "30%",
-                    //             })
-                    //         })
-                    // )
+                    .then(
+                        axios.post("http://localhost:8585/api/clientes/factura")
+                            .catch(error =>{
+                                Swal.fire({
+                                    title: "Fallo descarga factura",
+                                    text: "No se pudo descargar tu factura, no te preocupes en un momento la encontraras en tu perfil",
+                                    icon: "error",
+                                    width: "30%",
+                                })
+                            })
+                    )
 
                 })
                 .catch(error =>{
